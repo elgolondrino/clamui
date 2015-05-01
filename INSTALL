@@ -1,0 +1,18 @@
+INSTALLATION INSTRUCTIONS / INSTALLATIONSANLEITUNG
+*********************************************************
+
+- If you want to get up and running quickly and easily -
+:~/tar -xzvf clamui-0.x.x.tar.gz
+:~/cd clamui
+:~/clamui/> qmake clamui.pro
+:~/clamui/> make
+
+As user root / als Benutzer root:
+:~/clamui/> make install
+
+or as non-root-user root password is required
+oder als normaler Benutzer, dazu wird das root Passwort benötigt:
+:~/clamui/> su -c"make install"
+password:
+
+=========================================================
