@@ -40,6 +40,7 @@
 #define APP_NAME "clamui"
 #define APP_COMPANY_NAME "E67-ITS"
 #define CLAMAV_PATH QDir::homePath()+"/.config/clamav/"
+#define CLAMAV_VDB_PATH QDir::homePath()+"/.config/clamav/vdb/"
 #define APP_CONFIG_PATH QDir::homePath()+"/."+ APP_NAME + "/"
 #define APPS_TPL_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/tpl/"
 #define LANG_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/locale/"

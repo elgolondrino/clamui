@@ -37,6 +37,15 @@
 #include <KStatusNotifierItem>
 #include <KDESu/SuProcess>
 
+/* Qt Headers */
+#include <QMenu>
+#include <QAction>
+#include <QSettings>
+#include <QFileDialog>
+#include <QTranslator>
+#include <QProcess>
+#include <QMap>
+
 #include "about.h"
 #include "settings.h"
 #include "tababoutclamav.h"
@@ -45,6 +54,7 @@
 #include "tabvirusquarantine.h"
 #include "tabvirusscan.h"
 #include "definitionen.h"
+#include "languagetools.h"
 
 #include "ui_clamui.h"
 
@@ -63,6 +73,8 @@ private:
     void settingsWrite();
     void settingsRead();
     void settingsDefault();
+    void createTrayIcon();
+    void createActions();
 
 private slots:
     void slotQuit();

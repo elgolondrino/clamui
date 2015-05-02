@@ -89,7 +89,8 @@ HEADERS += src/definitionen.h \
     src/tabvirusdb.h \
     src/tabvirusquarantine.h \
     src/tabscanscheduling.h \
-    src/tababoutclamav.h
+    src/tababoutclamav.h \
+    src/languagetools.h
 
 SOURCES += src/about.cpp \
     src/main.cpp \
@@ -99,7 +100,8 @@ SOURCES += src/about.cpp \
     src/tabvirusdb.cpp \
     src/tabvirusquarantine.cpp \
     src/tabscanscheduling.cpp \
-    src/tababoutclamav.cpp
+    src/tababoutclamav.cpp \
+    src/languagetools.cpp
     
 FORMS += ui/about.ui \
     ui/clamui.ui \
@@ -117,7 +119,7 @@ OTHER_FILES += ChangeLog \
     TODO \
     my_rpm \
     AUTHORS \
-    src/clamui.desktop \
+    clamui.desktop \
     clamui.spec \
     translations/translation_info.txt 
     
@@ -126,7 +128,7 @@ RESOURCES += clamui.qrc
 TRANSLATIONS += translations/clamui_de.ts \
     translations/clamui_en.ts 
     
-DISTFILES += src/clamui.desktop \
+DISTFILES += clamui.desktop \
     translations/clamui_de.qm \
     translations/clamui_en.qm \
     AUTHORS \

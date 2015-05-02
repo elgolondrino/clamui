@@ -81,6 +81,10 @@ int main(int argc, char *argv[]) {
         clamDir.mkdir(CLAMAV_PATH);
     }
 
+    if (!clamDir.exists(CLAMAV_VDB_PATH)) {
+        clamDir.mkdir(CLAMAV_VDB_PATH);
+    }
+
         ClamUI start;
         start.show();
         return app.exec();
