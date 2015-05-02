@@ -23,7 +23,7 @@ CONFIG += qt
 
 # #### Programmicons
 pixmap.path += /usr/share/pixmaps/
-pixmap.files += images/48x48/clamui.png
+pixmap.files += icons/clamui.svg
 
 # #### Desktop-Eintrag
 menu.path += /usr/share/applications/
@@ -83,10 +83,32 @@ DEPENDPATH += . \
     debian
 HEADERS += src/definitionen.h \
     src/about.h \
+    src/clamui.h \
+    src/settings.h \
+    src/tabvirusscan.h \
+    src/tabvirusdb.h \
+    src/tabvirusquarantine.h \
+    src/tabscanscheduling.h \
+    src/tababoutclamav.h
 
 SOURCES += src/about.cpp \
+    src/main.cpp \
+    src/clamui.cpp \
+    src/settings.cpp \
+    src/tabvirusscan.cpp \
+    src/tabvirusdb.cpp \
+    src/tabvirusquarantine.cpp \
+    src/tabscanscheduling.cpp \
+    src/tababoutclamav.cpp
     
 FORMS += ui/about.ui \
+    ui/clamui.ui \
+    ui/settings.ui \
+    ui/tabvirusscan.ui \
+    ui/tabvirusdb.ui \
+    ui/tabvirusquarantine.ui \
+    ui/tabscanscheduling.ui \
+    ui/tababoutclamav.ui
     
 OTHER_FILES += ChangeLog \
     INSTALL \

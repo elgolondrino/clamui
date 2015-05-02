@@ -29,22 +29,22 @@
 **
 *******************************************************************************/
 
-#ifndef DEFINITIONEN_H
-#define DEFINITIONEN_H
+#include "settings.h"
 
-#include <QDir>
-#include <QString>
+Settings::Settings(QWidget *parent) :
+    QDialog(parent)
+{
+    setupUi(this);
+}
 
-#define APP_VERSION "0.0.0"
-#define APP_TITLE "ClamUI"
-#define APP_NAME "clamui"
-#define APP_COMPANY_NAME "E67-ITS"
-#define CLAMAV_PATH QDir::homePath()+"/.config/clamav/"
-#define APP_CONFIG_PATH QDir::homePath()+"/."+ APP_NAME + "/"
-#define APPS_TPL_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/tpl/"
-#define LANG_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/locale/"
-#define FLAGS_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/flags/"
-#define HELP_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/doc/"
-#define DESKTOP_FILE "/usr/share/applications/"
-
-#endif // DEFINITIONEN_H
+void Settings::changeEvent(QEvent *e)
+{
+    QDialog::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+        retranslateUi(this);
+        break;
+    default:
+        break;
+    }
+}

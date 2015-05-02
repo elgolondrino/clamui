@@ -29,22 +29,44 @@
 **
 *******************************************************************************/
 
-#ifndef DEFINITIONEN_H
-#define DEFINITIONEN_H
+#ifndef CLAMUI_H
+#define CLAMUI_H
 
-#include <QDir>
-#include <QString>
+/* KF5 Headers */
+#include <KNotification>
+#include <KStatusNotifierItem>
+#include <KDESu/SuProcess>
 
-#define APP_VERSION "0.0.0"
-#define APP_TITLE "ClamUI"
-#define APP_NAME "clamui"
-#define APP_COMPANY_NAME "E67-ITS"
-#define CLAMAV_PATH QDir::homePath()+"/.config/clamav/"
-#define APP_CONFIG_PATH QDir::homePath()+"/."+ APP_NAME + "/"
-#define APPS_TPL_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/tpl/"
-#define LANG_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/locale/"
-#define FLAGS_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/flags/"
-#define HELP_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/doc/"
-#define DESKTOP_FILE "/usr/share/applications/"
+#include "about.h"
+#include "settings.h"
+#include "tababoutclamav.h"
+#include "tabscanscheduling.h"
+#include "tabvirusdb.h"
+#include "tabvirusquarantine.h"
+#include "tabvirusscan.h"
+#include "definitionen.h"
 
-#endif // DEFINITIONEN_H
+#include "ui_clamui.h"
+
+class ClamUI : public QMainWindow, private Ui::ClamUI
+{
+    Q_OBJECT
+
+public:
+    explicit ClamUI(QWidget *parent = 0);
+
+protected:
+    void changeEvent(QEvent *e);
+
+private:
+    void createSlots();
+    void settingsWrite();
+    void settingsRead();
+    void settingsDefault();
+
+private slots:
+    void slotQuit();
+    void slotClose();
+};
+
+#endif // CLAMUI_H

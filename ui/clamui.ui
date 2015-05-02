@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ClamUI</class>
+ <widget class="QMainWindow" name="ClamUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>978</width>
+    <height>569</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+      <widget class="TabScanScheduling" name="tab_01">
+       <attribute name="title">
+        <string>Überprüfungsintervalle</string>
+       </attribute>
+      </widget>
+      <widget class="TabVirusScan" name="tab_02">
+       <attribute name="title">
+        <string>Dateien Scannen</string>
+       </attribute>
+      </widget>
+      <widget class="TabVirusQuarantine" name="tab_03">
+       <attribute name="title">
+        <string>Dateien in Quarantäne</string>
+       </attribute>
+      </widget>
+      <widget class="TabVirusDB" name="tab_04">
+       <attribute name="title">
+        <string>ClamAV Virendefinitionen</string>
+       </attribute>
+      </widget>
+      <widget class="TabAboutClamAV" name="tab_05">
+       <attribute name="title">
+        <string>Über ClamAV</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Close">
+        <property name="toolTip">
+         <string>SChließt dieses Fenster. Das Programm läuft im Systemabschnitt der Kontrollleiste weiter.</string>
+        </property>
+        <property name="text">
+         <string>Schließen</string>
+        </property>
+        <property name="icon">
+         <iconset theme="dialog-close">
+          <normaloff/>
+         </iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>978</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;Datei</string>
+    </property>
+    <addaction name="action_Close"/>
+    <addaction name="separator"/>
+    <addaction name="action_Quit"/>
+   </widget>
+   <widget class="QMenu" name="menu_ClamAV">
+    <property name="title">
+     <string>&amp;ClamAV</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;?</string>
+    </property>
+    <addaction name="action_Handbook"/>
+    <addaction name="separator"/>
+    <addaction name="action_AboutClamUI"/>
+    <addaction name="action_AboutKDE"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_ClamAV"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="action_Close">
+   <property name="icon">
+    <iconset theme="dialog-close">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Schließen</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_Quit">
+   <property name="icon">
+    <iconset theme="application-exit">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Beenden</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="action_Handbook">
+   <property name="icon">
+    <iconset theme="documentation">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Handbuch</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="action_AboutClamUI">
+   <property name="icon">
+    <iconset theme="help-about">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Über ClamUI</string>
+   </property>
+  </action>
+  <action name="action_AboutKDE">
+   <property name="icon">
+    <iconset theme="kde">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Über &amp;KDE</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TabVirusScan</class>
+   <extends>QWidget</extends>
+   <header>src/tabvirusscan.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TabScanScheduling</class>
+   <extends>QWidget</extends>
+   <header>src/tabscanscheduling.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TabVirusQuarantine</class>
+   <extends>QWidget</extends>
+   <header>src/tabvirusquarantine.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TabVirusDB</class>
+   <extends>QWidget</extends>
+   <header>src/tabvirusdb.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TabAboutClamAV</class>
+   <extends>QWidget</extends>
+   <header>src/tababoutclamav.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

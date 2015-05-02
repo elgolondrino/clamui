@@ -29,22 +29,22 @@
 **
 *******************************************************************************/
 
-#ifndef DEFINITIONEN_H
-#define DEFINITIONEN_H
+#ifndef TABABOUTCLAMAV_H
+#define TABABOUTCLAMAV_H
 
-#include <QDir>
-#include <QString>
+#include "definitionen.h"
 
-#define APP_VERSION "0.0.0"
-#define APP_TITLE "ClamUI"
-#define APP_NAME "clamui"
-#define APP_COMPANY_NAME "E67-ITS"
-#define CLAMAV_PATH QDir::homePath()+"/.config/clamav/"
-#define APP_CONFIG_PATH QDir::homePath()+"/."+ APP_NAME + "/"
-#define APPS_TPL_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/tpl/"
-#define LANG_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/locale/"
-#define FLAGS_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/flags/"
-#define HELP_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/doc/"
-#define DESKTOP_FILE "/usr/share/applications/"
+#include "ui_tababoutclamav.h"
 
-#endif // DEFINITIONEN_H
+class TabAboutClamAV : public QWidget, private Ui::TabAboutClamAV
+{
+    Q_OBJECT
+
+public:
+    explicit TabAboutClamAV(QWidget *parent = 0);
+
+protected:
+    void changeEvent(QEvent *e);
+};
+
+#endif // TABABOUTCLAMAV_H
