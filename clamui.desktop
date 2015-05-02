@@ -1,0 +1,18 @@
+[Desktop Entry]
+GenericName=ClamUI
+GenericName[de]=ClamUI
+GenericName[en]=ClamUI
+Name=ClamUI
+Name[de]=ClamUI
+Name[en]=ClamUI
+Categories=Qt;KDE;System;
+Comment=An UI for ClamAV
+Comment[de]= Eine grafische Oberfläche für ClamAV
+Comment[en]=An UI for ClamAV
+Encoding=UTF-8
+Exec=clamui -caption "%c" %u
+Icon=clamui
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0
