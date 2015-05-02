@@ -1,2 +1,2 @@
 # ClamUI
-An KF5 UI for ClamAV
+A KF5 UI for ClamAV.
