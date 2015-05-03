@@ -2,13 +2,12 @@ lessThan(QT_VERSION, 5.3) {
     error("Program requires at least Qt 5.3!")
 }
 
+QT += network
 QT += widgets
 QT += KIconThemes
-#QT += KWidgetsAddons
+#QT += KF5
 QT += KNotifications
 QT += KDESu
-QT += network
-
 INCLUDEPATH += /usr/lib64
 
 TEMPLATE = app

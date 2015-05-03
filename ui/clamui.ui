@@ -24,26 +24,41 @@
        <bool>true</bool>
       </property>
       <widget class="TabScanScheduling" name="tab_01">
+       <attribute name="icon">
+        <iconset theme="chronometer"/>
+       </attribute>
        <attribute name="title">
         <string>Überprüfungsintervalle</string>
        </attribute>
       </widget>
       <widget class="TabVirusScan" name="tab_02">
+       <attribute name="icon">
+        <iconset theme="system-search"/>
+       </attribute>
        <attribute name="title">
         <string>Dateien Scannen</string>
        </attribute>
       </widget>
       <widget class="TabVirusQuarantine" name="tab_03">
+       <attribute name="icon">
+        <iconset theme="document-encrypted"/>
+       </attribute>
        <attribute name="title">
         <string>Dateien in Quarantäne</string>
        </attribute>
       </widget>
       <widget class="TabVirusDB" name="tab_04">
+       <attribute name="icon">
+        <iconset theme="document-properties"/>
+       </attribute>
        <attribute name="title">
         <string>ClamAV Virendefinitionen</string>
        </attribute>
       </widget>
       <widget class="TabAboutClamAV" name="tab_05">
+       <attribute name="icon">
+        <iconset theme="clamav"/>
+       </attribute>
        <attribute name="title">
         <string>Über ClamAV</string>
        </attribute>

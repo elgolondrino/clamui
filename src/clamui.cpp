@@ -81,25 +81,57 @@ void ClamUI::closeEvent(QCloseEvent *event)
 
 void ClamUI::createSlots(){
 
+    connect(action_Quit, SIGNAL(triggered(bool)), this, SLOT(slotQuit()));
+
+    connect(action_Close, SIGNAL(triggered(bool)), this, SLOT(close()));
+
+    connect(pushButton_Close, SIGNAL(clicked(bool)), this, SLOT(close()));
+
 }
 
-void ClamUI::slotClose(){
+//void ClamUI::slotClose(){
 
-    close();
+//    close();
 
-}
+//}
 
 void ClamUI::slotQuit(){
 
-    close();
+    QMessageBox msgBox;
+
+    msgBox.setText(trUtf8("Möchten Sie <b>") +
+                          APP_TITLE + trUtf8("</b> wirklich beenden?"));
+
+    msgBox.setIcon(QMessageBox::Question);
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::Yes);
+    int ret = msgBox.exec();
+    switch (ret) {
+    case QMessageBox::Yes:
+        qApp->quit();
+        break;
+    case QMessageBox::No:
+        msgBox.close();
+        break;
+    default:
+        break;
+    }
 }
 
 void ClamUI::settingsWrite(){
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+    clamui_conf.beginGroup("ClamUI");
 
+    clamui_conf.endGroup();
 }
 
 void ClamUI::settingsRead(){
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+    clamui_conf.beginGroup("ClamUI");
 
+    clamui_conf.endGroup();
 }
 
 void ClamUI::settingsDefault(){
@@ -109,7 +141,9 @@ void ClamUI::settingsDefault(){
 void ClamUI::createTrayIcon(){
 
     statusNotifierItem = new KStatusNotifierItem(this);
-    statusNotifierItem->setTitle(APP_TITLE " - " APP_VERSION);
+    statusNotifierItem->setToolTip("clamui",
+                                   APP_TITLE " - " APP_VERSION,
+                                   "ClamAV ist derzeit inaktiv.");
     statusNotifierItem->setIconByName("clamui");
     statusNotifierItem->setStatus(KStatusNotifierItem::Active);
 

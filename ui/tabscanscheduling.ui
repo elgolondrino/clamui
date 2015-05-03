@@ -34,85 +34,13 @@
      </layout>
     </widget>
    </item>
-   <item row="0" column="1" rowspan="2">
-    <widget class="QGroupBox" name="groupBox_2">
-     <property name="title">
-      <string>Verzeichnisse</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QListWidget" name="listWidget_Directories">
-        <property name="toolTip">
-         <string>Zu überprüfende Verzeichnisse.</string>
-        </property>
-        <property name="editTriggers">
-         <set>QAbstractItemView::NoEditTriggers</set>
-        </property>
-        <property name="selectionMode">
-         <enum>QAbstractItemView::MultiSelection</enum>
-        </property>
-        <property name="selectionBehavior">
-         <enum>QAbstractItemView::SelectRows</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_OpenDir">
-          <property name="toolTip">
-           <string>Verzeichnisse auswählen, deren Inhlate von ClamAV überprüft werden sollen.</string>
-          </property>
-          <property name="text">
-           <string>Verzeichnisse hinzufügen</string>
-          </property>
-          <property name="icon">
-           <iconset theme="document-open-folder">
-            <normaloff/>
-           </iconset>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_ClearList">
-          <property name="toolTip">
-           <string>Ausgewählte Verzeichnisse entfernen.</string>
-          </property>
-          <property name="text">
-           <string>Verzeichnisse Entfernen</string>
-          </property>
-          <property name="icon">
-           <iconset theme="edit-clear-list">
-            <normaloff/>
-           </iconset>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="1" column="0">
+   <item row="0" column="1">
     <widget class="QGroupBox" name="groupBox_3">
      <property name="title">
       <string>Automatisches aktuallisieren der Virendatenbank</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
+     <layout class="QFormLayout" name="formLayout_2">
+      <item row="0" column="0" colspan="2">
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="1" column="0">
          <widget class="QLabel" name="label_2">
@@ -150,6 +78,150 @@
           </property>
           <property name="text">
            <string>freshclam im Hintergrund starten.</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Zu prüfende Verzeichnisse</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QListWidget" name="listWidget_DirectoriesScan">
+        <property name="toolTip">
+         <string>Zu überprüfende Verzeichnisse.</string>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::MultiSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_OpenDirScan">
+          <property name="toolTip">
+           <string>Verzeichnisse auswählen, deren Inhlate von ClamAV überprüft werden sollen.</string>
+          </property>
+          <property name="text">
+           <string>Verzeichnisse hinzufügen</string>
+          </property>
+          <property name="icon">
+           <iconset theme="document-open-folder">
+            <normaloff/>
+           </iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_ClearListScan">
+          <property name="toolTip">
+           <string>Ausgewählte Verzeichnisse entfernen.</string>
+          </property>
+          <property name="text">
+           <string>Verzeichnisse Entfernen</string>
+          </property>
+          <property name="icon">
+           <iconset theme="edit-clear-list">
+            <normaloff/>
+           </iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="title">
+      <string>Auszuschließende Verzeichnisse</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QListWidget" name="listWidget_DirectoriesExcludr">
+        <property name="toolTip">
+         <string>Zu überprüfende Verzeichnisse.</string>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::MultiSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_OpenDirExclude">
+          <property name="toolTip">
+           <string>Verzeichnisse auswählen, deren Inhlate von ClamAV überprüft werden sollen.</string>
+          </property>
+          <property name="text">
+           <string>Verzeichnisse hinzufügen</string>
+          </property>
+          <property name="icon">
+           <iconset theme="document-open-folder">
+            <normaloff/>
+           </iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_ClearListExclude">
+          <property name="toolTip">
+           <string>Ausgewählte Verzeichnisse entfernen.</string>
+          </property>
+          <property name="text">
+           <string>Verzeichnisse Entfernen</string>
+          </property>
+          <property name="icon">
+           <iconset theme="edit-clear-list">
+            <normaloff/>
+           </iconset>
           </property>
          </widget>
         </item>

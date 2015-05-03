@@ -30,6 +30,7 @@
 *******************************************************************************/
 
 /* KDE Headers */
+#include <KF5/kdelibs4support_version.h>
 
 /* Qt Headers */
 #include <QApplication>

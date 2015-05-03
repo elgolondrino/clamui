@@ -33,7 +33,6 @@
 #define CLAMUI_H
 
 /* KF5 Headers */
-#include <KNotification>
 #include <KStatusNotifierItem>
 #include <KF5/KIconThemes/KIconLoader>
 #include <KDESu/SuProcess>
@@ -48,6 +47,7 @@
 #include <QTranslator>
 #include <QProcess>
 #include <QMap>
+#include <QMessageBox>
 
 #include "about.h"
 #include "settings.h"
@@ -88,7 +88,7 @@ private:
 
 private slots:
     void slotQuit();
-    void slotClose();
+//    void slotClose();
 };
 
 #endif // CLAMUI_H
