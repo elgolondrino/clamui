@@ -35,18 +35,48 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
 
     setupUi(this);
 
+    loadThemeIcons();
+
+    setWindowTitle(trUtf8("%1 - %2").arg(
+                       APP_TITLE).arg(
+                       APP_VERSION));
+
     createSlots();
+    settingsRead();
+    createTrayIcon();
+    createActions();
+
 }
 
-void ClamUI::changeEvent(QEvent *e){
-    QMainWindow::changeEvent(e);
-    switch (e->type()) {
+void ClamUI::changeEvent(QEvent *event){
+    QMainWindow::changeEvent(event);
+    switch (event->type()) {
     case QEvent::LanguageChange:
         retranslateUi(this);
         break;
     default:
         break;
     }
+}
+
+void ClamUI::closeEvent(QCloseEvent *event)
+{
+    if (statusNotifierItem->standardActionsEnabled() == true) {
+
+        statusNotifierItem->showMessage(
+                    trUtf8("%1 - %2 - Hinweis!").arg(
+                        APP_TITLE).arg(
+                        APP_VERSION),
+                    trUtf8("Das Programm läuft im Systemabschnitt "
+                           "der Kontrollleiste weiter. "
+                           "Um das Programm zu beenden, "
+                           "im Kontextmenü auf Beenden klicken."),
+                    "dialog-information",
+                    5000 );
+    }
+    hide();
+    event->accept();
+
 }
 
 void ClamUI::createSlots(){
@@ -62,4 +92,33 @@ void ClamUI::slotClose(){
 void ClamUI::slotQuit(){
 
     close();
+}
+
+void ClamUI::settingsWrite(){
+
+}
+
+void ClamUI::settingsRead(){
+
+}
+
+void ClamUI::settingsDefault(){
+
+}
+
+void ClamUI::createTrayIcon(){
+
+    statusNotifierItem = new KStatusNotifierItem(this);
+    statusNotifierItem->setTitle(APP_TITLE " - " APP_VERSION);
+    statusNotifierItem->setIconByName("clamui");
+    statusNotifierItem->setStatus(KStatusNotifierItem::Active);
+
+}
+
+void ClamUI::createActions(){
+
+}
+
+void ClamUI::loadThemeIcons(){
+
 }

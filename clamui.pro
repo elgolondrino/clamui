@@ -3,6 +3,8 @@ lessThan(QT_VERSION, 5.3) {
 }
 
 QT += widgets
+QT += KIconThemes
+#QT += KWidgetsAddons
 QT += KNotifications
 QT += KDESu
 QT += network
@@ -121,7 +123,8 @@ OTHER_FILES += ChangeLog \
     AUTHORS \
     clamui.desktop \
     clamui.spec \
-    translations/translation_info.txt 
+    translations/translation_info.txt \
+    scripts/Virusscan.desktop
     
 RESOURCES += clamui.qrc
 
@@ -139,4 +142,5 @@ DISTFILES += clamui.desktop \
     README.md \
     TODO \
     clamui.spec \
-    translations/translation_info.txt
+    translations/translation_info.txt \
+    scripts/Virusscan.desktop

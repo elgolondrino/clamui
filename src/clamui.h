@@ -35,9 +35,12 @@
 /* KF5 Headers */
 #include <KNotification>
 #include <KStatusNotifierItem>
+#include <KF5/KIconThemes/KIconLoader>
 #include <KDESu/SuProcess>
+//#include <KF5/KWidgetsAddons/KActionMenu>
 
 /* Qt Headers */
+#include <QCloseEvent>
 #include <QMenu>
 #include <QAction>
 #include <QSettings>
@@ -66,7 +69,8 @@ public:
     explicit ClamUI(QWidget *parent = 0);
 
 protected:
-    void changeEvent(QEvent *e);
+    void changeEvent(QEvent *event);
+    void closeEvent(QCloseEvent *event);
 
 private:
     void createSlots();
@@ -75,6 +79,12 @@ private:
     void settingsDefault();
     void createTrayIcon();
     void createActions();
+    void loadThemeIcons();
+
+    QMenu *menu;
+    QAction *actionMenu;
+    KIconLoader *iconLoader;
+    KStatusNotifierItem *statusNotifierItem;
 
 private slots:
     void slotQuit();

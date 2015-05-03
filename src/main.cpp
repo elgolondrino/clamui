@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) {
 
     // Falls die Sprache manuell gesetzt wurde.
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
-                             APP_COMPANY_NAME, APP_NAME);
+                             APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("ClamUI");
     languageSet = clamui_conf.value("Set_Language", false).toBool();
     currLanguage = clamui_conf.value(
