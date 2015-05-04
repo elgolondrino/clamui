@@ -99,9 +99,9 @@ void ClamUI::slotQuit(){
 
     QMessageBox msgBox;
 
+    msgBox.setWindowTitle(trUtf8("Beenden bestätigen"));
     msgBox.setText(trUtf8("Möchten Sie <b>") +
                           APP_TITLE + trUtf8("</b> wirklich beenden?"));
-
     msgBox.setIcon(QMessageBox::Question);
     msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     msgBox.setDefaultButton(QMessageBox::Yes);

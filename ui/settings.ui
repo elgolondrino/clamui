@@ -21,14 +21,16 @@
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="icon">
-       <iconset theme="clamui"/>
+       <iconset theme="clamui">
+        <normaloff/>
+       </iconset>
       </attribute>
       <attribute name="title">
        <string>ClamUI</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QScrollArea" name="scrollArea">
+        <widget class="QScrollArea" name="scrollArea_ClamUI">
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
@@ -43,13 +45,20 @@
           </property>
           <layout class="QFormLayout" name="formLayout">
            <item row="0" column="0" colspan="2">
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox_General">
              <property name="title">
               <string>Allgemein</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_5">
               <item>
                <layout class="QGridLayout" name="gridLayout">
+                <item row="1" column="0">
+                 <widget class="QCheckBox" name="checkBox_HideWindow">
+                  <property name="text">
+                   <string>Fenster beim Start nicht anzeigen.</string>
+                  </property>
+                 </widget>
+                </item>
                 <item row="0" column="0">
                  <widget class="QCheckBox" name="checkBox_Autostart">
                   <property name="text">
@@ -57,10 +66,10 @@
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="0">
-                 <widget class="QCheckBox" name="checkBox_HideWindow">
+                <item row="2" column="0">
+                 <widget class="QCheckBox" name="checkBox_IconOnDesktop">
                   <property name="text">
-                   <string>Fenster beim Start nicht anzeigen.</string>
+                   <string>Icon auf dem Desktop anzeigen.</string>
                   </property>
                  </widget>
                 </item>
@@ -120,7 +129,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QScrollArea" name="scrollArea_2">
+        <widget class="QScrollArea" name="scrollArea_ClamAV">
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
@@ -148,7 +157,9 @@
         <string>Hilfe</string>
        </property>
        <property name="icon">
-        <iconset theme="help-about"/>
+        <iconset theme="help-about">
+         <normaloff/>
+        </iconset>
        </property>
       </widget>
      </item>
@@ -171,7 +182,9 @@
         <string>Standardwerte</string>
        </property>
        <property name="icon">
-        <iconset theme="edit-undo"/>
+        <iconset theme="edit-undo">
+         <normaloff/>
+        </iconset>
        </property>
       </widget>
      </item>
@@ -181,7 +194,9 @@
         <string>Speichern</string>
        </property>
        <property name="icon">
-        <iconset theme="dialog-ok-apply"/>
+        <iconset theme="dialog-ok-apply">
+         <normaloff/>
+        </iconset>
        </property>
       </widget>
      </item>
@@ -191,7 +206,9 @@
         <string>Schließen</string>
        </property>
        <property name="icon">
-        <iconset theme="dialog-close"/>
+        <iconset theme="dialog-close">
+         <normaloff/>
+        </iconset>
        </property>
       </widget>
      </item>

@@ -175,97 +175,97 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="28"/>
+        <location filename="../ui/clamui.ui" line="31"/>
         <source>Überprüfungsintervalle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="33"/>
+        <location filename="../ui/clamui.ui" line="39"/>
         <source>Dateien Scannen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="38"/>
+        <location filename="../ui/clamui.ui" line="47"/>
         <source>Dateien in Quarantäne</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="43"/>
+        <location filename="../ui/clamui.ui" line="55"/>
         <source>ClamAV Virendefinitionen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="48"/>
+        <location filename="../ui/clamui.ui" line="63"/>
         <source>Über ClamAV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="71"/>
+        <location filename="../ui/clamui.ui" line="86"/>
         <source>SChließt dieses Fenster. Das Programm läuft im Systemabschnitt der Kontrollleiste weiter.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="74"/>
+        <location filename="../ui/clamui.ui" line="89"/>
         <source>Schließen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="98"/>
+        <location filename="../ui/clamui.ui" line="113"/>
         <source>&amp;Datei</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="106"/>
+        <location filename="../ui/clamui.ui" line="121"/>
         <source>&amp;ClamAV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="111"/>
+        <location filename="../ui/clamui.ui" line="126"/>
         <source>&amp;?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="125"/>
+        <location filename="../ui/clamui.ui" line="140"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="141"/>
+        <location filename="../ui/clamui.ui" line="156"/>
         <source>&amp;Schließen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="144"/>
+        <location filename="../ui/clamui.ui" line="159"/>
         <source>Ctrl+S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="154"/>
+        <location filename="../ui/clamui.ui" line="169"/>
         <source>&amp;Beenden</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="157"/>
+        <location filename="../ui/clamui.ui" line="172"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="167"/>
+        <location filename="../ui/clamui.ui" line="182"/>
         <source>&amp;Handbuch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="170"/>
+        <location filename="../ui/clamui.ui" line="185"/>
         <source>F1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="180"/>
+        <location filename="../ui/clamui.ui" line="195"/>
         <source>&amp;Über ClamUI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="190"/>
+        <location filename="../ui/clamui.ui" line="205"/>
         <source>Über &amp;KDE</source>
         <translation type="unfinished"></translation>
     </message>
@@ -284,6 +284,16 @@ Vielen Dank im voraus.</source>
         <source>Das Programm läuft im Systemabschnitt der Kontrollleiste weiter. Um das Programm zu beenden, im Kontextmenü auf Beenden klicken.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/clamui.cpp" line="102"/>
+        <source>Möchten Sie &lt;b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clamui.cpp" line="103"/>
+        <source>&lt;/b&gt; wirklich beenden?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -293,57 +303,57 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="24"/>
+        <location filename="../ui/settings.ui" line="27"/>
         <source>ClamUI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="45"/>
+        <location filename="../ui/settings.ui" line="48"/>
         <source>Allgemein</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="53"/>
+        <location filename="../ui/settings.ui" line="56"/>
         <source>ClamUI automatisch starten.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="60"/>
+        <location filename="../ui/settings.ui" line="63"/>
         <source>Fenster beim Start nicht anzeigen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="75"/>
+        <location filename="../ui/settings.ui" line="78"/>
         <source>S&amp;prache ändern</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="89"/>
+        <location filename="../ui/settings.ui" line="92"/>
         <source>&amp;Sprache wechseln (Benötigt einen Neustart):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="112"/>
+        <location filename="../ui/settings.ui" line="119"/>
         <source>ClamAV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="141"/>
+        <location filename="../ui/settings.ui" line="148"/>
         <source>Hilfe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="161"/>
+        <location filename="../ui/settings.ui" line="171"/>
         <source>Standardwerte</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="168"/>
+        <location filename="../ui/settings.ui" line="181"/>
         <source>Speichern</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="175"/>
+        <location filename="../ui/settings.ui" line="191"/>
         <source>Schließen</source>
         <translation type="unfinished"></translation>
     </message>
@@ -374,58 +384,68 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="40"/>
-        <source>Verzeichnisse</source>
+        <location filename="../ui/tabscanscheduling.ui" line="92"/>
+        <source>Zu prüfende Verzeichnisse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="46"/>
+        <location filename="../ui/tabscanscheduling.ui" line="98"/>
+        <location filename="../ui/tabscanscheduling.ui" line="170"/>
         <source>Zu überprüfende Verzeichnisse.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="77"/>
+        <location filename="../ui/tabscanscheduling.ui" line="129"/>
+        <location filename="../ui/tabscanscheduling.ui" line="201"/>
         <source>Verzeichnisse auswählen, deren Inhlate von ClamAV überprüft werden sollen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="80"/>
+        <location filename="../ui/tabscanscheduling.ui" line="132"/>
+        <location filename="../ui/tabscanscheduling.ui" line="204"/>
         <source>Verzeichnisse hinzufügen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="92"/>
+        <location filename="../ui/tabscanscheduling.ui" line="144"/>
+        <location filename="../ui/tabscanscheduling.ui" line="216"/>
         <source>Ausgewählte Verzeichnisse entfernen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="95"/>
+        <location filename="../ui/tabscanscheduling.ui" line="147"/>
+        <location filename="../ui/tabscanscheduling.ui" line="219"/>
         <source>Verzeichnisse Entfernen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="112"/>
+        <location filename="../ui/tabscanscheduling.ui" line="164"/>
+        <source>Auszuschließende Verzeichnisse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="40"/>
         <source>Automatisches aktuallisieren der Virendatenbank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="120"/>
-        <location filename="../ui/tabscanscheduling.ui" line="130"/>
+        <location filename="../ui/tabscanscheduling.ui" line="48"/>
+        <location filename="../ui/tabscanscheduling.ui" line="58"/>
         <source>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="123"/>
+        <location filename="../ui/tabscanscheduling.ui" line="51"/>
         <source>Wie oft am Tag:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="149"/>
+        <location filename="../ui/tabscanscheduling.ui" line="77"/>
         <source>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktuallität der Virendefinitionen. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="152"/>
+        <location filename="../ui/tabscanscheduling.ui" line="80"/>
         <source>freshclam im Hintergrund starten.</source>
         <translation type="unfinished"></translation>
     </message>

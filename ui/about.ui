@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>About_SS2</class>
- <widget class="QDialog" name="About_SS2">
+ <class>About_App</class>
+ <widget class="QDialog" name="About_App">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,51 +11,29 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Über....</string>
+   <string>Über...</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../simurun2.qrc">
-    <normaloff>:/images/images/icons/info.png</normaloff>:/images/images/icons/info.png</iconset>
+   <iconset theme="help-about"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,1,0">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1">
      <item>
-      <widget class="QLabel" name="labelImage">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>10</horstretch>
-         <verstretch>10</verstretch>
-        </sizepolicy>
-       </property>
+      <widget class="QLabel" name="label">
        <property name="minimumSize">
         <size>
          <width>64</width>
          <height>64</height>
         </size>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>64</width>
-         <height>64</height>
-        </size>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
-       </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="../simurun2.qrc">:/images/images/hi64-app-simurun2.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>false</bool>
        </property>
       </widget>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,1">
+      <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0">
        <item>
         <widget class="QLabel" name="lblAppTitel">
          <property name="minimumSize">
@@ -124,13 +102,12 @@
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="tabSimurun">
+     <widget class="QWidget" name="tab_ClamUI">
       <attribute name="icon">
-       <iconset>
-        <normaloff>:/images/images/simurun2_32.png</normaloff>:/images/images/simurun2_32.png</iconset>
+       <iconset theme="clamui"/>
       </attribute>
       <attribute name="title">
-       <string>Simutrans St&amp;arter</string>
+       <string>ClamUI</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_6">
        <item>
@@ -152,16 +129,15 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>357</width>
-            <height>265</height>
+            <width>365</width>
+            <height>266</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
             <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>Ein Konfigurationstool für die Simutrans Wirtschafts Simulation.
-Über dieses Programm können die Einstellungen für jedes installierte Pak Set konfiguriert werden. Die Einstellungen werden in das jeweilige config Verzeichnis der Pak Sets gespeichert. So erhält jedes Pak Set seine eigene Konfiguration.</string>
+              <string>ClamUI ist ein einfach zu bediendes grafisches Frontend für den ClanAV Virenscanner.</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -187,7 +163,7 @@
            <item>
             <widget class="QLabel" name="label_1">
              <property name="text">
-              <string>(C) 2007 - 2014 by Georg Lassnig</string>
+              <string>(C) 2015 by Georg Lassnig</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -207,15 +183,12 @@
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QLabel" name="lblUrl">
+              <widget class="KUrlLabel" name="kurllabel">
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.e67-its.de/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;www.e67-its.de/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>http://www.e67-its.de</string>
                </property>
-               <property name="scaledContents">
-                <bool>false</bool>
-               </property>
-               <property name="openExternalLinks">
-                <bool>true</bool>
+               <property name="url">
+                <string>http://www.e67-its.de</string>
                </property>
               </widget>
              </item>
@@ -254,13 +227,12 @@ p, li { white-space: pre-wrap; }
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tabSimutrans">
+     <widget class="QWidget" name="tabClamAV">
       <attribute name="icon">
-       <iconset resource="../simurun2.qrc">
-        <normaloff>:/images/images/simutrans.png</normaloff>:/images/images/simutrans.png</iconset>
+       <iconset theme="clamav"/>
       </attribute>
       <attribute name="title">
-       <string>Sim&amp;utrans</string>
+       <string>ClamAV</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
@@ -279,8 +251,8 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>357</width>
-            <height>265</height>
+            <width>365</width>
+            <height>266</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">
@@ -292,114 +264,10 @@ p, li { white-space: pre-wrap; }
              <property name="spacing">
               <number>6</number>
              </property>
-             <item row="0" column="0">
-              <widget class="QLabel" name="versionLabel">
-               <property name="text">
-                <string>Simutrans Version:</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QLabel" name="versionInfoLabel">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="pfadLabel">
-               <property name="text">
-                <string>Simutranspfad:</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-               </property>
-              </widget>
-             </item>
              <item row="1" column="1">
               <widget class="QLabel" name="pfadInfoLabel">
                <property name="text">
                 <string/>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
-              <widget class="QLabel" name="paksetLabel">
-               <property name="text">
-                <string>Aktives Pakset:</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="1">
-              <widget class="QLabel" name="paksetInfoLabel">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-               </property>
-               <property name="wordWrap">
-                <bool>true</bool>
-               </property>
-               <property name="openExternalLinks">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0">
-              <widget class="QLabel" name="instPaksetsLabel">
-               <property name="text">
-                <string>Installierte Paksets:</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-               </property>
-              </widget>
-             </item>
-             <item row="6" column="0">
-              <widget class="QLabel" name="label_9">
-               <property name="text">
-                <string>Homepage:</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-               </property>
-              </widget>
-             </item>
-             <item row="8" column="0" colspan="2">
-              <widget class="QLabel" name="developerLabel">
-               <property name="text">
-                <string>(c) 1997-2003 Hans Joerg Malthaner
-(c) seit 2004 das Simutrans Team</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-               </property>
-               <property name="wordWrap">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item row="9" column="0" colspan="2">
-              <widget class="QLabel" name="licenseLabel">
-               <property name="text">
-                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lizensiert unter der &lt;span style=&quot; font-style:italic;&quot;&gt;The Artistic License&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -428,14 +296,46 @@ p, li { white-space: pre-wrap; }
                </property>
               </widget>
              </item>
-             <item row="6" column="1">
-              <widget class="QLabel" name="lblUrlSimutrans">
+             <item row="6" column="0">
+              <widget class="QLabel" name="label_9">
                <property name="text">
-                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.simutrans.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.simutrans.com/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>Homepage:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="versionLabel">
+               <property name="text">
+                <string>ClamAV Version:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="paksetInfoLabel">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+               <property name="openExternalLinks">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="versionInfoLabel">
+               <property name="text">
+                <string/>
                </property>
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -452,7 +352,7 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="tabAutor">
       <attribute name="icon">
-       <iconset resource="../simurun2.qrc">
+       <iconset>
         <normaloff>:/images/images/icons/system-users.png</normaloff>:/images/images/icons/system-users.png</iconset>
       </attribute>
       <attribute name="title">
@@ -475,8 +375,8 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>357</width>
-            <height>265</height>
+            <width>365</width>
+            <height>266</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -552,7 +452,7 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="tabTranslation">
       <attribute name="icon">
-       <iconset resource="../simurun2.qrc">
+       <iconset>
         <normaloff>:/images/images/icons/babelfish.png</normaloff>:/images/images/icons/babelfish.png</iconset>
       </attribute>
       <attribute name="title">
@@ -609,8 +509,7 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="tabDonate">
       <attribute name="icon">
-       <iconset resource="../simurun2.qrc">
-        <normaloff>:/images/images/icons/help-donate.png</normaloff>:/images/images/icons/help-donate.png</iconset>
+       <iconset theme="help-donate"/>
       </attribute>
       <attribute name="title">
        <string>Spenden</string>
@@ -636,7 +535,7 @@ Vielen Dank im voraus.</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../simurun2.qrc">:/images/images/donate.gif</pixmap>
+          <pixmap>:/images/images/donate.gif</pixmap>
          </property>
          <property name="openExternalLinks">
           <bool>true</bool>
@@ -674,8 +573,7 @@ Vielen Dank im voraus.</string>
         <string>&amp;Ok</string>
        </property>
        <property name="icon">
-        <iconset resource="../simurun2.qrc">
-         <normaloff>:/images/images/icons/dialog-close.png</normaloff>:/images/images/icons/dialog-close.png</iconset>
+        <iconset theme="dialog-ok-apply"/>
        </property>
       </widget>
      </item>
@@ -683,14 +581,19 @@ Vielen Dank im voraus.</string>
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../simurun2.qrc"/>
- </resources>
+ <customwidgets>
+  <customwidget>
+   <class>KUrlLabel</class>
+   <extends>QLabel</extends>
+   <header>kurllabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
  <connections>
   <connection>
    <sender>pbOK</sender>
    <signal>clicked()</signal>
-   <receiver>About_SS2</receiver>
+   <receiver>About_App</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
