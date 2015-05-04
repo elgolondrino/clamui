@@ -3,7 +3,10 @@
 
 The goal of this application is to create an easy to use frontend for ClamAV (Clam Anti Virus).
 
-### Dependings
+### Depends on:
 - ClamAV
 - Qt5
 - KF5
+
+### Requires:
+- ClamAV
