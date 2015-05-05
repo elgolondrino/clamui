@@ -32,6 +32,13 @@
 #ifndef TABSCANSCHEDULING_H
 #define TABSCANSCHEDULING_H
 
+/* Qt Headers */
+#include <QSettings>
+#include <QFileDialog>
+#include <QTranslator>
+#include <QProcess>
+#include <QMessageBox>
+
 #include "definitionen.h"
 
 #include "ui_tabscanscheduling.h"
@@ -45,6 +52,16 @@ public:
 
 protected:
     void changeEvent(QEvent *e);
+
+
+private:
+    void createSlots();
+    void settingsRead();
+
+private slots:
+    void settingsWrite();
+    void settingsDefault();
+
 };
 
 #endif // TABSCANSCHEDULING_H

@@ -32,6 +32,8 @@
 #ifndef TABABOUTCLAMAV_H
 #define TABABOUTCLAMAV_H
 
+#include <clamav.h>
+
 #include "definitionen.h"
 
 #include "ui_tababoutclamav.h"

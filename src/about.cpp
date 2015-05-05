@@ -31,7 +31,7 @@
 
 #include "about.h"
 
-About_SS2::About_SS2(QWidget *parent) : QDialog(parent)
+About_App::About_App(QWidget *parent) : QDialog(parent)
 {
   setupUi(this);
   retranslateUi(this);
@@ -45,7 +45,7 @@ About_SS2::About_SS2(QWidget *parent) : QDialog(parent)
   loadInfos();
 }
 
-void About_SS2::changeEvent(QEvent *e)
+void About_App::changeEvent(QEvent *e)
 {
   QDialog::changeEvent(e);
   switch (e->type()) {
@@ -57,7 +57,7 @@ void About_SS2::changeEvent(QEvent *e)
     }
 }
 
-void About_SS2::loadInfos() {
+void About_App::loadInfos() {
   QString contentVersion, contentPath, contentPaksetActive, contentPaksets;
 
   // Lese Simutrans Version ein.

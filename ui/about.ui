@@ -14,7 +14,9 @@
    <string>Über...</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="help-about"/>
+   <iconset theme="help-about">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,1,0">
    <item>
@@ -104,7 +106,9 @@
      </property>
      <widget class="QWidget" name="tab_ClamUI">
       <attribute name="icon">
-       <iconset theme="clamui"/>
+       <iconset theme="clamui">
+        <normaloff/>
+       </iconset>
       </attribute>
       <attribute name="title">
        <string>ClamUI</string>
@@ -182,16 +186,6 @@
                </property>
               </widget>
              </item>
-             <item row="0" column="1">
-              <widget class="KUrlLabel" name="kurllabel">
-               <property name="text">
-                <string>http://www.e67-its.de</string>
-               </property>
-               <property name="url">
-                <string>http://www.e67-its.de</string>
-               </property>
-              </widget>
-             </item>
             </layout>
            </item>
            <item>
@@ -229,7 +223,9 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="tabClamAV">
       <attribute name="icon">
-       <iconset theme="clamav"/>
+       <iconset theme="clamav">
+        <normaloff/>
+       </iconset>
       </attribute>
       <attribute name="title">
        <string>ClamAV</string>
@@ -251,8 +247,8 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>365</width>
-            <height>266</height>
+            <width>128</width>
+            <height>117</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">
@@ -375,8 +371,8 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>365</width>
-            <height>266</height>
+            <width>168</width>
+            <height>81</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -509,7 +505,9 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="tabDonate">
       <attribute name="icon">
-       <iconset theme="help-donate"/>
+       <iconset theme="help-donate">
+        <normaloff/>
+       </iconset>
       </attribute>
       <attribute name="title">
        <string>Spenden</string>
@@ -573,7 +571,9 @@ Vielen Dank im voraus.</string>
         <string>&amp;Ok</string>
        </property>
        <property name="icon">
-        <iconset theme="dialog-ok-apply"/>
+        <iconset theme="dialog-ok-apply">
+         <normaloff/>
+        </iconset>
        </property>
       </widget>
      </item>
@@ -581,13 +581,6 @@ Vielen Dank im voraus.</string>
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KUrlLabel</class>
-   <extends>QLabel</extends>
-   <header>kurllabel.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections>
   <connection>

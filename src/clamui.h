@@ -43,9 +43,7 @@
 #include <QMenu>
 #include <QAction>
 #include <QSettings>
-#include <QFileDialog>
 #include <QTranslator>
-#include <QProcess>
 #include <QMap>
 #include <QMessageBox>
 
@@ -74,10 +72,8 @@ protected:
 
 private:
     void createSlots();
-    void settingsWrite();
     void settingsRead();
-    void settingsDefault();
-    void createTrayIcon();
+    void createTrayIcon(QString iconSysTray, QString statusMessage);
     void createActions();
     void loadThemeIcons();
 
@@ -88,7 +84,8 @@ private:
 
 private slots:
     void slotQuit();
-//    void slotClose();
+    void slotSettings();
+    void settingsWrite();
 };
 
 #endif // CLAMUI_H

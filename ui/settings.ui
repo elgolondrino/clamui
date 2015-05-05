@@ -52,10 +52,16 @@
              <layout class="QVBoxLayout" name="verticalLayout_5">
               <item>
                <layout class="QGridLayout" name="gridLayout">
-                <item row="1" column="0">
-                 <widget class="QCheckBox" name="checkBox_HideWindow">
+                <item row="3" column="0">
+                 <widget class="QCheckBox" name="checkBox_MenuBar">
+                  <property name="toolTip">
+                   <string>Die Menüleiste ein- oder ausblenden.</string>
+                  </property>
                   <property name="text">
-                   <string>Fenster beim Start nicht anzeigen.</string>
+                   <string>Menü anzeigen.</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>
@@ -66,10 +72,43 @@
                   </property>
                  </widget>
                 </item>
+                <item row="1" column="0">
+                 <widget class="QCheckBox" name="checkBox_HideWindow">
+                  <property name="text">
+                   <string>Fenster beim Start nicht anzeigen.</string>
+                  </property>
+                 </widget>
+                </item>
                 <item row="2" column="0">
                  <widget class="QCheckBox" name="checkBox_IconOnDesktop">
                   <property name="text">
                    <string>Icon auf dem Desktop anzeigen.</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QCheckBox" name="checkBox_ToolBar">
+                  <property name="toolTip">
+                   <string>Die Werkzeugleiste ein- oder ausblenden.</string>
+                  </property>
+                  <property name="text">
+                   <string>Werkzeugleiste anzeigen.</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QCheckBox" name="checkBox_StatusBar">
+                  <property name="toolTip">
+                   <string>Die Statusleiste ein- oder ausblenden.</string>
+                  </property>
+                  <property name="text">
+                   <string>Statusleiste anzeigen.</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>
@@ -216,6 +255,23 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>tabWidget_Settings</tabstop>
+  <tabstop>scrollArea_ClamUI</tabstop>
+  <tabstop>checkBox_Autostart</tabstop>
+  <tabstop>checkBox_HideWindow</tabstop>
+  <tabstop>checkBox_IconOnDesktop</tabstop>
+  <tabstop>checkBox_MenuBar</tabstop>
+  <tabstop>checkBox_ToolBar</tabstop>
+  <tabstop>checkBox_StatusBar</tabstop>
+  <tabstop>groupBox_Language</tabstop>
+  <tabstop>comboBox_Language</tabstop>
+  <tabstop>pushButton_Help</tabstop>
+  <tabstop>pushButton_Default</tabstop>
+  <tabstop>pushButton_Save</tabstop>
+  <tabstop>pushButton_Close</tabstop>
+  <tabstop>scrollArea_ClamAV</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

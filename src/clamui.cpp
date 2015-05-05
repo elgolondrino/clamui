@@ -37,14 +37,14 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
 
     loadThemeIcons();
 
-    setWindowTitle(trUtf8("%1 - %2").arg(
+    setWindowTitle(trUtf8("%1 - Version: %2").arg(
                        APP_TITLE).arg(
                        APP_VERSION));
 
     createSlots();
     settingsRead();
-    createTrayIcon();
     createActions();
+    createTrayIcon("clamui", "ClamAV ist derzeit inaktiv.");
 
 }
 
@@ -81,19 +81,28 @@ void ClamUI::closeEvent(QCloseEvent *event)
 
 void ClamUI::createSlots(){
 
-    connect(action_Quit, SIGNAL(triggered(bool)), this, SLOT(slotQuit()));
+    connect(action_Quit, SIGNAL(triggered(bool)),
+            this, SLOT(slotQuit()));
+    connect(action_Close, SIGNAL(triggered(bool)),
+            this, SLOT(close()));
+    connect(pushButton_Close, SIGNAL(clicked(bool)),
+            this, SLOT(close()));
+    connect(tabWidget, SIGNAL(currentChanged(int)),
+            this, SLOT(settingsWrite()));
+    connect(pushButton_Settings, SIGNAL(clicked(bool)),
+            this, SLOT(slotSettings()));
 
-    connect(action_Close, SIGNAL(triggered(bool)), this, SLOT(close()));
-
-    connect(pushButton_Close, SIGNAL(clicked(bool)), this, SLOT(close()));
 
 }
 
-//void ClamUI::slotClose(){
+void ClamUI::slotSettings(){
 
-//    close();
+    Settings *settings = new Settings(this);
+    settings->exec();
 
-//}
+    settingsRead();
+
+}
 
 void ClamUI::slotQuit(){
 
@@ -122,7 +131,7 @@ void ClamUI::settingsWrite(){
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("ClamUI");
-
+    clamui_conf.setValue("Currend_Tab", tabWidget->currentIndex());
     clamui_conf.endGroup();
 }
 
@@ -130,21 +139,17 @@ void ClamUI::settingsRead(){
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("ClamUI");
-
+    tabWidget->setCurrentIndex(clamui_conf.value("Currend_Tab", 0).toInt());
     clamui_conf.endGroup();
 }
 
-void ClamUI::settingsDefault(){
-
-}
-
-void ClamUI::createTrayIcon(){
+void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){
 
     statusNotifierItem = new KStatusNotifierItem(this);
     statusNotifierItem->setToolTip("clamui",
                                    APP_TITLE " - " APP_VERSION,
-                                   "ClamAV ist derzeit inaktiv.");
-    statusNotifierItem->setIconByName("clamui");
+                                   statusMessage);
+    statusNotifierItem->setIconByName(iconSysTray);
     statusNotifierItem->setStatus(KStatusNotifierItem::Active);
 
 }

@@ -14,86 +14,14 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
-   <item row="0" column="0">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>Prüfungsintervall</string>
-     </property>
-     <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="0">
-       <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Wie oft soll überprüft werden:</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="QGroupBox" name="groupBox_3">
-     <property name="title">
-      <string>Automatisches aktuallisieren der Virendatenbank</string>
-     </property>
-     <layout class="QFormLayout" name="formLayout_2">
-      <item row="0" column="0" colspan="2">
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="toolTip">
-           <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
-          </property>
-          <property name="text">
-           <string>Wie oft am Tag:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QSpinBox" name="spinBox_FreshClamUpdate">
-          <property name="toolTip">
-           <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>50</number>
-          </property>
-          <property name="value">
-           <number>12</number>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="2">
-         <widget class="QCheckBox" name="checkBox_FreshClam">
-          <property name="toolTip">
-           <string>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktuallität der Virendefinitionen. </string>
-          </property>
-          <property name="text">
-           <string>freshclam im Hintergrund starten.</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </item>
    <item row="1" column="0" colspan="2">
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
-      <string>Zu prüfende Verzeichnisse</string>
+      <string>Verzeichnisse ausschließen</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QListWidget" name="listWidget_DirectoriesScan">
+       <widget class="QListWidget" name="listWidget_DirectoriesExclude">
         <property name="toolTip">
          <string>Zu überprüfende Verzeichnisse.</string>
         </property>
@@ -124,7 +52,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_OpenDirScan">
+         <widget class="QPushButton" name="pushButton_DirectoriesExclide">
           <property name="toolTip">
            <string>Verzeichnisse auswählen, deren Inhlate von ClamAV überprüft werden sollen.</string>
           </property>
@@ -139,7 +67,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_ClearListScan">
+         <widget class="QPushButton" name="pushButton_ClearListDirectories">
           <property name="toolTip">
            <string>Ausgewählte Verzeichnisse entfernen.</string>
           </property>
@@ -161,11 +89,11 @@
    <item row="1" column="2">
     <widget class="QGroupBox" name="groupBox_4">
      <property name="title">
-      <string>Auszuschließende Verzeichnisse</string>
+      <string>Dateien ausschließen</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QListWidget" name="listWidget_DirectoriesExcludr">
+       <widget class="QListWidget" name="listWidget_FilesExclude">
         <property name="toolTip">
          <string>Zu überprüfende Verzeichnisse.</string>
         </property>
@@ -201,7 +129,7 @@
            <string>Verzeichnisse auswählen, deren Inhlate von ClamAV überprüft werden sollen.</string>
           </property>
           <property name="text">
-           <string>Verzeichnisse hinzufügen</string>
+           <string>Dateien hinzufügen</string>
           </property>
           <property name="icon">
            <iconset theme="document-open-folder">
@@ -211,12 +139,12 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_ClearListExclude">
+         <widget class="QPushButton" name="pushButton_ClearListExcludeFiles">
           <property name="toolTip">
            <string>Ausgewählte Verzeichnisse entfernen.</string>
           </property>
           <property name="text">
-           <string>Verzeichnisse Entfernen</string>
+           <string>Dateien Entfernen</string>
           </property>
           <property name="icon">
            <iconset theme="edit-clear-list">
@@ -230,8 +158,186 @@
      </layout>
     </widget>
    </item>
+   <item row="0" column="2">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Automatisches aktuallisieren der Virendatenbank</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout_2">
+      <item row="0" column="0">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="toolTip">
+           <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
+          </property>
+          <property name="text">
+           <string>Wie oft am Tag aktuallisieren:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="spinBox_FreshClamUpdate">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="toolTip">
+           <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>50</number>
+          </property>
+          <property name="value">
+           <number>12</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QCheckBox" name="checkBox_FreshClam">
+          <property name="toolTip">
+           <string>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktuallität der Virendefinitionen. </string>
+          </property>
+          <property name="text">
+           <string>freshclam im Hintergrund starten.</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>ClamAV</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QCheckBox" name="checkBox_ExternalDevice">
+          <property name="text">
+           <string>Externen Datenträger automatisch prüfen, sobald er angeschlossen wurde.</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_5">
+        <property name="title">
+         <string>Prüfungsinterval</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_4" columnstretch="0,0,1">
+           <item row="1" column="0">
+            <widget class="QRadioButton" name="radioButton_Daily">
+             <property name="text">
+              <string>T&amp;äglich um</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QTimeEdit" name="timeEdit_Daily">
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="currentSectionIndex">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Uhr prüfen.</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QRadioButton" name="radioButton_Hourly">
+             <property name="text">
+              <string>A&amp;lle</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Stunden prüfen.</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="spinBox_Hourly">
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="maximum">
+              <number>24</number>
+             </property>
+             <property name="value">
+              <number>6</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>checkBox_FreshClam</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>label_2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>355</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>282</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_FreshClam</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>spinBox_FreshClamUpdate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>355</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>428</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

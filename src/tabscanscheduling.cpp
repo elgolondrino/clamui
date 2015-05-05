@@ -35,6 +35,10 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
     QWidget(parent)
 {
     setupUi(this);
+
+    createSlots();
+
+    settingsRead();
 }
 
 void TabScanScheduling::changeEvent(QEvent *e)
@@ -43,6 +47,96 @@ void TabScanScheduling::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         retranslateUi(this);
+        break;
+    default:
+        break;
+    }
+}
+
+
+void TabScanScheduling::createSlots(){
+
+    connect(checkBox_FreshClam, SIGNAL(clicked(bool)),
+            this, SLOT(settingsWrite()));
+    connect(spinBox_FreshClamUpdate, SIGNAL(valueChanged(int)),
+            this, SLOT(settingsWrite()));
+    connect(spinBox_Hourly, SIGNAL(valueChanged(int)),
+            this, SLOT(settingsWrite()));
+    connect(timeEdit_Daily, SIGNAL(timeChanged(QTime)),
+            this, SLOT(settingsWrite()));
+    connect(checkBox_ExternalDevice, SIGNAL(clicked(bool)),
+            this, SLOT(settingsWrite()));
+    connect(radioButton_Daily, SIGNAL(clicked(bool)),
+            this, SLOT(settingsWrite()));
+    connect(radioButton_Hourly, SIGNAL(clicked(bool)),
+            this, SLOT(settingsWrite()));
+}
+
+void TabScanScheduling::settingsWrite(){
+
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+    clamui_conf.beginGroup("Freshclam");
+    clamui_conf.setValue("Start_As_Demon", checkBox_FreshClam->isChecked());
+    clamui_conf.setValue("Update_Interval", spinBox_FreshClamUpdate->value());
+    clamui_conf.endGroup();
+
+    clamui_conf.beginGroup("ClamAV");
+    clamui_conf.setValue("HourInterval", spinBox_Hourly->value());
+    clamui_conf.setValue("DayInterval", timeEdit_Daily->time());
+    clamui_conf.setValue("ScanExternal", checkBox_ExternalDevice->isChecked());
+    clamui_conf.setValue("ScanDaily", radioButton_Daily->isChecked());
+    clamui_conf.setValue("ScanHourly", radioButton_Hourly->isChecked());
+    clamui_conf.endGroup();
+
+}
+
+void TabScanScheduling::settingsRead(){
+
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+    clamui_conf.beginGroup("Freshclam");
+    checkBox_FreshClam->setChecked(clamui_conf.value("Start_As_Demon", false).toBool());
+    spinBox_FreshClamUpdate->setValue(clamui_conf.value("Update_Interval", 12).toInt());
+    clamui_conf.endGroup();
+
+    clamui_conf.beginGroup("ClamAV");
+    spinBox_Hourly->setValue(clamui_conf.value("HourInterval", 6).toInt());
+    timeEdit_Daily->setTime(clamui_conf.value("DayInterval", "03:00").toTime());
+    checkBox_ExternalDevice->setChecked(clamui_conf.value("ScanExternal", false).toBool());
+    radioButton_Daily->setChecked(clamui_conf.value("ScanDaily", true).toBool());
+    radioButton_Hourly->setChecked(clamui_conf.value("ScanHourly", false).toBool());
+    clamui_conf.endGroup();
+
+    if (checkBox_FreshClam->isChecked()) {
+        label_2->setEnabled(true);
+        spinBox_FreshClamUpdate->setEnabled(true);
+    }
+}
+
+void TabScanScheduling::settingsDefault(){
+
+    QMessageBox msgBox;
+
+    msgBox.setWindowTitle(trUtf8("Zurücksetzen bestätigen"));
+    msgBox.setText(trUtf8("Möchten Sie die Werte wirklich auf die "
+                          "Standardeinstellungen zurücksetzen?"));
+    msgBox.setIcon(QMessageBox::Question);
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::Yes);
+    int ret = msgBox.exec();
+    switch (ret) {
+    case QMessageBox::Yes:
+        checkBox_FreshClam->setChecked(false);
+        spinBox_FreshClamUpdate->setValue(12);
+        spinBox_Hourly->setValue(6);
+        timeEdit_Daily->setTime(QTime(3, 0));
+        checkBox_ExternalDevice->setChecked(false);
+        radioButton_Daily->setChecked(true);
+        radioButton_Hourly->setChecked(false);
+        break;
+    case QMessageBox::No:
+        msgBox.close();
         break;
     default:
         break;

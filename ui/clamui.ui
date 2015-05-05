@@ -78,6 +78,40 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
+       <widget class="QPushButton" name="pushButton_Help">
+        <property name="text">
+         <string>Hilfe</string>
+        </property>
+        <property name="icon">
+         <iconset theme="documentation">
+          <normaloff/>
+         </iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_About">
+        <property name="text">
+         <string>Über...</string>
+        </property>
+        <property name="icon">
+         <iconset theme="help-about"/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Settings">
+        <property name="text">
+         <string>Einstellungen</string>
+        </property>
+        <property name="icon">
+         <iconset theme="configure">
+          <normaloff/>
+         </iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -126,11 +160,6 @@
     <addaction name="separator"/>
     <addaction name="action_Quit"/>
    </widget>
-   <widget class="QMenu" name="menu_ClamAV">
-    <property name="title">
-     <string>&amp;ClamAV</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
      <string>&amp;?</string>
@@ -141,7 +170,6 @@
     <addaction name="action_AboutKDE"/>
    </widget>
    <addaction name="menu_File"/>
-   <addaction name="menu_ClamAV"/>
    <addaction name="menu_Help"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -248,6 +276,13 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>pushButton_Help</tabstop>
+  <tabstop>pushButton_About</tabstop>
+  <tabstop>pushButton_Settings</tabstop>
+  <tabstop>pushButton_Close</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

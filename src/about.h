@@ -29,8 +29,8 @@
 **
 *******************************************************************************/
 
-#ifndef ABOUT_SS2_H
-#define ABOUT_SS2_H
+#ifndef ABOUT_APP_H
+#define ABOUT_APP_H
 
 #include <QUrl>
 #include <QString>
@@ -42,12 +42,12 @@
 
 #include "ui_about.h"
 
-class About_SS2 : public QDialog, private Ui::About_SS2
+class About_App : public QDialog, private Ui::About_App
 {
   Q_OBJECT
   
 public:
-  explicit About_SS2(QWidget *parent = 0);
+  explicit About_App(QWidget *parent = 0);
   
 protected:
   void changeEvent(QEvent *e);
@@ -56,4 +56,4 @@ private:
   void loadInfos();
 };
 
-#endif // ABOUT_SS2_H
+#endif // ABOUT_APP_H

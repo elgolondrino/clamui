@@ -32,6 +32,8 @@
 #ifndef TABVIRUSDB_H
 #define TABVIRUSDB_H
 
+#include <clamav.h>
+
 #include "definitionen.h"
 
 #include "ui_tabvirusdb.h"
