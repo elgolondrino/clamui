@@ -37,9 +37,10 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
 
     loadThemeIcons();
 
-    setWindowTitle(trUtf8("%1 - Version: %2").arg(
+    setWindowTitle(trUtf8("%1 %2").arg(
                        APP_TITLE).arg(
                        APP_VERSION));
+    setWindowIcon(QIcon::fromTheme("clamui"));
 
     createSlots();
     settingsRead();
@@ -91,6 +92,10 @@ void ClamUI::createSlots(){
             this, SLOT(settingsWrite()));
     connect(pushButton_Settings, SIGNAL(clicked(bool)),
             this, SLOT(slotSettings()));
+    connect(pushButton_About, SIGNAL(clicked(bool)),
+            this ,SLOT(slotAbout()));
+    connect(action_AboutClamUI, SIGNAL(triggered(bool)),
+            this, SLOT(slotAbout()));
 
 
 }
@@ -102,6 +107,12 @@ void ClamUI::slotSettings(){
 
     settingsRead();
 
+}
+
+void ClamUI::slotAbout(){
+
+    About_App *about = new About_App(this);
+    about->exec();
 }
 
 void ClamUI::slotQuit(){

@@ -84,6 +84,7 @@ private:
 
 private slots:
     void slotQuit();
+    void slotAbout();
     void slotSettings();
     void settingsWrite();
 };

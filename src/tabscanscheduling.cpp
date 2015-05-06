@@ -114,31 +114,4 @@ void TabScanScheduling::settingsRead(){
     }
 }
 
-void TabScanScheduling::settingsDefault(){
 
-    QMessageBox msgBox;
-
-    msgBox.setWindowTitle(trUtf8("Zurücksetzen bestätigen"));
-    msgBox.setText(trUtf8("Möchten Sie die Werte wirklich auf die "
-                          "Standardeinstellungen zurücksetzen?"));
-    msgBox.setIcon(QMessageBox::Question);
-    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-    msgBox.setDefaultButton(QMessageBox::Yes);
-    int ret = msgBox.exec();
-    switch (ret) {
-    case QMessageBox::Yes:
-        checkBox_FreshClam->setChecked(false);
-        spinBox_FreshClamUpdate->setValue(12);
-        spinBox_Hourly->setValue(6);
-        timeEdit_Daily->setTime(QTime(3, 0));
-        checkBox_ExternalDevice->setChecked(false);
-        radioButton_Daily->setChecked(true);
-        radioButton_Hourly->setChecked(false);
-        break;
-    case QMessageBox::No:
-        msgBox.close();
-        break;
-    default:
-        break;
-    }
-}

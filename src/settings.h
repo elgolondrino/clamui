@@ -32,7 +32,14 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
+/* Qt Headers */
+#include <QSettings>
+#include <QFileDialog>
+#include <QProcess>
+#include <QMessageBox>
+
 #include "definitionen.h"
+#include "languagetools.h"
 
 #include "ui_settings.h"
 
@@ -45,6 +52,16 @@ public:
 
 protected:
     void changeEvent(QEvent *e);
+
+private:
+    void createSlots();
+    void settingsRead();
+    void settingsDefaultClamUI();
+    void settingsDefaultClamAV();
+
+private slots:
+    void settingsWrite();
+    void settingsDefault();
 };
 
 #endif // SETTINGS_H

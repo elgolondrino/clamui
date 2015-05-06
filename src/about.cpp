@@ -42,7 +42,6 @@ About_App::About_App(QWidget *parent) : QDialog(parent)
   lblAppTitel->setText(trUtf8(APP_TITLE));
   lblAppVersion->setText(trUtf8("Version: ") + trUtf8(APP_VERSION));
 
-  loadInfos();
 }
 
 void About_App::changeEvent(QEvent *e)
@@ -57,35 +56,3 @@ void About_App::changeEvent(QEvent *e)
     }
 }
 
-void About_App::loadInfos() {
-  QString contentVersion, contentPath, contentPaksetActive, contentPaksets;
-
-  // Lese Simutrans Version ein.
-  // Read the simutrans version.
-  QFile fileVersion(APP_CONFIG_PATH + "SimutransVersion.lst");
-  fileVersion.open(QIODevice::ReadOnly | QIODevice::Text);
-  QTextStream inVersion(&fileVersion);
-  contentVersion = inVersion.readLine();
-
-  // Zeige Installationspfad und aktives Pakset an.
-  QSettings simurun_conf(APP_CONFIG_PATH + "/" +
-                         APP_NAME + ".conf", QSettings::NativeFormat);
-  contentPath = simurun_conf.value("Simutrans_Starter/GamePath").toString();
-  contentPaksetActive = simurun_conf.value(
-                          "Simutrans/pak_file_path").toString();
-
-  // Lese Paksets ein.
-  QDir dir(contentPath + "/", "*pak*");
-  QStringList filter;
-  filter << "*pak*";
-  QStringList dirNames = dir.entryList();
-
-  for (int i = 0; i < (int)dirNames.size(); ++i) {
-      contentPaksets += dirNames[i] + "<br>";
-    }
-
-  versionInfoLabel->setText("<b>" + contentVersion + "</b>");
-  pfadInfoLabel->setText("<b>" + contentPath + "</b>");
-  paksetInfoLabel->setText("<b>" + contentPaksetActive + "</b>");
-  instPaksetsInfoLabel->setText("<b>" + contentPaksets + "</b>");
-}

@@ -31,10 +31,17 @@
 
 #include "settings.h"
 
-Settings::Settings(QWidget *parent) :
-    QDialog(parent)
-{
+Settings::Settings(QWidget *parent) : QDialog(parent){
+
     setupUi(this);
+
+    setWindowTitle(trUtf8("%1 %2 - Einstellungen").arg(
+                       APP_TITLE).arg(
+                       APP_VERSION));
+    setWindowIcon(QIcon::fromTheme("configure"));
+
+    settingsRead();
+    createSlots();
 }
 
 void Settings::changeEvent(QEvent *e)
@@ -47,4 +54,100 @@ void Settings::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void Settings::createSlots(){
+
+    connect(pushButton_Default, SIGNAL(clicked(bool)),
+            this, SLOT(settingsDefault()));
+    connect(pushButton_Close, SIGNAL(clicked(bool)),
+            this, SLOT(close()));
+    connect(pushButton_Save, SIGNAL(clicked(bool)),
+            this, SLOT(settingsWrite()));
+}
+
+void Settings::settingsWrite(){
+
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+    clamui_conf.beginGroup("ClamUI");
+    clamui_conf.setValue("Language_Manually", groupBox_Language->isChecked());
+    clamui_conf.setValue("Language_Index", comboBox_Language->currentIndex());
+    clamui_conf.setValue("Language", comboBox_Language->currentText());
+    clamui_conf.setValue("Autostart", checkBox_Autostart->isChecked());
+    clamui_conf.setValue("Hide_Window", checkBox_HideWindow->isChecked());
+    clamui_conf.setValue("Icon_on_Desktop", checkBox_IconOnDesktop->isChecked());
+    clamui_conf.setValue("Hide_Menubar", checkBox_MenuBar->isChecked());
+    clamui_conf.setValue("Hide_Statusbar", checkBox_StatusBar->isChecked());
+    clamui_conf.setValue("Hide_Toolbar", checkBox_ToolBar->isChecked());
+    clamui_conf.endGroup();
+
+    clamui_conf.beginGroup("ClamAV");
+
+    clamui_conf.endGroup();
+}
+
+void Settings::settingsRead(){
+
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+
+    clamui_conf.beginGroup("ClamUI");
+    groupBox_Language->setChecked(clamui_conf.value("Language_Manually", false).toBool());
+    comboBox_Language->setCurrentIndex(clamui_conf.value("Language_Index", 0).toInt());
+    comboBox_Language->setCurrentText(clamui_conf.value("Language", "").toString());
+    checkBox_Autostart->setChecked(clamui_conf.value("Autostart", false).toBool());
+    checkBox_HideWindow->setChecked(clamui_conf.value("Hide_Window", false).toBool());
+    checkBox_IconOnDesktop->setChecked(clamui_conf.value("Icon_on_Desktop", false).toBool());
+    checkBox_MenuBar->setChecked(clamui_conf.value("Hide_Menubar", true).toBool());
+    checkBox_StatusBar->setChecked(clamui_conf.value("Hide_Statusbar", true).toBool());
+    checkBox_ToolBar->setChecked(clamui_conf.value("Hide_Toolbar", true).toBool());
+    clamui_conf.endGroup();
+
+    clamui_conf.beginGroup("ClamAV");
+
+    clamui_conf.endGroup();
+}
+
+void Settings::settingsDefault(){
+
+    QMessageBox msgBox;
+
+    msgBox.setWindowTitle(trUtf8("Zurücksetzen bestätigen"));
+    msgBox.setText(trUtf8("Möchten Sie die Werte wirklich auf die "
+                          "Standardeinstellungen zurücksetzen?"));
+    msgBox.setIcon(QMessageBox::Question);
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::Yes);
+    int ret = msgBox.exec();
+    switch (ret) {
+    case QMessageBox::Yes:
+        if (tabWidget_Settings->currentIndex() == 0)
+            settingsDefaultClamUI();
+        else if (tabWidget_Settings->currentIndex() == 1)
+            settingsDefaultClamAV();
+        break;
+    case QMessageBox::No:
+        msgBox.close();
+        break;
+    default:
+        break;
+    }
+}
+
+void Settings::settingsDefaultClamAV(){
+
+}
+
+void Settings::settingsDefaultClamUI(){
+
+    groupBox_Language->setChecked(false);
+    comboBox_Language->setCurrentIndex(0);
+    comboBox_Language->setCurrentText("");
+    checkBox_Autostart->setChecked(false);
+    checkBox_HideWindow->setChecked(false);
+    checkBox_IconOnDesktop->setChecked(false);
+    checkBox_MenuBar->setChecked(true);
+    checkBox_StatusBar->setChecked(true);
+    checkBox_ToolBar->setChecked(true);
 }

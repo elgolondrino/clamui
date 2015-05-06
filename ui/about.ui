@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>397</width>
+    <width>491</width>
     <height>437</height>
    </rect>
   </property>
@@ -133,7 +133,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>365</width>
+            <width>459</width>
             <height>266</height>
            </rect>
           </property>
@@ -183,6 +183,13 @@
               <widget class="QLabel" name="label_3">
                <property name="text">
                 <string>Web:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_WebSiteClamUI">
+               <property name="text">
+                <string>TextLabel</string>
                </property>
               </widget>
              </item>
@@ -247,8 +254,8 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>128</width>
-            <height>117</height>
+            <width>459</width>
+            <height>266</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">
@@ -338,6 +345,13 @@ p, li { white-space: pre-wrap; }
                </property>
               </widget>
              </item>
+             <item row="6" column="1">
+              <widget class="QLabel" name="label_WebSiteClamAV">
+               <property name="text">
+                <string>TextLabel</string>
+               </property>
+              </widget>
+             </item>
             </layout>
            </item>
           </layout>
@@ -371,8 +385,8 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>168</width>
-            <height>81</height>
+            <width>459</width>
+            <height>266</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -426,9 +440,12 @@ p, li { white-space: pre-wrap; }
                  </widget>
                 </item>
                 <item row="1" column="0">
-                 <widget class="QLabel" name="lblUrlEmail">
+                 <widget class="QLabel" name="label_UrlEmail">
                   <property name="text">
                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;g.lassnig@e67-its.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;g.lassnig@e67-its.de&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::RichText</enum>
                   </property>
                   <property name="openExternalLinks">
                    <bool>true</bool>

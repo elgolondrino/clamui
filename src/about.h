@@ -35,7 +35,6 @@
 #include <QUrl>
 #include <QString>
 #include <QSettings>
-#include <QTextStream>
 #include <QDesktopServices>
 
 #include "definitionen.h"
@@ -53,7 +52,6 @@ protected:
   void changeEvent(QEvent *e);
 
 private:
-  void loadInfos();
 };
 
 #endif // ABOUT_APP_H

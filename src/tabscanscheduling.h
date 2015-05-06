@@ -35,7 +35,6 @@
 /* Qt Headers */
 #include <QSettings>
 #include <QFileDialog>
-#include <QTranslator>
 #include <QProcess>
 #include <QMessageBox>
 
@@ -60,7 +59,6 @@ private:
 
 private slots:
     void settingsWrite();
-    void settingsDefault();
 
 };
 
