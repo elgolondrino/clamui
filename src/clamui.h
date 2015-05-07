@@ -36,7 +36,8 @@
 #include <KStatusNotifierItem>
 #include <KF5/KIconThemes/KIconLoader>
 #include <KDESu/SuProcess>
-//#include <KF5/KWidgetsAddons/KActionMenu>
+#include <KF5/Solid/Solid/StorageDrive>
+#include <KF5/Solid/Solid/StorageAccess>
 
 /* Qt Headers */
 #include <QCloseEvent>

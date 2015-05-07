@@ -151,7 +151,24 @@ void ClamUI::settingsRead(){
                              APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("ClamUI");
     tabWidget->setCurrentIndex(clamui_conf.value("Currend_Tab", 0).toInt());
+
+    if (clamui_conf.value("Hide_Menubar", true).toBool()){
+        menubar->setVisible(true);
+    } else {
+        menubar->setHidden(true);
+    }
+    if (clamui_conf.value("Hide_Statusbar", true).toBool()){
+        statusbar->setVisible(true);
+    } else {
+        statusbar->setHidden(true);
+    }
+    if (clamui_conf.value("Hide_Toolbar", true).toBool()){
+        toolBar->setVisible(true);
+    } else {
+        toolBar->setHidden(true);
+    }
     clamui_conf.endGroup();
+
 }
 
 void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){

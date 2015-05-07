@@ -5,7 +5,7 @@ lessThan(QT_VERSION, 5.3) {
 QT += network
 QT += widgets
 QT += KIconThemes
-#QT += KF5
+QT += Solid
 QT += KNotifications
 QT += KDESu
 INCLUDEPATH += /usr/lib64

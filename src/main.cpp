@@ -53,14 +53,16 @@ int main(int argc, char *argv[]) {
     QString defaultLanguage = QString(APP_NAME) + "_" + locale + ".qm";
     QString currLanguage, gamePath;
     bool languageSet;
+    bool hideWindow;
 
     // Falls die Sprache manuell gesetzt wurde.
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("ClamUI");
-    languageSet = clamui_conf.value("Set_Language", false).toBool();
+    languageSet = clamui_conf.value("Language_Manually", false).toBool();
     currLanguage = clamui_conf.value(
-                     "languageFileName", defaultLanguage).toString();
+                     "Language", defaultLanguage).toString();
+    hideWindow =clamui_conf.value("Hide_Window", false).toBool();
     clamui_conf.endGroup();
 
     // Systemsprache aus der Umgebungsvariable des Systems lesen.
@@ -78,17 +80,19 @@ int main(int argc, char *argv[]) {
         app.installTranslator(&myappTranslator);
       }
 
-    if (!clamDir.exists(CLAMAV_PATH)) {
+    if (!clamDir.exists(CLAMAV_PATH))
         clamDir.mkdir(CLAMAV_PATH);
-    }
 
-    if (!clamDir.exists(CLAMAV_VDB_PATH)) {
+    if (!clamDir.exists(CLAMAV_VDB_PATH))
         clamDir.mkdir(CLAMAV_VDB_PATH);
-    }
 
-        ClamUI start;
+    ClamUI start;
+    if (hideWindow)
+        start.hide();
+    else
         start.show();
-        return app.exec();
-  } // main end
+
+    return app.exec();
+} // main end
 
 //--- main.cpp end ---
