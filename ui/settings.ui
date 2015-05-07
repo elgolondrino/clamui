@@ -10,6 +10,9 @@
     <height>453</height>
    </rect>
   </property>
+  <property name="windowTitle">
+   <string>Einstellungen</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTabWidget" name="tabWidget_Settings">

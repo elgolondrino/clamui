@@ -42,6 +42,14 @@
 
 #include "ui_tabscanscheduling.h"
 
+struct Directory {
+    QString directoryName;
+};
+
+struct File {
+    QString fileName;
+};
+
 class TabScanScheduling : public QWidget, private Ui::TabScanScheduling
 {
     Q_OBJECT
@@ -56,9 +64,15 @@ protected:
 private:
     void createSlots();
     void settingsRead();
+    void settingsReadDirectories();
+    void settingsReadFiles();
+
+    QFileDialog *fileDialog;
 
 private slots:
     void settingsWrite();
+    void settingsWriteDirectories();
+    void settingsWriteFiles();
 
 };
 

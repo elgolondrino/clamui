@@ -91,6 +91,34 @@ void TabScanScheduling::settingsWrite(){
 
 }
 
+void TabScanScheduling::settingsWriteDirectories(){
+
+    QList<Directory> directories;
+
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+    clamui_conf.beginWriteArray("DirectoriesExclude");
+    for (int i = 0; i < directories.size(); ++i) {
+        clamui_conf.setArrayIndex(i);
+        clamui_conf.setValue("Directory", directories.at(i).directoryName);
+    }
+    clamui_conf.endArray();
+}
+
+void TabScanScheduling::settingsWriteFiles(){
+
+    QList<File> files;
+
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+    clamui_conf.beginWriteArray("DirectoriesFiles");
+    for (int i = 0; i < files.size(); ++i) {
+        clamui_conf.setArrayIndex(i);
+        clamui_conf.setValue("Files", files.at(i).fileName);
+    }
+    clamui_conf.endArray();
+}
+
 void TabScanScheduling::settingsRead(){
 
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,

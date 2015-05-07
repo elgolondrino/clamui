@@ -126,7 +126,7 @@
       <item>
        <widget class="QPushButton" name="pushButton_Close">
         <property name="toolTip">
-         <string>SChließt dieses Fenster. Das Programm läuft im Systemabschnitt der Kontrollleiste weiter.</string>
+         <string>Schließt dieses Fenster. Das Programm läuft im Systemabschnitt der Kontrollleiste weiter.</string>
         </property>
         <property name="text">
          <string>Schließen</string>
