@@ -419,107 +419,119 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="26"/>
-        <location filename="../ui/tabscanscheduling.ui" line="98"/>
-        <source>Zu überprüfende Verzeichnisse.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="57"/>
-        <location filename="../ui/tabscanscheduling.ui" line="129"/>
-        <source>Verzeichnisse auswählen, deren Inhlate von ClamAV überprüft werden sollen.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="60"/>
-        <source>Verzeichnisse hinzufügen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="72"/>
-        <location filename="../ui/tabscanscheduling.ui" line="144"/>
-        <source>Ausgewählte Verzeichnisse entfernen.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="75"/>
-        <source>Verzeichnisse Entfernen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="92"/>
+        <location filename="../ui/tabscanscheduling.ui" line="107"/>
         <source>Dateien ausschließen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="132"/>
-        <source>Dateien hinzufügen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="147"/>
-        <source>Dateien Entfernen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="178"/>
+        <location filename="../ui/tabscanscheduling.ui" line="205"/>
         <source>Wie oft am Tag aktuallisieren:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="222"/>
+        <location filename="../ui/tabscanscheduling.ui" line="249"/>
         <source>ClamAV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="230"/>
-        <source>Externen Datenträger automatisch prüfen, sobald er angeschlossen wurde.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="239"/>
+        <location filename="../ui/tabscanscheduling.ui" line="266"/>
         <source>Prüfungsinterval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="247"/>
+        <location filename="../ui/tabscanscheduling.ui" line="274"/>
         <source>T&amp;äglich um</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="267"/>
+        <location filename="../ui/tabscanscheduling.ui" line="294"/>
         <source>Uhr prüfen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="274"/>
+        <location filename="../ui/tabscanscheduling.ui" line="301"/>
         <source>A&amp;lle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="281"/>
+        <location filename="../ui/tabscanscheduling.ui" line="308"/>
         <source>Stunden prüfen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="164"/>
+        <location filename="../ui/tabscanscheduling.ui" line="191"/>
         <source>Automatisches aktuallisieren der Virendatenbank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="175"/>
-        <location filename="../ui/tabscanscheduling.ui" line="188"/>
+        <location filename="../ui/tabscanscheduling.ui" line="26"/>
+        <source>Verzeichnisse die von der Überprüfung ausgeschlossen werden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="72"/>
+        <source>Verzeichnisse auswählen, deren Inhalte von ClamAV nicht überprüft werden sollen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="75"/>
+        <source>Verzeichnis hinzufügen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="87"/>
+        <source>Ausgewähltes Verzeichnis entfernen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="90"/>
+        <source>Verzeichnis Entfernen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="113"/>
+        <source>Dateien die von der Überprüfung ausgeschlossen werden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="156"/>
+        <source>Dateien auswählen, die von ClamAV nicht überprüft werden sollen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="159"/>
+        <source>Datei hinzufügen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="171"/>
+        <source>Ausgewählte Datei entfernen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="174"/>
+        <source>Datei Entfernen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="202"/>
+        <location filename="../ui/tabscanscheduling.ui" line="215"/>
         <source>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="207"/>
+        <location filename="../ui/tabscanscheduling.ui" line="234"/>
         <source>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktuallität der Virendefinitionen. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="210"/>
+        <location filename="../ui/tabscanscheduling.ui" line="237"/>
         <source>freshclam im Hintergrund starten.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="257"/>
+        <source>Externe Datenträger bei Anschluss automatisch prüfen.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

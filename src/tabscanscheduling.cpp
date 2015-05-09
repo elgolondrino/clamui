@@ -41,6 +41,9 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
     settingsRead();
 
     db = QSqlDatabase::addDatabase("QSQLITE");
+    db.close();
+    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
+    db.open();
 
     databaseReadDirectories();
     databaseReadFiles();
@@ -79,6 +82,10 @@ void TabScanScheduling::createSlots(){
             this, SLOT(saveDirectories()));
     connect(pushButton_OpenDirExclude, SIGNAL(clicked(bool)),
             this, SLOT(saveFiles()));
+    connect(pushButton_ClearListExcludeFiles, SIGNAL(clicked(bool)),
+            this, SLOT(removeFiles()));
+    connect(pushButton_ClearListDirectories, SIGNAL(clicked(bool)),
+            this, SLOT(removeDirectories()));
 }
 
 void TabScanScheduling::settingsWrite(){
@@ -106,19 +113,17 @@ void TabScanScheduling::saveDirectories(){
 
     QFileDialog fileDialog;
     fileDialog.setFileMode(QFileDialog::Directory);
+    fileDialog.setViewMode(QFileDialog::Detail);
     fileDialog.setOption(QFileDialog::ShowDirsOnly, true);
-    if (fileDialog.exec())
-        directory = fileDialog.selectedFiles();
+    fileDialog.exec();
+
+    directory = fileDialog.selectedFiles();
 
     QString value = directory.value(0);
-
-//    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.close();
-    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
-    db.open();
-
-    QSqlQueryModel save;
-    save.setQuery("INSERT INTO directories VALUES('" + value + "');");
+    if (!value.count() == 0) {
+        QSqlQueryModel save;
+        save.setQuery("INSERT INTO directories VALUES('" + value + "');");
+    }
 
     databaseReadDirectories();
 
@@ -126,15 +131,17 @@ void TabScanScheduling::saveDirectories(){
 
 void TabScanScheduling::databaseReadDirectories(){
 
-//    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
-    db.open();
-
     QSqlQueryModel *query = new QSqlQueryModel;
     query->clear();
-    query->setQuery("SELECT directory FROM directories");
+    query->setQuery("SELECT directory FROM directories "
+                    "ORDER BY directory ASC");
 
     tableView_DirectoriesExclude->setModel(query);
+}
+
+void TabScanScheduling::removeDirectories(){
+
+
 }
 
 void TabScanScheduling::saveFiles(){
@@ -143,33 +150,32 @@ void TabScanScheduling::saveFiles(){
 
     QFileDialog fileDialog;
     fileDialog.setFileMode(QFileDialog::AnyFile);
+    fileDialog.setViewMode(QFileDialog::Detail);
     if (fileDialog.exec())
         files = fileDialog.selectedFiles();
 
     QString value = files.value(0);
 
-//    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.close();
-    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
-    db.open();
-
-    QSqlQueryModel save;
-    save.setQuery("INSERT INTO files VALUES('" + value + "');");
+    if (!value.count() == 0) {
+        QSqlQueryModel save;
+        save.setQuery("INSERT INTO files VALUES('" + value + "');");
+    }
 
     databaseReadFiles();
 }
 
 void TabScanScheduling::databaseReadFiles(){
 
-//    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
-    db.open();
-
     QSqlQueryModel *query = new QSqlQueryModel;
     query->clear();
-    query->setQuery("SELECT file FROM files");
+    query->setQuery("SELECT file FROM files "
+                    "ORDER BY file ASC");
 
     tableView_FilesExclude->setModel(query);
+}
+
+void TabScanScheduling::removeFiles(){
+
 }
 
 void TabScanScheduling::settingsRead(){

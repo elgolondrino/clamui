@@ -37,6 +37,7 @@
 #include <QFileDialog>
 #include <QProcess>
 #include <QMessageBox>
+#include <QDebug>
 
 #include "definitionen.h"
 #include "sqlite_db.h"
@@ -68,6 +69,8 @@ private slots:
     void settingsWrite();
     void saveDirectories();
     void saveFiles();
+    void removeDirectories();
+    void removeFiles();
 
 };
 
