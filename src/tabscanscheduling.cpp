@@ -39,6 +39,11 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
     createSlots();
 
     settingsRead();
+
+    db = QSqlDatabase::addDatabase("QSQLITE");
+
+    databaseReadDirectories();
+    databaseReadFiles();
 }
 
 void TabScanScheduling::changeEvent(QEvent *e)
@@ -70,6 +75,10 @@ void TabScanScheduling::createSlots(){
             this, SLOT(settingsWrite()));
     connect(radioButton_Hourly, SIGNAL(clicked(bool)),
             this, SLOT(settingsWrite()));
+    connect(pushButton_DirectoriesExclude, SIGNAL(clicked(bool)),
+            this, SLOT(saveDirectories()));
+    connect(pushButton_OpenDirExclude, SIGNAL(clicked(bool)),
+            this, SLOT(saveFiles()));
 }
 
 void TabScanScheduling::settingsWrite(){
@@ -91,32 +100,76 @@ void TabScanScheduling::settingsWrite(){
 
 }
 
-void TabScanScheduling::settingsWriteDirectories(){
+void TabScanScheduling::saveDirectories(){
 
-    QList<Directory> directories;
+    QStringList directory;
 
-    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
-                             APP_TITLE, APP_NAME);
-    clamui_conf.beginWriteArray("DirectoriesExclude");
-    for (int i = 0; i < directories.size(); ++i) {
-        clamui_conf.setArrayIndex(i);
-        clamui_conf.setValue("Directory", directories.at(i).directoryName);
-    }
-    clamui_conf.endArray();
+    QFileDialog fileDialog;
+    fileDialog.setFileMode(QFileDialog::Directory);
+    fileDialog.setOption(QFileDialog::ShowDirsOnly, true);
+    if (fileDialog.exec())
+        directory = fileDialog.selectedFiles();
+
+    QString value = directory.value(0);
+
+//    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.close();
+    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
+    db.open();
+
+    QSqlQueryModel save;
+    save.setQuery("INSERT INTO directories VALUES('" + value + "');");
+
+    databaseReadDirectories();
+
 }
 
-void TabScanScheduling::settingsWriteFiles(){
+void TabScanScheduling::databaseReadDirectories(){
 
-    QList<File> files;
+//    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
+    db.open();
 
-    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
-                             APP_TITLE, APP_NAME);
-    clamui_conf.beginWriteArray("DirectoriesFiles");
-    for (int i = 0; i < files.size(); ++i) {
-        clamui_conf.setArrayIndex(i);
-        clamui_conf.setValue("Files", files.at(i).fileName);
-    }
-    clamui_conf.endArray();
+    QSqlQueryModel *query = new QSqlQueryModel;
+    query->clear();
+    query->setQuery("SELECT directory FROM directories");
+
+    tableView_DirectoriesExclude->setModel(query);
+}
+
+void TabScanScheduling::saveFiles(){
+
+    QStringList files;
+
+    QFileDialog fileDialog;
+    fileDialog.setFileMode(QFileDialog::AnyFile);
+    if (fileDialog.exec())
+        files = fileDialog.selectedFiles();
+
+    QString value = files.value(0);
+
+//    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.close();
+    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
+    db.open();
+
+    QSqlQueryModel save;
+    save.setQuery("INSERT INTO files VALUES('" + value + "');");
+
+    databaseReadFiles();
+}
+
+void TabScanScheduling::databaseReadFiles(){
+
+//    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
+    db.open();
+
+    QSqlQueryModel *query = new QSqlQueryModel;
+    query->clear();
+    query->setQuery("SELECT file FROM files");
+
+    tableView_FilesExclude->setModel(query);
 }
 
 void TabScanScheduling::settingsRead(){

@@ -39,16 +39,9 @@
 #include <QMessageBox>
 
 #include "definitionen.h"
+#include "sqlite_db.h"
 
 #include "ui_tabscanscheduling.h"
-
-struct Directory {
-    QString directoryName;
-};
-
-struct File {
-    QString fileName;
-};
 
 class TabScanScheduling : public QWidget, private Ui::TabScanScheduling
 {
@@ -66,13 +59,15 @@ private:
     void settingsRead();
     void settingsReadDirectories();
     void settingsReadFiles();
+    void databaseReadDirectories();
+    void databaseReadFiles();
 
-    QFileDialog *fileDialog;
+    QSqlDatabase db;
 
 private slots:
     void settingsWrite();
-    void settingsWriteDirectories();
-    void settingsWriteFiles();
+    void saveDirectories();
+    void saveFiles();
 
 };
 

@@ -29,24 +29,46 @@
 **
 *******************************************************************************/
 
-#ifndef DEFINITIONEN_H
-#define DEFINITIONEN_H
 
-#include <QDir>
-#include <QString>
+#include "sqlite_db.h"
 
-#define APP_VERSION "0.0.0"
-#define APP_TITLE "ClamUI"
-#define APP_NAME "clamui"
-#define APP_COMPANY_NAME "E67-ITS"
-#define CLAMAV_PATH QDir::homePath()+"/.config/clamav/"
-#define CLAMAV_VDB_PATH QDir::homePath()+"/.config/clamav/vdb/"
-#define APP_CONFIG_PATH QDir::homePath()+"/.config/"+ APP_TITLE + "/"
-#define APPS_TPL_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/tpl/"
-#define LANG_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/locale/"
-#define FLAGS_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/flags/"
-#define HELP_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/doc/"
-#define DESKTOP_FILE "/usr/share/applications/"
-#define SQLITE_DB_NAME APP_NAME + ".db"
+SQLite_DB::SQLite_DB(QObject *parent) : QObject(parent){
 
-#endif // DEFINITIONEN_H
+}
+
+void SQLite_DB::connectDB(){
+
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
+
+    if (db.open()){
+
+        db.setConnectOptions();
+        createTables();
+    }
+    db.close();
+}
+
+void SQLite_DB::createTables(){
+
+    QSqlQuery createDirectory(db);
+    createDirectory.exec("CREATE TABLE IF NOT EXISTS directories("
+                         "directory VARCHAR(250) NOT NULL)");
+
+    QSqlQuery createFiles(db);
+    createFiles.exec("CREATE TABLE IF NOT EXISTS files("
+                         "file VARCHAR(250) NOT NULL)");
+}
+
+void SQLite_DB::readValues(QString value, QString table, QTableView *tableView){
+
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
+    db.open();
+
+    QSqlQueryModel *query = new QSqlQueryModel;
+    query->clear();
+    query->setQuery("SELECT " + value + " FROM" + table);
+
+    tableView->setModel(query);
+}

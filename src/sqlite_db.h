@@ -29,24 +29,30 @@
 **
 *******************************************************************************/
 
-#ifndef DEFINITIONEN_H
-#define DEFINITIONEN_H
 
-#include <QDir>
-#include <QString>
+#ifndef SQLITE_DB_H
+#define SQLITE_DB_H
 
-#define APP_VERSION "0.0.0"
-#define APP_TITLE "ClamUI"
-#define APP_NAME "clamui"
-#define APP_COMPANY_NAME "E67-ITS"
-#define CLAMAV_PATH QDir::homePath()+"/.config/clamav/"
-#define CLAMAV_VDB_PATH QDir::homePath()+"/.config/clamav/vdb/"
-#define APP_CONFIG_PATH QDir::homePath()+"/.config/"+ APP_TITLE + "/"
-#define APPS_TPL_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/tpl/"
-#define LANG_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/locale/"
-#define FLAGS_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/flags/"
-#define HELP_PATH "/usr/share/doc/packages/" + QString(APP_NAME) + "/doc/"
-#define DESKTOP_FILE "/usr/share/applications/"
-#define SQLITE_DB_NAME APP_NAME + ".db"
+#include <QtCore/QObject>
+#include <QSqlDatabase>
+#include <QSqlQueryModel>
+#include <QSqlQuery>
+#include <QTableView>
 
-#endif // DEFINITIONEN_H
+#include "definitionen.h"
+
+class SQLite_DB : public QObject
+{
+    Q_OBJECT
+public:
+    explicit SQLite_DB(QObject *parent = 0);
+    void connectDB();
+    void readValues(QString value, QString table, QTableView *tableView);
+
+private:
+    void createTables();
+
+    QSqlDatabase db;
+};
+
+#endif // SQLITE_DB_H

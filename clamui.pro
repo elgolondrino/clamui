@@ -2,16 +2,17 @@ lessThan(QT_VERSION, 5.3) {
     error("Program requires at least Qt 5.3!")
 }
 
+QT += sql
 QT += network
 QT += widgets
 QT += KIconThemes
 QT += Solid
 QT += KNotifications
 QT += KDESu
-INCLUDEPATH += /usr/lib64
+#INCLUDEPATH += /usr/lib64
 
 TEMPLATE = app
-VERSION = -0.4.0
+VERSION = -0.0.0
 LANGUAGE += C++
 CODECFORTR += UTF-8
 UI_DIR += src
@@ -91,7 +92,8 @@ HEADERS += src/definitionen.h \
     src/tabvirusquarantine.h \
     src/tabscanscheduling.h \
     src/tababoutclamav.h \
-    src/languagetools.h
+    src/languagetools.h \
+    src/sqlite_db.h
 
 SOURCES += src/about.cpp \
     src/main.cpp \
@@ -102,7 +104,8 @@ SOURCES += src/about.cpp \
     src/tabvirusquarantine.cpp \
     src/tabscanscheduling.cpp \
     src/tababoutclamav.cpp \
-    src/languagetools.cpp
+    src/languagetools.cpp \
+    src/sqlite_db.cpp
     
 FORMS += ui/about.ui \
     ui/clamui.ui \

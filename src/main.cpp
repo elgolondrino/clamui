@@ -42,9 +42,11 @@
 
 #include "clamui.h"
 #include "definitionen.h"
+#include "sqlite_db.h"
 
 int main(int argc, char *argv[]) {
     QDir clamDir;
+    QFile dbFile;
 
     QApplication app(argc, argv);
     QTranslator myappTranslator;
@@ -85,6 +87,12 @@ int main(int argc, char *argv[]) {
 
     if (!clamDir.exists(CLAMAV_VDB_PATH))
         clamDir.mkdir(CLAMAV_VDB_PATH);
+
+    if (!dbFile.exists(APP_CONFIG_PATH + SQLITE_DB_NAME)){
+
+        SQLite_DB sqliteDB;
+        sqliteDB.connectDB();
+    }
 
     ClamUI start;
     if (hideWindow)

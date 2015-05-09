@@ -21,9 +21,9 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QListWidget" name="listWidget_DirectoriesExclude">
+       <widget class="QTableView" name="tableView_DirectoriesExclude">
         <property name="toolTip">
-         <string>Zu überprüfende Verzeichnisse.</string>
+         <string>Verzeichnisse die von der Überprüfung ausgeschlossen werden.</string>
         </property>
         <property name="editTriggers">
          <set>QAbstractItemView::NoEditTriggers</set>
@@ -34,6 +34,21 @@
         <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectRows</enum>
         </property>
+        <property name="cornerButtonEnabled">
+         <bool>false</bool>
+        </property>
+        <attribute name="horizontalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderHighlightSections">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -52,12 +67,12 @@
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_DirectoriesExclide">
+         <widget class="QPushButton" name="pushButton_DirectoriesExclude">
           <property name="toolTip">
            <string>Verzeichnisse auswählen, deren Inhlate von ClamAV überprüft werden sollen.</string>
           </property>
           <property name="text">
-           <string>Verzeichnisse hinzufügen</string>
+           <string>Verzeichnis hinzufügen</string>
           </property>
           <property name="icon">
            <iconset theme="document-open-folder">
@@ -72,7 +87,7 @@
            <string>Ausgewählte Verzeichnisse entfernen.</string>
           </property>
           <property name="text">
-           <string>Verzeichnisse Entfernen</string>
+           <string>Verzeichnis Entfernen</string>
           </property>
           <property name="icon">
            <iconset theme="edit-clear-list">
@@ -93,9 +108,9 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QListWidget" name="listWidget_FilesExclude">
+       <widget class="QTableView" name="tableView_FilesExclude">
         <property name="toolTip">
-         <string>Zu überprüfende Verzeichnisse.</string>
+         <string>Dateien die von der Überprüfung ausgeschlossen werden.</string>
         </property>
         <property name="editTriggers">
          <set>QAbstractItemView::NoEditTriggers</set>
@@ -106,6 +121,18 @@
         <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectRows</enum>
         </property>
+        <property name="cornerButtonEnabled">
+         <bool>false</bool>
+        </property>
+        <attribute name="horizontalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -129,7 +156,7 @@
            <string>Verzeichnisse auswählen, deren Inhlate von ClamAV überprüft werden sollen.</string>
           </property>
           <property name="text">
-           <string>Dateien hinzufügen</string>
+           <string>Datei hinzufügen</string>
           </property>
           <property name="icon">
            <iconset theme="document-open-folder">
@@ -144,7 +171,7 @@
            <string>Ausgewählte Verzeichnisse entfernen.</string>
           </property>
           <property name="text">
-           <string>Dateien Entfernen</string>
+           <string>Datei Entfernen</string>
           </property>
           <property name="icon">
            <iconset theme="edit-clear-list">
