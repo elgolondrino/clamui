@@ -61,7 +61,6 @@ void TabScanScheduling::changeEvent(QEvent *e)
     }
 }
 
-
 void TabScanScheduling::createSlots(){
 
     connect(checkBox_FreshClam, SIGNAL(clicked(bool)),
@@ -120,9 +119,11 @@ void TabScanScheduling::saveDirectories(){
     directory = fileDialog.selectedFiles();
 
     QString value = directory.value(0);
-    if (!value.count() == 0) {
+    if (!value.isEmpty()) {
         QSqlQueryModel save;
-        save.setQuery("INSERT INTO directories VALUES('" + value + "');");
+        save.setQuery("INSERT INTO directories (directory) VALUES('" + value + "');");
+
+//        qDebug() << save.lastError();
     }
 
     databaseReadDirectories();
@@ -133,7 +134,7 @@ void TabScanScheduling::databaseReadDirectories(){
 
     QSqlQueryModel *query = new QSqlQueryModel;
     query->clear();
-    query->setQuery("SELECT directory FROM directories "
+    query->setQuery("SELECT DISTINCT directory FROM directories "
                     "ORDER BY directory ASC");
 
     tableView_DirectoriesExclude->setModel(query);
@@ -141,7 +142,35 @@ void TabScanScheduling::databaseReadDirectories(){
 
 void TabScanScheduling::removeDirectories(){
 
+    QString dataDelete = tableView_DirectoriesExclude->currentIndex().data(0).toString();
 
+    QSqlQuery deleteData;
+
+    QMessageBox msgBox;
+
+    msgBox.setWindowTitle(trUtf8("Löschen bestätigen"));
+    msgBox.setText(trUtf8("Möchten Sie die den Eintrag <b>")
+                   + dataDelete +
+                   trUtf8("</b> wirklich löschen?"));
+    msgBox.setIcon(QMessageBox::Question);
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::Yes);
+    int ret = msgBox.exec();
+    switch (ret) {
+    case QMessageBox::Yes:
+
+        deleteData.exec("DELETE FROM directories WHERE directory = '" +
+                           dataDelete + "'");
+//        qDebug() << deleteData.lastError();
+
+        databaseReadDirectories();
+        break;
+    case QMessageBox::No:
+        msgBox.close();
+        break;
+    default:
+        break;
+    }
 }
 
 void TabScanScheduling::saveFiles(){
@@ -156,9 +185,9 @@ void TabScanScheduling::saveFiles(){
 
     QString value = files.value(0);
 
-    if (!value.count() == 0) {
+    if (!value.isEmpty()) {
         QSqlQueryModel save;
-        save.setQuery("INSERT INTO files VALUES('" + value + "');");
+        save.setQuery("INSERT INTO files (file) VALUES('" + value + "');");
     }
 
     databaseReadFiles();
@@ -168,7 +197,7 @@ void TabScanScheduling::databaseReadFiles(){
 
     QSqlQueryModel *query = new QSqlQueryModel;
     query->clear();
-    query->setQuery("SELECT file FROM files "
+    query->setQuery("SELECT DISTINCT file FROM files "
                     "ORDER BY file ASC");
 
     tableView_FilesExclude->setModel(query);
@@ -176,6 +205,34 @@ void TabScanScheduling::databaseReadFiles(){
 
 void TabScanScheduling::removeFiles(){
 
+    QString dataDelete = tableView_FilesExclude->currentIndex().data(0).toString();
+
+    QSqlQuery deleteData;
+
+    QMessageBox msgBox;
+
+    msgBox.setWindowTitle(trUtf8("Löschen bestätigen"));
+    msgBox.setText(trUtf8("Möchten Sie die den Eintrag <b>")
+                   + dataDelete +
+                   trUtf8("</b> wirklich löschen?"));
+    msgBox.setIcon(QMessageBox::Question);
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::Yes);
+    int ret = msgBox.exec();
+    switch (ret) {
+    case QMessageBox::Yes:
+
+        deleteData.exec("DELETE FROM files WHERE file = '" +
+                           dataDelete + "'");
+
+        databaseReadFiles();
+        break;
+    case QMessageBox::No:
+        msgBox.close();
+        break;
+    default:
+        break;
+    }
 }
 
 void TabScanScheduling::settingsRead(){

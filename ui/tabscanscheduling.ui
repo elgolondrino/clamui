@@ -28,6 +28,9 @@
         <property name="editTriggers">
          <set>QAbstractItemView::NoEditTriggers</set>
         </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
         <property name="selectionMode">
          <enum>QAbstractItemView::MultiSelection</enum>
         </property>
@@ -115,6 +118,9 @@
         <property name="editTriggers">
          <set>QAbstractItemView::NoEditTriggers</set>
         </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
         <property name="selectionMode">
          <enum>QAbstractItemView::MultiSelection</enum>
         </property>
@@ -188,7 +194,7 @@
    <item row="0" column="2">
     <widget class="QGroupBox" name="groupBox_3">
      <property name="title">
-      <string>Automatisches aktuallisieren der Virendatenbank</string>
+      <string>Automatisches aktualisieren der Virendatenbank</string>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
       <item row="0" column="0">
@@ -231,7 +237,7 @@
         <item row="0" column="0" colspan="2">
          <widget class="QCheckBox" name="checkBox_FreshClam">
           <property name="toolTip">
-           <string>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktuallität der Virendefinitionen. </string>
+           <string>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktualität der Virendefinitionen. </string>
           </property>
           <property name="text">
            <string>freshclam im Hintergrund starten.</string>
@@ -253,6 +259,9 @@
        <layout class="QGridLayout" name="gridLayout">
         <item row="0" column="0">
          <widget class="QCheckBox" name="checkBox_ExternalDevice">
+          <property name="toolTip">
+           <string>Externe Datenträger bei Anschluss automatisch prüfen.</string>
+          </property>
           <property name="text">
            <string>Externe Datenträger bei Anschluss automatisch prüfen.</string>
           </property>

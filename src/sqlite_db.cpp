@@ -53,11 +53,13 @@ void SQLite_DB::createTables(){
 
     QSqlQuery createDirectory(db);
     createDirectory.exec("CREATE TABLE IF NOT EXISTS directories("
-                         "directory VARCHAR(250) NOT NULL)");
+                         "`id` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,"
+                         "`directory` VARCHAR(250) NOT NULL)");
 
     QSqlQuery createFiles(db);
     createFiles.exec("CREATE TABLE IF NOT EXISTS files("
-                         "file VARCHAR(250) NOT NULL)");
+                     "`id` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,"
+                     "`file` VARCHAR(250) NOT NULL)");
 }
 
 void SQLite_DB::readValues(QString value, QString table, QTableView *tableView){

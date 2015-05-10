@@ -38,6 +38,7 @@
 #include <QProcess>
 #include <QMessageBox>
 #include <QDebug>
+#include <QSqlError>
 
 #include "definitionen.h"
 #include "sqlite_db.h"
