@@ -43,6 +43,7 @@
 #include "clamui.h"
 #include "definitionen.h"
 #include "sqlite_db.h"
+#include "clam_processes.h"
 
 int main(int argc, char *argv[]) {
     QDir clamDir;
@@ -53,18 +54,18 @@ int main(int argc, char *argv[]) {
 
     QString locale = QLocale::system().name();
     QString defaultLanguage = QString(APP_NAME) + "_" + locale + ".qm";
-    QString currLanguage, gamePath;
-    bool languageSet;
-    bool hideWindow;
+
+//    bool languageSet;
+//    bool hideWindow;
 
     // Falls die Sprache manuell gesetzt wurde.
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("ClamUI");
-    languageSet = clamui_conf.value("Language_Manually", false).toBool();
-    currLanguage = clamui_conf.value(
+    bool languageSet = clamui_conf.value("Language_Manually", false).toBool();
+    QString currLanguage = clamui_conf.value(
                      "Language", defaultLanguage).toString();
-    hideWindow =clamui_conf.value("Hide_Window", false).toBool();
+    bool hideWindow =clamui_conf.value("Hide_Window", false).toBool();
     clamui_conf.endGroup();
 
     // Systemsprache aus der Umgebungsvariable des Systems lesen.
@@ -75,19 +76,31 @@ int main(int argc, char *argv[]) {
     app.installTranslator(&qtTranslator);
 
     if (languageSet == false) {
+        // Langauge from system settings
         myappTranslator.load(LANG_PATH + APP_NAME + "_"  + locale + ".qm");
         app.installTranslator(&myappTranslator);
       } else {
+        // Language manually.
         myappTranslator.load(LANG_PATH + currLanguage);
         app.installTranslator(&myappTranslator);
       }
 
+    /*
+     * Check if there is a ClamAV directory.
+     * In this directory are the config files stored.
+     */
     if (!clamDir.exists(CLAMAV_PATH))
         clamDir.mkdir(CLAMAV_PATH);
 
+    /*
+     * The directory for the virus definitionen stored.
+     */
     if (!clamDir.exists(CLAMAV_VDB_PATH))
         clamDir.mkdir(CLAMAV_VDB_PATH);
 
+    /*
+     * Check for an existing SQLite3 database.
+     */
     if (!dbFile.exists(APP_CONFIG_PATH + SQLITE_DB_NAME)){
 
         SQLite_DB sqliteDB;

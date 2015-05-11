@@ -36,14 +36,19 @@ SQLite_DB::SQLite_DB(QObject *parent) : QObject(parent){
 
 }
 
+/*
+ * Create database and tables.
+ */
 void SQLite_DB::connectDB(){
 
     db = QSqlDatabase::addDatabase("QSQLITE");
+    // Values from definitionen.h
     db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
 
     if (db.open()){
 
         db.setConnectOptions();
+        // Create tables.
         createTables();
     }
     db.close();
@@ -60,17 +65,4 @@ void SQLite_DB::createTables(){
     createFiles.exec("CREATE TABLE IF NOT EXISTS files("
                      "`id` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,"
                      "`file` VARCHAR(250) NOT NULL)");
-}
-
-void SQLite_DB::readValues(QString value, QString table, QTableView *tableView){
-
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
-    db.open();
-
-    QSqlQueryModel *query = new QSqlQueryModel;
-    query->clear();
-    query->setQuery("SELECT " + value + " FROM" + table);
-
-    tableView->setModel(query);
 }

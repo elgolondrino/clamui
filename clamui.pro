@@ -93,7 +93,8 @@ HEADERS += src/definitionen.h \
     src/tabscanscheduling.h \
     src/tababoutclamav.h \
     src/languagetools.h \
-    src/sqlite_db.h
+    src/sqlite_db.h \
+    src/clam_processes.h
 
 SOURCES += src/about.cpp \
     src/main.cpp \
@@ -105,7 +106,8 @@ SOURCES += src/about.cpp \
     src/tabscanscheduling.cpp \
     src/tababoutclamav.cpp \
     src/languagetools.cpp \
-    src/sqlite_db.cpp
+    src/sqlite_db.cpp \
+    src/clam_processes.cpp
     
 FORMS += ui/about.ui \
     ui/clamui.ui \

@@ -40,11 +40,17 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
 
     settingsRead();
 
+    /*
+     * Open the SQLite3 database.
+     */
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.close();
     db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
     db.open();
 
+    /*
+     * Load values to the tableview.
+     */
     databaseReadDirectories();
     databaseReadFiles();
 }
@@ -106,6 +112,9 @@ void TabScanScheduling::settingsWrite(){
 
 }
 
+/*
+ * Add directories to exlude from scanning.
+ */
 void TabScanScheduling::saveDirectories(){
 
     QStringList directory;
@@ -130,6 +139,9 @@ void TabScanScheduling::saveDirectories(){
 
 }
 
+/*
+ * Load excluded directories to Tableview.
+ */
 void TabScanScheduling::databaseReadDirectories(){
 
     QSqlQueryModel *query = new QSqlQueryModel;
@@ -140,6 +152,9 @@ void TabScanScheduling::databaseReadDirectories(){
     tableView_DirectoriesExclude->setModel(query);
 }
 
+/*
+ * Delete excluded directories from Tableview and databse.
+ */
 void TabScanScheduling::removeDirectories(){
 
     QString dataDelete = tableView_DirectoriesExclude->currentIndex().data(0).toString();
@@ -159,8 +174,8 @@ void TabScanScheduling::removeDirectories(){
     switch (ret) {
     case QMessageBox::Yes:
 
-        deleteData.exec("DELETE FROM directories WHERE directory = '" +
-                           dataDelete + "'");
+        deleteData.exec("DELETE FROM directories WHERE directory = '"
+                        + dataDelete + "'");
 //        qDebug() << deleteData.lastError();
 
         databaseReadDirectories();
@@ -173,6 +188,9 @@ void TabScanScheduling::removeDirectories(){
     }
 }
 
+/*
+ * Add files to exlude from scanning.
+ */
 void TabScanScheduling::saveFiles(){
 
     QStringList files;
@@ -193,6 +211,9 @@ void TabScanScheduling::saveFiles(){
     databaseReadFiles();
 }
 
+/*
+ * Load excluded fieles to Tableview.
+ */
 void TabScanScheduling::databaseReadFiles(){
 
     QSqlQueryModel *query = new QSqlQueryModel;
@@ -203,6 +224,9 @@ void TabScanScheduling::databaseReadFiles(){
     tableView_FilesExclude->setModel(query);
 }
 
+/*
+ * Delete excluded files from Tableview and databse.
+ */
 void TabScanScheduling::removeFiles(){
 
     QString dataDelete = tableView_FilesExclude->currentIndex().data(0).toString();
@@ -222,8 +246,8 @@ void TabScanScheduling::removeFiles(){
     switch (ret) {
     case QMessageBox::Yes:
 
-        deleteData.exec("DELETE FROM files WHERE file = '" +
-                           dataDelete + "'");
+        deleteData.exec("DELETE FROM files WHERE file = '"
+                        + dataDelete + "'");
 
         databaseReadFiles();
         break;

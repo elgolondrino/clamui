@@ -29,51 +29,22 @@
 **
 *******************************************************************************/
 
-#ifndef TABSCANSCHEDULING_H
-#define TABSCANSCHEDULING_H
+#ifndef CLAM_PROCESSES_H
+#define CLAM_PROCESSES_H
 
-/* Qt Headers */
-#include <QSettings>
-#include <QFileDialog>
+#include <QtCore/QObject>
+#include <QtCore/qglobal.h>
 #include <QProcess>
-#include <QMessageBox>
-#include <QDebug>
-#include <QSqlError>
+#include <QByteArray>
 
-#include "definitionen.h"
-#include "sqlite_db.h"
-#include "clam_processes.h"
-
-#include "ui_tabscanscheduling.h"
-
-class TabScanScheduling : public QWidget, private Ui::TabScanScheduling
+class Clam_Processes : public QProcess
 {
-    Q_OBJECT
-
 public:
-    explicit TabScanScheduling(QWidget *parent = 0);
+    Clam_Processes();
 
-protected:
-    void changeEvent(QEvent *e);
-
-
-private:
-    void createSlots();
-    void settingsRead();
-    void settingsReadDirectories();
-    void settingsReadFiles();
-    void databaseReadDirectories();
-    void databaseReadFiles();
-
-    QSqlDatabase db;
-
-private slots:
-    void settingsWrite();
-    void saveDirectories();
-    void saveFiles();
-    void removeDirectories();
-    void removeFiles();
-
+    QByteArray FreshclamDemon(QString freshclam, QStringList list);
+    QByteArray FreshclamManuelly(QString freshclam, QStringList list);
+    QByteArray ClamScan(QString clamscan, QStringList list);
 };
 
-#endif // TABSCANSCHEDULING_H
+#endif // CLAM_PROCESSES_H

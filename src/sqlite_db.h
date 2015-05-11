@@ -47,7 +47,6 @@ class SQLite_DB : public QObject
 public:
     explicit SQLite_DB(QObject *parent = 0);
     void connectDB();
-    void readValues(QString value, QString table, QTableView *tableView);
 
 private:
     void createTables();
