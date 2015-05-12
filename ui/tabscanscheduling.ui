@@ -199,6 +199,26 @@
      <layout class="QFormLayout" name="formLayout_2">
       <item row="0" column="0">
        <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="2" colspan="2">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Freshclam Status</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QCheckBox" name="checkBox_FreshClam">
+          <property name="toolTip">
+           <string>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktualität der Virendefinitionen. </string>
+          </property>
+          <property name="text">
+           <string>freshclam im Hintergrund starten.</string>
+          </property>
+         </widget>
+        </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_2">
           <property name="enabled">
@@ -234,13 +254,17 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="0" colspan="2">
-         <widget class="QCheckBox" name="checkBox_FreshClam">
-          <property name="toolTip">
-           <string>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktualität der Virendefinitionen. </string>
-          </property>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="pushButton_FreshclamStatus">
           <property name="text">
-           <string>freshclam im Hintergrund starten.</string>
+           <string>PushButton</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_FreshclamStatus">
+          <property name="text">
+           <string>TextLabel</string>
           </property>
          </widget>
         </item>

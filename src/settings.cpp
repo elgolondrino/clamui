@@ -38,7 +38,7 @@ Settings::Settings(QWidget *parent) : QDialog(parent){
     setWindowTitle(trUtf8("%1 %2 - Einstellungen").arg(
                        APP_TITLE).arg(
                        APP_VERSION));
-    setWindowIcon(QIcon::fromTheme("configure"));
+//    setWindowIcon(QIcon::fromTheme("configure"));
 
     settingsRead();
     createSlots();
@@ -83,7 +83,8 @@ void Settings::settingsWrite(){
     clamui_conf.endGroup();
 
     clamui_conf.beginGroup("ClamAV");
-
+    clamui_conf.setValue("Clamscan_Path", lineEdit_BinClamScan->text());
+    clamui_conf.setValue("Freshclam_Path", lineEdit_BinFreshClam->text());
     clamui_conf.endGroup();
 }
 
@@ -93,19 +94,31 @@ void Settings::settingsRead(){
                              APP_TITLE, APP_NAME);
 
     clamui_conf.beginGroup("ClamUI");
-    groupBox_Language->setChecked(clamui_conf.value("Language_Manually", false).toBool());
-    comboBox_Language->setCurrentIndex(clamui_conf.value("Language_Index", 0).toInt());
-    comboBox_Language->setCurrentText(clamui_conf.value("Language", "").toString());
-    checkBox_Autostart->setChecked(clamui_conf.value("Autostart", false).toBool());
-    checkBox_HideWindow->setChecked(clamui_conf.value("Hide_Window", false).toBool());
-    checkBox_IconOnDesktop->setChecked(clamui_conf.value("Icon_on_Desktop", false).toBool());
-    checkBox_MenuBar->setChecked(clamui_conf.value("Hide_Menubar", true).toBool());
-    checkBox_StatusBar->setChecked(clamui_conf.value("Hide_Statusbar", true).toBool());
-    checkBox_ToolBar->setChecked(clamui_conf.value("Hide_Toolbar", true).toBool());
+    groupBox_Language->setChecked(
+                clamui_conf.value("Language_Manually", false).toBool());
+    comboBox_Language->setCurrentIndex(
+                clamui_conf.value("Language_Index", 0).toInt());
+    comboBox_Language->setCurrentText(
+                clamui_conf.value("Language", "").toString());
+    checkBox_Autostart->setChecked(
+                clamui_conf.value("Autostart", false).toBool());
+    checkBox_HideWindow->setChecked(
+                clamui_conf.value("Hide_Window", false).toBool());
+    checkBox_IconOnDesktop->setChecked(
+                clamui_conf.value("Icon_on_Desktop", false).toBool());
+    checkBox_MenuBar->setChecked(
+                clamui_conf.value("Hide_Menubar", true).toBool());
+    checkBox_StatusBar->setChecked(
+                clamui_conf.value("Hide_Statusbar", true).toBool());
+    checkBox_ToolBar->setChecked(
+                clamui_conf.value("Hide_Toolbar", true).toBool());
     clamui_conf.endGroup();
 
     clamui_conf.beginGroup("ClamAV");
-
+    lineEdit_BinClamScan->setText(
+                clamui_conf.value("Clamscan_Path", "/usr/bin/clamscan").toString());
+    lineEdit_BinFreshClam->setText(
+                clamui_conf.value("Freshclam_Path", "/usr/bin/freshclam").toString());
     clamui_conf.endGroup();
 }
 
@@ -136,7 +149,8 @@ void Settings::settingsDefault(){
 }
 
 void Settings::settingsDefaultClamAV(){
-
+    lineEdit_BinClamScan->setText("/usr/bin/clamscan");
+    lineEdit_BinFreshClam->setText("/usr/bin/freshclam");
 }
 
 void Settings::settingsDefaultClamUI(){
