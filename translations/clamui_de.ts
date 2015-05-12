@@ -265,176 +265,206 @@ Vielen Dank im voraus.</source>
 <context>
     <name>FirstRunWizard</name>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="14"/>
+        <location filename="../ui/firstrunwizard.ui" line="20"/>
         <source>ClamUI - Einrichtungsassistent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="33"/>
-        <location filename="../src/firstrunwizard.cpp" line="64"/>
+        <location filename="../ui/firstrunwizard.ui" line="39"/>
+        <location filename="../src/firstrunwizard.cpp" line="72"/>
         <source>2. Schritt: Das Programm &lt;b&gt;FreshClam&lt;/b&gt; einrichten.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="47"/>
+        <location filename="../ui/firstrunwizard.ui" line="53"/>
         <source>3. Schritt: Ihre Angaben überprüfen und die Konfiguration abschließen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="58"/>
-        <source>ClamAV Ausführungsoptionen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/firstrunwizard.ui" line="66"/>
-        <location filename="../ui/firstrunwizard.ui" line="69"/>
+        <location filename="../ui/firstrunwizard.ui" line="92"/>
+        <location filename="../ui/firstrunwizard.ui" line="95"/>
         <source>Externe Datenträger bei Anschluss automatisch prüfen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="78"/>
-        <source>Prüfungsinterval</source>
+        <location filename="../ui/firstrunwizard.ui" line="64"/>
+        <source>Ausführungsoptionen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="86"/>
+        <location filename="../ui/firstrunwizard.ui" line="72"/>
+        <source>Das Programm läuft im Systemabschnitt der Kontrollleiste und es wird nach dem starten kein Fenster angezeigt. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="75"/>
+        <source>Fenster beim Start nicht anzeigen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="82"/>
+        <source>Startet ClamUI automatisch nach dem einloggen in KDE.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="85"/>
+        <source>ClamUI automatisch starten.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="102"/>
+        <source>Erstellt auf dem Desktop eine Verknüpfung zum Programm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="105"/>
+        <source>Icon auf dem Desktop anzeigen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="114"/>
+        <source>ClamAV Prüfungsinterval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="122"/>
         <source>Viren&amp;suche festlegen:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="132"/>
+        <location filename="../ui/firstrunwizard.ui" line="168"/>
         <source>dd.MM.yyyy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="142"/>
+        <location filename="../ui/firstrunwizard.ui" line="178"/>
         <source>Datu&amp;m:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="152"/>
+        <location filename="../ui/firstrunwizard.ui" line="188"/>
         <source>Uhr&amp;zeit:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="192"/>
+        <location filename="../ui/firstrunwizard.ui" line="228"/>
         <source>Automatisches aktualisieren der Virendatenbank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="200"/>
+        <location filename="../ui/firstrunwizard.ui" line="236"/>
         <source>Freshclam Status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="210"/>
+        <location filename="../ui/firstrunwizard.ui" line="246"/>
         <source>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktualität der Virendefinitionen. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="213"/>
+        <location filename="../ui/firstrunwizard.ui" line="249"/>
         <source>freshclam im Hintergrund starten.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="223"/>
-        <location filename="../ui/firstrunwizard.ui" line="236"/>
+        <location filename="../ui/firstrunwizard.ui" line="259"/>
+        <location filename="../ui/firstrunwizard.ui" line="272"/>
         <source>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="226"/>
+        <location filename="../ui/firstrunwizard.ui" line="262"/>
         <source>Wie oft am Tag aktuallisieren:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="255"/>
+        <location filename="../ui/firstrunwizard.ui" line="291"/>
         <source>PushButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="262"/>
+        <location filename="../ui/firstrunwizard.ui" line="298"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="40"/>
-        <location filename="../src/firstrunwizard.cpp" line="55"/>
+        <location filename="../ui/firstrunwizard.ui" line="46"/>
+        <location filename="../src/firstrunwizard.cpp" line="61"/>
         <source>1. Schritt: Den Virenscanner &lt;b&gt;ClamAV&lt;/b&gt; einrichten.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="42"/>
+        <location filename="../src/firstrunwizard.cpp" line="46"/>
         <source>Der &lt;b&gt;ClamUI&lt;/b&gt; Einrichtungsassistent hilft Ihnen dabei das Programm in drei Schritten einzurichten.&lt;br /&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="46"/>
+        <location filename="../src/firstrunwizard.cpp" line="50"/>
         <source>Klichen Sie auf &lt;b&gt;Weiter&lt;/b&gt;, um mit der Einrichtung zu beginnen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="52"/>
+        <location filename="../src/firstrunwizard.cpp" line="58"/>
         <source>Angeben, wie und wann der Virenscanner ausgeführt werden soll.&lt;br /&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="61"/>
+        <location filename="../src/firstrunwizard.cpp" line="69"/>
         <source>Den Aktualisierungsinterval für die Virendatenbank einrichten.&lt;br /&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="70"/>
+        <location filename="../src/firstrunwizard.cpp" line="80"/>
         <source>Abschluss der Konfiguration.&lt;br /&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="72"/>
+        <location filename="../src/firstrunwizard.cpp" line="82"/>
         <source>3. Schritt: Ihre Angaben überprüfen und anschließend auf &lt;b&gt;Abschließen&lt;/b&gt; klicken.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="78"/>
+        <location filename="../src/firstrunwizard.cpp" line="88"/>
         <source>Keine automatische Prüfung</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="79"/>
+        <location filename="../src/firstrunwizard.cpp" line="89"/>
         <source>Beim einloggen in KDE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="80"/>
+        <location filename="../src/firstrunwizard.cpp" line="90"/>
         <source>Jeden Tag, ab jetzt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="81"/>
+        <location filename="../src/firstrunwizard.cpp" line="91"/>
         <source>Täglich zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="82"/>
+        <location filename="../src/firstrunwizard.cpp" line="92"/>
         <source>Wöchentlich ab jetzt, zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="83"/>
+        <location filename="../src/firstrunwizard.cpp" line="93"/>
         <source>Wöchentlich ab diesem Termin (Datum/Zeit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="84"/>
+        <location filename="../src/firstrunwizard.cpp" line="94"/>
         <source>Monatlich ab jetzt, zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="85"/>
+        <location filename="../src/firstrunwizard.cpp" line="95"/>
         <source>Monatlich ab diesem Termin (Datum/Zeit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="86"/>
+        <location filename="../src/firstrunwizard.cpp" line="96"/>
         <source>Nur einmal an diesem Termin (Datum/Zeit)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -447,173 +477,188 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="32"/>
+        <location filename="../ui/settings.ui" line="34"/>
         <source>ClamUI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="53"/>
-        <location filename="../ui/settings.ui" line="192"/>
+        <location filename="../ui/settings.ui" line="55"/>
+        <location filename="../ui/settings.ui" line="205"/>
         <source>Allgemein</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="61"/>
+        <location filename="../ui/settings.ui" line="63"/>
         <source>Die Menüleiste ein- oder ausblenden.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="64"/>
+        <location filename="../ui/settings.ui" line="66"/>
         <source>Menü anzeigen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="74"/>
+        <location filename="../ui/settings.ui" line="76"/>
+        <source>Startet ClamUI automatisch nach dem einloggen in KDE.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="79"/>
         <source>ClamUI automatisch starten.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="81"/>
+        <location filename="../ui/settings.ui" line="86"/>
+        <source>Das Programm läuft im Systemabschnitt der Kontrollleiste und es wird nach dem starten kein Fenster angezeigt. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="89"/>
         <source>Fenster beim Start nicht anzeigen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="88"/>
+        <location filename="../ui/settings.ui" line="96"/>
+        <source>Erstellt auf dem Desktop eine Verknüpfung zum Programm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="99"/>
         <source>Icon auf dem Desktop anzeigen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="95"/>
+        <location filename="../ui/settings.ui" line="106"/>
         <source>Die Werkzeugleiste ein- oder ausblenden.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="98"/>
+        <location filename="../ui/settings.ui" line="109"/>
         <source>Werkzeugleiste anzeigen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="108"/>
+        <location filename="../ui/settings.ui" line="119"/>
         <source>Die Statusleiste ein- oder ausblenden.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="111"/>
+        <location filename="../ui/settings.ui" line="122"/>
         <source>Statusleiste anzeigen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="129"/>
+        <location filename="../ui/settings.ui" line="140"/>
         <source>S&amp;prache ändern</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="143"/>
+        <location filename="../ui/settings.ui" line="154"/>
         <source>&amp;Sprache wechseln (Benötigt einen Neustart):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="169"/>
+        <location filename="../ui/settings.ui" line="182"/>
         <source>ClamAV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="213"/>
+        <location filename="../ui/settings.ui" line="226"/>
         <source>Pfade</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="224"/>
+        <location filename="../ui/settings.ui" line="237"/>
         <source>/usr/bin/clamscan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="231"/>
+        <location filename="../ui/settings.ui" line="244"/>
         <source>&amp;Pfad zum Progamm clamscan:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="241"/>
+        <location filename="../ui/settings.ui" line="254"/>
         <source>Pfad &amp;zum Progamm freshclam:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="254"/>
+        <location filename="../ui/settings.ui" line="267"/>
         <source>/usr/bin/freshclam</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="261"/>
-        <location filename="../ui/settings.ui" line="276"/>
+        <location filename="../ui/settings.ui" line="274"/>
+        <location filename="../ui/settings.ui" line="289"/>
         <source>Pfad zum ausführbarem Programm wählen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="314"/>
+        <location filename="../ui/settings.ui" line="327"/>
         <source>Clamscan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="337"/>
-        <location filename="../ui/settings.ui" line="344"/>
-        <location filename="../ui/settings.ui" line="351"/>
-        <location filename="../ui/settings.ui" line="358"/>
-        <location filename="../ui/settings.ui" line="365"/>
-        <location filename="../ui/settings.ui" line="372"/>
-        <location filename="../ui/settings.ui" line="379"/>
-        <location filename="../ui/settings.ui" line="386"/>
-        <location filename="../ui/settings.ui" line="393"/>
-        <location filename="../ui/settings.ui" line="400"/>
-        <location filename="../ui/settings.ui" line="407"/>
-        <location filename="../ui/settings.ui" line="414"/>
-        <location filename="../ui/settings.ui" line="421"/>
-        <location filename="../ui/settings.ui" line="428"/>
-        <location filename="../ui/settings.ui" line="435"/>
-        <location filename="../ui/settings.ui" line="442"/>
-        <location filename="../ui/settings.ui" line="449"/>
-        <location filename="../ui/settings.ui" line="456"/>
-        <location filename="../ui/settings.ui" line="463"/>
-        <location filename="../ui/settings.ui" line="470"/>
-        <location filename="../ui/settings.ui" line="477"/>
-        <location filename="../ui/settings.ui" line="484"/>
-        <location filename="../ui/settings.ui" line="491"/>
-        <location filename="../ui/settings.ui" line="498"/>
-        <location filename="../ui/settings.ui" line="548"/>
-        <location filename="../ui/settings.ui" line="555"/>
-        <location filename="../ui/settings.ui" line="562"/>
-        <location filename="../ui/settings.ui" line="569"/>
-        <location filename="../ui/settings.ui" line="576"/>
-        <location filename="../ui/settings.ui" line="583"/>
-        <location filename="../ui/settings.ui" line="590"/>
-        <location filename="../ui/settings.ui" line="597"/>
-        <location filename="../ui/settings.ui" line="604"/>
-        <location filename="../ui/settings.ui" line="611"/>
-        <location filename="../ui/settings.ui" line="618"/>
+        <location filename="../ui/settings.ui" line="350"/>
+        <location filename="../ui/settings.ui" line="357"/>
+        <location filename="../ui/settings.ui" line="364"/>
+        <location filename="../ui/settings.ui" line="371"/>
+        <location filename="../ui/settings.ui" line="378"/>
+        <location filename="../ui/settings.ui" line="385"/>
+        <location filename="../ui/settings.ui" line="392"/>
+        <location filename="../ui/settings.ui" line="399"/>
+        <location filename="../ui/settings.ui" line="406"/>
+        <location filename="../ui/settings.ui" line="413"/>
+        <location filename="../ui/settings.ui" line="420"/>
+        <location filename="../ui/settings.ui" line="427"/>
+        <location filename="../ui/settings.ui" line="434"/>
+        <location filename="../ui/settings.ui" line="441"/>
+        <location filename="../ui/settings.ui" line="448"/>
+        <location filename="../ui/settings.ui" line="455"/>
+        <location filename="../ui/settings.ui" line="462"/>
+        <location filename="../ui/settings.ui" line="469"/>
+        <location filename="../ui/settings.ui" line="476"/>
+        <location filename="../ui/settings.ui" line="483"/>
+        <location filename="../ui/settings.ui" line="490"/>
+        <location filename="../ui/settings.ui" line="497"/>
+        <location filename="../ui/settings.ui" line="504"/>
+        <location filename="../ui/settings.ui" line="511"/>
+        <location filename="../ui/settings.ui" line="561"/>
+        <location filename="../ui/settings.ui" line="568"/>
+        <location filename="../ui/settings.ui" line="575"/>
+        <location filename="../ui/settings.ui" line="582"/>
+        <location filename="../ui/settings.ui" line="589"/>
+        <location filename="../ui/settings.ui" line="596"/>
+        <location filename="../ui/settings.ui" line="603"/>
+        <location filename="../ui/settings.ui" line="610"/>
+        <location filename="../ui/settings.ui" line="617"/>
+        <location filename="../ui/settings.ui" line="624"/>
+        <location filename="../ui/settings.ui" line="631"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="525"/>
+        <location filename="../ui/settings.ui" line="538"/>
         <source>Freshclam</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="641"/>
+        <location filename="../ui/settings.ui" line="654"/>
         <source>Hilfe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="666"/>
+        <location filename="../ui/settings.ui" line="679"/>
         <source>Standardwerte</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="678"/>
+        <location filename="../ui/settings.ui" line="691"/>
         <source>Speichern</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="690"/>
+        <location filename="../ui/settings.ui" line="703"/>
         <source>Schließen</source>
         <translation type="unfinished"></translation>
     </message>

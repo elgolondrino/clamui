@@ -14,7 +14,9 @@
    <string>Einstellungen</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="configure"/>
+   <iconset theme="configure">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -70,6 +72,9 @@
                 </item>
                 <item row="0" column="0">
                  <widget class="QCheckBox" name="checkBox_Autostart">
+                  <property name="toolTip">
+                   <string>Startet ClamUI automatisch nach dem einloggen in KDE.</string>
+                  </property>
                   <property name="text">
                    <string>ClamUI automatisch starten.</string>
                   </property>
@@ -77,6 +82,9 @@
                 </item>
                 <item row="1" column="0">
                  <widget class="QCheckBox" name="checkBox_HideWindow">
+                  <property name="toolTip">
+                   <string>Das Programm läuft im Systemabschnitt der Kontrollleiste und es wird nach dem starten kein Fenster angezeigt. </string>
+                  </property>
                   <property name="text">
                    <string>Fenster beim Start nicht anzeigen.</string>
                   </property>
@@ -84,6 +92,9 @@
                 </item>
                 <item row="2" column="0">
                  <widget class="QCheckBox" name="checkBox_IconOnDesktop">
+                  <property name="toolTip">
+                   <string>Erstellt auf dem Desktop eine Verknüpfung zum Programm.</string>
+                  </property>
                   <property name="text">
                    <string>Icon auf dem Desktop anzeigen.</string>
                   </property>
@@ -163,7 +174,9 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="icon">
-       <iconset theme="clamav"/>
+       <iconset theme="clamav">
+        <normaloff/>
+       </iconset>
       </attribute>
       <attribute name="title">
        <string>ClamAV</string>
@@ -301,8 +314,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>831</width>
-            <height>384</height>
+            <width>86</width>
+            <height>86</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -324,8 +337,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>815</width>
-                <height>368</height>
+                <width>130</width>
+                <height>260</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -512,8 +525,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>831</width>
-            <height>384</height>
+            <width>86</width>
+            <height>86</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -535,8 +548,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>815</width>
-                <height>368</height>
+                <width>69</width>
+                <height>239</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_11">

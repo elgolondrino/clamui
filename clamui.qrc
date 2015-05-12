@@ -5,5 +5,9 @@
     <qresource prefix="/icons">
         <file>icons/png/clamui.png</file>
         <file>icons/png/clamav.png</file>
+        <file>icons/png/clamui-256.png</file>
+        <file>icons/png/clamav-256.png</file>
+        <file>icons/png/clamav-128.png</file>
+        <file>icons/png/clamui-128.png</file>
     </qresource>
 </RCC>

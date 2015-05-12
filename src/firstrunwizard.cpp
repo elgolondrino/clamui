@@ -35,7 +35,11 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
     QWizard(parent)
 {
     setupUi(this);
+    setWindowIcon(QIcon::fromTheme("tools-wizard"));
+    setFixedSize(700, 455);
 
+    page(0)->setPixmap(QWizard::WatermarkPixmap,
+                       QPixmap(QString(":/icons/icons/png/clamui-128.png")));
     page(0)->setPixmap(QWizard::LogoPixmap,
                        QPixmap(QString(":/icons/icons/png/clamui.png")));
     page(0)->setTitle(
@@ -46,6 +50,8 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
                 trUtf8("Klichen Sie auf <b>Weiter</b>, um mit der "
                        "Einrichtung zu beginnen."));
 
+    page(1)->setPixmap(QWizard::WatermarkPixmap,
+                       QPixmap(QString(":/icons/icons/png/clamav-128.png")));
     page(1)->setPixmap(QWizard::LogoPixmap,
                        QPixmap(QString(":/icons/icons/png/clamav.png")));
     page(1)->setTitle(
@@ -55,6 +61,8 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
                 trUtf8("1. Schritt: Den Virenscanner <b>ClamAV</b> "
                        "einrichten."));
 
+    page(2)->setPixmap(QWizard::WatermarkPixmap,
+                       QPixmap(QString(":/icons/icons/png/clamav-128.png")));
     page(2)->setPixmap(QWizard::LogoPixmap,
                        QPixmap(QString(":/icons/icons/png/clamav.png")));
     page(2)->setTitle(
@@ -64,6 +72,8 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
                 trUtf8("2. Schritt: Das Programm <b>FreshClam</b> "
                        "einrichten."));
 
+    page(3)->setPixmap(QWizard::WatermarkPixmap,
+                       QPixmap(QString(":/icons/icons/png/clamui-128.png")));
     page(3)->setPixmap(QWizard::LogoPixmap,
                        QPixmap(QString(":/icons/icons/png/clamui.png")));
     page(3)->setTitle(
