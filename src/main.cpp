@@ -44,10 +44,12 @@
 #include "definitionen.h"
 #include "sqlite_db.h"
 #include "clam_processes.h"
+#include "freshclamprosses.h"
+#include "firstrunwizard.h"
 
 int main(int argc, char *argv[]) {
     QDir clamDir;
-    QFile dbFile;
+    QFile dbFile, confFile;
 
     QApplication app(argc, argv);
     QTranslator myappTranslator;
@@ -104,13 +106,35 @@ int main(int argc, char *argv[]) {
         sqliteDB.connectDB();
     }
 
-    ClamUI start;
-    if (hideWindow)
-        start.hide();
-    else
-        start.show();
+    /*
+     * Check for an existing config file.
+     *
+     * If not run the wizard.
+     */
+    if (!confFile.exists(APP_CONFIG_PATH + APP_NAME + ".conf")){
 
-    return app.exec();
+        FirstRunWizard startWizard;
+        startWizard.exec();
+
+    }
+
+    /*
+     * If exists run clamui.
+     */
+    if (confFile.exists(APP_CONFIG_PATH + APP_NAME + ".conf")){
+
+        ClamUI startClamUI;
+        if (hideWindow){
+
+            startClamUI.hide();
+
+        } else {
+
+            startClamUI.show();
+        }
+        return app.exec();
+    }
+
 } // main end
 
 //--- main.cpp end ---

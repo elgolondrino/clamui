@@ -29,53 +29,29 @@
 **
 *******************************************************************************/
 
-#ifndef TABSCANSCHEDULING_H
-#define TABSCANSCHEDULING_H
-
-/* Qt Headers */
-#include <QSettings>
-#include <QFileDialog>
-#include <QProcess>
-#include <QMessageBox>
-#include <QDebug>
-#include <QSqlError>
-
-#include "definitionen.h"
-#include "sqlite_db.h"
-#include "clam_processes.h"
 #include "freshclamprosses.h"
 
-#include "ui_tabscanscheduling.h"
+FreshClamProsses::FreshClamProsses(QObject *parent) : QObject(parent){
 
-class TabScanScheduling : public QWidget, private Ui::TabScanScheduling
-{
-    Q_OBJECT
+}
 
-public:
-    explicit TabScanScheduling(QWidget *parent = 0);
+QByteArray FreshClamProsses::FreshclamDaemon(QString freshclam, QStringList arguments){
 
-protected:
-    void changeEvent(QEvent *e);
+    freshClamRunDaemon = new QProcess(this);
+    freshClamRunDaemon->start(freshclam, arguments);
 
+    QByteArray array = freshClamRunDaemon->readAll();
 
-private:
-    void createSlots();
-    void settingsRead();
-    void settingsReadDirectories();
-    void settingsReadFiles();
-    void databaseReadDirectories();
-    void databaseReadFiles();
-    void enableGroupBoxes();
+    return array;
+}
 
-    QSqlDatabase db;
+QByteArray FreshClamProsses::FreshclamManuelly(QString freshclam, QStringList arguments){
 
-private slots:
-    void settingsWrite();
-    void saveDirectories();
-    void saveFiles();
-    void removeDirectories();
-    void removeFiles();
+    freshClamRun = new QProcess(this);
+    freshClamRun->start(freshclam, arguments);
 
-};
+    QByteArray array = freshClamRun->readAll();
 
-#endif // TABSCANSCHEDULING_H
+    return array;
+}
+

@@ -35,10 +35,10 @@ Settings::Settings(QWidget *parent) : QDialog(parent){
 
     setupUi(this);
 
+    setWindowIcon(QIcon::fromTheme("configure"));
     setWindowTitle(trUtf8("%1 %2 - Einstellungen").arg(
                        APP_TITLE).arg(
                        APP_VERSION));
-//    setWindowIcon(QIcon::fromTheme("configure"));
 
     settingsRead();
     createSlots();

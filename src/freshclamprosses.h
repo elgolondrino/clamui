@@ -29,53 +29,25 @@
 **
 *******************************************************************************/
 
-#ifndef TABSCANSCHEDULING_H
-#define TABSCANSCHEDULING_H
+#ifndef FRESHCLAMPROSSES_H
+#define FRESHCLAMPROSSES_H
 
-/* Qt Headers */
-#include <QSettings>
-#include <QFileDialog>
+#include <QtCore/QObject>
+#include <QtCore/qglobal.h>
 #include <QProcess>
-#include <QMessageBox>
-#include <QDebug>
-#include <QSqlError>
+#include <QByteArray>
 
-#include "definitionen.h"
-#include "sqlite_db.h"
-#include "clam_processes.h"
-#include "freshclamprosses.h"
-
-#include "ui_tabscanscheduling.h"
-
-class TabScanScheduling : public QWidget, private Ui::TabScanScheduling
-{
+class FreshClamProsses : public QObject {
     Q_OBJECT
-
 public:
-    explicit TabScanScheduling(QWidget *parent = 0);
+    explicit FreshClamProsses(QObject *parent = 0);
 
-protected:
-    void changeEvent(QEvent *e);
-
+    QByteArray FreshclamDaemon(QString freshclam, QStringList arguments);
+    QByteArray FreshclamManuelly(QString freshclam, QStringList arguments);
 
 private:
-    void createSlots();
-    void settingsRead();
-    void settingsReadDirectories();
-    void settingsReadFiles();
-    void databaseReadDirectories();
-    void databaseReadFiles();
-    void enableGroupBoxes();
-
-    QSqlDatabase db;
-
-private slots:
-    void settingsWrite();
-    void saveDirectories();
-    void saveFiles();
-    void removeDirectories();
-    void removeFiles();
-
+    QProcess *freshClamRun;
+    QProcess *freshClamRunDaemon;
 };
 
-#endif // TABSCANSCHEDULING_H
+#endif // FRESHCLAMPROSSES_H

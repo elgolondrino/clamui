@@ -36,9 +36,6 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
 {
     setupUi(this);
 
-    createSlots();
-
-    settingsRead();
 
     /*
      * Open the SQLite3 database.
@@ -47,6 +44,22 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
     db.close();
     db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
     db.open();
+
+    settingsRead();
+    createSlots();
+
+    /*
+     * Load Scheduling values in the comboBox_Scheduling
+     */
+    comboBox_Scheduling->addItem(trUtf8("Keine automatische Prüfung"));
+    comboBox_Scheduling->addItem(trUtf8("Beim einloggen in KDE"));
+    comboBox_Scheduling->addItem(trUtf8("Jeden Tag, ab jetzt"));
+    comboBox_Scheduling->addItem(trUtf8("Täglich zu einer festgelegten Zeit"));
+    comboBox_Scheduling->addItem(trUtf8("Wöchentlich ab jetzt, zu einer festgelegten Zeit"));
+    comboBox_Scheduling->addItem(trUtf8("Wöchentlich ab diesem Termin (Datum/Zeit)"));
+    comboBox_Scheduling->addItem(trUtf8("Monatlich ab jetzt, zu einer festgelegten Zeit"));
+    comboBox_Scheduling->addItem(trUtf8("Monatlich ab diesem Termin (Datum/Zeit)"));
+    comboBox_Scheduling->addItem(trUtf8("Nur einmal an diesem Termin (Datum/Zeit)"));
 
     /*
      * Load values to the tableview.
@@ -73,15 +86,9 @@ void TabScanScheduling::createSlots(){
             this, SLOT(settingsWrite()));
     connect(spinBox_FreshClamUpdate, SIGNAL(valueChanged(int)),
             this, SLOT(settingsWrite()));
-    connect(spinBox_Hourly, SIGNAL(valueChanged(int)),
-            this, SLOT(settingsWrite()));
-    connect(timeEdit_Daily, SIGNAL(timeChanged(QTime)),
+    connect(timeEdit_ScheduleTime, SIGNAL(timeChanged(QTime)),
             this, SLOT(settingsWrite()));
     connect(checkBox_ExternalDevice, SIGNAL(clicked(bool)),
-            this, SLOT(settingsWrite()));
-    connect(radioButton_Daily, SIGNAL(clicked(bool)),
-            this, SLOT(settingsWrite()));
-    connect(radioButton_Hourly, SIGNAL(clicked(bool)),
             this, SLOT(settingsWrite()));
     connect(pushButton_DirectoriesExclude, SIGNAL(clicked(bool)),
             this, SLOT(saveDirectories()));
@@ -91,6 +98,21 @@ void TabScanScheduling::createSlots(){
             this, SLOT(removeFiles()));
     connect(pushButton_ClearListDirectories, SIGNAL(clicked(bool)),
             this, SLOT(removeDirectories()));
+    connect(groupBox_Eclude, SIGNAL(clicked(bool)),
+            this, SLOT(settingsWrite()));
+}
+
+void TabScanScheduling::enableGroupBoxes(){
+
+    if (!groupBox_Eclude->isChecked()) {
+        groupBox_ExlcludeDir->setEnabled(true);
+        groupBox_ExlcludeFile->setEnabled(true);
+        databaseReadDirectories();
+        databaseReadFiles();
+    } else {
+        groupBox_ExlcludeDir->setEnabled(false);
+        groupBox_ExlcludeFile->setEnabled(false);
+    }
 }
 
 void TabScanScheduling::settingsWrite(){
@@ -103,13 +125,36 @@ void TabScanScheduling::settingsWrite(){
     clamui_conf.endGroup();
 
     clamui_conf.beginGroup("ClamAV");
-    clamui_conf.setValue("HourInterval", spinBox_Hourly->value());
-    clamui_conf.setValue("DayInterval", timeEdit_Daily->time());
+    clamui_conf.setValue("TimeInterval", timeEdit_ScheduleTime->time());
     clamui_conf.setValue("ScanExternal", checkBox_ExternalDevice->isChecked());
-    clamui_conf.setValue("ScanDaily", radioButton_Daily->isChecked());
-    clamui_conf.setValue("ScanHourly", radioButton_Hourly->isChecked());
+    clamui_conf.setValue("Scan_All", groupBox_Eclude->isChecked());
     clamui_conf.endGroup();
 
+    settingsRead();
+
+}
+
+void TabScanScheduling::settingsRead(){
+
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+    clamui_conf.beginGroup("Freshclam");
+    checkBox_FreshClam->setChecked(clamui_conf.value("Start_As_Demon", false).toBool());
+    spinBox_FreshClamUpdate->setValue(clamui_conf.value("Update_Interval", 12).toInt());
+    clamui_conf.endGroup();
+
+    clamui_conf.beginGroup("ClamAV");
+    timeEdit_ScheduleTime->setTime(clamui_conf.value("DayInterval", "03:00").toTime());
+    checkBox_ExternalDevice->setChecked(clamui_conf.value("ScanExternal", false).toBool());
+    groupBox_Eclude->setChecked(clamui_conf.value("Scan_All", true).toBool());
+    clamui_conf.endGroup();
+
+    if (checkBox_FreshClam->isChecked()) {
+        label_2->setEnabled(true);
+        spinBox_FreshClamUpdate->setEnabled(true);
+    }
+
+    enableGroupBoxes();
 }
 
 /*
@@ -256,29 +301,6 @@ void TabScanScheduling::removeFiles(){
         break;
     default:
         break;
-    }
-}
-
-void TabScanScheduling::settingsRead(){
-
-    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
-                             APP_TITLE, APP_NAME);
-    clamui_conf.beginGroup("Freshclam");
-    checkBox_FreshClam->setChecked(clamui_conf.value("Start_As_Demon", false).toBool());
-    spinBox_FreshClamUpdate->setValue(clamui_conf.value("Update_Interval", 12).toInt());
-    clamui_conf.endGroup();
-
-    clamui_conf.beginGroup("ClamAV");
-    spinBox_Hourly->setValue(clamui_conf.value("HourInterval", 6).toInt());
-    timeEdit_Daily->setTime(clamui_conf.value("DayInterval", "03:00").toTime());
-    checkBox_ExternalDevice->setChecked(clamui_conf.value("ScanExternal", false).toBool());
-    radioButton_Daily->setChecked(clamui_conf.value("ScanDaily", true).toBool());
-    radioButton_Hourly->setChecked(clamui_conf.value("ScanHourly", false).toBool());
-    clamui_conf.endGroup();
-
-    if (checkBox_FreshClam->isChecked()) {
-        label_2->setEnabled(true);
-        spinBox_FreshClamUpdate->setEnabled(true);
     }
 }
 

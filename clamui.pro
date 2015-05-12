@@ -22,6 +22,84 @@ target.path += /usr/bin
 TARGET = clamui
 
 CONFIG += qt
+DEPENDPATH += . \
+    gui \
+    src \
+    doc \
+    icaons \
+    ui \
+    translations
+
+HEADERS += src/definitionen.h \
+    src/about.h \
+    src/clamui.h \
+    src/settings.h \
+    src/tabvirusscan.h \
+    src/tabvirusdb.h \
+    src/tabvirusquarantine.h \
+    src/tabscanscheduling.h \
+    src/tababoutclamav.h \
+    src/languagetools.h \
+    src/sqlite_db.h \
+    src/clam_processes.h \
+    src/freshclamprosses.h \
+    src/firstrunwizard.h
+
+SOURCES += src/about.cpp \
+    src/main.cpp \
+    src/clamui.cpp \
+    src/settings.cpp \
+    src/tabvirusscan.cpp \
+    src/tabvirusdb.cpp \
+    src/tabvirusquarantine.cpp \
+    src/tabscanscheduling.cpp \
+    src/tababoutclamav.cpp \
+    src/languagetools.cpp \
+    src/sqlite_db.cpp \
+    src/clam_processes.cpp \
+    src/freshclamprosses.cpp \
+    src/firstrunwizard.cpp
+
+FORMS += ui/about.ui \
+    ui/clamui.ui \
+    ui/settings.ui \
+    ui/tabvirusscan.ui \
+    ui/tabvirusdb.ui \
+    ui/tabvirusquarantine.ui \
+    ui/tabscanscheduling.ui \
+    ui/tababoutclamav.ui \
+    ui/firstrunwizard.ui
+
+OTHER_FILES += ChangeLog \
+    INSTALL \
+    README.md \
+    NEWS \
+    TODO \
+    my_rpm \
+    AUTHORS \
+    clamui.desktop \
+    clamui.spec \
+    translations/translation_info.txt \
+    scripts/Virusscan.desktop
+
+RESOURCES += clamui.qrc
+
+TRANSLATIONS += translations/clamui_de.ts \
+    translations/clamui_en.ts
+
+DISTFILES += clamui.desktop \
+    translations/clamui_de.qm \
+    translations/clamui_en.qm \
+    AUTHORS \
+    ChangeLog \
+    LICENSE \
+    INSTALL \
+    NEWS \
+    README.md \
+    TODO \
+    clamui.spec \
+    translations/translation_info.txt \
+    scripts/Virusscan.desktop
 
 # #### Programmicons
 pixmap.path += /usr/share/pixmaps/
@@ -77,74 +155,3 @@ INSTALLS += target \
     translationDE \
     translationEN \
     pixmap
-DEPENDPATH += . \
-    gui \
-    src \
-    doc \
-    translations \
-    debian
-HEADERS += src/definitionen.h \
-    src/about.h \
-    src/clamui.h \
-    src/settings.h \
-    src/tabvirusscan.h \
-    src/tabvirusdb.h \
-    src/tabvirusquarantine.h \
-    src/tabscanscheduling.h \
-    src/tababoutclamav.h \
-    src/languagetools.h \
-    src/sqlite_db.h \
-    src/clam_processes.h
-
-SOURCES += src/about.cpp \
-    src/main.cpp \
-    src/clamui.cpp \
-    src/settings.cpp \
-    src/tabvirusscan.cpp \
-    src/tabvirusdb.cpp \
-    src/tabvirusquarantine.cpp \
-    src/tabscanscheduling.cpp \
-    src/tababoutclamav.cpp \
-    src/languagetools.cpp \
-    src/sqlite_db.cpp \
-    src/clam_processes.cpp
-    
-FORMS += ui/about.ui \
-    ui/clamui.ui \
-    ui/settings.ui \
-    ui/tabvirusscan.ui \
-    ui/tabvirusdb.ui \
-    ui/tabvirusquarantine.ui \
-    ui/tabscanscheduling.ui \
-    ui/tababoutclamav.ui
-    
-OTHER_FILES += ChangeLog \
-    INSTALL \
-    README.md \
-    NEWS \
-    TODO \
-    my_rpm \
-    AUTHORS \
-    clamui.desktop \
-    clamui.spec \
-    translations/translation_info.txt \
-    scripts/Virusscan.desktop
-    
-RESOURCES += clamui.qrc
-
-TRANSLATIONS += translations/clamui_de.ts \
-    translations/clamui_en.ts 
-    
-DISTFILES += clamui.desktop \
-    translations/clamui_de.qm \
-    translations/clamui_en.qm \
-    AUTHORS \
-    ChangeLog \
-    LICENSE \
-    INSTALL \
-    NEWS \
-    README.md \
-    TODO \
-    clamui.spec \
-    translations/translation_info.txt \
-    scripts/Virusscan.desktop

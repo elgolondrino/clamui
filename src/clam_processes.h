@@ -37,13 +37,11 @@
 #include <QProcess>
 #include <QByteArray>
 
-class Clam_Processes : public QProcess
-{
+class Clam_Processes : public QObject {
+    Q_OBJECT
 public:
-    Clam_Processes();
+    explicit Clam_Processes(QObject *parent = 0);
 
-    QByteArray FreshclamDemon(QString freshclam, QStringList list);
-    QByteArray FreshclamManuelly(QString freshclam, QStringList list);
     QByteArray ClamScan(QString clamscan, QStringList list);
 };
 

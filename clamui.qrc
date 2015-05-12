@@ -1,6 +1,9 @@
 <RCC>
-    <qresource prefix="/images"/>
     <qresource prefix="/translations">
         <file>translations/translation_info.txt</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file>icons/png/clamui.png</file>
+        <file>icons/png/clamav.png</file>
     </qresource>
 </RCC>

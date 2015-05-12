@@ -29,53 +29,20 @@
 **
 *******************************************************************************/
 
-#ifndef TABSCANSCHEDULING_H
-#define TABSCANSCHEDULING_H
+#ifndef FIRSTRUNWIZARD_H
+#define FIRSTRUNWIZARD_H
 
-/* Qt Headers */
-#include <QSettings>
-#include <QFileDialog>
-#include <QProcess>
-#include <QMessageBox>
-#include <QDebug>
-#include <QSqlError>
+#include "ui_firstrunwizard.h"
 
-#include "definitionen.h"
-#include "sqlite_db.h"
-#include "clam_processes.h"
-#include "freshclamprosses.h"
-
-#include "ui_tabscanscheduling.h"
-
-class TabScanScheduling : public QWidget, private Ui::TabScanScheduling
+class FirstRunWizard : public QWizard, private Ui::FirstRunWizard
 {
     Q_OBJECT
 
 public:
-    explicit TabScanScheduling(QWidget *parent = 0);
+    explicit FirstRunWizard(QWidget *parent = 0);
 
 protected:
     void changeEvent(QEvent *e);
-
-
-private:
-    void createSlots();
-    void settingsRead();
-    void settingsReadDirectories();
-    void settingsReadFiles();
-    void databaseReadDirectories();
-    void databaseReadFiles();
-    void enableGroupBoxes();
-
-    QSqlDatabase db;
-
-private slots:
-    void settingsWrite();
-    void saveDirectories();
-    void saveFiles();
-    void removeDirectories();
-    void removeFiles();
-
 };
 
-#endif // TABSCANSCHEDULING_H
+#endif // FIRSTRUNWIZARD_H

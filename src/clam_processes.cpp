@@ -31,24 +31,8 @@
 
 #include "clam_processes.h"
 
-Clam_Processes::Clam_Processes(){
+Clam_Processes::Clam_Processes(QObject *parent) : QObject(parent){
 
-}
-
-QByteArray Clam_Processes::FreshclamDemon(QString freshclam, QStringList list){
-
-    QByteArray array;
-
-
-    return array;
-}
-
-QByteArray Clam_Processes::FreshclamManuelly(QString freshclam, QStringList list){
-
-    QByteArray array;
-
-
-    return array;
 }
 
 QByteArray Clam_Processes::ClamScan(QString clamscan, QStringList list){
