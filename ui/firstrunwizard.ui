@@ -12,8 +12,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>416</width>
-    <height>155</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -34,25 +34,25 @@
    <set>QWizard::HaveHelpButton|QWizard::NoBackButtonOnStartPage</set>
   </property>
   <widget class="QWizardPage" name="wizardPage1">
-   <layout class="QFormLayout" name="formLayout">
-    <item row="1" column="0" colspan="2">
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>2. Schritt: Das Programm &lt;b&gt;FreshClam&lt;/b&gt; einrichten.</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="2">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
      <widget class="QLabel" name="label">
       <property name="text">
        <string>1. Schritt: Den Virenscanner &lt;b&gt;ClamAV&lt;/b&gt; einrichten.</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="0" colspan="2">
-     <widget class="QLabel" name="label_3">
+    <item>
+     <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>3. Schritt: Ihre Angaben überprüfen und die Konfiguration abschließen.</string>
+       <string>2. Schritt: Das Programm &lt;b&gt;FreshClam&lt;/b&gt; einrichten.</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>3. Schritt: Das Programmverzeichnis setzen.</string>
       </property>
      </widget>
     </item>
@@ -287,7 +287,82 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWizardPage" name="wizardPage_2"/>
+  <widget class="QWizardPage" name="wizardPage_3">
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Programmpfad setzen</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,0">
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_ProgramPath">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../clamui.qrc">:/icons/icons/breeze/actions/toolbar/dialog-close.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QComboBox" name="comboBox_ProgramPath">
+           <item>
+            <property name="text">
+             <string>/usr/bin/</string>
+            </property>
+            <property name="icon">
+             <iconset theme="folder">
+              <normaloff/>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>/usr/local/bin/</string>
+            </property>
+            <property name="icon">
+             <iconset theme="folder">
+              <normaloff/>
+             </iconset>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>212</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_TextFinished">
+      <property name="text">
+       <string>&lt;b&gt;Herzlichen Glückwunsch!&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
+
+Alle benötigten Einstellungen wurden vorgenommen. Klicken Sie nun auf &lt;b&gt;Abschließen&lt;/b&gt;, um ClamUI zu starten.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>checkBox_Autostart</tabstop>
@@ -300,7 +375,9 @@
   <tabstop>checkBox_FreshClam</tabstop>
   <tabstop>spinBox_FreshClamUpdate</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../clamui.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>checkBox_FreshClam</sender>

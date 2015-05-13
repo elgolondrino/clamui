@@ -270,125 +270,132 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="39"/>
+        <location filename="../ui/firstrunwizard.ui" line="48"/>
         <location filename="../src/firstrunwizard.cpp" line="72"/>
         <source>2. Schritt: Das Programm &lt;b&gt;FreshClam&lt;/b&gt; einrichten.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="53"/>
-        <source>3. Schritt: Ihre Angaben überprüfen und die Konfiguration abschließen.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/firstrunwizard.ui" line="92"/>
-        <location filename="../ui/firstrunwizard.ui" line="95"/>
+        <location filename="../ui/firstrunwizard.ui" line="94"/>
+        <location filename="../ui/firstrunwizard.ui" line="97"/>
         <source>Externe Datenträger bei Anschluss automatisch prüfen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="64"/>
+        <location filename="../ui/firstrunwizard.ui" line="66"/>
         <source>Ausführungsoptionen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="72"/>
+        <location filename="../ui/firstrunwizard.ui" line="55"/>
+        <source>3. Schritt: Das Programmverzeichnis setzen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="74"/>
         <source>Das Programm läuft im Systemabschnitt der Kontrollleiste und es wird nach dem starten kein Fenster angezeigt. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="75"/>
+        <location filename="../ui/firstrunwizard.ui" line="77"/>
         <source>Fenster beim Start nicht anzeigen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="82"/>
+        <location filename="../ui/firstrunwizard.ui" line="84"/>
         <source>Startet ClamUI automatisch nach dem einloggen in KDE.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="85"/>
+        <location filename="../ui/firstrunwizard.ui" line="87"/>
         <source>ClamUI automatisch starten.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="102"/>
+        <location filename="../ui/firstrunwizard.ui" line="104"/>
         <source>Erstellt auf dem Desktop eine Verknüpfung zum Programm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="105"/>
+        <location filename="../ui/firstrunwizard.ui" line="107"/>
         <source>Icon auf dem Desktop anzeigen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="114"/>
+        <location filename="../ui/firstrunwizard.ui" line="116"/>
         <source>ClamAV Prüfungsinterval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="122"/>
+        <location filename="../ui/firstrunwizard.ui" line="124"/>
         <source>Viren&amp;suche festlegen:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="168"/>
+        <location filename="../ui/firstrunwizard.ui" line="170"/>
         <source>dd.MM.yyyy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="178"/>
+        <location filename="../ui/firstrunwizard.ui" line="180"/>
         <source>Datu&amp;m:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="188"/>
-        <source>Uhr&amp;zeit:</source>
+        <location filename="../ui/firstrunwizard.ui" line="295"/>
+        <source>Programmpfad setzen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="228"/>
+        <location filename="../ui/firstrunwizard.ui" line="314"/>
+        <source>/usr/bin/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="324"/>
+        <source>/usr/local/bin/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="355"/>
+        <source>&lt;b&gt;Herzlichen Glückwunsch!&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
+
+Alle benötigten Einstellungen wurden vorgenommen. Klicken Sie nun auf &lt;b&gt;Abschließen&lt;/b&gt;, um ClamUI zu starten.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="230"/>
         <source>Automatisches aktualisieren der Virendatenbank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="236"/>
-        <source>Freshclam Status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/firstrunwizard.ui" line="246"/>
+        <location filename="../ui/firstrunwizard.ui" line="260"/>
         <source>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktualität der Virendefinitionen. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="249"/>
+        <location filename="../ui/firstrunwizard.ui" line="263"/>
         <source>freshclam im Hintergrund starten.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="259"/>
-        <location filename="../ui/firstrunwizard.ui" line="272"/>
+        <location filename="../ui/firstrunwizard.ui" line="241"/>
+        <location filename="../ui/firstrunwizard.ui" line="276"/>
         <source>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="262"/>
+        <location filename="../ui/firstrunwizard.ui" line="190"/>
+        <source>&amp;Uhrzeit:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="279"/>
         <source>Wie oft am Tag aktuallisieren:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="291"/>
-        <source>PushButton</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/firstrunwizard.ui" line="298"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/firstrunwizard.ui" line="46"/>
+        <location filename="../ui/firstrunwizard.ui" line="41"/>
         <location filename="../src/firstrunwizard.cpp" line="61"/>
         <source>1. Schritt: Den Virenscanner &lt;b&gt;ClamAV&lt;/b&gt; einrichten.</source>
         <translation type="unfinished"></translation>
@@ -415,56 +422,56 @@ Vielen Dank im voraus.</source>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="80"/>
-        <source>Abschluss der Konfiguration.&lt;br /&gt;</source>
+        <source>Verzeichnis zu den Programmen setzen.&lt;br /&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="82"/>
-        <source>3. Schritt: Ihre Angaben überprüfen und anschließend auf &lt;b&gt;Abschließen&lt;/b&gt; klicken.</source>
+        <source>3. Schritt: Wählen Sie das Verzeichnis aus, in den sich die Programme befinden</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="88"/>
+        <location filename="../src/firstrunwizard.cpp" line="97"/>
         <source>Keine automatische Prüfung</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="89"/>
+        <location filename="../src/firstrunwizard.cpp" line="98"/>
         <source>Beim einloggen in KDE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="90"/>
+        <location filename="../src/firstrunwizard.cpp" line="99"/>
         <source>Jeden Tag, ab jetzt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="91"/>
+        <location filename="../src/firstrunwizard.cpp" line="100"/>
         <source>Täglich zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="92"/>
+        <location filename="../src/firstrunwizard.cpp" line="101"/>
         <source>Wöchentlich ab jetzt, zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="93"/>
+        <location filename="../src/firstrunwizard.cpp" line="102"/>
         <source>Wöchentlich ab diesem Termin (Datum/Zeit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="94"/>
+        <location filename="../src/firstrunwizard.cpp" line="103"/>
         <source>Monatlich ab jetzt, zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="95"/>
+        <location filename="../src/firstrunwizard.cpp" line="104"/>
         <source>Monatlich ab diesem Termin (Datum/Zeit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="96"/>
+        <location filename="../src/firstrunwizard.cpp" line="105"/>
         <source>Nur einmal an diesem Termin (Datum/Zeit)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -568,97 +575,86 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="237"/>
-        <source>/usr/bin/clamscan</source>
+        <location filename="../ui/settings.ui" line="235"/>
+        <source>/usr/bin/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="244"/>
-        <source>&amp;Pfad zum Progamm clamscan:</source>
+        <location filename="../ui/settings.ui" line="245"/>
+        <source>/usr/local/bin/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="254"/>
-        <source>Pfad &amp;zum Progamm freshclam:</source>
+        <location filename="../ui/settings.ui" line="258"/>
+        <source>&amp;Pfad zu Progammen:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="267"/>
-        <source>/usr/bin/freshclam</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/settings.ui" line="274"/>
-        <location filename="../ui/settings.ui" line="289"/>
-        <source>Pfad zum ausführbarem Programm wählen.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/settings.ui" line="327"/>
+        <location filename="../ui/settings.ui" line="298"/>
         <source>Clamscan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="350"/>
-        <location filename="../ui/settings.ui" line="357"/>
-        <location filename="../ui/settings.ui" line="364"/>
-        <location filename="../ui/settings.ui" line="371"/>
-        <location filename="../ui/settings.ui" line="378"/>
-        <location filename="../ui/settings.ui" line="385"/>
-        <location filename="../ui/settings.ui" line="392"/>
-        <location filename="../ui/settings.ui" line="399"/>
-        <location filename="../ui/settings.ui" line="406"/>
-        <location filename="../ui/settings.ui" line="413"/>
-        <location filename="../ui/settings.ui" line="420"/>
-        <location filename="../ui/settings.ui" line="427"/>
-        <location filename="../ui/settings.ui" line="434"/>
-        <location filename="../ui/settings.ui" line="441"/>
-        <location filename="../ui/settings.ui" line="448"/>
-        <location filename="../ui/settings.ui" line="455"/>
-        <location filename="../ui/settings.ui" line="462"/>
-        <location filename="../ui/settings.ui" line="469"/>
-        <location filename="../ui/settings.ui" line="476"/>
-        <location filename="../ui/settings.ui" line="483"/>
-        <location filename="../ui/settings.ui" line="490"/>
-        <location filename="../ui/settings.ui" line="497"/>
-        <location filename="../ui/settings.ui" line="504"/>
-        <location filename="../ui/settings.ui" line="511"/>
-        <location filename="../ui/settings.ui" line="561"/>
-        <location filename="../ui/settings.ui" line="568"/>
-        <location filename="../ui/settings.ui" line="575"/>
-        <location filename="../ui/settings.ui" line="582"/>
-        <location filename="../ui/settings.ui" line="589"/>
-        <location filename="../ui/settings.ui" line="596"/>
-        <location filename="../ui/settings.ui" line="603"/>
-        <location filename="../ui/settings.ui" line="610"/>
-        <location filename="../ui/settings.ui" line="617"/>
-        <location filename="../ui/settings.ui" line="624"/>
-        <location filename="../ui/settings.ui" line="631"/>
+        <location filename="../ui/settings.ui" line="321"/>
+        <location filename="../ui/settings.ui" line="328"/>
+        <location filename="../ui/settings.ui" line="335"/>
+        <location filename="../ui/settings.ui" line="342"/>
+        <location filename="../ui/settings.ui" line="349"/>
+        <location filename="../ui/settings.ui" line="356"/>
+        <location filename="../ui/settings.ui" line="363"/>
+        <location filename="../ui/settings.ui" line="370"/>
+        <location filename="../ui/settings.ui" line="377"/>
+        <location filename="../ui/settings.ui" line="384"/>
+        <location filename="../ui/settings.ui" line="391"/>
+        <location filename="../ui/settings.ui" line="398"/>
+        <location filename="../ui/settings.ui" line="405"/>
+        <location filename="../ui/settings.ui" line="412"/>
+        <location filename="../ui/settings.ui" line="419"/>
+        <location filename="../ui/settings.ui" line="426"/>
+        <location filename="../ui/settings.ui" line="433"/>
+        <location filename="../ui/settings.ui" line="440"/>
+        <location filename="../ui/settings.ui" line="447"/>
+        <location filename="../ui/settings.ui" line="454"/>
+        <location filename="../ui/settings.ui" line="461"/>
+        <location filename="../ui/settings.ui" line="468"/>
+        <location filename="../ui/settings.ui" line="475"/>
+        <location filename="../ui/settings.ui" line="482"/>
+        <location filename="../ui/settings.ui" line="532"/>
+        <location filename="../ui/settings.ui" line="539"/>
+        <location filename="../ui/settings.ui" line="546"/>
+        <location filename="../ui/settings.ui" line="553"/>
+        <location filename="../ui/settings.ui" line="560"/>
+        <location filename="../ui/settings.ui" line="567"/>
+        <location filename="../ui/settings.ui" line="574"/>
+        <location filename="../ui/settings.ui" line="581"/>
+        <location filename="../ui/settings.ui" line="588"/>
+        <location filename="../ui/settings.ui" line="595"/>
+        <location filename="../ui/settings.ui" line="602"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="538"/>
+        <location filename="../ui/settings.ui" line="509"/>
         <source>Freshclam</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="654"/>
+        <location filename="../ui/settings.ui" line="625"/>
         <source>Hilfe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="679"/>
+        <location filename="../ui/settings.ui" line="650"/>
         <source>Standardwerte</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="691"/>
+        <location filename="../ui/settings.ui" line="662"/>
         <source>Speichern</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="703"/>
+        <location filename="../ui/settings.ui" line="674"/>
         <source>Schließen</source>
         <translation type="unfinished"></translation>
     </message>
@@ -836,65 +832,65 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="54"/>
+        <location filename="../src/tabscanscheduling.cpp" line="73"/>
         <source>Keine automatische Prüfung</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="55"/>
+        <location filename="../src/tabscanscheduling.cpp" line="74"/>
         <source>Beim einloggen in KDE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="56"/>
+        <location filename="../src/tabscanscheduling.cpp" line="75"/>
         <source>Jeden Tag, ab jetzt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="57"/>
+        <location filename="../src/tabscanscheduling.cpp" line="76"/>
         <source>Täglich zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="58"/>
+        <location filename="../src/tabscanscheduling.cpp" line="77"/>
         <source>Wöchentlich ab jetzt, zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="59"/>
+        <location filename="../src/tabscanscheduling.cpp" line="78"/>
         <source>Wöchentlich ab diesem Termin (Datum/Zeit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="60"/>
+        <location filename="../src/tabscanscheduling.cpp" line="79"/>
         <source>Monatlich ab jetzt, zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="61"/>
+        <location filename="../src/tabscanscheduling.cpp" line="80"/>
         <source>Monatlich ab diesem Termin (Datum/Zeit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="62"/>
+        <location filename="../src/tabscanscheduling.cpp" line="81"/>
         <source>Nur einmal an diesem Termin (Datum/Zeit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="211"/>
-        <location filename="../src/tabscanscheduling.cpp" line="283"/>
+        <location filename="../src/tabscanscheduling.cpp" line="275"/>
+        <location filename="../src/tabscanscheduling.cpp" line="347"/>
         <source>Löschen bestätigen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="212"/>
-        <location filename="../src/tabscanscheduling.cpp" line="284"/>
+        <location filename="../src/tabscanscheduling.cpp" line="276"/>
+        <location filename="../src/tabscanscheduling.cpp" line="348"/>
         <source>Möchten Sie die den Eintrag &lt;b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="214"/>
-        <location filename="../src/tabscanscheduling.cpp" line="286"/>
+        <location filename="../src/tabscanscheduling.cpp" line="278"/>
+        <location filename="../src/tabscanscheduling.cpp" line="350"/>
         <source>&lt;/b&gt; wirklich löschen?</source>
         <translation type="unfinished"></translation>
     </message>

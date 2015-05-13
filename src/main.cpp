@@ -127,12 +127,13 @@ int main(int argc, char *argv[]) {
         if (hideWindow){
 
             startClamUI.hide();
+            return app.exec();
 
         } else {
 
             startClamUI.show();
+            return app.exec();
         }
-        return app.exec();
     }
 
 } // main end

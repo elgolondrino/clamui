@@ -83,8 +83,8 @@ void Settings::settingsWrite(){
     clamui_conf.endGroup();
 
     clamui_conf.beginGroup("ClamAV");
-    clamui_conf.setValue("Clamscan_Path", lineEdit_BinClamScan->text());
-    clamui_conf.setValue("Freshclam_Path", lineEdit_BinFreshClam->text());
+    clamui_conf.setValue("Program_Path_Id", comboBox_ProgramPath->currentIndex());
+    clamui_conf.setValue("Program_Path", comboBox_ProgramPath->currentText());
     clamui_conf.endGroup();
 }
 
@@ -115,10 +115,10 @@ void Settings::settingsRead(){
     clamui_conf.endGroup();
 
     clamui_conf.beginGroup("ClamAV");
-    lineEdit_BinClamScan->setText(
-                clamui_conf.value("Clamscan_Path", "/usr/bin/clamscan").toString());
-    lineEdit_BinFreshClam->setText(
-                clamui_conf.value("Freshclam_Path", "/usr/bin/freshclam").toString());
+    comboBox_ProgramPath->setCurrentIndex(
+                clamui_conf.value("Program_Path_Id", 0).toInt());
+    comboBox_ProgramPath->setCurrentText(
+                clamui_conf.value("Program_Path", "/usr/bin/").toString());
     clamui_conf.endGroup();
 }
 
@@ -149,8 +149,8 @@ void Settings::settingsDefault(){
 }
 
 void Settings::settingsDefaultClamAV(){
-    lineEdit_BinClamScan->setText("/usr/bin/clamscan");
-    lineEdit_BinFreshClam->setText("/usr/bin/freshclam");
+    comboBox_ProgramPath->setCurrentIndex(0);
+    comboBox_ProgramPath->setCurrentText("/usr/bin/");
 }
 
 void Settings::settingsDefaultClamUI(){

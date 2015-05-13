@@ -219,82 +219,53 @@
                 <height>368</height>
                </rect>
               </property>
-              <layout class="QVBoxLayout" name="verticalLayout_9">
-               <item>
+              <layout class="QFormLayout" name="formLayout_2">
+               <item row="0" column="0" colspan="2">
                 <widget class="QGroupBox" name="groupBox">
                  <property name="title">
                   <string>Pfade</string>
                  </property>
-                 <layout class="QFormLayout" name="formLayout_2">
-                  <item row="0" column="0" colspan="2">
-                   <layout class="QGridLayout" name="gridLayout_2">
+                 <layout class="QHBoxLayout" name="horizontalLayout_3">
+                  <item>
+                   <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,1,0">
                     <item row="0" column="1">
-                     <widget class="QLineEdit" name="lineEdit_BinClamScan">
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="placeholderText">
-                       <string>/usr/bin/clamscan</string>
-                      </property>
+                     <widget class="QComboBox" name="comboBox_ProgramPath">
+                      <item>
+                       <property name="text">
+                        <string>/usr/bin/</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="folder">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>/usr/local/bin/</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="folder">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
                      </widget>
                     </item>
                     <item row="0" column="0">
                      <widget class="QLabel" name="label_2">
                       <property name="text">
-                       <string>&amp;Pfad zum Progamm clamscan:</string>
-                      </property>
-                      <property name="buddy">
-                       <cstring>lineEdit_BinClamScan</cstring>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0">
-                     <widget class="QLabel" name="label_3">
-                      <property name="text">
-                       <string>Pfad &amp;zum Progamm freshclam:</string>
-                      </property>
-                      <property name="buddy">
-                       <cstring>lineEdit_BinFreshClam</cstring>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="1">
-                     <widget class="QLineEdit" name="lineEdit_BinFreshClam">
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="placeholderText">
-                       <string>/usr/bin/freshclam</string>
+                       <string>&amp;Pfad zu Progammen:</string>
                       </property>
                      </widget>
                     </item>
                     <item row="0" column="2">
-                     <widget class="QPushButton" name="pushButton_BinClamScan">
-                      <property name="toolTip">
-                       <string>Pfad zum ausführbarem Programm wählen.</string>
-                      </property>
+                     <widget class="QLabel" name="label_ProgramPath">
                       <property name="text">
                        <string/>
                       </property>
-                      <property name="icon">
-                       <iconset theme="folder">
-                        <normaloff/>
-                       </iconset>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="2">
-                     <widget class="QPushButton" name="pushButton_BinFreshClam">
-                      <property name="toolTip">
-                       <string>Pfad zum ausführbarem Programm wählen.</string>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="icon">
-                       <iconset theme="folder">
-                        <normaloff/>
-                       </iconset>
+                      <property name="pixmap">
+                       <pixmap resource="../clamui.qrc">:/icons/icons/breeze/actions/toolbar/dialog-close.svg</pixmap>
                       </property>
                      </widget>
                     </item>
@@ -314,7 +285,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>86</width>
+            <width>96</width>
             <height>86</height>
            </rect>
           </property>
@@ -525,7 +496,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>86</width>
+            <width>96</width>
             <height>86</height>
            </rect>
           </property>
@@ -548,7 +519,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>69</width>
+                <width>96</width>
                 <height>239</height>
                </rect>
               </property>
@@ -729,6 +700,8 @@
   <tabstop>pushButton_Save</tabstop>
   <tabstop>pushButton_Close</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../clamui.qrc"/>
+ </resources>
  <connections/>
 </ui>

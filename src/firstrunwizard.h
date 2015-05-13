@@ -33,6 +33,7 @@
 #define FIRSTRUNWIZARD_H
 
 #include <QSettings>
+#include <QFile>
 
 
 #include "definitionen.h"
@@ -52,6 +53,7 @@ protected:
 private slots:
     void settingsWrite();
     void slotComboBoxSchedulingIndexChanged();
+    void slotCheckPath();
 };
 
 #endif // FIRSTRUNWIZARD_H

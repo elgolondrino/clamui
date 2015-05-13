@@ -39,7 +39,7 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
     setFixedSize(700, 455);
 
     page(0)->setPixmap(QWizard::WatermarkPixmap,
-                       QPixmap(QString(":/icons/icons/png/clamui-128.png")));
+                       QPixmap(QString(":/icons/icons/png/clamav-128.png")));
     page(0)->setPixmap(QWizard::LogoPixmap,
                        QPixmap(QString(":/icons/icons/png/clamui.png")));
     page(0)->setTitle(
@@ -53,7 +53,7 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
     page(1)->setPixmap(QWizard::WatermarkPixmap,
                        QPixmap(QString(":/icons/icons/png/clamav-128.png")));
     page(1)->setPixmap(QWizard::LogoPixmap,
-                       QPixmap(QString(":/icons/icons/png/clamav.png")));
+                       QPixmap(QString(":/icons/icons/png/clamui.png")));
     page(1)->setTitle(
                 trUtf8("Angeben, wie und wann der Virenscanner "
                        "ausgeführt werden soll.<br />"));
@@ -64,7 +64,7 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
     page(2)->setPixmap(QWizard::WatermarkPixmap,
                        QPixmap(QString(":/icons/icons/png/clamav-128.png")));
     page(2)->setPixmap(QWizard::LogoPixmap,
-                       QPixmap(QString(":/icons/icons/png/clamav.png")));
+                       QPixmap(QString(":/icons/icons/png/clamui.png")));
     page(2)->setTitle(
                 trUtf8("Den Aktualisierungsinterval für die "
                        "Virendatenbank einrichten.<br />"));
@@ -73,15 +73,24 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
                        "einrichten."));
 
     page(3)->setPixmap(QWizard::WatermarkPixmap,
-                       QPixmap(QString(":/icons/icons/png/clamui-128.png")));
+                       QPixmap(QString(":/icons/icons/png/clamav-128.png")));
     page(3)->setPixmap(QWizard::LogoPixmap,
                        QPixmap(QString(":/icons/icons/png/clamui.png")));
     page(3)->setTitle(
-                trUtf8("Abschluss der Konfiguration.<br />"));
+                trUtf8("Verzeichnis zu den Programmen setzen.<br />"));
     page(3)->setSubTitle(
-                trUtf8("3. Schritt: Ihre Angaben überprüfen und "
-                       "anschließend auf <b>Abschließen</b> klicken."));
+                trUtf8("3. Schritt: Wählen Sie das Verzeichnis aus, "
+                       "in den sich die Programme befinden"));
 
+//    page(4)->setPixmap(QWizard::WatermarkPixmap,
+//                       QPixmap(QString(":/icons/icons/png/clamui-128.png")));
+//    page(4)->setPixmap(QWizard::LogoPixmap,
+//                       QPixmap(QString(":/icons/icons/png/clamui.png")));
+//    page(4)->setTitle(
+//                trUtf8("Abschluss der Konfiguration.<br />"));
+//    page(4)->setSubTitle(
+//                trUtf8("4. Schritt: Ihre Angaben überprüfen und "
+//                       "anschließend auf <b>Abschließen</b> klicken."));
     /*
      * Load Scheduling values in the comboBox_Scheduling
      */
@@ -105,10 +114,17 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
         timeEdit_ScheduleTime->setEnabled(false);
     }
 
+    button(QWizard::FinishButton)->setEnabled(false);
+    label_TextFinished->setHidden(true);
+
     connect(comboBox_Scheduling, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotComboBoxSchedulingIndexChanged()));
     connect(button(QWizard::FinishButton), SIGNAL(clicked(bool)),
             this, SLOT(settingsWrite()));
+    connect(this, SIGNAL(currentIdChanged(int)),
+            this, SLOT(slotCheckPath()));
+    connect(comboBox_ProgramPath, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotCheckPath()));
 }
 
 void FirstRunWizard::changeEvent(QEvent *e){
@@ -120,6 +136,26 @@ void FirstRunWizard::changeEvent(QEvent *e){
         break;
     default:
         break;
+    }
+}
+
+void FirstRunWizard::slotCheckPath(){
+
+    if (currentId() == 3){
+        QString path = comboBox_ProgramPath->currentText();
+        QFile programPath;
+        if (programPath.exists(path + "clamscan")
+                and programPath.exists(path + "freshclam")){
+            label_ProgramPath->setPixmap(
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-ok.svg"));
+            button(QWizard::FinishButton)->setEnabled(true);
+            label_TextFinished->setVisible(true);
+        } else {
+            label_ProgramPath->setPixmap(
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-close.svg"));
+            button(QWizard::FinishButton)->setEnabled(false);
+            label_TextFinished->setHidden(true);
+        }
     }
 }
 
@@ -167,5 +203,7 @@ void FirstRunWizard::settingsWrite(){
     clamui_conf.setValue("Schedule_Index", comboBox_Scheduling->currentIndex());
     clamui_conf.setValue("Schedule_Date", dateEdit_ScheduleDate->date());
     clamui_conf.setValue("Schedule_Time", timeEdit_ScheduleTime->time());
+    clamui_conf.setValue("Program_Path_Id", comboBox_ProgramPath->currentIndex());
+    clamui_conf.setValue("Program_Path", comboBox_ProgramPath->currentText());
     clamui_conf.endGroup();
 }
