@@ -95,10 +95,24 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
     comboBox_Scheduling->addItem(trUtf8("Monatlich ab diesem Termin (Datum/Zeit)"));
     comboBox_Scheduling->addItem(trUtf8("Nur einmal an diesem Termin (Datum/Zeit)"));
 
+    // Set current date und current time
+    dateEdit_ScheduleDate->setDate(QDate::currentDate());
+    timeEdit_ScheduleTime->setTime(QTime::currentTime());
+
+    if (comboBox_Scheduling->currentIndex() == 0){
+
+        dateEdit_ScheduleDate->setEnabled(false);
+        timeEdit_ScheduleTime->setEnabled(false);
+    }
+
+    connect(comboBox_Scheduling, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotComboBoxSchedulingIndexChanged()));
+    connect(button(QWizard::FinishButton), SIGNAL(clicked(bool)),
+            this, SLOT(settingsWrite()));
 }
 
-void FirstRunWizard::changeEvent(QEvent *e)
-{
+void FirstRunWizard::changeEvent(QEvent *e){
+
     QWizard::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
@@ -107,4 +121,51 @@ void FirstRunWizard::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void FirstRunWizard::slotComboBoxSchedulingIndexChanged(){
+
+    if (comboBox_Scheduling->currentIndex() == 0
+            or comboBox_Scheduling->currentIndex() == 1
+            or comboBox_Scheduling->currentIndex() == 2){
+
+        dateEdit_ScheduleDate->setEnabled(false);
+        timeEdit_ScheduleTime->setEnabled(false);
+    }
+    if (comboBox_Scheduling->currentIndex() == 3
+            or comboBox_Scheduling->currentIndex() == 4
+            or comboBox_Scheduling->currentIndex() == 6){
+
+        dateEdit_ScheduleDate->setEnabled(false);
+        timeEdit_ScheduleTime->setEnabled(true);
+    }
+    if (comboBox_Scheduling->currentIndex() == 5
+            or comboBox_Scheduling->currentIndex() == 7
+            or comboBox_Scheduling->currentIndex() == 8){
+
+        dateEdit_ScheduleDate->setEnabled(true);
+        timeEdit_ScheduleTime->setEnabled(true);
+    }
+}
+
+void FirstRunWizard::settingsWrite(){
+
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+    clamui_conf.beginGroup("Freshclam");
+    clamui_conf.setValue("Start_As_Demon", checkBox_FreshClam->isChecked());
+    clamui_conf.setValue("Update_Interval", spinBox_FreshClamUpdate->value());
+    clamui_conf.endGroup();
+
+    clamui_conf.beginGroup("ClamUI");
+    clamui_conf.setValue("Autostart", checkBox_Autostart->isChecked());
+    clamui_conf.setValue("Hide_Window", checkBox_HideWindow->isChecked());
+    clamui_conf.setValue("Icon_on_Desktop", checkBox_IconOnDesktop->isChecked());
+    clamui_conf.endGroup();
+
+    clamui_conf.beginGroup("ClamAV");
+    clamui_conf.setValue("Schedule_Index", comboBox_Scheduling->currentIndex());
+    clamui_conf.setValue("Schedule_Date", dateEdit_ScheduleDate->date());
+    clamui_conf.setValue("Schedule_Time", timeEdit_ScheduleTime->time());
+    clamui_conf.endGroup();
 }

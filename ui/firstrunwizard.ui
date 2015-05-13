@@ -12,15 +12,17 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
-    <height>0</height>
+    <width>416</width>
+    <height>155</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>ClamUI - Einrichtungsassistent</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="tools-wizard"/>
+   <iconset theme="tools-wizard">
+    <normaloff/>
+   </iconset>
   </property>
   <property name="sizeGripEnabled">
    <bool>false</bool>
@@ -185,7 +187,7 @@
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_ScheduleTime">
                    <property name="text">
-                    <string>Uhr&amp;zeit:</string>
+                    <string>&amp;Uhrzeit:</string>
                    </property>
                    <property name="buddy">
                     <cstring>timeEdit_ScheduleTime</cstring>
@@ -230,43 +232,10 @@
       <layout class="QFormLayout" name="formLayout_2">
        <item row="0" column="0">
         <layout class="QGridLayout" name="gridLayout_2">
-         <item row="0" column="2" colspan="2">
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>Freshclam Status</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
-          <widget class="QCheckBox" name="checkBox_FreshClam">
-           <property name="toolTip">
-            <string>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktualität der Virendefinitionen. </string>
-           </property>
-           <property name="text">
-            <string>freshclam im Hintergrund starten.</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_6">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="toolTip">
-            <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
-           </property>
-           <property name="text">
-            <string>Wie oft am Tag aktuallisieren:</string>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="1">
           <widget class="QSpinBox" name="spinBox_FreshClamUpdate">
            <property name="enabled">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="toolTip">
             <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
@@ -285,17 +254,29 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="3">
-          <widget class="QPushButton" name="pushButton_FreshclamStatus">
+         <item row="0" column="0" colspan="2">
+          <widget class="QCheckBox" name="checkBox_FreshClam">
+           <property name="toolTip">
+            <string>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktualität der Virendefinitionen. </string>
+           </property>
            <property name="text">
-            <string>PushButton</string>
+            <string>freshclam im Hintergrund starten.</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
-         <item row="1" column="2">
-          <widget class="QLabel" name="label_FreshclamStatus">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
+           </property>
            <property name="text">
-            <string>TextLabel</string>
+            <string>Wie oft am Tag aktuallisieren:</string>
            </property>
           </widget>
          </item>
@@ -308,6 +289,50 @@
   </widget>
   <widget class="QWizardPage" name="wizardPage_2"/>
  </widget>
+ <tabstops>
+  <tabstop>checkBox_Autostart</tabstop>
+  <tabstop>checkBox_HideWindow</tabstop>
+  <tabstop>checkBox_IconOnDesktop</tabstop>
+  <tabstop>checkBox_ExternalDevice</tabstop>
+  <tabstop>comboBox_Scheduling</tabstop>
+  <tabstop>dateEdit_ScheduleDate</tabstop>
+  <tabstop>timeEdit_ScheduleTime</tabstop>
+  <tabstop>checkBox_FreshClam</tabstop>
+  <tabstop>spinBox_FreshClamUpdate</tabstop>
+ </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>checkBox_FreshClam</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>spinBox_FreshClamUpdate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>217</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_FreshClam</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>label_6</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>100</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

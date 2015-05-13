@@ -75,6 +75,7 @@ private slots:
     void saveFiles();
     void removeDirectories();
     void removeFiles();
+    void slotComboBoxSchedulingIndexChanged();
 
 };
 

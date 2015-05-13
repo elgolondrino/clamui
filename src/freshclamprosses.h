@@ -37,6 +37,8 @@
 #include <QProcess>
 #include <QByteArray>
 
+#include "definitionen.h"
+
 class FreshClamProsses : public QObject {
     Q_OBJECT
 public:

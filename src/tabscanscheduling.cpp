@@ -45,8 +45,27 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
     db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
     db.open();
 
-    settingsRead();
-    createSlots();
+    if (comboBox_Scheduling->currentIndex() == 0
+            or comboBox_Scheduling->currentIndex() == 1
+            or comboBox_Scheduling->currentIndex() == 2){
+
+        dateEdit_ScheduleDate->setEnabled(false);
+        timeEdit_ScheduleTime->setEnabled(false);
+    }
+    if (comboBox_Scheduling->currentIndex() == 3
+            or comboBox_Scheduling->currentIndex() == 4
+            or comboBox_Scheduling->currentIndex() == 6){
+
+        dateEdit_ScheduleDate->setEnabled(false);
+        timeEdit_ScheduleTime->setEnabled(true);
+    }
+    if (comboBox_Scheduling->currentIndex() == 5
+            or comboBox_Scheduling->currentIndex() == 7
+            or comboBox_Scheduling->currentIndex() == 8){
+
+        dateEdit_ScheduleDate->setEnabled(true);
+        timeEdit_ScheduleTime->setEnabled(true);
+    }
 
     /*
      * Load Scheduling values in the comboBox_Scheduling
@@ -61,6 +80,13 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
     comboBox_Scheduling->addItem(trUtf8("Monatlich ab diesem Termin (Datum/Zeit)"));
     comboBox_Scheduling->addItem(trUtf8("Nur einmal an diesem Termin (Datum/Zeit)"));
 
+    // Set current date und current time
+//    dateEdit_ScheduleDate->setDate(QDate::currentDate());
+//    timeEdit_ScheduleTime->setTime(QTime::currentTime());
+
+    settingsRead();
+    createSlots();
+
     /*
      * Load values to the tableview.
      */
@@ -68,8 +94,8 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
     databaseReadFiles();
 }
 
-void TabScanScheduling::changeEvent(QEvent *e)
-{
+void TabScanScheduling::changeEvent(QEvent *e){
+
     QWidget::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
@@ -100,6 +126,8 @@ void TabScanScheduling::createSlots(){
             this, SLOT(removeDirectories()));
     connect(groupBox_Eclude, SIGNAL(clicked(bool)),
             this, SLOT(settingsWrite()));
+    connect(comboBox_Scheduling, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotComboBoxSchedulingIndexChanged()));
 }
 
 void TabScanScheduling::enableGroupBoxes(){
@@ -115,6 +143,31 @@ void TabScanScheduling::enableGroupBoxes(){
     }
 }
 
+void TabScanScheduling::slotComboBoxSchedulingIndexChanged(){
+
+    if (comboBox_Scheduling->currentIndex() == 0
+            or comboBox_Scheduling->currentIndex() == 1
+            or comboBox_Scheduling->currentIndex() == 2){
+
+        dateEdit_ScheduleDate->setEnabled(false);
+        timeEdit_ScheduleTime->setEnabled(false);
+    }
+    if (comboBox_Scheduling->currentIndex() == 3
+            or comboBox_Scheduling->currentIndex() == 4
+            or comboBox_Scheduling->currentIndex() == 6){
+
+        dateEdit_ScheduleDate->setEnabled(false);
+        timeEdit_ScheduleTime->setEnabled(true);
+    }
+    if (comboBox_Scheduling->currentIndex() == 5
+            or comboBox_Scheduling->currentIndex() == 7
+            or comboBox_Scheduling->currentIndex() == 8){
+
+        dateEdit_ScheduleDate->setEnabled(true);
+        timeEdit_ScheduleTime->setEnabled(true);
+    }
+}
+
 void TabScanScheduling::settingsWrite(){
 
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
@@ -125,9 +178,11 @@ void TabScanScheduling::settingsWrite(){
     clamui_conf.endGroup();
 
     clamui_conf.beginGroup("ClamAV");
-    clamui_conf.setValue("TimeInterval", timeEdit_ScheduleTime->time());
     clamui_conf.setValue("ScanExternal", checkBox_ExternalDevice->isChecked());
     clamui_conf.setValue("Scan_All", groupBox_Eclude->isChecked());
+    clamui_conf.setValue("Schedule_Index", comboBox_Scheduling->currentIndex());
+    clamui_conf.setValue("Schedule_Date", dateEdit_ScheduleDate->date());
+    clamui_conf.setValue("Schedule_Time", timeEdit_ScheduleTime->time());
     clamui_conf.endGroup();
 
     settingsRead();
@@ -139,14 +194,23 @@ void TabScanScheduling::settingsRead(){
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("Freshclam");
-    checkBox_FreshClam->setChecked(clamui_conf.value("Start_As_Demon", false).toBool());
-    spinBox_FreshClamUpdate->setValue(clamui_conf.value("Update_Interval", 12).toInt());
+    checkBox_FreshClam->setChecked(
+                clamui_conf.value("Start_As_Demon", false).toBool());
+    spinBox_FreshClamUpdate->setValue(
+                clamui_conf.value("Update_Interval", 12).toInt());
     clamui_conf.endGroup();
 
     clamui_conf.beginGroup("ClamAV");
-    timeEdit_ScheduleTime->setTime(clamui_conf.value("DayInterval", "03:00").toTime());
-    checkBox_ExternalDevice->setChecked(clamui_conf.value("ScanExternal", false).toBool());
-    groupBox_Eclude->setChecked(clamui_conf.value("Scan_All", true).toBool());
+    checkBox_ExternalDevice->setChecked(
+                clamui_conf.value("ScanExternal", false).toBool());
+    groupBox_Eclude->setChecked(
+                clamui_conf.value("Scan_All", true).toBool());
+    comboBox_Scheduling->setCurrentIndex(
+                clamui_conf.value("Schedule_Index", 0).toInt());
+    dateEdit_ScheduleDate->setDate(
+                clamui_conf.value("Schedule_Date", QDate::currentDate()).toDate());
+    timeEdit_ScheduleTime->setTime(
+                clamui_conf.value("Schedule_Time", QTime::currentTime()).toTime());
     clamui_conf.endGroup();
 
     if (checkBox_FreshClam->isChecked()) {

@@ -32,6 +32,11 @@
 #ifndef FIRSTRUNWIZARD_H
 #define FIRSTRUNWIZARD_H
 
+#include <QSettings>
+
+
+#include "definitionen.h"
+
 #include "ui_firstrunwizard.h"
 
 class FirstRunWizard : public QWizard, private Ui::FirstRunWizard
@@ -43,6 +48,10 @@ public:
 
 protected:
     void changeEvent(QEvent *e);
+
+private slots:
+    void settingsWrite();
+    void slotComboBoxSchedulingIndexChanged();
 };
 
 #endif // FIRSTRUNWIZARD_H
