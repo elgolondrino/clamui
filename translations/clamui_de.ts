@@ -247,17 +247,17 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="122"/>
+        <location filename="../src/clamui.cpp" line="134"/>
         <source>Beenden bestätigen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="123"/>
+        <location filename="../src/clamui.cpp" line="135"/>
         <source>Möchten Sie &lt;b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="124"/>
+        <location filename="../src/clamui.cpp" line="136"/>
         <source>&lt;/b&gt; wirklich beenden?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -343,21 +343,92 @@ Vielen Dank im voraus.</source>
     </message>
     <message>
         <location filename="../ui/firstrunwizard.ui" line="295"/>
-        <source>Programmpfad setzen</source>
+        <source>Programmpfade setzen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="314"/>
+        <location filename="../ui/firstrunwizard.ui" line="303"/>
+        <location filename="../ui/firstrunwizard.ui" line="393"/>
+        <source>Wo sollen die Virendefinitionen gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="307"/>
+        <source>Pfad zur &amp;Virendatenbank:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="317"/>
+        <location filename="../ui/firstrunwizard.ui" line="435"/>
+        <source>&lt;b&gt;Kreuz&lt;/b&gt; = unter diesem Pfad wurden die benötigten Programme &lt;b&gt;nicht&lt;/b&gt; gefunden. &lt;br /&gt;
+&lt;b&gt;Haken&lt;/b&gt; = Kreuz = unter diesem Pfad wurden die benötigten Programme gefunden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="331"/>
+        <location filename="../ui/firstrunwizard.ui" line="345"/>
+        <source>Unter diesem Pfad befindet sich der ClamAV Dämon.&lt;br /&gt;
+&lt;i&gt;clamd&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="335"/>
+        <source>Der Pfad zu&amp;m ClamAV dämon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="350"/>
+        <source>/usr/sbin/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="360"/>
+        <source>/usr/local/sbin/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="373"/>
+        <location filename="../ui/firstrunwizard.ui" line="401"/>
+        <source>Unter diesem Pfad befinden sich die ClamAV Programme.&lt;br /&gt;
+&lt;i&gt;clambc&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamconf&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamdscan&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamdtop&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamscan&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;freshclam&lt;/i&gt; und &lt;br /&gt; 
+&lt;i&gt;sigtool&lt;/i&gt;&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="383"/>
+        <source>Pfad z&amp;u den Programmen: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="412"/>
         <source>/usr/bin/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="324"/>
+        <location filename="../ui/firstrunwizard.ui" line="422"/>
         <source>/usr/local/bin/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/firstrunwizard.ui" line="355"/>
+        <location filename="../ui/firstrunwizard.ui" line="449"/>
+        <location filename="../ui/firstrunwizard.ui" line="460"/>
+        <source>Wo sollen die Konfigurationsdateien gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="453"/>
+        <source>Pfad zu den Konfigurationsdateien:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/firstrunwizard.ui" line="486"/>
         <source>&lt;b&gt;Herzlichen Glückwunsch!&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
 
 Alle benötigten Einstellungen wurden vorgenommen. Klicken Sie nun auf &lt;b&gt;Abschließen&lt;/b&gt;, um ClamUI zu starten.</source>
@@ -556,7 +627,83 @@ Alle benötigten Einstellungen wurden vorgenommen. Klicken Sie nun auf &lt;b&gt;
     </message>
     <message>
         <location filename="../ui/settings.ui" line="140"/>
-        <source>S&amp;prache ändern</source>
+        <source>Sprache &amp;ändern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="226"/>
+        <source>Programmpfade setzen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="234"/>
+        <location filename="../ui/settings.ui" line="296"/>
+        <source>Unter diesem Pfad befindet sich der ClamAV Dämon.&lt;br /&gt;
+&lt;i&gt;clamd&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="239"/>
+        <source>/usr/sbin/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="249"/>
+        <source>/usr/local/sbin/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="262"/>
+        <location filename="../ui/settings.ui" line="310"/>
+        <source>Unter diesem Pfad befinden sich die ClamAV Programme.&lt;br /&gt;
+&lt;i&gt;clambc&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamconf&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamdscan&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamdtop&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamscan&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;freshclam&lt;/i&gt; und &lt;br /&gt; 
+&lt;i&gt;sigtool&lt;/i&gt;&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="300"/>
+        <source>Der Pfad &amp;zum ClamAV dämon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="320"/>
+        <source>&amp;Pfad zu den Programmen: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="330"/>
+        <location filename="../ui/settings.ui" line="344"/>
+        <source>&lt;b&gt;Kreuz&lt;/b&gt; = unter diesem Pfad wurden die benötigten Programme &lt;b&gt;nicht&lt;/b&gt; gefunden. &lt;br /&gt;
+&lt;b&gt;Haken&lt;/b&gt; = Kreuz = unter diesem Pfad wurden die benötigten Programme gefunden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="358"/>
+        <location filename="../ui/settings.ui" line="366"/>
+        <source>Wo sollen die Virendefinitionen gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="370"/>
+        <source>Pfad zur &amp;Virendatenbank:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="380"/>
+        <location filename="../ui/settings.ui" line="391"/>
+        <source>Wo sollen die Konfigurationsdateien gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="384"/>
+        <source>Pfad zu den Konfigurationsdateien:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -570,91 +717,80 @@ Alle benötigten Einstellungen wurden vorgenommen. Klicken Sie nun auf &lt;b&gt;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="226"/>
-        <source>Pfade</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/settings.ui" line="235"/>
+        <location filename="../ui/settings.ui" line="273"/>
         <source>/usr/bin/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="245"/>
+        <location filename="../ui/settings.ui" line="283"/>
         <source>/usr/local/bin/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="258"/>
-        <source>&amp;Pfad zu Progammen:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/settings.ui" line="298"/>
+        <location filename="../ui/settings.ui" line="422"/>
         <source>Clamscan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="321"/>
-        <location filename="../ui/settings.ui" line="328"/>
-        <location filename="../ui/settings.ui" line="335"/>
-        <location filename="../ui/settings.ui" line="342"/>
-        <location filename="../ui/settings.ui" line="349"/>
-        <location filename="../ui/settings.ui" line="356"/>
-        <location filename="../ui/settings.ui" line="363"/>
-        <location filename="../ui/settings.ui" line="370"/>
-        <location filename="../ui/settings.ui" line="377"/>
-        <location filename="../ui/settings.ui" line="384"/>
-        <location filename="../ui/settings.ui" line="391"/>
-        <location filename="../ui/settings.ui" line="398"/>
-        <location filename="../ui/settings.ui" line="405"/>
-        <location filename="../ui/settings.ui" line="412"/>
-        <location filename="../ui/settings.ui" line="419"/>
-        <location filename="../ui/settings.ui" line="426"/>
-        <location filename="../ui/settings.ui" line="433"/>
-        <location filename="../ui/settings.ui" line="440"/>
-        <location filename="../ui/settings.ui" line="447"/>
-        <location filename="../ui/settings.ui" line="454"/>
-        <location filename="../ui/settings.ui" line="461"/>
-        <location filename="../ui/settings.ui" line="468"/>
-        <location filename="../ui/settings.ui" line="475"/>
-        <location filename="../ui/settings.ui" line="482"/>
-        <location filename="../ui/settings.ui" line="532"/>
-        <location filename="../ui/settings.ui" line="539"/>
-        <location filename="../ui/settings.ui" line="546"/>
-        <location filename="../ui/settings.ui" line="553"/>
-        <location filename="../ui/settings.ui" line="560"/>
-        <location filename="../ui/settings.ui" line="567"/>
-        <location filename="../ui/settings.ui" line="574"/>
-        <location filename="../ui/settings.ui" line="581"/>
-        <location filename="../ui/settings.ui" line="588"/>
-        <location filename="../ui/settings.ui" line="595"/>
-        <location filename="../ui/settings.ui" line="602"/>
+        <location filename="../ui/settings.ui" line="445"/>
+        <location filename="../ui/settings.ui" line="452"/>
+        <location filename="../ui/settings.ui" line="459"/>
+        <location filename="../ui/settings.ui" line="466"/>
+        <location filename="../ui/settings.ui" line="473"/>
+        <location filename="../ui/settings.ui" line="480"/>
+        <location filename="../ui/settings.ui" line="487"/>
+        <location filename="../ui/settings.ui" line="494"/>
+        <location filename="../ui/settings.ui" line="501"/>
+        <location filename="../ui/settings.ui" line="508"/>
+        <location filename="../ui/settings.ui" line="515"/>
+        <location filename="../ui/settings.ui" line="522"/>
+        <location filename="../ui/settings.ui" line="529"/>
+        <location filename="../ui/settings.ui" line="536"/>
+        <location filename="../ui/settings.ui" line="543"/>
+        <location filename="../ui/settings.ui" line="550"/>
+        <location filename="../ui/settings.ui" line="557"/>
+        <location filename="../ui/settings.ui" line="564"/>
+        <location filename="../ui/settings.ui" line="571"/>
+        <location filename="../ui/settings.ui" line="578"/>
+        <location filename="../ui/settings.ui" line="585"/>
+        <location filename="../ui/settings.ui" line="592"/>
+        <location filename="../ui/settings.ui" line="599"/>
+        <location filename="../ui/settings.ui" line="606"/>
+        <location filename="../ui/settings.ui" line="656"/>
+        <location filename="../ui/settings.ui" line="663"/>
+        <location filename="../ui/settings.ui" line="670"/>
+        <location filename="../ui/settings.ui" line="677"/>
+        <location filename="../ui/settings.ui" line="684"/>
+        <location filename="../ui/settings.ui" line="691"/>
+        <location filename="../ui/settings.ui" line="698"/>
+        <location filename="../ui/settings.ui" line="705"/>
+        <location filename="../ui/settings.ui" line="712"/>
+        <location filename="../ui/settings.ui" line="719"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="509"/>
+        <location filename="../ui/settings.ui" line="633"/>
         <source>Freshclam</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="625"/>
+        <location filename="../ui/settings.ui" line="742"/>
         <source>Hilfe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="650"/>
+        <location filename="../ui/settings.ui" line="767"/>
         <source>Standardwerte</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="662"/>
+        <location filename="../ui/settings.ui" line="779"/>
         <source>Speichern</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="674"/>
+        <location filename="../ui/settings.ui" line="791"/>
         <source>Schließen</source>
         <translation type="unfinished"></translation>
     </message>
@@ -664,12 +800,12 @@ Alle benötigten Einstellungen wurden vorgenommen. Klicken Sie nun auf &lt;b&gt;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="129"/>
+        <location filename="../src/settings.cpp" line="201"/>
         <source>Zurücksetzen bestätigen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="130"/>
+        <location filename="../src/settings.cpp" line="202"/>
         <source>Möchten Sie die Werte wirklich auf die Standardeinstellungen zurücksetzen?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -832,65 +968,65 @@ Alle benötigten Einstellungen wurden vorgenommen. Klicken Sie nun auf &lt;b&gt;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="73"/>
+        <location filename="../src/tabscanscheduling.cpp" line="50"/>
         <source>Keine automatische Prüfung</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="74"/>
+        <location filename="../src/tabscanscheduling.cpp" line="51"/>
         <source>Beim einloggen in KDE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="75"/>
+        <location filename="../src/tabscanscheduling.cpp" line="52"/>
         <source>Jeden Tag, ab jetzt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="76"/>
+        <location filename="../src/tabscanscheduling.cpp" line="53"/>
         <source>Täglich zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="77"/>
+        <location filename="../src/tabscanscheduling.cpp" line="54"/>
         <source>Wöchentlich ab jetzt, zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="78"/>
+        <location filename="../src/tabscanscheduling.cpp" line="55"/>
         <source>Wöchentlich ab diesem Termin (Datum/Zeit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="79"/>
+        <location filename="../src/tabscanscheduling.cpp" line="56"/>
         <source>Monatlich ab jetzt, zu einer festgelegten Zeit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="80"/>
+        <location filename="../src/tabscanscheduling.cpp" line="57"/>
         <source>Monatlich ab diesem Termin (Datum/Zeit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="81"/>
+        <location filename="../src/tabscanscheduling.cpp" line="58"/>
         <source>Nur einmal an diesem Termin (Datum/Zeit)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/tabscanscheduling.cpp" line="275"/>
-        <location filename="../src/tabscanscheduling.cpp" line="347"/>
-        <source>Löschen bestätigen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/tabscanscheduling.cpp" line="276"/>
         <location filename="../src/tabscanscheduling.cpp" line="348"/>
+        <source>Löschen bestätigen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/tabscanscheduling.cpp" line="277"/>
+        <location filename="../src/tabscanscheduling.cpp" line="349"/>
         <source>Möchten Sie die den Eintrag &lt;b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="278"/>
-        <location filename="../src/tabscanscheduling.cpp" line="350"/>
+        <location filename="../src/tabscanscheduling.cpp" line="279"/>
+        <location filename="../src/tabscanscheduling.cpp" line="351"/>
         <source>&lt;/b&gt; wirklich löschen?</source>
         <translation type="unfinished"></translation>
     </message>

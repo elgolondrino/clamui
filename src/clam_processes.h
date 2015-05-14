@@ -42,7 +42,12 @@ class Clam_Processes : public QObject {
 public:
     explicit Clam_Processes(QObject *parent = 0);
 
-    QByteArray ClamScan(QString clamscan, QStringList list);
+    QByteArray ClamScan(QString clamscan, QStringList argumentsList);
+    bool startClamDaemon(QString clamd, QStringList argumentsList);
+    void stopDaemon();
+
+private:
+    QProcess *daemonProcess;
 };
 
 #endif // CLAM_PROCESSES_H

@@ -57,6 +57,8 @@
 #include "tabvirusscan.h"
 #include "definitionen.h"
 #include "languagetools.h"
+#include "clam_processes.h"
+#include "freshclamprosses.h"
 
 #include "ui_clamui.h"
 
@@ -75,8 +77,14 @@ private:
     void createSlots();
     void settingsRead();
     void createTrayIcon(QString iconSysTray, QString statusMessage);
-    void createActions();
+//    void createActions();
     void loadThemeIcons();
+    void startClamDaemon();
+
+    QString daemonPath;
+    QString configPath;
+
+    Clam_Processes startDaemon;
 
     QMenu *menu;
     QAction *actionMenu;

@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>670</width>
+    <width>700</width>
     <height>400</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
-    <height>0</height>
+    <width>700</width>
+    <height>185</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -288,17 +288,35 @@
    </layout>
   </widget>
   <widget class="QWizardPage" name="wizardPage_3">
-   <layout class="QGridLayout" name="gridLayout_5">
-    <item row="0" column="0">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
      <widget class="QGroupBox" name="groupBox_2">
       <property name="title">
-       <string>Programmpfad setzen</string>
+       <string>Programmpfade setzen</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,0">
-         <item row="0" column="1">
-          <widget class="QLabel" name="label_ProgramPath">
+        <layout class="QGridLayout" name="gridLayout_3" columnstretch="0,1,0">
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_36">
+           <property name="toolTip">
+            <string>Wo sollen die Virendefinitionen gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+           </property>
+           <property name="text">
+            <string>Pfad zur &amp;Virendatenbank:</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_ClamVDB</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_DaemonPath">
+           <property name="toolTip">
+            <string>&lt;b&gt;Kreuz&lt;/b&gt; = unter diesem Pfad wurden die benötigten Programme &lt;b&gt;nicht&lt;/b&gt; gefunden. &lt;br /&gt;
+&lt;b&gt;Haken&lt;/b&gt; = Kreuz = unter diesem Pfad wurden die benötigten Programme gefunden.</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -307,8 +325,88 @@
            </property>
           </widget>
          </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="toolTip">
+            <string>Unter diesem Pfad befindet sich der ClamAV Dämon.&lt;br /&gt;
+&lt;i&gt;clamd&lt;/i&gt;</string>
+           </property>
+           <property name="text">
+            <string>Der Pfad zu&amp;m ClamAV dämon:</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_DaemonPath</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="comboBox_DaemonPath">
+           <property name="toolTip">
+            <string>Unter diesem Pfad befindet sich der ClamAV Dämon.&lt;br /&gt;
+&lt;i&gt;clamd&lt;/i&gt;</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>/usr/sbin/</string>
+            </property>
+            <property name="icon">
+             <iconset theme="folder">
+              <normaloff/>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>/usr/local/sbin/</string>
+            </property>
+            <property name="icon">
+             <iconset theme="folder">
+              <normaloff/>
+             </iconset>
+            </property>
+           </item>
+          </widget>
+         </item>
          <item row="0" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="toolTip">
+            <string>Unter diesem Pfad befinden sich die ClamAV Programme.&lt;br /&gt;
+&lt;i&gt;clambc&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamconf&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamdscan&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamdtop&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamscan&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;freshclam&lt;/i&gt; und &lt;br /&gt; 
+&lt;i&gt;sigtool&lt;/i&gt;&lt;br /&gt;</string>
+           </property>
+           <property name="text">
+            <string>Pfad z&amp;u den Programmen: </string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_ProgramPath</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="comboBox_ClamVDB">
+           <property name="toolTip">
+            <string>Wo sollen die Virendefinitionen gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
           <widget class="QComboBox" name="comboBox_ProgramPath">
+           <property name="toolTip">
+            <string>Unter diesem Pfad befinden sich die ClamAV Programme.&lt;br /&gt;
+&lt;i&gt;clambc&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamconf&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamdscan&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamdtop&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;clamscan&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;freshclam&lt;/i&gt; und &lt;br /&gt; 
+&lt;i&gt;sigtool&lt;/i&gt;&lt;br /&gt;</string>
+           </property>
            <item>
             <property name="text">
              <string>/usr/bin/</string>
@@ -331,12 +429,45 @@
            </item>
           </widget>
          </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_ProgramPath">
+           <property name="toolTip">
+            <string>&lt;b&gt;Kreuz&lt;/b&gt; = unter diesem Pfad wurden die benötigten Programme &lt;b&gt;nicht&lt;/b&gt; gefunden. &lt;br /&gt;
+&lt;b&gt;Haken&lt;/b&gt; = Kreuz = unter diesem Pfad wurden die benötigten Programme gefunden.</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../clamui.qrc">:/icons/icons/breeze/actions/toolbar/dialog-close.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="toolTip">
+            <string>Wo sollen die Konfigurationsdateien gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+           </property>
+           <property name="text">
+            <string>Pfad zu den Konfigurationsdateien:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="comboBox_ConfigPath">
+           <property name="toolTip">
+            <string>Wo sollen die Konfigurationsdateien gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
       </layout>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item>
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -349,7 +480,7 @@
       </property>
      </spacer>
     </item>
-    <item row="2" column="0">
+    <item>
      <widget class="QLabel" name="label_TextFinished">
       <property name="text">
        <string>&lt;b&gt;Herzlichen Glückwunsch!&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;

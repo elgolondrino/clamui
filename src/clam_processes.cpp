@@ -35,10 +35,28 @@ Clam_Processes::Clam_Processes(QObject *parent) : QObject(parent){
 
 }
 
-QByteArray Clam_Processes::ClamScan(QString clamscan, QStringList list){
+QByteArray Clam_Processes::ClamScan(QString clamscan, QStringList argumentsList){
 
     QByteArray array;
 
 
     return array;
+}
+
+bool Clam_Processes::startClamDaemon(QString clamd, QStringList argumentsList){
+
+    daemonProcess = new QProcess();
+    daemonProcess->start(clamd, argumentsList);
+
+    if (daemonProcess->waitForStarted()
+            and daemonProcess->state() == QProcess::Running)
+        return true;
+    else
+        return false;
+
+}
+
+void Clam_Processes::stopDaemon(){
+
+    daemonProcess->close();
 }

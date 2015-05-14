@@ -36,7 +36,6 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
 {
     setupUi(this);
 
-
     /*
      * Open the SQLite3 database.
      */
@@ -44,28 +43,6 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
     db.close();
     db.setDatabaseName(APP_CONFIG_PATH + SQLITE_DB_NAME);
     db.open();
-
-    if (comboBox_Scheduling->currentIndex() == 0
-            or comboBox_Scheduling->currentIndex() == 1
-            or comboBox_Scheduling->currentIndex() == 2){
-
-        dateEdit_ScheduleDate->setEnabled(false);
-        timeEdit_ScheduleTime->setEnabled(false);
-    }
-    if (comboBox_Scheduling->currentIndex() == 3
-            or comboBox_Scheduling->currentIndex() == 4
-            or comboBox_Scheduling->currentIndex() == 6){
-
-        dateEdit_ScheduleDate->setEnabled(false);
-        timeEdit_ScheduleTime->setEnabled(true);
-    }
-    if (comboBox_Scheduling->currentIndex() == 5
-            or comboBox_Scheduling->currentIndex() == 7
-            or comboBox_Scheduling->currentIndex() == 8){
-
-        dateEdit_ScheduleDate->setEnabled(true);
-        timeEdit_ScheduleTime->setEnabled(true);
-    }
 
     /*
      * Load Scheduling values in the comboBox_Scheduling
@@ -128,6 +105,8 @@ void TabScanScheduling::createSlots(){
             this, SLOT(settingsWrite()));
     connect(comboBox_Scheduling, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotComboBoxSchedulingIndexChanged()));
+    connect(comboBox_Scheduling, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(settingsWrite()));
 }
 
 void TabScanScheduling::enableGroupBoxes(){
@@ -171,7 +150,7 @@ void TabScanScheduling::slotComboBoxSchedulingIndexChanged(){
 void TabScanScheduling::settingsWrite(){
 
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
-                             APP_TITLE, APP_NAME);
+                          APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("Freshclam");
     clamui_conf.setValue("Start_As_Demon", checkBox_FreshClam->isChecked());
     clamui_conf.setValue("Update_Interval", spinBox_FreshClamUpdate->value());
@@ -216,6 +195,28 @@ void TabScanScheduling::settingsRead(){
     if (checkBox_FreshClam->isChecked()) {
         label_2->setEnabled(true);
         spinBox_FreshClamUpdate->setEnabled(true);
+    }
+
+    if (comboBox_Scheduling->currentIndex() == 0
+            or comboBox_Scheduling->currentIndex() == 1
+            or comboBox_Scheduling->currentIndex() == 2){
+
+        dateEdit_ScheduleDate->setEnabled(false);
+        timeEdit_ScheduleTime->setEnabled(false);
+    }
+    if (comboBox_Scheduling->currentIndex() == 3
+            or comboBox_Scheduling->currentIndex() == 4
+            or comboBox_Scheduling->currentIndex() == 6){
+
+        dateEdit_ScheduleDate->setEnabled(false);
+        timeEdit_ScheduleTime->setEnabled(true);
+    }
+    if (comboBox_Scheduling->currentIndex() == 5
+            or comboBox_Scheduling->currentIndex() == 7
+            or comboBox_Scheduling->currentIndex() == 8){
+
+        dateEdit_ScheduleDate->setEnabled(true);
+        timeEdit_ScheduleTime->setEnabled(true);
     }
 
     enableGroupBoxes();

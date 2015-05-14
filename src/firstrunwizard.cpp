@@ -92,7 +92,7 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
 //                trUtf8("4. Schritt: Ihre Angaben überprüfen und "
 //                       "anschließend auf <b>Abschließen</b> klicken."));
     /*
-     * Load Scheduling values in the comboBox_Scheduling
+     * Load scheduling values in the comboBox_Scheduling
      */
     comboBox_Scheduling->addItem(trUtf8("Keine automatische Prüfung"));
     comboBox_Scheduling->addItem(trUtf8("Beim einloggen in KDE"));
@@ -103,6 +103,32 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
     comboBox_Scheduling->addItem(trUtf8("Monatlich ab jetzt, zu einer festgelegten Zeit"));
     comboBox_Scheduling->addItem(trUtf8("Monatlich ab diesem Termin (Datum/Zeit)"));
     comboBox_Scheduling->addItem(trUtf8("Nur einmal an diesem Termin (Datum/Zeit)"));
+
+    /*
+     * Load path values in the comboBox_ClamVDB.
+     */
+    comboBox_ClamVDB->addItem(CLAMAV_VDB_PATH);
+    comboBox_ClamVDB->setItemIcon(0, QIcon::fromTheme("folder"));
+    comboBox_ClamVDB->addItem("/usr/local/share/clamav/");
+    comboBox_ClamVDB->setItemIcon(1, QIcon::fromTheme("folder"));
+    comboBox_ClamVDB->addItem("/usr/share/clamav/");
+    comboBox_ClamVDB->setItemIcon(2, QIcon::fromTheme("folder"));
+    comboBox_ClamVDB->addItem("/var/lib/clamav/");
+    comboBox_ClamVDB->setItemIcon(3, QIcon::fromTheme("folder"));
+
+    /*
+     * Load path values in the comboBox_ConfigPath.
+     */
+    comboBox_ConfigPath->addItem(CLAMAV_PATH);
+    comboBox_ConfigPath->setItemIcon(0, QIcon::fromTheme("folder"));
+    comboBox_ConfigPath->addItem("/usr/local/share/clamav/");
+    comboBox_ConfigPath->setItemIcon(1, QIcon::fromTheme("folder"));
+    comboBox_ConfigPath->addItem("/usr/share/clamav/");
+    comboBox_ConfigPath->setItemIcon(2, QIcon::fromTheme("folder"));
+    comboBox_ConfigPath->addItem("/var/lib/clamav/");
+    comboBox_ConfigPath->setItemIcon(3, QIcon::fromTheme("folder"));
+    comboBox_ConfigPath->addItem("/usr/local/etc/");
+    comboBox_ConfigPath->setItemIcon(4, QIcon::fromTheme("folder"));
 
     // Set current date und current time
     dateEdit_ScheduleDate->setDate(QDate::currentDate());
@@ -125,6 +151,8 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
             this, SLOT(slotCheckPath()));
     connect(comboBox_ProgramPath, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotCheckPath()));
+    connect(comboBox_DaemonPath, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotCheckPath()));
 }
 
 void FirstRunWizard::changeEvent(QEvent *e){
@@ -142,19 +170,44 @@ void FirstRunWizard::changeEvent(QEvent *e){
 void FirstRunWizard::slotCheckPath(){
 
     if (currentId() == 3){
-        QString path = comboBox_ProgramPath->currentText();
-        QFile programPath;
-        if (programPath.exists(path + "clamscan")
-                and programPath.exists(path + "freshclam")){
+        QString pathPrograms = comboBox_ProgramPath->currentText();
+        QString pathDeamon = comboBox_DaemonPath->currentText();
+        QFile programPath, daemonPath;
+
+        /*
+         * Check where the ClamAV programs are located.
+         */
+        if (programPath.exists(pathPrograms + "clamscan")
+                and programPath.exists(pathPrograms + "freshclam")){
             label_ProgramPath->setPixmap(
                         QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-ok.svg"));
-            button(QWizard::FinishButton)->setEnabled(true);
-            label_TextFinished->setVisible(true);
         } else {
             label_ProgramPath->setPixmap(
                         QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-close.svg"));
             button(QWizard::FinishButton)->setEnabled(false);
             label_TextFinished->setHidden(true);
+        }
+
+        /*
+         * Check where the ClamAV daemon is located.
+         */
+        if (daemonPath.exists(pathDeamon + "clamd")){
+            label_DaemonPath->setPixmap(
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-ok.svg"));
+        } else {
+            label_DaemonPath->setPixmap(
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-close.svg"));
+            button(QWizard::FinishButton)->setEnabled(false);
+            label_TextFinished->setHidden(true);
+        }
+
+        /*
+         * If all ok show finish button and greeter text.
+         */
+        if (programPath.exists(pathPrograms + "clamscan")
+                and daemonPath.exists(pathDeamon + "clamd")) {
+            button(QWizard::FinishButton)->setEnabled(true);
+            label_TextFinished->setVisible(true);
         }
     }
 }
@@ -205,5 +258,11 @@ void FirstRunWizard::settingsWrite(){
     clamui_conf.setValue("Schedule_Time", timeEdit_ScheduleTime->time());
     clamui_conf.setValue("Program_Path_Id", comboBox_ProgramPath->currentIndex());
     clamui_conf.setValue("Program_Path", comboBox_ProgramPath->currentText());
+    clamui_conf.setValue("Daemon_Path_Id", comboBox_DaemonPath->currentIndex());
+    clamui_conf.setValue("Daemon_Path", comboBox_DaemonPath->currentText());
+    clamui_conf.setValue("VirusDB_Path_Id", comboBox_ClamVDB->currentIndex());
+    clamui_conf.setValue("VirusDB_Path", comboBox_ClamVDB->currentText());
+    clamui_conf.setValue("Config_Path_Id", comboBox_ConfigPath->currentIndex());
+    clamui_conf.setValue("Config_Path", comboBox_ConfigPath->currentText());
     clamui_conf.endGroup();
 }

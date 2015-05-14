@@ -62,6 +62,7 @@ private:
 private slots:
     void settingsWrite();
     void settingsDefault();
+    void slotCheckPath();
 };
 
 #endif // SETTINGS_H

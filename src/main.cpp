@@ -114,7 +114,8 @@ int main(int argc, char *argv[]) {
     if (!confFile.exists(APP_CONFIG_PATH + APP_NAME + ".conf")){
 
         FirstRunWizard startWizard;
-        startWizard.exec();
+        startWizard.show();
+        return app.exec();
 
     }
 

@@ -44,8 +44,10 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
 
     createSlots();
     settingsRead();
-    createActions();
+//    createActions();
     createTrayIcon("clamui", "ClamAV ist derzeit inaktiv.");
+
+    startClamDaemon();
 
 }
 
@@ -83,17 +85,29 @@ void ClamUI::closeEvent(QCloseEvent *event)
 void ClamUI::createSlots(){
 
     connect(action_Quit, SIGNAL(triggered(bool)),
+            this, SLOT(settingsWrite()));
+    connect(action_Quit, SIGNAL(triggered(bool)),
             this, SLOT(slotQuit()));
+
+    connect(action_Close, SIGNAL(triggered(bool)),
+            this, SLOT(settingsWrite()));
     connect(action_Close, SIGNAL(triggered(bool)),
             this, SLOT(close()));
+
+    connect(pushButton_Close, SIGNAL(clicked(bool)),
+            this, SLOT(settingsWrite()));
     connect(pushButton_Close, SIGNAL(clicked(bool)),
             this, SLOT(close()));
+
     connect(tabWidget, SIGNAL(currentChanged(int)),
             this, SLOT(settingsWrite()));
+
     connect(pushButton_Settings, SIGNAL(clicked(bool)),
             this, SLOT(slotSettings()));
+
     connect(pushButton_About, SIGNAL(clicked(bool)),
             this ,SLOT(slotAbout()));
+
     connect(action_AboutClamUI, SIGNAL(triggered(bool)),
             this, SLOT(slotAbout()));
 
@@ -128,6 +142,7 @@ void ClamUI::slotQuit(){
     int ret = msgBox.exec();
     switch (ret) {
     case QMessageBox::Yes:
+        startDaemon.stopDaemon();
         qApp->quit();
         break;
     case QMessageBox::No:
@@ -143,6 +158,8 @@ void ClamUI::settingsWrite(){
                              APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("ClamUI");
     clamui_conf.setValue("Currend_Tab", tabWidget->currentIndex());
+    clamui_conf.setValue("Window_Size", size());
+    clamui_conf.setValue("Window_Pos", pos());
     clamui_conf.endGroup();
 }
 
@@ -151,6 +168,10 @@ void ClamUI::settingsRead(){
                              APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("ClamUI");
     tabWidget->setCurrentIndex(clamui_conf.value("Currend_Tab", 0).toInt());
+    QPoint pos = clamui_conf.value("Window_Pos", QPoint(200, 200)).toPoint();
+    QSize size = clamui_conf.value("Window_Size", QSize(900, 500)).toSize();
+    resize(size);
+    move(pos);
 
     if (clamui_conf.value("Hide_Menubar", true).toBool()){
         menubar->setVisible(true);
@@ -169,6 +190,11 @@ void ClamUI::settingsRead(){
     }
     clamui_conf.endGroup();
 
+    clamui_conf.beginGroup("ClamAV");
+    daemonPath = clamui_conf.value("Daemon_Path", "/usr/sbin/").toString();
+    configPath =  clamui_conf.value("Config_Path", CLAMAV_PATH).toString();
+    clamui_conf.endGroup();
+
 }
 
 void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){
@@ -182,7 +208,31 @@ void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){
 
 }
 
-void ClamUI::createActions(){
+void ClamUI::startClamDaemon(){
+
+    QStringList arguments;
+    arguments << " -c " + configPath + "clamd.conf";
+
+    //Clam_Processes startDaemon;
+    bool running = startDaemon.startClamDaemon(daemonPath + "clamd", arguments);
+
+    if (running) {
+        statusNotifierItem->showMessage(
+                    trUtf8("%1 - %2 - Hinweis!").arg(
+                        APP_TITLE).arg(
+                        APP_VERSION),
+                    trUtf8("Der CLamAV Dämon wurde erfolgreich gestartet."),
+                    "dialog-information",
+                    5000 );
+    } else {
+        statusNotifierItem->showMessage(
+                    trUtf8("%1 - %2 - Warnung!").arg(
+                        APP_TITLE).arg(
+                        APP_VERSION),
+                    trUtf8("Der CLamAV Dämon konnte nicht gestartet werden."),
+                    "dialog-warning",
+                    5000 );
+    }
 
 }
 

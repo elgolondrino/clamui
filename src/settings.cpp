@@ -40,8 +40,36 @@ Settings::Settings(QWidget *parent) : QDialog(parent){
                        APP_TITLE).arg(
                        APP_VERSION));
 
-    settingsRead();
+    /*
+     * Load path values in the comboBox_ClamVDB.
+     */
+    comboBox_ClamVDB->addItem(CLAMAV_VDB_PATH);
+    comboBox_ClamVDB->setItemIcon(0, QIcon::fromTheme("folder"));
+    comboBox_ClamVDB->addItem("/usr/local/share/clamav/");
+    comboBox_ClamVDB->setItemIcon(1, QIcon::fromTheme("folder"));
+    comboBox_ClamVDB->addItem("/usr/share/clamav/");
+    comboBox_ClamVDB->setItemIcon(2, QIcon::fromTheme("folder"));
+    comboBox_ClamVDB->addItem("/var/lib/clamav/");
+    comboBox_ClamVDB->setItemIcon(3, QIcon::fromTheme("folder"));
+
+    /*
+     * Load path values in the comboBox_ConfigPath.
+     */
+    comboBox_ConfigPath->addItem(CLAMAV_PATH);
+    comboBox_ConfigPath->setItemIcon(0, QIcon::fromTheme("folder"));
+    comboBox_ConfigPath->addItem("/usr/local/share/clamav/");
+    comboBox_ConfigPath->setItemIcon(1, QIcon::fromTheme("folder"));
+    comboBox_ConfigPath->addItem("/usr/share/clamav/");
+    comboBox_ConfigPath->setItemIcon(2, QIcon::fromTheme("folder"));
+    comboBox_ConfigPath->addItem("/var/lib/clamav/");
+    comboBox_ConfigPath->setItemIcon(3, QIcon::fromTheme("folder"));
+    comboBox_ConfigPath->addItem("/usr/local/etc/");
+    comboBox_ConfigPath->setItemIcon(4, QIcon::fromTheme("folder"));
+
     createSlots();
+    settingsRead();
+
+    tabWidget_Settings->setCurrentIndex(0);
 }
 
 void Settings::changeEvent(QEvent *e)
@@ -64,6 +92,42 @@ void Settings::createSlots(){
             this, SLOT(close()));
     connect(pushButton_Save, SIGNAL(clicked(bool)),
             this, SLOT(settingsWrite()));
+    connect(comboBox_ProgramPath, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotCheckPath()));
+    connect(comboBox_DaemonPath, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotCheckPath()));
+}
+
+void Settings::slotCheckPath(){
+
+    if (tabWidget_Settings->currentIndex() == 1){
+        QString pathPrograms = comboBox_ProgramPath->currentText();
+        QString pathDeamon = comboBox_DaemonPath->currentText();
+        QFile programPath, daemonPath;
+
+        /*
+         * Check where the ClamAV programs are located.
+         */
+        if (programPath.exists(pathPrograms + "clamscan")
+                and programPath.exists(pathPrograms + "freshclam")){
+            label_ProgramPath->setPixmap(
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-ok.svg"));
+        } else {
+            label_ProgramPath->setPixmap(
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-close.svg"));
+        }
+
+        /*
+         * Check where the ClamAV daemon is located.
+         */
+        if (daemonPath.exists(pathDeamon + "clamd")){
+            label_DaemonPath->setPixmap(
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-ok.svg"));
+        } else {
+            label_DaemonPath->setPixmap(
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-close.svg"));
+        }
+    }
 }
 
 void Settings::settingsWrite(){
@@ -85,6 +149,12 @@ void Settings::settingsWrite(){
     clamui_conf.beginGroup("ClamAV");
     clamui_conf.setValue("Program_Path_Id", comboBox_ProgramPath->currentIndex());
     clamui_conf.setValue("Program_Path", comboBox_ProgramPath->currentText());
+    clamui_conf.setValue("Daemon_Path_Id", comboBox_DaemonPath->currentIndex());
+    clamui_conf.setValue("Daemon_Path", comboBox_DaemonPath->currentText());
+    clamui_conf.setValue("VirusDB_Path_Id", comboBox_ClamVDB->currentIndex());
+    clamui_conf.setValue("VirusDB_Path", comboBox_ClamVDB->currentText());
+    clamui_conf.setValue("Config_Path_Id", comboBox_ConfigPath->currentIndex());
+    clamui_conf.setValue("Config_Path", comboBox_ConfigPath->currentText());
     clamui_conf.endGroup();
 }
 
@@ -117,8 +187,16 @@ void Settings::settingsRead(){
     clamui_conf.beginGroup("ClamAV");
     comboBox_ProgramPath->setCurrentIndex(
                 clamui_conf.value("Program_Path_Id", 0).toInt());
-    comboBox_ProgramPath->setCurrentText(
-                clamui_conf.value("Program_Path", "/usr/bin/").toString());
+//  QString progranPath = clamui_conf.value("Program_Path", "/usr/bin/").toString());
+    comboBox_DaemonPath->setCurrentIndex(
+                clamui_conf.value("Daemon_Path_Id", 0).toInt());
+//  QString daemonPath =   clamui_conf.value("Daemon_Path", "/usr/sbin/").toString());
+    comboBox_ClamVDB->setCurrentIndex(
+                clamui_conf.value("VirusDB_Path_Id", 0).toInt());
+//  QString virusdbPath =   clamui_conf.value("VirusDB_Path", CLAMAV_VDB_PATH").toString());
+    comboBox_ConfigPath->setCurrentIndex(
+                clamui_conf.value("Config_Path_Id", 0).toInt());
+//   QString configPath =  clamui_conf.value("Config_Path", CLAMAV_PATH).toString());
     clamui_conf.endGroup();
 }
 
@@ -150,7 +228,9 @@ void Settings::settingsDefault(){
 
 void Settings::settingsDefaultClamAV(){
     comboBox_ProgramPath->setCurrentIndex(0);
-    comboBox_ProgramPath->setCurrentText("/usr/bin/");
+    comboBox_DaemonPath->setCurrentIndex(0);
+    comboBox_ClamVDB->setCurrentIndex(0);
+    comboBox_ConfigPath->setCurrentIndex(0);
 }
 
 void Settings::settingsDefaultClamUI(){
