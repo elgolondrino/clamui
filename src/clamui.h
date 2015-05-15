@@ -79,12 +79,16 @@ private:
     void createTrayIcon(QString iconSysTray, QString statusMessage);
 //    void createActions();
     void loadThemeIcons();
-    void startClamDaemon();
+    void clamDaemon();
+    void freshclamDaemon();
 
+    QString virusdbPath;
     QString daemonPath;
     QString configPath;
+    QString programPath;
+    QString freshclamInterval;
 
-    Clam_Processes startDaemon;
+    bool freshclamAsDaemon;
 
     QMenu *menu;
     QAction *actionMenu;

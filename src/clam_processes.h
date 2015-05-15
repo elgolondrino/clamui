@@ -36,18 +36,21 @@
 #include <QtCore/qglobal.h>
 #include <QProcess>
 #include <QByteArray>
+#include <QDebug>
 
 class Clam_Processes : public QObject {
     Q_OBJECT
 public:
     explicit Clam_Processes(QObject *parent = 0);
 
-    QByteArray ClamScan(QString clamscan, QStringList argumentsList);
-    bool startClamDaemon(QString clamd, QStringList argumentsList);
+    bool clamScan(QString clamscan, QStringList argumentsList);
+    bool clamdScan(QString clamscan, QStringList argumentsList);
+    bool clamDaemon(QString clamd, QStringList argumentsList);
     void stopDaemon();
 
 private:
-    QProcess *daemonProcess;
+    QProcess *clamscanProcess;
+    QProcess *clamdscanProcess;
 };
 
 #endif // CLAM_PROCESSES_H

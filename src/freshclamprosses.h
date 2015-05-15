@@ -44,12 +44,11 @@ class FreshClamProsses : public QObject {
 public:
     explicit FreshClamProsses(QObject *parent = 0);
 
-    QByteArray FreshclamDaemon(QString freshclam, QStringList arguments);
-    QByteArray FreshclamManuelly(QString freshclam, QStringList arguments);
+    bool freshclamDaemon(QString freshclam, QStringList arguments);
+    bool freshclamManuelly(QString freshclam, QStringList arguments);
 
 private:
     QProcess *freshClamRun;
-    QProcess *freshClamRunDaemon;
 };
 
 #endif // FRESHCLAMPROSSES_H

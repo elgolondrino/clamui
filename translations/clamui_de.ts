@@ -237,28 +237,56 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="68"/>
+        <location filename="../src/clamui.cpp" line="69"/>
+        <location filename="../src/clamui.cpp" line="227"/>
+        <location filename="../src/clamui.cpp" line="266"/>
         <source>%1 - %2 - Hinweis!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="71"/>
+        <location filename="../src/clamui.cpp" line="72"/>
         <source>Das Programm läuft im Systemabschnitt der Kontrollleiste weiter. Um das Programm zu beenden, im Kontextmenü auf Beenden klicken.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="134"/>
+        <location filename="../src/clamui.cpp" line="135"/>
         <source>Beenden bestätigen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="135"/>
+        <location filename="../src/clamui.cpp" line="136"/>
         <source>Möchten Sie &lt;b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="136"/>
+        <location filename="../src/clamui.cpp" line="137"/>
         <source>&lt;/b&gt; wirklich beenden?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clamui.cpp" line="230"/>
+        <source>Der CLamAV Dämon wurde erfolgreich gestartet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clamui.cpp" line="240"/>
+        <location filename="../src/clamui.cpp" line="278"/>
+        <source>%1 - %2 - Warnung!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clamui.cpp" line="243"/>
+        <source>Der CLamAV Dämon konnte nicht gestartet werden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clamui.cpp" line="269"/>
+        <source>Das Programm &lt;i&gt;freshclam&lt;/i&gt; wurde als Dämon erfolgreich gestartet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clamui.cpp" line="281"/>
+        <source>Das Programm &lt;i&gt;freshclam&lt;/i&gt; konnte nicht als Dämon gestartet werden.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -800,12 +828,12 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="201"/>
+        <location filename="../src/settings.cpp" line="207"/>
         <source>Zurücksetzen bestätigen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="202"/>
+        <location filename="../src/settings.cpp" line="208"/>
         <source>Möchten Sie die Werte wirklich auf die Standardeinstellungen zurücksetzen?</source>
         <translation type="unfinished"></translation>
     </message>

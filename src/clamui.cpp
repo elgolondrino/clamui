@@ -47,8 +47,7 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
 //    createActions();
     createTrayIcon("clamui", "ClamAV ist derzeit inaktiv.");
 
-    startClamDaemon();
-
+    clamDaemon();
 }
 
 void ClamUI::changeEvent(QEvent *event){
@@ -75,7 +74,7 @@ void ClamUI::closeEvent(QCloseEvent *event)
                            "Um das Programm zu beenden, "
                            "im Kontextmenü auf Beenden klicken."),
                     "dialog-information",
-                    5000 );
+                    10000 );
     }
     hide();
     event->accept();
@@ -142,7 +141,7 @@ void ClamUI::slotQuit(){
     int ret = msgBox.exec();
     switch (ret) {
     case QMessageBox::Yes:
-        startDaemon.stopDaemon();
+//        startDaemon.stopDaemon();
         qApp->quit();
         break;
     case QMessageBox::No:
@@ -192,9 +191,15 @@ void ClamUI::settingsRead(){
 
     clamui_conf.beginGroup("ClamAV");
     daemonPath = clamui_conf.value("Daemon_Path", "/usr/sbin/").toString();
+    programPath = clamui_conf.value("Program_Path", "/usr/bin/").toString();
     configPath =  clamui_conf.value("Config_Path", CLAMAV_PATH).toString();
+    virusdbPath =  clamui_conf.value("VirusDB_Path", CLAMAV_VDB_PATH).toString();
     clamui_conf.endGroup();
 
+    clamui_conf.beginGroup("Freshclam");
+    freshclamAsDaemon = clamui_conf.value("Start_As_Demon", false).toBool();
+    freshclamInterval = clamui_conf.value("Update_Interval", false).toString();
+    clamui_conf.endGroup();
 }
 
 void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){
@@ -208,23 +213,29 @@ void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){
 
 }
 
-void ClamUI::startClamDaemon(){
+void ClamUI::clamDaemon(){
 
     QStringList arguments;
-    arguments << " -c " + configPath + "clamd.conf";
+    arguments << "--config-file=" + configPath + "clamd.conf";
 
-    //Clam_Processes startDaemon;
-    bool running = startDaemon.startClamDaemon(daemonPath + "clamd", arguments);
+    Clam_Processes startDaemon;
+    bool running = startDaemon.clamDaemon(daemonPath + "clamd", arguments);
 
     if (running) {
         statusNotifierItem->showMessage(
+
                     trUtf8("%1 - %2 - Hinweis!").arg(
                         APP_TITLE).arg(
                         APP_VERSION),
                     trUtf8("Der CLamAV Dämon wurde erfolgreich gestartet."),
                     "dialog-information",
                     5000 );
-    } else {
+
+        if (freshclamAsDaemon)
+            freshclamDaemon();
+
+    } else if (!running) {
+
         statusNotifierItem->showMessage(
                     trUtf8("%1 - %2 - Warnung!").arg(
                         APP_TITLE).arg(
@@ -234,6 +245,44 @@ void ClamUI::startClamDaemon(){
                     5000 );
     }
 
+}
+
+void ClamUI::freshclamDaemon(){
+
+    QStringList arguments;
+    arguments << " -d" << " --checks=" + freshclamInterval
+              << " --config-file=" + configPath +  "freshclam.conf"
+              << " --log=" + configPath + "freshclam.log"
+              << " --datadir=" + virusdbPath
+              << " --daemon-notify=" + configPath + "clamd.conf";
+
+    FreshClamProsses *startFreshClam = new FreshClamProsses;
+
+    bool running = startFreshClam->freshclamDaemon(programPath + "freshclam", arguments);
+
+    if (running) {
+        statusNotifierItem->showMessage(
+
+                    trUtf8("%1 - %2 - Hinweis!").arg(
+                        APP_TITLE).arg(
+                        APP_VERSION),
+                    trUtf8("Das Programm <i>freshclam</i> wurde als "
+                           "Dämon erfolgreich gestartet."),
+                    "dialog-information",
+                    5000 );
+        freshclamDaemon();
+
+    } else if (!running) {
+
+        statusNotifierItem->showMessage(
+                    trUtf8("%1 - %2 - Warnung!").arg(
+                        APP_TITLE).arg(
+                        APP_VERSION),
+                    trUtf8("Das Programm <i>freshclam</i> konnte nicht "
+                           "als Dämon gestartet werden."),
+                    "dialog-warning",
+                    5000 );
+    }
 }
 
 void ClamUI::loadThemeIcons(){
