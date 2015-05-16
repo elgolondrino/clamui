@@ -83,23 +83,14 @@ void ClamUI::closeEvent(QCloseEvent *event)
 
 void ClamUI::createSlots(){
 
-    connect(action_Quit, SIGNAL(triggered(bool)),
-            this, SLOT(settingsWrite()));
-    connect(action_Quit, SIGNAL(triggered(bool)),
-            this, SLOT(slotQuit()));
-
-    connect(action_Close, SIGNAL(triggered(bool)),
-            this, SLOT(settingsWrite()));
-    connect(action_Close, SIGNAL(triggered(bool)),
-            this, SLOT(close()));
-
-    connect(pushButton_Close, SIGNAL(clicked(bool)),
-            this, SLOT(settingsWrite()));
-    connect(pushButton_Close, SIGNAL(clicked(bool)),
-            this, SLOT(close()));
 
     connect(tabWidget, SIGNAL(currentChanged(int)),
             this, SLOT(settingsWrite()));
+
+    connect(pushButton_Close, SIGNAL(clicked(bool)),
+            this, SLOT(settingsWrite()));
+    connect(pushButton_Close, SIGNAL(clicked(bool)),
+            this, SLOT(close()));
 
     connect(pushButton_Settings, SIGNAL(clicked(bool)),
             this, SLOT(slotSettings()));
@@ -110,7 +101,33 @@ void ClamUI::createSlots(){
     connect(action_AboutClamUI, SIGNAL(triggered(bool)),
             this, SLOT(slotAbout()));
 
+    connect(action_Quit, SIGNAL(triggered(bool)),
+            this, SLOT(settingsWrite()));
+    connect(action_Quit, SIGNAL(triggered(bool)),
+            this, SLOT(slotQuit()));
 
+    connect(action_Close, SIGNAL(triggered(bool)),
+            this, SLOT(settingsWrite()));
+    connect(action_Close, SIGNAL(triggered(bool)),
+            this, SLOT(close()));
+
+    connect(action_Settings, SIGNAL(triggered(bool)),
+            this, SLOT(slotSettings()));
+
+    connect(action_Update_VirusDB, SIGNAL(triggered(bool)),
+            this, SLOT(slotUpdateVirusDB()));
+
+    connect(action_FilesQuarantyne, SIGNAL(triggered(bool)),
+            this, SLOT(slotIsolatedFiles()));
+}
+
+void ClamUI::slotUpdateVirusDB(){
+
+    tabWidget->setCurrentIndex(3);
+}
+void ClamUI::slotIsolatedFiles(){
+
+    tabWidget->setCurrentIndex(2);
 }
 
 void ClamUI::slotSettings(){
@@ -204,12 +221,21 @@ void ClamUI::settingsRead(){
 
 void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){
 
+
+    trayIconMenu = new QMenu(this);
+    trayIconMenu->addAction(action_Handbook);
+    trayIconMenu->addSeparator();
+    trayIconMenu->addAction(action_Settings);
+    trayIconMenu->setTitle(QString("%1 - %2").arg(APP_TITLE).arg(APP_VERSION));
+
     statusNotifierItem = new KStatusNotifierItem(this);
+    statusNotifierItem->setTitle(QString("%1 - %2").arg(APP_TITLE).arg(APP_VERSION));
     statusNotifierItem->setToolTip("clamui",
                                    APP_TITLE " - " APP_VERSION,
                                    statusMessage);
     statusNotifierItem->setIconByName(iconSysTray);
     statusNotifierItem->setStatus(KStatusNotifierItem::Active);
+    statusNotifierItem->setContextMenu(trayIconMenu);
 
 }
 
@@ -231,8 +257,8 @@ void ClamUI::clamDaemon(){
                     "dialog-information",
                     5000 );
 
-        if (freshclamAsDaemon)
-            freshclamDaemon();
+//        if (freshclamAsDaemon)
+//            freshclamDaemon();
 
     } else if (!running) {
 

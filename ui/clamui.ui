@@ -15,7 +15,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="movable">
        <bool>true</bool>
@@ -27,7 +27,7 @@
         </iconset>
        </attribute>
        <attribute name="title">
-        <string>Überprüfungsintervalle</string>
+        <string>Automatische Virenprüfung</string>
        </attribute>
       </widget>
       <widget class="TabVirusScan" name="tab_02">
@@ -37,7 +37,7 @@
         </iconset>
        </attribute>
        <attribute name="title">
-        <string>Dateien Scannen</string>
+        <string>Datei(en) auf Viren prüfen</string>
        </attribute>
       </widget>
       <widget class="TabVirusQuarantine" name="tab_03">
@@ -49,6 +49,7 @@
        <attribute name="title">
         <string>Dateien in Quarantäne</string>
        </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3"/>
       </widget>
       <widget class="TabVirusDB" name="tab_04">
        <attribute name="icon">
@@ -148,7 +149,7 @@
      <x>0</x>
      <y>0</y>
      <width>900</width>
-     <height>27</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -165,10 +166,55 @@
     </property>
     <addaction name="action_Handbook"/>
     <addaction name="separator"/>
+    <addaction name="actionClamAV_Online"/>
+    <addaction name="separator"/>
     <addaction name="action_AboutClamUI"/>
     <addaction name="action_AboutKDE"/>
    </widget>
+   <widget class="QMenu" name="menu_Extra">
+    <property name="title">
+     <string>E&amp;xtra</string>
+    </property>
+    <addaction name="action_Settings"/>
+   </widget>
+   <widget class="QMenu" name="menu_ClamAV">
+    <property name="title">
+     <string>&amp;ClamAV</string>
+    </property>
+    <widget class="QMenu" name="menuClamAV_Daemon">
+     <property name="title">
+      <string>ClamAV Dämon</string>
+     </property>
+     <property name="icon">
+      <iconset theme="clamav"/>
+     </property>
+     <property name="toolTipsVisible">
+      <bool>true</bool>
+     </property>
+     <addaction name="actionClamAV_Daemon_Start"/>
+     <addaction name="actionClamAV_Daemon_Stop"/>
+    </widget>
+    <widget class="QMenu" name="menuFreshClam">
+     <property name="title">
+      <string>FreshClam</string>
+     </property>
+     <property name="icon">
+      <iconset theme="clamav"/>
+     </property>
+     <addaction name="actionFreshclam_Daemon_Start"/>
+     <addaction name="actionFreshClam_Daemon_Stop"/>
+    </widget>
+    <addaction name="actionDateien_auf_Viren_pr_fen"/>
+    <addaction name="separator"/>
+    <addaction name="menuClamAV_Daemon"/>
+    <addaction name="menuFreshClam"/>
+    <addaction name="separator"/>
+    <addaction name="action_Update_VirusDB"/>
+    <addaction name="action_FilesQuarantyne"/>
+   </widget>
    <addaction name="menu_File"/>
+   <addaction name="menu_ClamAV"/>
+   <addaction name="menu_Extra"/>
    <addaction name="menu_Help"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -242,6 +288,79 @@
     <string>Über &amp;KDE</string>
    </property>
   </action>
+  <action name="action_Settings">
+   <property name="icon">
+    <iconset theme="configure"/>
+   </property>
+   <property name="text">
+    <string>Einstellungen</string>
+   </property>
+  </action>
+  <action name="actionClamAV_Online">
+   <property name="icon">
+    <iconset resource="../clamui.qrc">
+     <normaloff>:/icons/icons/breeze/actions/toolbar/web-browser.svg</normaloff>:/icons/icons/breeze/actions/toolbar/web-browser.svg</iconset>
+   </property>
+   <property name="text">
+    <string>ClamAV im Web</string>
+   </property>
+  </action>
+  <action name="actionClamAV_Daemon_Start">
+   <property name="icon">
+    <iconset theme="clamav"/>
+   </property>
+   <property name="text">
+    <string>ClamAV Dämon starten</string>
+   </property>
+  </action>
+  <action name="actionClamAV_Daemon_Stop">
+   <property name="icon">
+    <iconset theme="clamav"/>
+   </property>
+   <property name="text">
+    <string>ClamAV Dämon anhalten</string>
+   </property>
+  </action>
+  <action name="actionFreshclam_Daemon_Start">
+   <property name="icon">
+    <iconset theme="clamav"/>
+   </property>
+   <property name="text">
+    <string>FreshClam als Dämon starten</string>
+   </property>
+  </action>
+  <action name="actionFreshClam_Daemon_Stop">
+   <property name="icon">
+    <iconset theme="clamav"/>
+   </property>
+   <property name="text">
+    <string>FreshClam Dämon anhalten</string>
+   </property>
+  </action>
+  <action name="action_Update_VirusDB">
+   <property name="icon">
+    <iconset theme="document-properties"/>
+   </property>
+   <property name="text">
+    <string>Virendefinitionen aktualisieren</string>
+   </property>
+  </action>
+  <action name="action_FilesQuarantyne">
+   <property name="icon">
+    <iconset theme="document-encrypted"/>
+   </property>
+   <property name="text">
+    <string>Dateien in Quarantäne</string>
+   </property>
+  </action>
+  <action name="actionDateien_auf_Viren_pr_fen">
+   <property name="icon">
+    <iconset theme="system-search"/>
+   </property>
+   <property name="text">
+    <string>Dateien auf Viren prüfen</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -282,6 +401,8 @@
   <tabstop>pushButton_Settings</tabstop>
   <tabstop>pushButton_Close</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../clamui.qrc"/>
+ </resources>
  <connections/>
 </ui>

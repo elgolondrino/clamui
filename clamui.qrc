@@ -1,16 +1,17 @@
 <RCC>
-    <qresource prefix="/translations">
-        <file>translations/translation_info.txt</file>
-    </qresource>
-    <qresource prefix="/icons">
-        <file>icons/breeze/actions/toolbar/dialog-ok.svg</file>
-        <file>icons/breeze/actions/toolbar/dialog-close.svg</file>
-        <file>icons/png/clamui.png</file>
-        <file>icons/png/clamav.png</file>
-        <file>icons/png/clamui-256.png</file>
-        <file>icons/png/clamav-256.png</file>
-        <file>icons/png/clamav-128.png</file>
-        <file>icons/png/clamui-128.png</file>
-        <file>icons/png/clamav-128x128.png</file>
-    </qresource>
+  <qresource prefix="/translations">
+    <file>translations/translation_info.txt</file>
+  </qresource>
+  <qresource prefix="/icons">
+    <file>icons/breeze/actions/toolbar/web-browser.svg</file>
+    <file>icons/breeze/actions/toolbar/dialog-ok.svg</file>
+    <file>icons/breeze/actions/toolbar/dialog-close.svg</file>
+    <file>icons/png/clamui.png</file>
+    <file>icons/png/clamav.png</file>
+    <file>icons/png/clamui-256.png</file>
+    <file>icons/png/clamav-256.png</file>
+    <file>icons/png/clamav-128.png</file>
+    <file>icons/png/clamui-128.png</file>
+    <file>icons/png/clamav-128x128.png</file>
+  </qresource>
 </RCC>

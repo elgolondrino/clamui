@@ -90,15 +90,18 @@ private:
 
     bool freshclamAsDaemon;
 
-    QMenu *menu;
-    QAction *actionMenu;
-    KIconLoader *iconLoader;
     KStatusNotifierItem *statusNotifierItem;
+    QMenu *trayIconMenu;
+    QTranslator *appTranslator;
+    LanguageTools * languages;
+    QMap<QString, QString> * fileToNiceName;
 
 private slots:
     void slotQuit();
     void slotAbout();
     void slotSettings();
+    void slotIsolatedFiles();
+    void slotUpdateVirusDB();
     void settingsWrite();
 };
 
