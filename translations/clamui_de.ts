@@ -127,108 +127,165 @@ Vielen Dank im voraus.</source>
 <context>
     <name>ClamUI</name>
     <message>
-        <location filename="../ui/clamui.ui" line="30"/>
-        <source>Überprüfungsintervalle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/clamui.ui" line="40"/>
-        <source>Dateien Scannen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../ui/clamui.ui" line="50"/>
+        <location filename="../ui/clamui.ui" line="353"/>
         <source>Dateien in Quarantäne</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="60"/>
+        <location filename="../ui/clamui.ui" line="61"/>
         <source>ClamAV Virendefinitionen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="70"/>
+        <location filename="../ui/clamui.ui" line="71"/>
         <source>Über ClamAV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="132"/>
+        <location filename="../ui/clamui.ui" line="133"/>
         <source>Schließen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="156"/>
+        <location filename="../ui/clamui.ui" line="157"/>
         <source>&amp;Datei</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="80"/>
+        <location filename="../ui/clamui.ui" line="81"/>
         <source>Hilfe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="92"/>
+        <location filename="../ui/clamui.ui" line="30"/>
+        <source>Automatische Virenprüfung</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="40"/>
+        <source>Datei(en) auf Viren prüfen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="93"/>
         <source>Über...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="104"/>
+        <location filename="../ui/clamui.ui" line="105"/>
+        <location filename="../ui/clamui.ui" line="296"/>
         <source>Einstellungen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="129"/>
+        <location filename="../ui/clamui.ui" line="130"/>
         <source>Schließt dieses Fenster. Das Programm läuft im Systemabschnitt der Kontrollleiste weiter.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="164"/>
+        <location filename="../ui/clamui.ui" line="165"/>
         <source>&amp;?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="177"/>
+        <location filename="../ui/clamui.ui" line="176"/>
+        <source>E&amp;xtra</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="182"/>
+        <source>&amp;ClamAV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="186"/>
+        <source>ClamAV Dämon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="199"/>
+        <source>FreshClam</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="223"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="193"/>
+        <location filename="../ui/clamui.ui" line="239"/>
         <source>&amp;Schließen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="196"/>
+        <location filename="../ui/clamui.ui" line="242"/>
         <source>Ctrl+S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="206"/>
+        <location filename="../ui/clamui.ui" line="252"/>
         <source>&amp;Beenden</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="209"/>
+        <location filename="../ui/clamui.ui" line="255"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="219"/>
+        <location filename="../ui/clamui.ui" line="265"/>
         <source>&amp;Handbuch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="222"/>
+        <location filename="../ui/clamui.ui" line="268"/>
         <source>F1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="232"/>
+        <location filename="../ui/clamui.ui" line="278"/>
         <source>&amp;Über ClamUI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="242"/>
+        <location filename="../ui/clamui.ui" line="288"/>
         <source>Über &amp;KDE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="305"/>
+        <source>ClamAV im Web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="313"/>
+        <source>ClamAV Dämon starten</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="321"/>
+        <source>ClamAV Dämon anhalten</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="329"/>
+        <source>FreshClam als Dämon starten</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="337"/>
+        <source>FreshClam Dämon anhalten</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="345"/>
+        <source>Virendefinitionen aktualisieren</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="361"/>
+        <source>Dateien auf Viren prüfen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -238,8 +295,8 @@ Vielen Dank im voraus.</source>
     </message>
     <message>
         <location filename="../src/clamui.cpp" line="69"/>
-        <location filename="../src/clamui.cpp" line="227"/>
-        <location filename="../src/clamui.cpp" line="266"/>
+        <location filename="../src/clamui.cpp" line="253"/>
+        <location filename="../src/clamui.cpp" line="292"/>
         <source>%1 - %2 - Hinweis!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -249,43 +306,43 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="135"/>
+        <location filename="../src/clamui.cpp" line="152"/>
         <source>Beenden bestätigen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="136"/>
+        <location filename="../src/clamui.cpp" line="153"/>
         <source>Möchten Sie &lt;b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="137"/>
+        <location filename="../src/clamui.cpp" line="154"/>
         <source>&lt;/b&gt; wirklich beenden?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="230"/>
+        <location filename="../src/clamui.cpp" line="256"/>
         <source>Der CLamAV Dämon wurde erfolgreich gestartet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="240"/>
-        <location filename="../src/clamui.cpp" line="278"/>
+        <location filename="../src/clamui.cpp" line="266"/>
+        <location filename="../src/clamui.cpp" line="304"/>
         <source>%1 - %2 - Warnung!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="243"/>
+        <location filename="../src/clamui.cpp" line="269"/>
         <source>Der CLamAV Dämon konnte nicht gestartet werden.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="269"/>
+        <location filename="../src/clamui.cpp" line="295"/>
         <source>Das Programm &lt;i&gt;freshclam&lt;/i&gt; wurde als Dämon erfolgreich gestartet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="281"/>
+        <location filename="../src/clamui.cpp" line="307"/>
         <source>Das Programm &lt;i&gt;freshclam&lt;/i&gt; konnte nicht als Dämon gestartet werden.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1062,24 +1119,109 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
 <context>
     <name>TabVirusDB</name>
     <message>
-        <location filename="../ui/tabvirusdb.ui" line="16"/>
+        <location filename="../ui/tabvirusdb.ui" line="14"/>
         <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusdb.ui" line="22"/>
+        <source>Aktualisiert die Virendatenbank.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusdb.ui" line="25"/>
+        <source>Virendefinition aktualisieren</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusdb.ui" line="54"/>
+        <source>Virendefinition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusdb.ui" line="64"/>
+        <source>Beschreibung</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TabVirusQuarantine</name>
     <message>
-        <location filename="../ui/tabvirusquarantine.ui" line="16"/>
+        <location filename="../ui/tabvirusquarantine.ui" line="14"/>
         <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusquarantine.ui" line="20"/>
+        <source>Aktionen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusquarantine.ui" line="28"/>
+        <source>Markierte Darteien löschen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusquarantine.ui" line="40"/>
+        <source>Markierte Dateien wieder herstellen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusquarantine.ui" line="57"/>
+        <source>Isolierte Dateien</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TabVirusScan</name>
     <message>
-        <location filename="../ui/tabvirusscan.ui" line="16"/>
+        <location filename="../ui/tabvirusscan.ui" line="14"/>
         <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusscan.ui" line="23"/>
+        <source>Dateien auf Viren überprüfen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusscan.ui" line="29"/>
+        <source>Dateien die von der Überprüfung ausgeschlossen werden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusscan.ui" line="75"/>
+        <source>Verzeichnisse auswählen, deren Inhalte von ClamAV nicht überprüft werden sollen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusscan.ui" line="78"/>
+        <source>Verzeichnis hinzufügen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusscan.ui" line="90"/>
+        <source>Dateien auswählen, die von ClamAV nicht überprüft werden sollen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusscan.ui" line="93"/>
+        <source>Datei hinzufügen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusscan.ui" line="105"/>
+        <source>Ausgewählte Datei entfernen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusscan.ui" line="108"/>
+        <source>Markierte Entfernen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabvirusscan.ui" line="131"/>
+        <source>Ausgabe</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
