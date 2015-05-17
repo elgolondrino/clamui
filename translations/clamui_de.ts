@@ -128,7 +128,6 @@ Vielen Dank im voraus.</source>
     <name>ClamUI</name>
     <message>
         <location filename="../ui/clamui.ui" line="50"/>
-        <location filename="../ui/clamui.ui" line="353"/>
         <source>Dateien in Quarantäne</source>
         <translation type="unfinished"></translation>
     </message>
@@ -174,7 +173,6 @@ Vielen Dank im voraus.</source>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="105"/>
-        <location filename="../ui/clamui.ui" line="296"/>
         <source>Einstellungen</source>
         <translation type="unfinished"></translation>
     </message>
@@ -200,103 +198,113 @@ Vielen Dank im voraus.</source>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="186"/>
-        <source>ClamAV Dämon</source>
+        <source>&amp;ClamAV Dämon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="199"/>
-        <source>FreshClam</source>
+        <location filename="../ui/clamui.ui" line="201"/>
+        <source>&amp;FreshClam</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="223"/>
-        <source>toolBar</source>
+        <location filename="../ui/clamui.ui" line="302"/>
+        <source>&amp;Einstellungen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="239"/>
-        <source>&amp;Schließen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/clamui.ui" line="242"/>
-        <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/clamui.ui" line="252"/>
-        <source>&amp;Beenden</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/clamui.ui" line="255"/>
-        <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/clamui.ui" line="265"/>
-        <source>&amp;Handbuch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/clamui.ui" line="268"/>
-        <source>F1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/clamui.ui" line="278"/>
-        <source>&amp;Über ClamUI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/clamui.ui" line="288"/>
-        <source>Über &amp;KDE</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/clamui.ui" line="305"/>
-        <source>ClamAV im Web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/clamui.ui" line="313"/>
-        <source>ClamAV Dämon starten</source>
+        <location filename="../ui/clamui.ui" line="311"/>
+        <source>&amp;ClamAV im Web</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="321"/>
-        <source>ClamAV Dämon anhalten</source>
+        <source>&amp;ClamAV Dämon starten</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="329"/>
-        <source>FreshClam als Dämon starten</source>
+        <location filename="../ui/clamui.ui" line="331"/>
+        <source>ClamAV &amp;Dämon anhalten</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="337"/>
-        <source>FreshClam Dämon anhalten</source>
+        <location filename="../ui/clamui.ui" line="341"/>
+        <source>&amp;FreshClam als Dämon starten</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/clamui.ui" line="345"/>
-        <source>Virendefinitionen aktualisieren</source>
+        <location filename="../ui/clamui.ui" line="351"/>
+        <source>FreshClam &amp;Dämon anhalten</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="361"/>
-        <source>Dateien auf Viren prüfen</source>
+        <source>&amp;Virendefinitionen aktualisieren</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="40"/>
+        <location filename="../ui/clamui.ui" line="371"/>
+        <source>Dateien &amp;in Quarantäne</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="381"/>
+        <source>&amp;Dateien auf Viren prüfen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="227"/>
+        <source>toolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="243"/>
+        <source>&amp;Schließen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="246"/>
+        <source>Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="256"/>
+        <source>&amp;Beenden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="259"/>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="269"/>
+        <source>&amp;Handbuch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="272"/>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="282"/>
+        <source>&amp;Über ClamUI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/clamui.ui" line="292"/>
+        <source>Über &amp;KDE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clamui.cpp" line="38"/>
         <source>%1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clamui.cpp" line="69"/>
-        <location filename="../src/clamui.cpp" line="253"/>
-        <location filename="../src/clamui.cpp" line="292"/>
+        <location filename="../src/clamui.cpp" line="262"/>
+        <location filename="../src/clamui.cpp" line="299"/>
         <source>%1 - %2 - Hinweis!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -306,44 +314,49 @@ Vielen Dank im voraus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="152"/>
+        <location filename="../src/clamui.cpp" line="161"/>
         <source>Beenden bestätigen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="153"/>
+        <location filename="../src/clamui.cpp" line="162"/>
         <source>Möchten Sie &lt;b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="154"/>
+        <location filename="../src/clamui.cpp" line="163"/>
         <source>&lt;/b&gt; wirklich beenden?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="256"/>
-        <source>Der CLamAV Dämon wurde erfolgreich gestartet.</source>
+        <location filename="../src/clamui.cpp" line="265"/>
+        <source>Der &lt;b&gt;CLamAV Dämon&lt;/b&gt; wurde erfolgreich gestartet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="266"/>
+        <location filename="../src/clamui.cpp" line="275"/>
+        <source>Der &lt;b&gt;CLamAV Dämon&lt;/b&gt; konnte &lt;b&gt;nicht&lt;/b&gt; gestartet werden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clamui.cpp" line="302"/>
+        <source>Der &lt;b&gt;Datenbank Update Dämon&lt;/b&gt; wurde erfolgreich gestartet und aktualisiert </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/clamui.cpp" line="304"/>
+        <source>x am Tag die Virendatenbank.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clamui.cpp" line="315"/>
+        <source>Der &lt;b&gt;Datenbank Update Dämon&lt;/b&gt; konnte &lt;b&gt;nicht&lt;/b&gt; gestartet werden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clamui.cpp" line="272"/>
+        <location filename="../src/clamui.cpp" line="312"/>
         <source>%1 - %2 - Warnung!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/clamui.cpp" line="269"/>
-        <source>Der CLamAV Dämon konnte nicht gestartet werden.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/clamui.cpp" line="295"/>
-        <source>Das Programm &lt;i&gt;freshclam&lt;/i&gt; wurde als Dämon erfolgreich gestartet.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/clamui.cpp" line="307"/>
-        <source>Das Programm &lt;i&gt;freshclam&lt;/i&gt; konnte nicht als Dämon gestartet werden.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -921,17 +934,17 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="94"/>
+        <location filename="../ui/tabscanscheduling.ui" line="117"/>
         <source>dd.MM.yyyy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="104"/>
+        <location filename="../ui/tabscanscheduling.ui" line="81"/>
         <source>Dat&amp;um:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="114"/>
+        <location filename="../ui/tabscanscheduling.ui" line="91"/>
         <source>Uhr&amp;zeit:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -966,13 +979,13 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="247"/>
-        <source>Verzeichnisse ausschließen</source>
+        <location filename="../ui/tabscanscheduling.ui" line="312"/>
+        <source>Dateien und Verzeichnisse auswählen, deren Inhalte von ClamAV nicht überprüft werden sollen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="340"/>
-        <source>Dateien ausschließen</source>
+        <location filename="../ui/tabscanscheduling.ui" line="330"/>
+        <source>Markierte Entfernen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -986,53 +999,28 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../ui/tabscanscheduling.ui" line="247"/>
+        <source>Dateien und Verzeichnisse ausschließen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../ui/tabscanscheduling.ui" line="253"/>
         <source>Verzeichnisse die von der Überprüfung ausgeschlossen werden.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="302"/>
-        <source>Verzeichnisse auswählen, deren Inhalte von ClamAV nicht überprüft werden sollen.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="305"/>
+        <location filename="../ui/tabscanscheduling.ui" line="315"/>
         <source>Verzeichnis hinzufügen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="317"/>
+        <location filename="../ui/tabscanscheduling.ui" line="327"/>
         <source>Ausgewähltes Verzeichnis entfernen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="320"/>
-        <source>Verzeichnis Entfernen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="346"/>
-        <source>Dateien die von der Überprüfung ausgeschlossen werden.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="392"/>
-        <source>Dateien auswählen, die von ClamAV nicht überprüft werden sollen.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="395"/>
+        <location filename="../ui/tabscanscheduling.ui" line="302"/>
         <source>Datei hinzufügen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="407"/>
-        <source>Ausgewählte Datei entfernen.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabscanscheduling.ui" line="410"/>
-        <source>Datei Entfernen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1098,20 +1086,17 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="276"/>
-        <location filename="../src/tabscanscheduling.cpp" line="348"/>
+        <location filename="../src/tabscanscheduling.cpp" line="304"/>
         <source>Löschen bestätigen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="277"/>
-        <location filename="../src/tabscanscheduling.cpp" line="349"/>
+        <location filename="../src/tabscanscheduling.cpp" line="305"/>
         <source>Möchten Sie die den Eintrag &lt;b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="279"/>
-        <location filename="../src/tabscanscheduling.cpp" line="351"/>
+        <location filename="../src/tabscanscheduling.cpp" line="307"/>
         <source>&lt;/b&gt; wirklich löschen?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1196,31 +1181,21 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     </message>
     <message>
         <location filename="../ui/tabvirusscan.ui" line="78"/>
-        <source>Verzeichnis hinzufügen</source>
+        <source>Datei oder Verzeichnis hinzufügen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tabvirusscan.ui" line="90"/>
-        <source>Dateien auswählen, die von ClamAV nicht überprüft werden sollen.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabvirusscan.ui" line="93"/>
-        <source>Datei hinzufügen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/tabvirusscan.ui" line="105"/>
         <source>Ausgewählte Datei entfernen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabvirusscan.ui" line="108"/>
+        <location filename="../ui/tabvirusscan.ui" line="93"/>
         <source>Markierte Entfernen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/tabvirusscan.ui" line="131"/>
+        <location filename="../ui/tabvirusscan.ui" line="116"/>
         <source>Ausgabe</source>
         <translation type="unfinished"></translation>
     </message>
