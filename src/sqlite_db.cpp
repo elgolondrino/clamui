@@ -49,20 +49,15 @@ void SQLite_DB::connectDB(){
 
         db.setConnectOptions();
         // Create tables.
-        createTables();
+        createTable();
     }
     db.close();
 }
 
-void SQLite_DB::createTables(){
+void SQLite_DB::createTable(){
 
     QSqlQuery createDirectory(db);
-    createDirectory.exec("CREATE TABLE IF NOT EXISTS directories("
+    createDirectory.exec("CREATE TABLE IF NOT EXISTS dir_files("
                          "`id` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,"
-                         "`directory` VARCHAR(250) NOT NULL)");
-
-    QSqlQuery createFiles(db);
-    createFiles.exec("CREATE TABLE IF NOT EXISTS files("
-                     "`id` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,"
-                     "`file` VARCHAR(250) NOT NULL)");
+                         "`value` VARCHAR(250) NOT NULL)");
 }

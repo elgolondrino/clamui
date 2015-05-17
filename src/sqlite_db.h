@@ -49,7 +49,7 @@ public:
     void connectDB();
 
 private:
-    void createTables();
+    void createTable();
 
     QSqlDatabase db;
 };
