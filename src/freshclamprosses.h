@@ -35,12 +35,12 @@
 #include <QtCore/QObject>
 #include <QtCore/qglobal.h>
 #include <QProcess>
-#include <QByteArray>
 
 #include "definitionen.h"
 
 class FreshClamProsses : public QObject {
     Q_OBJECT
+
 public:
     explicit FreshClamProsses(QObject *parent = 0);
 
@@ -48,7 +48,7 @@ public:
     bool freshclamManuelly(QString freshclam, QStringList arguments);
 
 private:
-    QProcess *freshClamRun;
+
 };
 
 #endif // FRESHCLAMPROSSES_H

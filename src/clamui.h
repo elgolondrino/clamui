@@ -77,8 +77,6 @@ private:
     void createSlots();
     void settingsRead();
     void createTrayIcon(QString iconSysTray, QString statusMessage);
-//    void createActions();
-    void loadThemeIcons();
     void clamDaemon();
     void freshclamDaemon();
 
@@ -100,6 +98,7 @@ private slots:
     void slotQuit();
     void slotAbout();
     void slotSettings();
+    void slotScanFiles();
     void slotIsolatedFiles();
     void slotUpdateVirusDB();
     void settingsWrite();

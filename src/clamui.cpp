@@ -35,8 +35,6 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
 
     setupUi(this);
 
-    loadThemeIcons();
-
     setWindowTitle(trUtf8("%1 %2").arg(
                        APP_TITLE).arg(
                        APP_VERSION));
@@ -44,8 +42,10 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
 
     createSlots();
     settingsRead();
-//    createActions();
     createTrayIcon("clamui", "ClamAV ist derzeit inaktiv.");
+
+    if (freshclamAsDaemon)
+        freshclamDaemon();
 
     clamDaemon();
 }
@@ -119,15 +119,24 @@ void ClamUI::createSlots(){
 
     connect(action_FilesQuarantyne, SIGNAL(triggered(bool)),
             this, SLOT(slotIsolatedFiles()));
+
+    connect(action_FilesScan, SIGNAL(triggered(bool)),
+            this, SLOT(slotScanFiles()));
 }
 
 void ClamUI::slotUpdateVirusDB(){
 
     tabWidget->setCurrentIndex(3);
 }
+
 void ClamUI::slotIsolatedFiles(){
 
     tabWidget->setCurrentIndex(2);
+}
+
+void ClamUI::slotScanFiles(){
+
+    tabWidget->setCurrentIndex(1);
 }
 
 void ClamUI::slotSettings(){
@@ -185,8 +194,8 @@ void ClamUI::settingsRead(){
     clamui_conf.beginGroup("ClamUI");
     tabWidget->setCurrentIndex(clamui_conf.value("Currend_Tab", 0).toInt());
     QPoint pos = clamui_conf.value("Window_Pos", QPoint(200, 200)).toPoint();
-    QSize size = clamui_conf.value("Window_Size", QSize(900, 500)).toSize();
-    resize(size);
+    resize(clamui_conf.value("Window_Size", QSize(900, 500)).toSize());
+//    resize(size);
     move(pos);
 
     if (clamui_conf.value("Hide_Menubar", true).toBool()){
@@ -253,12 +262,9 @@ void ClamUI::clamDaemon(){
                     trUtf8("%1 - %2 - Hinweis!").arg(
                         APP_TITLE).arg(
                         APP_VERSION),
-                    trUtf8("Der CLamAV Dämon wurde erfolgreich gestartet."),
+                    trUtf8("Der <b>CLamAV Dämon</b> wurde erfolgreich gestartet."),
                     "dialog-information",
                     5000 );
-
-//        if (freshclamAsDaemon)
-//            freshclamDaemon();
 
     } else if (!running) {
 
@@ -266,7 +272,7 @@ void ClamUI::clamDaemon(){
                     trUtf8("%1 - %2 - Warnung!").arg(
                         APP_TITLE).arg(
                         APP_VERSION),
-                    trUtf8("Der CLamAV Dämon konnte nicht gestartet werden."),
+                    trUtf8("Der <b>CLamAV Dämon</b> konnte <b>nicht</b> gestartet werden."),
                     "dialog-warning",
                     5000 );
     }
@@ -276,41 +282,39 @@ void ClamUI::clamDaemon(){
 void ClamUI::freshclamDaemon(){
 
     QStringList arguments;
-    arguments << " -d" << " --checks=" + freshclamInterval
-              << " --config-file=" + configPath +  "freshclam.conf"
-              << " --log=" + configPath + "freshclam.log"
-              << " --datadir=" + virusdbPath
-              << " --daemon-notify=" + configPath + "clamd.conf";
+    arguments << "--config-file=" + configPath +  "freshclam.conf"
+              << "--log=" + configPath + "freshclam.log"
+              << "--daemon"
+              << "--pid=" + configPath + "freshclam.pid"
+              << "--checks=" + freshclamInterval
+              << "--datadir=" + virusdbPath
+              << "--daemon-notify=" + configPath + "clamd.conf"
+              << "--enable-stats";
 
     FreshClamProsses *startFreshClam = new FreshClamProsses;
 
-    bool running = startFreshClam->freshclamDaemon(programPath + "freshclam", arguments);
-
-    if (running) {
+    if (startFreshClam->freshclamDaemon(programPath + "freshclam", arguments)) {
         statusNotifierItem->showMessage(
 
                     trUtf8("%1 - %2 - Hinweis!").arg(
                         APP_TITLE).arg(
                         APP_VERSION),
-                    trUtf8("Das Programm <i>freshclam</i> wurde als "
-                           "Dämon erfolgreich gestartet."),
+                    trUtf8("Der <b>Datenbank Update Dämon</b> wurde "
+                           "erfolgreich gestartet und aktualisiert ")
+                    + freshclamInterval + trUtf8("x am Tag die "
+                                                 "Virendatenbank."),
                     "dialog-information",
                     5000 );
-        freshclamDaemon();
 
-    } else if (!running) {
+    } else {
 
         statusNotifierItem->showMessage(
                     trUtf8("%1 - %2 - Warnung!").arg(
                         APP_TITLE).arg(
                         APP_VERSION),
-                    trUtf8("Das Programm <i>freshclam</i> konnte nicht "
-                           "als Dämon gestartet werden."),
+                    trUtf8("Der <b>Datenbank Update Dämon</b> konnte <b>nicht</b> "
+                           "gestartet werden."),
                     "dialog-warning",
                     5000 );
     }
-}
-
-void ClamUI::loadThemeIcons(){
-
 }

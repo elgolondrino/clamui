@@ -63,18 +63,17 @@ private:
     void settingsRead();
     void settingsReadDirectories();
     void settingsReadFiles();
-    void databaseReadDirectories();
-    void databaseReadFiles();
+    void databaseRead();
     void enableGroupBoxes();
+    void saveToDB(QStringList values);
 
     QSqlDatabase db;
 
 private slots:
     void settingsWrite();
-    void saveDirectories();
-    void saveFiles();
-    void removeDirectories();
-    void removeFiles();
+    void addDirectory();
+    void addFile();
+    void removeFromDB();
     void slotComboBoxSchedulingIndexChanged();
 
 };
