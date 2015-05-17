@@ -70,27 +70,12 @@
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_DirectoriesScanFiles">
+         <widget class="QPushButton" name="pushButton_DirectoriesFilesScan">
           <property name="toolTip">
            <string>Verzeichnisse auswählen, deren Inhalte von ClamAV nicht überprüft werden sollen.</string>
           </property>
           <property name="text">
-           <string>Verzeichnis hinzufügen</string>
-          </property>
-          <property name="icon">
-           <iconset theme="document-open-folder">
-            <normaloff/>
-           </iconset>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_OpenScanFiles">
-          <property name="toolTip">
-           <string>Dateien auswählen, die von ClamAV nicht überprüft werden sollen.</string>
-          </property>
-          <property name="text">
-           <string>Datei hinzufügen</string>
+           <string>Datei oder Verzeichnis hinzufügen</string>
           </property>
           <property name="icon">
            <iconset theme="document-open-folder">

@@ -15,7 +15,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="movable">
        <bool>true</bool>
@@ -183,10 +183,12 @@
     </property>
     <widget class="QMenu" name="menuClamAV_Daemon">
      <property name="title">
-      <string>ClamAV Dämon</string>
+      <string>&amp;ClamAV Dämon</string>
      </property>
      <property name="icon">
-      <iconset theme="clamav"/>
+      <iconset theme="clamav">
+       <normaloff/>
+      </iconset>
      </property>
      <property name="toolTipsVisible">
       <bool>true</bool>
@@ -196,15 +198,17 @@
     </widget>
     <widget class="QMenu" name="menuFreshClam">
      <property name="title">
-      <string>FreshClam</string>
+      <string>&amp;FreshClam</string>
      </property>
      <property name="icon">
-      <iconset theme="clamav"/>
+      <iconset theme="clamav">
+       <normaloff/>
+      </iconset>
      </property>
      <addaction name="actionFreshclam_Daemon_Start"/>
      <addaction name="actionFreshClam_Daemon_Stop"/>
     </widget>
-    <addaction name="actionDateien_auf_Viren_pr_fen"/>
+    <addaction name="action_FilesScan"/>
     <addaction name="separator"/>
     <addaction name="menuClamAV_Daemon"/>
     <addaction name="menuFreshClam"/>
@@ -290,10 +294,12 @@
   </action>
   <action name="action_Settings">
    <property name="icon">
-    <iconset theme="configure"/>
+    <iconset theme="configure">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
-    <string>Einstellungen</string>
+    <string>&amp;Einstellungen</string>
    </property>
   </action>
   <action name="actionClamAV_Online">
@@ -302,63 +308,77 @@
      <normaloff>:/icons/icons/breeze/actions/toolbar/web-browser.svg</normaloff>:/icons/icons/breeze/actions/toolbar/web-browser.svg</iconset>
    </property>
    <property name="text">
-    <string>ClamAV im Web</string>
+    <string>&amp;ClamAV im Web</string>
    </property>
   </action>
   <action name="actionClamAV_Daemon_Start">
    <property name="icon">
-    <iconset theme="clamav"/>
+    <iconset theme="clamav">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
-    <string>ClamAV Dämon starten</string>
+    <string>&amp;ClamAV Dämon starten</string>
    </property>
   </action>
   <action name="actionClamAV_Daemon_Stop">
    <property name="icon">
-    <iconset theme="clamav"/>
+    <iconset theme="clamav">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
-    <string>ClamAV Dämon anhalten</string>
+    <string>ClamAV &amp;Dämon anhalten</string>
    </property>
   </action>
   <action name="actionFreshclam_Daemon_Start">
    <property name="icon">
-    <iconset theme="clamav"/>
+    <iconset theme="clamav">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
-    <string>FreshClam als Dämon starten</string>
+    <string>&amp;FreshClam als Dämon starten</string>
    </property>
   </action>
   <action name="actionFreshClam_Daemon_Stop">
    <property name="icon">
-    <iconset theme="clamav"/>
+    <iconset theme="clamav">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
-    <string>FreshClam Dämon anhalten</string>
+    <string>FreshClam &amp;Dämon anhalten</string>
    </property>
   </action>
   <action name="action_Update_VirusDB">
    <property name="icon">
-    <iconset theme="document-properties"/>
+    <iconset theme="document-properties">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
-    <string>Virendefinitionen aktualisieren</string>
+    <string>&amp;Virendefinitionen aktualisieren</string>
    </property>
   </action>
   <action name="action_FilesQuarantyne">
    <property name="icon">
-    <iconset theme="document-encrypted"/>
+    <iconset theme="document-encrypted">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
-    <string>Dateien in Quarantäne</string>
+    <string>Dateien &amp;in Quarantäne</string>
    </property>
   </action>
-  <action name="actionDateien_auf_Viren_pr_fen">
+  <action name="action_FilesScan">
    <property name="icon">
-    <iconset theme="system-search"/>
+    <iconset theme="system-search">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
-    <string>Dateien auf Viren prüfen</string>
+    <string>&amp;Dateien auf Viren prüfen</string>
    </property>
   </action>
  </widget>
