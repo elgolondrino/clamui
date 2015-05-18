@@ -57,8 +57,8 @@
 #include "tabvirusscan.h"
 #include "definitionen.h"
 #include "languagetools.h"
-#include "clam_processes.h"
-#include "freshclamprosses.h"
+#include "clamdprocess.h"
+#include "freshclamprocess.h"
 
 #include "ui_clamui.h"
 

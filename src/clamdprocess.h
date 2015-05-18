@@ -29,8 +29,8 @@
 **
 *******************************************************************************/
 
-#ifndef CLAM_PROCESSES_H
-#define CLAM_PROCESSES_H
+#ifndef CLAMDPROCESSES_H
+#define CLAMDPROCESSES_H
 
 #include <QtCore/QObject>
 #include <QtCore/qglobal.h>
@@ -38,10 +38,11 @@
 #include <QByteArray>
 #include <QDebug>
 
-class Clam_Processes : public QObject {
+class ClamdProcess : public QProcess {
     Q_OBJECT
+
 public:
-    explicit Clam_Processes(QObject *parent = 0);
+    explicit ClamdProcess(QObject *parent = 0);
 
     bool clamScan(QString clamscan, QStringList argumentsList);
     bool clamdScan(QString clamscan, QStringList argumentsList);
@@ -53,4 +54,4 @@ private:
     QProcess *clamdscanProcess;
 };
 
-#endif // CLAM_PROCESSES_H
+#endif // CLAMDPROCESSES_H

@@ -41,9 +41,10 @@ HEADERS += src/definitionen.h \
     src/tababoutclamav.h \
     src/languagetools.h \
     src/sqlite_db.h \
-    src/clam_processes.h \
-    src/freshclamprosses.h \
-    src/firstrunwizard.h
+    src/firstrunwizard.h \
+    src/clamscanprocess.h \
+    src/clamdprocess.h \
+    src/freshclamprocess.h
 
 SOURCES += src/about.cpp \
     src/main.cpp \
@@ -56,9 +57,10 @@ SOURCES += src/about.cpp \
     src/tababoutclamav.cpp \
     src/languagetools.cpp \
     src/sqlite_db.cpp \
-    src/clam_processes.cpp \
-    src/freshclamprosses.cpp \
-    src/firstrunwizard.cpp
+    src/firstrunwizard.cpp \
+    src/clamscanprocess.cpp \
+    src/clamdprocess.cpp \
+    src/freshclamprocess.cpp
 
 FORMS += ui/about.ui \
     ui/clamui.ui \

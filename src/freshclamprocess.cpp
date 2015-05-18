@@ -29,30 +29,26 @@
 **
 *******************************************************************************/
 
-#include "freshclamprosses.h"
+#include "freshclamprocess.h"
 
-FreshClamProsses::FreshClamProsses(QObject *parent) : QObject(parent){
+FreshClamProcess::FreshClamProcess(QObject *parent) : QProcess(parent){
 
 }
 
-bool FreshClamProsses::freshclamDaemon(QString freshclam, QStringList arguments){
+bool FreshClamProcess::freshclamDaemon(QString freshclam, QStringList arguments){
 
     QProcess *freshClamRunDaemon = new QProcess;
-    freshClamRunDaemon->start("killall freshclam");
-    freshClamRunDaemon->waitForFinished(30000);
     freshClamRunDaemon->start(freshclam, arguments);
 
     if (freshClamRunDaemon->waitForStarted()
             and freshClamRunDaemon->state() == QProcess::Running)
         return freshClamRunDaemon->isOpen();
-    else /*if (freshClamRunDaemon->state() == QProcess::NotRunning)*/
+    else
         return false;
-
-//    return false;
 
 }
 
-bool FreshClamProsses::freshclamManuelly(QString freshclam, QStringList arguments){
+bool FreshClamProcess::freshclamManuelly(QString freshclam, QStringList arguments){
 
     QProcess *freshClamRun = new QProcess();
     return freshClamRun->startDetached(freshclam, arguments);

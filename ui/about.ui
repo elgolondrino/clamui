@@ -29,8 +29,20 @@
          <height>64</height>
         </size>
        </property>
+       <property name="maximumSize">
+        <size>
+         <width>70</width>
+         <height>70</height>
+        </size>
+       </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../clamui.qrc">:/icons/icons/png/clamui-128.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -134,7 +146,7 @@
             <x>0</x>
             <y>0</y>
             <width>459</width>
-            <height>266</height>
+            <height>259</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -255,7 +267,7 @@ p, li { white-space: pre-wrap; }
             <x>0</x>
             <y>0</y>
             <width>459</width>
-            <height>266</height>
+            <height>259</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">
@@ -362,8 +374,7 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="tabAutor">
       <attribute name="icon">
-       <iconset>
-        <normaloff>:/images/images/icons/system-users.png</normaloff>:/images/images/icons/system-users.png</iconset>
+       <iconset theme="im-user"/>
       </attribute>
       <attribute name="title">
        <string>Aut&amp;oren</string>
@@ -386,7 +397,7 @@ p, li { white-space: pre-wrap; }
             <x>0</x>
             <y>0</y>
             <width>459</width>
-            <height>266</height>
+            <height>259</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -465,8 +476,7 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="tabTranslation">
       <attribute name="icon">
-       <iconset>
-        <normaloff>:/images/images/icons/babelfish.png</normaloff>:/images/images/icons/babelfish.png</iconset>
+       <iconset theme="tools-check-spelling"/>
       </attribute>
       <attribute name="title">
        <string>Ü&amp;bersetzung</string>
@@ -598,7 +608,9 @@ Vielen Dank im voraus.</string>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../clamui.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>pbOK</sender>

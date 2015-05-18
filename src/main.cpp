@@ -43,8 +43,8 @@
 #include "clamui.h"
 #include "definitionen.h"
 #include "sqlite_db.h"
-#include "clam_processes.h"
-#include "freshclamprosses.h"
+#include "clamdprocess.h"
+#include "freshclamprocess.h"
 #include "firstrunwizard.h"
 
 int main(int argc, char *argv[]) {

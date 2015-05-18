@@ -38,11 +38,11 @@
 
 #include "definitionen.h"
 
-class FreshClamProsses : public QObject {
+class FreshClamProcess : public QProcess {
     Q_OBJECT
 
 public:
-    explicit FreshClamProsses(QObject *parent = 0);
+    explicit FreshClamProcess(QObject *parent = 0);
 
     bool freshclamDaemon(QString freshclam, QStringList arguments);
     bool freshclamManuelly(QString freshclam, QStringList arguments);

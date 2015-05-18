@@ -31,8 +31,7 @@
 
 #include "clamscanprocess.h"
 
-ClamScanProcess::ClamScanProcess()
-{
+ClamScanProcess::ClamScanProcess(QObject *parent) : QProcess(parent){
 
 }
 

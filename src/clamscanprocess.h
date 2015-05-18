@@ -34,11 +34,13 @@
 
 #include <QtCore/QObject>
 #include <QtCore/qglobal.h>
+#include <QProcess>
 
-class ClamScanProcess : public QProcess
-{
+class ClamScanProcess : public QProcess{
+    Q_OBJECT
+
 public:
-    ClamScanProcess();
+    explicit ClamScanProcess(QObject *parent = 0);
 };
 
 #endif // CLAMSCANPROCESS_H

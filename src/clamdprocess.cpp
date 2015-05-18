@@ -29,34 +29,24 @@
 **
 *******************************************************************************/
 
-#include "clam_processes.h"
+#include "clamdprocess.h"
 
-Clam_Processes::Clam_Processes(QObject *parent) : QObject(parent){
+ClamdProcess::ClamdProcess(QObject *parent) : QProcess(parent){
 
 }
 
-bool Clam_Processes::clamScan(QString clamscan, QStringList argumentsList){
-
-
-    return false;
-}
-
-bool Clam_Processes::clamDaemon(QString clamd, QStringList argumentsList){
+bool ClamdProcess::clamDaemon(QString clamd, QStringList argumentsList){
 
     QProcess *daemonProcess = new QProcess();
-    daemonProcess->start("killall clamd");
-    daemonProcess->waitForFinished(30000);
     daemonProcess->start(clamd, argumentsList);
 
     if (daemonProcess->waitForStarted()
             and daemonProcess->state() == QProcess::Running)
         return daemonProcess->isOpen();
-    else /*if (daemonProcess->state() == QProcess::NotRunning)*/
+    else
         return false;
-
-//    return false;
 }
 
-void Clam_Processes::stopDaemon(){
+void ClamdProcess::stopDaemon(){
 
 }
