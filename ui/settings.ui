@@ -22,7 +22,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget_Settings">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="icon">
@@ -45,7 +45,7 @@
             <x>0</x>
             <y>0</y>
             <width>827</width>
-            <height>470</height>
+            <height>469</height>
            </rect>
           </property>
           <layout class="QFormLayout" name="formLayout">
@@ -193,7 +193,7 @@
             <x>0</x>
             <y>0</y>
             <width>831</width>
-            <height>384</height>
+            <height>380</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -216,11 +216,38 @@
                 <x>0</x>
                 <y>0</y>
                 <width>815</width>
-                <height>368</height>
+                <height>364</height>
                </rect>
               </property>
-              <layout class="QFormLayout" name="formLayout_2">
+              <layout class="QFormLayout" name="formLayout_3">
                <item row="0" column="0" colspan="2">
+                <widget class="QGroupBox" name="groupBox">
+                 <property name="title">
+                  <string>Verhalten der Hintergrundprogramme</string>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_2">
+                  <item row="0" column="0" colspan="2">
+                   <layout class="QGridLayout" name="gridLayout_2">
+                    <item row="0" column="0">
+                     <widget class="QCheckBox" name="checkBox_StopClamdOnQuit">
+                      <property name="text">
+                       <string>Den ClamAV Dämon beim beenden von ClamUI anhalten.</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="QCheckBox" name="checkBox_StopFreshclamOnQuit">
+                      <property name="text">
+                       <string>Den ClamAV Virendefinitions-Updater beim beenden von ClamUI anhalten.</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0" colspan="2">
                 <widget class="QGroupBox" name="groupBox_2">
                  <property name="title">
                   <string>Programmpfade setzen</string>
@@ -297,7 +324,7 @@
 &lt;i&gt;clamd&lt;/i&gt;</string>
                       </property>
                       <property name="text">
-                       <string>Der Pfad &amp;zum ClamAV dämon:</string>
+                       <string>Der Pfad &amp;zum ClamAV Dämon:</string>
                       </property>
                       <property name="buddy">
                        <cstring>comboBox_DaemonPath</cstring>
@@ -409,8 +436,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>831</width>
-            <height>384</height>
+            <width>96</width>
+            <height>86</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -432,8 +459,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>815</width>
-                <height>368</height>
+                <width>134</width>
+                <height>284</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -620,8 +647,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>831</width>
-            <height>384</height>
+            <width>96</width>
+            <height>86</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -643,8 +670,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>815</width>
-                <height>368</height>
+                <width>96</width>
+                <height>238</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_11">
@@ -804,14 +831,23 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
  <tabstops>
   <tabstop>tabWidget_Settings</tabstop>
   <tabstop>scrollArea_ClamUI</tabstop>
+  <tabstop>checkBox_ToolBar</tabstop>
   <tabstop>checkBox_Autostart</tabstop>
   <tabstop>checkBox_HideWindow</tabstop>
   <tabstop>checkBox_IconOnDesktop</tabstop>
   <tabstop>checkBox_MenuBar</tabstop>
-  <tabstop>checkBox_ToolBar</tabstop>
   <tabstop>checkBox_StatusBar</tabstop>
   <tabstop>groupBox_Language</tabstop>
   <tabstop>comboBox_Language</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>checkBox_StopClamdOnQuit</tabstop>
+  <tabstop>checkBox_StopFreshclamOnQuit</tabstop>
+  <tabstop>comboBox_ProgramPath</tabstop>
+  <tabstop>comboBox_DaemonPath</tabstop>
+  <tabstop>comboBox_ClamVDB</tabstop>
+  <tabstop>comboBox_ConfigPath</tabstop>
+  <tabstop>scrollArea_2</tabstop>
+  <tabstop>scrollArea_3</tabstop>
   <tabstop>pushButton_Help</tabstop>
   <tabstop>pushButton_Default</tabstop>
   <tabstop>pushButton_Save</tabstop>

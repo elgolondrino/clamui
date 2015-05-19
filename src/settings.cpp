@@ -155,6 +155,8 @@ void Settings::settingsWrite(){
     clamui_conf.setValue("VirusDB_Path", comboBox_ClamVDB->currentText());
     clamui_conf.setValue("Config_Path_Id", comboBox_ConfigPath->currentIndex());
     clamui_conf.setValue("Config_Path", comboBox_ConfigPath->currentText());
+    clamui_conf.setValue("StopClamdOnQuit", checkBox_StopClamdOnQuit->isChecked());
+    clamui_conf.setValue("StopFreshclamOnQuit", checkBox_StopFreshclamOnQuit->isChecked());
     clamui_conf.endGroup();
 }
 
@@ -197,6 +199,10 @@ void Settings::settingsRead(){
     comboBox_ConfigPath->setCurrentIndex(
                 clamui_conf.value("Config_Path_Id", 0).toInt());
 //   QString configPath =  clamui_conf.value("Config_Path", CLAMAV_PATH).toString());
+    checkBox_StopClamdOnQuit->setChecked(
+                clamui_conf.value("StopClamdOnQuit", false).toBool());
+    checkBox_StopFreshclamOnQuit->setChecked(
+                clamui_conf.value("StopFreshclamOnQuit", false).toBool());
     clamui_conf.endGroup();
 }
 
@@ -231,6 +237,8 @@ void Settings::settingsDefaultClamAV(){
     comboBox_DaemonPath->setCurrentIndex(0);
     comboBox_ClamVDB->setCurrentIndex(0);
     comboBox_ConfigPath->setCurrentIndex(0);
+    checkBox_StopClamdOnQuit->setChecked(false);
+    checkBox_StopFreshclamOnQuit->setChecked(false);
 }
 
 void Settings::settingsDefaultClamUI(){

@@ -39,6 +39,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <QSqlError>
+#include <QTimer>
 
 #include "definitionen.h"
 #include "sqlite_db.h"
@@ -67,13 +68,22 @@ private:
     void enableGroupBoxes();
     void saveToDB(QStringList values);
 
+    QString daemonPath;
+    QString programPath;
+    QString virusdbPath;
+    QString configPath;
+    QString freshclamInterval;
+
     QSqlDatabase db;
 
 private slots:
-    void settingsWrite();
-    void addDirectory();
     void addFile();
+    void addDirectory();
     void removeFromDB();
+    void settingsWrite();
+    void slotDaemonStatus();
+    void slotStartStopClamd();
+    void slotStartStopFreshclam();
     void slotComboBoxSchedulingIndexChanged();
 
 };

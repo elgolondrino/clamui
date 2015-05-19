@@ -1,0 +1,12 @@
+[Desktop Entry]
+X-KDE-Solid-Predicate=[ [ [ StorageVolume.ignored == false AND StorageVolume.usage == 'FileSystem' ] OR [ IS StorageAccess AND StorageDrive.driveType == 'Floppy' ] ] OR StorageAccess.ignored == false ]
+Type=Service
+Actions=scanwithClamav;
+
+[Desktop Action scanwithClamav]
+Icon=clamav
+Name=Virus scan with ClamAV
+Name[de]=Mit ClamAV auf Viren prüfen
+Name[en]=Virus scan with ClamAV
+Exec[de]=/usr/share/solid/actions/ClamScan.sh de %F
+Exec[en]=/usr/share/solid/actions/ClamScan.sh en %F

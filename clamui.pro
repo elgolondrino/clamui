@@ -77,12 +77,13 @@ OTHER_FILES += ChangeLog \
     README.md \
     NEWS \
     TODO \
-    my_rpm \
     AUTHORS \
     clamui.desktop \
     clamui.spec \
     translations/translation_info.txt \
-    scripts/Virusscan.desktop
+    tpl/* \
+    scripts/VirusScan.desktop \
+    scripts/VirusScan.sh
 
 RESOURCES += clamui.qrc
 
@@ -101,11 +102,17 @@ DISTFILES += clamui.desktop \
     TODO \
     clamui.spec \
     translations/translation_info.txt \
-    scripts/Virusscan.desktop
+    scripts/VirusScan.desktop \
+    scripts/VirusScan.sh
 
 # #### Programmicons
 pixmap.path += /usr/share/pixmaps/
 pixmap.files += icons/clamui.svg
+
+# ### Solid Actions
+solid.path += /usr/share/solid/actions/
+solid.files += scripts/VirusScan.desktop \
+    scripts/VirusScan.sh
 
 # #### Desktop-Eintrag
 menu.path += /usr/share/applications/
@@ -147,7 +154,8 @@ documentation.files += AUTHORS \
     INSTALL \
     NEWS \
     README.md \
-    TODO
+    TODO \
+    tpl*
     
 INSTALLS += target \
     documentation \
@@ -156,4 +164,5 @@ INSTALLS += target \
 #	helpEN \
     translationDE \
     translationEN \
-    pixmap
+    pixmap \
+    solid

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>951</width>
+    <width>927</width>
     <height>558</height>
    </rect>
   </property>
@@ -74,40 +74,7 @@
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_5">
               <item>
-               <layout class="QGridLayout" name="gridLayout_DateTime" columnstretch="0,0,0,0,0">
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label_ScheduleDate">
-                  <property name="text">
-                   <string>Dat&amp;um:</string>
-                  </property>
-                  <property name="buddy">
-                   <cstring>dateEdit_ScheduleDate</cstring>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="2">
-                 <widget class="QLabel" name="label_ScheduleTime">
-                  <property name="text">
-                   <string>Uhr&amp;zeit:</string>
-                  </property>
-                  <property name="buddy">
-                   <cstring>timeEdit_ScheduleTime</cstring>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="4">
-                 <spacer name="horizontalSpacer_3">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
+               <layout class="QGridLayout" name="gridLayout_DateTime" columnstretch="0,0,0,0,0,0">
                 <item row="0" column="1">
                  <widget class="QDateEdit" name="dateEdit_ScheduleDate">
                   <property name="alignment">
@@ -121,6 +88,39 @@
                   </property>
                  </widget>
                 </item>
+                <item row="0" column="5">
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLabel" name="label_ScheduleTime">
+                  <property name="text">
+                   <string>Uhr&amp;zeit:</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>timeEdit_ScheduleTime</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_ScheduleDate">
+                  <property name="text">
+                   <string>Dat&amp;um:</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>dateEdit_ScheduleDate</cstring>
+                  </property>
+                 </widget>
+                </item>
                 <item row="0" column="3">
                  <widget class="QTimeEdit" name="timeEdit_ScheduleTime">
                   <property name="alignment">
@@ -128,6 +128,16 @@
                   </property>
                   <property name="currentSectionIndex">
                    <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="4">
+                 <widget class="QPushButton" name="pushButton_DateTimeSave">
+                  <property name="text">
+                   <string>Speichern</string>
+                  </property>
+                  <property name="icon">
+                   <iconset theme="dialog-ok-apply"/>
                   </property>
                  </widget>
                 </item>
@@ -145,83 +155,188 @@
     </widget>
    </item>
    <item row="0" column="1">
-    <widget class="QGroupBox" name="groupBox_3">
-     <property name="title">
-      <string>Automatisches aktualisieren der Virendatenbank</string>
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
      </property>
-     <layout class="QFormLayout" name="formLayout_2">
-      <item row="0" column="0">
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="2" colspan="2">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Freshclam Status</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="2">
-         <widget class="QCheckBox" name="checkBox_FreshClam">
-          <property name="toolTip">
-           <string>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktualität der Virendefinitionen. </string>
-          </property>
-          <property name="text">
-           <string>freshclam im Hintergrund starten.</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="toolTip">
-           <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
-          </property>
-          <property name="text">
-           <string>Wie oft am Tag aktuallisieren:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QSpinBox" name="spinBox_FreshClamUpdate">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="toolTip">
-           <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>48</number>
-          </property>
-          <property name="value">
-           <number>12</number>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="3">
-         <widget class="QPushButton" name="pushButton_FreshclamStatus">
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QLabel" name="label_FreshclamStatus">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="title">
+         <string>Automatisches aktualisieren der Virendatenbank</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="2" colspan="2">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Freshclam Status</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" colspan="2">
+            <widget class="QCheckBox" name="checkBox_FreshClam">
+             <property name="toolTip">
+              <string>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktualität der Virendefinitionen. </string>
+             </property>
+             <property name="text">
+              <string>freshclam im Hintergrund starten.</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="toolTip">
+              <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
+             </property>
+             <property name="text">
+              <string>Wie oft am Tag aktualisieren:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="spinBox_FreshClamUpdate">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="toolTip">
+              <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>48</number>
+             </property>
+             <property name="value">
+              <number>12</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="pushButton_FreshclamStatus">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Den Virendefinitionen Updater starten oder stoppen.</string>
+             </property>
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_FreshclamStatus">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Den Virendefinitionen Updater starten oder stoppen.</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Sunken</enum>
+             </property>
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="title">
+         <string>Status ClamAV Dämon</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,0">
+           <item>
+            <widget class="QLabel" name="label_CamdStatus">
+             <property name="toolTip">
+              <string>Den ClamAV Dämon starten oder stoppen.</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Sunken</enum>
+             </property>
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_CamdStatus">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Den ClamAV Dämon starten oder stoppen.</string>
+             </property>
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -302,7 +417,9 @@
               <string>Datei hinzufügen</string>
              </property>
              <property name="icon">
-              <iconset theme="document-open-folder"/>
+              <iconset theme="document-open-folder">
+               <normaloff/>
+              </iconset>
              </property>
             </widget>
            </item>

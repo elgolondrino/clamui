@@ -34,7 +34,7 @@
 
 /* KF5 Headers */
 #include <KStatusNotifierItem>
-#include <KF5/KIconThemes/KIconLoader>
+#include <KNotification>
 #include <KDESu/SuProcess>
 #include <KF5/Solid/Solid/StorageDrive>
 #include <KF5/Solid/Solid/StorageAccess>
@@ -46,6 +46,7 @@
 #include <QSettings>
 #include <QTranslator>
 #include <QMap>
+#include <QTimer>
 #include <QMessageBox>
 
 #include "about.h"
@@ -69,6 +70,9 @@ class ClamUI : public QMainWindow, private Ui::ClamUI
 public:
     explicit ClamUI(QWidget *parent = 0);
 
+    bool freshclamStatus;
+    bool clamdStatus;
+
 protected:
     void changeEvent(QEvent *event);
     void closeEvent(QCloseEvent *event);
@@ -87,6 +91,8 @@ private:
     QString freshclamInterval;
 
     bool freshclamAsDaemon;
+    bool stopClamdOnQuit;
+    bool stopFreshclamOnQuit;
 
     KStatusNotifierItem *statusNotifierItem;
     QMenu *trayIconMenu;
@@ -98,10 +104,11 @@ private slots:
     void slotQuit();
     void slotAbout();
     void slotSettings();
+    void settingsWrite();
     void slotScanFiles();
+    void slotDaemonStatus();
     void slotIsolatedFiles();
     void slotUpdateVirusDB();
-    void settingsWrite();
 };
 
 #endif // CLAMUI_H

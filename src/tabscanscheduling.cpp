@@ -57,10 +57,6 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
     comboBox_Scheduling->addItem(trUtf8("Monatlich ab diesem Termin (Datum/Zeit)"));
     comboBox_Scheduling->addItem(trUtf8("Nur einmal an diesem Termin (Datum/Zeit)"));
 
-    // Set current date und current time
-//    dateEdit_ScheduleDate->setDate(QDate::currentDate());
-//    timeEdit_ScheduleTime->setTime(QTime::currentTime());
-
     settingsRead();
     createSlots();
 
@@ -68,6 +64,48 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
      * Load values to the tableview.
      */
     databaseRead();
+
+    slotDaemonStatus();
+
+    QTimer *daemonStatus = new QTimer;
+    connect(daemonStatus,
+            SIGNAL(timeout()),
+            this,
+            SLOT(slotDaemonStatus()));
+    daemonStatus->start(1000);
+}
+
+void TabScanScheduling::slotDaemonStatus() {
+
+    /*
+     * If clamd not running.
+     */
+    if (!QFile::exists("/tmp/clamd.socket")){
+
+        pushButton_CamdStatus->setText(trUtf8("Starten"));
+        label_CamdStatus->setText(trUtf8("<b>Der ClamAV Dämon läuft nicht.</b>"));
+        label_CamdStatus->setStyleSheet("color: rgb(255, 0, 0);");
+    } else {
+
+        pushButton_CamdStatus->setText(trUtf8("Stoppen"));
+        label_CamdStatus->setText(trUtf8("<b>Der ClamAV Dämon läuft.</b>"));
+        label_CamdStatus->setStyleSheet("color: rgb(0, 170, 0);");
+    }
+
+    /*
+     * If freshclam not running.
+     */
+    if (!QFile::exists(configPath + "freshclam.pid")) {
+
+        pushButton_FreshclamStatus->setText(trUtf8("Starten"));
+        label_FreshclamStatus->setText(trUtf8("<b>Läuft nicht.</b>"));
+        label_FreshclamStatus->setStyleSheet("color: rgb(255, 0, 0);");
+    } else {
+
+        pushButton_FreshclamStatus->setText(trUtf8("Stoppen"));
+        label_FreshclamStatus->setText(trUtf8("L<b>äuft</b>"));
+        label_FreshclamStatus->setStyleSheet("color: rgb(0, 170, 0);");
+    }
 }
 
 void TabScanScheduling::changeEvent(QEvent *e){
@@ -108,11 +146,42 @@ void TabScanScheduling::createSlots(){
     connect(groupBox_Eclude, SIGNAL(clicked(bool)),
             this, SLOT(settingsWrite()));
 
+    connect(pushButton_FreshclamStatus, SIGNAL(clicked(bool)),
+            this, SLOT(slotStartStopFreshclam()));
+
+    connect(pushButton_CamdStatus, SIGNAL(clicked(bool)),
+            this, SLOT(slotStartStopClamd()));
+
     connect(comboBox_Scheduling, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotComboBoxSchedulingIndexChanged()));
 
     connect(comboBox_Scheduling, SIGNAL(currentIndexChanged(int)),
             this, SLOT(settingsWrite()));
+}
+
+void TabScanScheduling::slotStartStopClamd(){
+
+    QStringList arguments;
+    arguments << "--config-file=" + configPath + "clamd.conf";
+
+    ClamdProcess start;
+    start.clamDaemon(daemonPath + "clamd", arguments);
+}
+
+void TabScanScheduling::slotStartStopFreshclam(){
+
+    QStringList arguments;
+    arguments << "--config-file=" + configPath +  "freshclam.conf"
+              << "--log=" + configPath + "freshclam.log"
+              << "--daemon"
+              << "--pid=" + configPath + "freshclam.pid"
+              << "--checks=" + spinBox_FreshClamUpdate->value()
+              << "--datadir=" + virusdbPath
+              << "--daemon-notify=" + configPath + "clamd.conf"
+              << "--enable-stats";
+
+    FreshClamProcess start;
+    start.freshclamDaemon(programPath + "freshclam", arguments);
 }
 
 void TabScanScheduling::enableGroupBoxes(){
@@ -131,6 +200,7 @@ void TabScanScheduling::slotComboBoxSchedulingIndexChanged(){
             or comboBox_Scheduling->currentIndex() == 1
             or comboBox_Scheduling->currentIndex() == 2){
 
+        pushButton_DateTimeSave->setEnabled(false);
         dateEdit_ScheduleDate->setEnabled(false);
         timeEdit_ScheduleTime->setEnabled(false);
     }
@@ -138,6 +208,11 @@ void TabScanScheduling::slotComboBoxSchedulingIndexChanged(){
             or comboBox_Scheduling->currentIndex() == 4
             or comboBox_Scheduling->currentIndex() == 6){
 
+        // Set current date und current time
+        dateEdit_ScheduleDate->setDate(QDate::currentDate());
+        timeEdit_ScheduleTime->setTime(QTime::currentTime());
+
+        pushButton_DateTimeSave->setEnabled(true);
         dateEdit_ScheduleDate->setEnabled(false);
         timeEdit_ScheduleTime->setEnabled(true);
     }
@@ -145,6 +220,11 @@ void TabScanScheduling::slotComboBoxSchedulingIndexChanged(){
             or comboBox_Scheduling->currentIndex() == 7
             or comboBox_Scheduling->currentIndex() == 8){
 
+        // Set current date und current time
+        dateEdit_ScheduleDate->setDate(QDate::currentDate());
+        timeEdit_ScheduleTime->setTime(QTime::currentTime());
+
+        pushButton_DateTimeSave->setEnabled(true);
         dateEdit_ScheduleDate->setEnabled(true);
         timeEdit_ScheduleTime->setEnabled(true);
     }
@@ -193,6 +273,10 @@ void TabScanScheduling::settingsRead(){
                 clamui_conf.value("Schedule_Date", QDate::currentDate()).toDate());
     timeEdit_ScheduleTime->setTime(
                 clamui_conf.value("Schedule_Time", QTime::currentTime()).toTime());
+    configPath =  clamui_conf.value("Config_Path", CLAMAV_PATH).toString();
+    virusdbPath =  clamui_conf.value("VirusDB_Path", CLAMAV_VDB_PATH).toString();
+    daemonPath = clamui_conf.value("Daemon_Path", "/usr/sbin/").toString();
+    programPath = clamui_conf.value("Program_Path", "/usr/bin/").toString();
     clamui_conf.endGroup();
 
     if (checkBox_FreshClam->isChecked()) {
