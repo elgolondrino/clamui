@@ -6,7 +6,7 @@
     <message>
         <location filename="../ui/about.ui" line="14"/>
         <source>Über...</source>
-        <translation type="unfinished"></translation>
+        <translation>About...</translation>
     </message>
     <message>
         <location filename="../ui/about.ui" line="75"/>
@@ -14,27 +14,31 @@
         <location filename="../ui/about.ui" line="204"/>
         <location filename="../ui/about.ui" line="363"/>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/about.ui" line="126"/>
         <source>ClamUI</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <source>ClamUI ist ein einfach zu bediendes grafisches Frontend für den ClanAV Virenscanner.</source>
+        <translation type="vanished">ClamUI is an easy to use graphical front end for the ClanAV virus scanner.</translation>
     </message>
     <message>
         <location filename="../ui/about.ui" line="156"/>
-        <source>ClamUI ist ein einfach zu bediendes grafisches Frontend für den ClanAV Virenscanner.</source>
-        <translation type="unfinished"></translation>
+        <source>ClamUI ist ein einfach zu bedienendes grafisches Frontend für den ClanAV Virenscanner.</source>
+        <translation>ClamUI is an easy to use graphical front end for the ClanAV virus scanner.</translation>
     </message>
     <message>
         <location filename="../ui/about.ui" line="182"/>
         <source>(C) 2015 by Georg Lassnig</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/about.ui" line="197"/>
         <source>Web:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/about.ui" line="226"/>
@@ -43,85 +47,90 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lizensiert unter der &lt;span style=&quot; font-style:italic;&quot;&gt;General Public License Version 3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under the &lt;span style=&quot; font-style:italic;&quot;&gt;General Public License Version 3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/about.ui" line="250"/>
         <source>ClamAV</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/about.ui" line="317"/>
         <source>Homepage:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/about.ui" line="327"/>
         <source>ClamAV Version:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../ui/about.ui" line="380"/>
+        <location filename="../ui/about.ui" line="382"/>
         <source>Aut&amp;oren</source>
-        <translation type="unfinished"></translation>
+        <translation>Aut&amp;hors</translation>
     </message>
     <message>
-        <location filename="../ui/about.ui" line="436"/>
+        <location filename="../ui/about.ui" line="438"/>
         <source>Betreuer und Entwickler</source>
-        <translation type="unfinished">Maintainer and Developer</translation>
+        <translation>Maintainer and Developer</translation>
     </message>
     <message>
-        <location filename="../ui/about.ui" line="446"/>
-        <location filename="../ui/about.ui" line="504"/>
-        <location filename="../ui/about.ui" line="511"/>
+        <location filename="../ui/about.ui" line="448"/>
+        <location filename="../ui/about.ui" line="508"/>
+        <location filename="../ui/about.ui" line="515"/>
         <source>Georg Lassnig</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../ui/about.ui" line="456"/>
+        <location filename="../ui/about.ui" line="458"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;g.lassnig@e67-its.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;g.lassnig@e67-its.de&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../ui/about.ui" line="482"/>
+        <location filename="../ui/about.ui" line="486"/>
         <source>Ü&amp;bersetzung</source>
-        <translation type="unfinished"></translation>
+        <translation>T&amp;ranslation</translation>
     </message>
     <message>
-        <location filename="../ui/about.ui" line="490"/>
+        <location filename="../ui/about.ui" line="494"/>
         <source>Deutsch</source>
-        <translation type="unfinished">German</translation>
+        <translation>German</translation>
     </message>
     <message>
-        <location filename="../ui/about.ui" line="497"/>
+        <location filename="../ui/about.ui" line="501"/>
         <source>Englisch (UK)</source>
-        <translation type="unfinished">English</translation>
+        <translation>English</translation>
     </message>
     <message>
-        <location filename="../ui/about.ui" line="525"/>
+        <location filename="../ui/about.ui" line="529"/>
         <source>Übersetzungen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Translations:</translation>
     </message>
     <message>
-        <location filename="../ui/about.ui" line="540"/>
+        <location filename="../ui/about.ui" line="544"/>
         <source>Spenden</source>
-        <translation type="unfinished">Donate</translation>
+        <translation>Donate</translation>
     </message>
     <message>
-        <location filename="../ui/about.ui" line="549"/>
+        <location filename="../ui/about.ui" line="553"/>
         <source>Die Entwicklung von freier Software nimmt viel Zeit in Anspruch. Aus diesem Grund würde ich mich über eine kleine Spende sehr freuen.
 Vielen Dank im voraus.</source>
-        <translation type="unfinished"></translation>
+        <translation>The development of free software takes a long time to complete. For this reason, I would appreciate a small donation very.
+Thanks in advance.</translation>
     </message>
     <message>
-        <location filename="../ui/about.ui" line="598"/>
+        <location filename="../ui/about.ui" line="602"/>
         <source>&amp;Ok</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/about.cpp" line="43"/>
         <source>Version: </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -152,32 +161,32 @@ Vielen Dank im voraus.</source>
     <message>
         <location filename="../ui/clamui.ui" line="50"/>
         <source>Dateien in Quarantäne</source>
-        <translation type="unfinished"></translation>
+        <translation>Quarantined files</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="61"/>
         <source>ClamAV Virendefinitionen</source>
-        <translation type="unfinished"></translation>
+        <translation>ClamAV virus definitions</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="71"/>
         <source>Über ClamAV</source>
-        <translation type="unfinished"></translation>
+        <translation>About ClamAV</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="133"/>
         <source>Schließen</source>
-        <translation type="unfinished"></translation>
+        <translation>Close</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="157"/>
         <source>&amp;Datei</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;File</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="81"/>
         <source>Hilfe</source>
-        <translation type="unfinished"></translation>
+        <translation>Help</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="30"/>
@@ -192,12 +201,12 @@ Vielen Dank im voraus.</source>
     <message>
         <location filename="../ui/clamui.ui" line="93"/>
         <source>Über...</source>
-        <translation type="unfinished"></translation>
+        <translation>About...</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="105"/>
         <source>Einstellungen</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="130"/>
@@ -207,37 +216,37 @@ Vielen Dank im voraus.</source>
     <message>
         <location filename="../ui/clamui.ui" line="165"/>
         <source>&amp;?</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="176"/>
         <source>E&amp;xtra</source>
-        <translation type="unfinished"></translation>
+        <translation>E&amp;xtra</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="182"/>
         <source>&amp;ClamAV</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;ClamAV</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="186"/>
         <source>&amp;ClamAV Dämon</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;ClamAV Daemon</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="201"/>
         <source>&amp;FreshClam</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="302"/>
         <source>&amp;Einstellungen</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;ettings</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="311"/>
         <source>&amp;ClamAV im Web</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;ClamAV on the Web</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="321"/>
@@ -400,7 +409,7 @@ Vielen Dank im voraus.</source>
     <message>
         <location filename="../ui/firstrunwizard.ui" line="20"/>
         <source>ClamUI - Einrichtungsassistent</source>
-        <translation type="unfinished"></translation>
+        <translation>ClamUI - Setup Wizard</translation>
     </message>
     <message>
         <location filename="../ui/firstrunwizard.ui" line="48"/>
@@ -467,12 +476,12 @@ Vielen Dank im voraus.</source>
     <message>
         <location filename="../ui/firstrunwizard.ui" line="170"/>
         <source>dd.MM.yyyy</source>
-        <translation type="unfinished"></translation>
+        <translation>yyyy-MM-dd</translation>
     </message>
     <message>
         <location filename="../ui/firstrunwizard.ui" line="180"/>
         <source>Datu&amp;m:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Date:</translation>
     </message>
     <message>
         <location filename="../ui/firstrunwizard.ui" line="295"/>
@@ -513,12 +522,12 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/firstrunwizard.ui" line="350"/>
         <source>/usr/sbin/</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/firstrunwizard.ui" line="360"/>
         <source>/usr/local/sbin/</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/firstrunwizard.ui" line="373"/>
@@ -541,12 +550,12 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/firstrunwizard.ui" line="412"/>
         <source>/usr/bin/</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/firstrunwizard.ui" line="422"/>
         <source>/usr/local/bin/</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/firstrunwizard.ui" line="449"/>
@@ -591,7 +600,7 @@ Alle benötigten Einstellungen wurden vorgenommen. Klicken Sie nun auf &lt;b&gt;
     <message>
         <location filename="../ui/firstrunwizard.ui" line="190"/>
         <source>&amp;Uhrzeit:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Time:</translation>
     </message>
     <message>
         <location filename="../ui/firstrunwizard.ui" line="279"/>
@@ -637,12 +646,12 @@ Alle benötigten Einstellungen wurden vorgenommen. Klicken Sie nun auf &lt;b&gt;
     <message>
         <location filename="../src/firstrunwizard.cpp" line="97"/>
         <source>Keine automatische Prüfung</source>
-        <translation type="unfinished"></translation>
+        <translation>No automatic check</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="98"/>
         <source>Beim einloggen in KDE</source>
-        <translation type="unfinished"></translation>
+        <translation>When log in KDE</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="99"/>
@@ -685,7 +694,7 @@ Alle benötigten Einstellungen wurden vorgenommen. Klicken Sie nun auf &lt;b&gt;
     <message>
         <location filename="../ui/settings.ui" line="14"/>
         <source>Einstellungen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Settings</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="34"/>
@@ -925,7 +934,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/settings.ui" line="769"/>
         <source>Hilfe</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Help</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="794"/>
@@ -935,12 +944,12 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/settings.ui" line="806"/>
         <source>Speichern</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Save</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="818"/>
         <source>Schließen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Close</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="39"/>
@@ -961,9 +970,97 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
 <context>
     <name>TabAboutClamAV</name>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="16"/>
+        <location filename="../ui/tababoutclamav.ui" line="14"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="35"/>
+        <source>Clamd</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="59"/>
+        <location filename="../ui/tababoutclamav.ui" line="147"/>
+        <location filename="../ui/tababoutclamav.ui" line="235"/>
+        <location filename="../ui/tababoutclamav.ui" line="309"/>
+        <location filename="../ui/tababoutclamav.ui" line="387"/>
+        <location filename="../ui/tababoutclamav.ui" line="468"/>
+        <location filename="../ui/tababoutclamav.ui" line="549"/>
+        <location filename="../ui/tababoutclamav.ui" line="607"/>
+        <source>Beschreibung</source>
+        <translation>Description</translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="65"/>
+        <location filename="../ui/tababoutclamav.ui" line="153"/>
+        <location filename="../ui/tababoutclamav.ui" line="241"/>
+        <location filename="../ui/tababoutclamav.ui" line="315"/>
+        <location filename="../ui/tababoutclamav.ui" line="393"/>
+        <location filename="../ui/tababoutclamav.ui" line="474"/>
+        <location filename="../ui/tababoutclamav.ui" line="555"/>
+        <location filename="../ui/tababoutclamav.ui" line="613"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="81"/>
+        <location filename="../ui/tababoutclamav.ui" line="140"/>
+        <location filename="../ui/tababoutclamav.ui" line="205"/>
+        <location filename="../ui/tababoutclamav.ui" line="286"/>
+        <location filename="../ui/tababoutclamav.ui" line="367"/>
+        <location filename="../ui/tababoutclamav.ui" line="461"/>
+        <location filename="../ui/tababoutclamav.ui" line="526"/>
+        <location filename="../ui/tababoutclamav.ui" line="645"/>
+        <source>Version:</source>
+        <translation>Version:</translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="88"/>
+        <location filename="../ui/tababoutclamav.ui" line="169"/>
+        <location filename="../ui/tababoutclamav.ui" line="228"/>
+        <location filename="../ui/tababoutclamav.ui" line="331"/>
+        <location filename="../ui/tababoutclamav.ui" line="409"/>
+        <location filename="../ui/tababoutclamav.ui" line="490"/>
+        <location filename="../ui/tababoutclamav.ui" line="571"/>
+        <location filename="../ui/tababoutclamav.ui" line="652"/>
+        <source>Installationspfad:</source>
+        <translation>Install Path:</translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="116"/>
+        <source>Freshclam</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="197"/>
+        <source>Clamdscan</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="278"/>
+        <source>Clamscan</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="359"/>
+        <source>Clamdtop</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="437"/>
+        <source>Clambc</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="518"/>
+        <source>Clamconf</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="599"/>
+        <source>Sigtool</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -971,7 +1068,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="20"/>
@@ -986,22 +1083,22 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="84"/>
         <source>dd.MM.yyyy</source>
-        <translation type="unfinished"></translation>
+        <translation>yyyy-MM-dd</translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="117"/>
         <source>Dat&amp;um:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Date:</translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="107"/>
         <source>Uhr&amp;zeit:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Time:</translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="137"/>
         <source>Speichern</source>
-        <translation type="unfinished"></translation>
+        <translation>Save</translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="169"/>
@@ -1033,13 +1130,13 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <location filename="../ui/tabscanscheduling.ui" line="247"/>
         <location filename="../ui/tabscanscheduling.ui" line="332"/>
         <source>PushButton</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="275"/>
         <location filename="../ui/tabscanscheduling.ui" line="307"/>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="290"/>
@@ -1085,7 +1182,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="432"/>
         <source>Verzeichnis hinzufügen</source>
-        <translation type="unfinished"></translation>
+        <translation>Add Directory</translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="444"/>
@@ -1095,7 +1192,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="417"/>
         <source>Datei hinzufügen</source>
-        <translation type="unfinished"></translation>
+        <translation>Add File</translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="200"/>
@@ -1163,7 +1260,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <location filename="../src/tabscanscheduling.cpp" line="85"/>
         <location filename="../src/tabscanscheduling.cpp" line="100"/>
         <source>Starten</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="../src/tabscanscheduling.cpp" line="86"/>
@@ -1174,7 +1271,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <location filename="../src/tabscanscheduling.cpp" line="90"/>
         <location filename="../src/tabscanscheduling.cpp" line="105"/>
         <source>Stoppen</source>
-        <translation type="unfinished"></translation>
+        <translation>Stop</translation>
     </message>
     <message>
         <location filename="../src/tabscanscheduling.cpp" line="91"/>
@@ -1184,25 +1281,29 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../src/tabscanscheduling.cpp" line="101"/>
         <source>&lt;b&gt;Läuft nicht.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Not running</translation>
     </message>
     <message>
         <location filename="../src/tabscanscheduling.cpp" line="106"/>
-        <source>L&lt;b&gt;äuft&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;b&gt;Läuft&lt;/b&gt;</source>
+        <translation>Running</translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="388"/>
+        <source>L&lt;b&gt;äuft&lt;/b&gt;</source>
+        <translation type="vanished">Running</translation>
+    </message>
+    <message>
+        <location filename="../src/tabscanscheduling.cpp" line="398"/>
         <source>Löschen bestätigen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="389"/>
+        <location filename="../src/tabscanscheduling.cpp" line="399"/>
         <source>Möchten Sie die den Eintrag &lt;b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/tabscanscheduling.cpp" line="391"/>
+        <location filename="../src/tabscanscheduling.cpp" line="401"/>
         <source>&lt;/b&gt; wirklich löschen?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1232,7 +1333,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/tabvirusdb.ui" line="64"/>
         <source>Beschreibung</source>
-        <translation type="unfinished"></translation>
+        <translation>Description</translation>
     </message>
 </context>
 <context>
@@ -1240,12 +1341,12 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/tabvirusquarantine.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/tabvirusquarantine.ui" line="20"/>
         <source>Aktionen</source>
-        <translation type="unfinished"></translation>
+        <translation>Actions</translation>
     </message>
     <message>
         <location filename="../ui/tabvirusquarantine.ui" line="28"/>
@@ -1268,7 +1369,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/tabvirusscan.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/tabvirusscan.ui" line="23"/>
@@ -1303,7 +1404,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
     <message>
         <location filename="../ui/tabvirusscan.ui" line="116"/>
         <source>Ausgabe</source>
-        <translation type="unfinished"></translation>
+        <translation>Output</translation>
     </message>
 </context>
 </TS>
