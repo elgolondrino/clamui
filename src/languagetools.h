@@ -39,6 +39,8 @@
 #include <QDebug>
 #include <QFile>
 
+#include "definitionen.h"
+
 struct LanguageInfo {
 	QString niceName;
 	QString flagFile;

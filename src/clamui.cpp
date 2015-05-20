@@ -85,7 +85,7 @@ void ClamUI::slotDaemonStatus() {
                     trUtf8("%1 - %2 - Warnung!").arg(
                         APP_TITLE).arg(
                         APP_VERSION),
-                    trUtf8("Der <b>Virenfefinitionen Update Dämon</b> nicht."),
+                    trUtf8("Der <b>Virendefinitionen Update Dämon</b> läuft nicht."),
                     "dialog-warning",
                     10000 );
         freshclamStatus = false;
@@ -354,7 +354,7 @@ void ClamUI::freshclamDaemon(){
                     trUtf8("%1 - %2 - Hinweis!").arg(
                         APP_TITLE).arg(
                         APP_VERSION),
-                    trUtf8("Der <b>Virenfefinitionen Update Dämon</b> wurde "
+                    trUtf8("Der <b>Virendefinitionen Update Dämon</b> wurde "
                            "erfolgreich gestartet und aktualisiert ")
                     + freshclamInterval + trUtf8("x am Tag die "
                                                  "Virendatenbank."),
@@ -366,7 +366,7 @@ void ClamUI::freshclamDaemon(){
                     trUtf8("%1 - %2 - Warnung!").arg(
                         APP_TITLE).arg(
                         APP_VERSION),
-                    trUtf8("Der <b>Virenfefinitionen Update Dämon</b> "
+                    trUtf8("Der <b>Virendefinitionen Update Dämon</b> "
                            "konnte <b>nicht</b> gestartet werden."),
                     "dialog-warning",
                     10000 );

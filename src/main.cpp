@@ -57,13 +57,15 @@ int main(int argc, char *argv[]) {
     QString locale = QLocale::system().name();
     QString defaultLanguage = QString(APP_NAME) + "_" + locale + ".qm";
 
+    qDebug() << locale;
+
     // Falls die Sprache manuell gesetzt wurde.
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("ClamUI");
     bool languageSet = clamui_conf.value("Language_Manually", false).toBool();
     QString currLanguage = clamui_conf.value(
-                     "Language", defaultLanguage).toString();
+                     "languageFileName", defaultLanguage).toString();
     bool hideWindow =clamui_conf.value("Hide_Window", false).toBool();
     clamui_conf.endGroup();
 
@@ -76,7 +78,9 @@ int main(int argc, char *argv[]) {
 
     if (languageSet == false) {
         // Langauge from system settings
-        myappTranslator.load(LANG_PATH + APP_NAME + "_"  + locale + ".qm");
+        myappTranslator.load(LANG_PATH
+                             + APP_NAME + "_"
+                             + locale + ".qm");
         app.installTranslator(&myappTranslator);
       } else {
         // Language manually.

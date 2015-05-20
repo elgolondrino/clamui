@@ -37,6 +37,9 @@
 #include <QFileDialog>
 #include <QProcess>
 #include <QMessageBox>
+#include <QMap>
+#include <QTranslator>
+#include <QMetaProperty>
 
 #include "definitionen.h"
 #include "languagetools.h"
@@ -58,6 +61,11 @@ private:
     void settingsRead();
     void settingsDefaultClamUI();
     void settingsDefaultClamAV();
+    void createLanguageMenu();
+
+    QTranslator *appTranslator;
+    LanguageTools * languages;
+    QMap<QString, QString> * fileToNiceName;
 
 private slots:
     void settingsWrite();

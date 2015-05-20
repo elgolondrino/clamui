@@ -153,7 +153,7 @@
            <item>
             <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>ClamUI ist ein einfach zu bediendes grafisches Frontend für den ClanAV Virenscanner.</string>
+              <string>ClamUI ist ein einfach zu bedienendes grafisches Frontend für den ClanAV Virenscanner.</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -201,7 +201,7 @@
              <item row="0" column="1">
               <widget class="QLabel" name="label_WebSiteClamUI">
                <property name="text">
-                <string>TextLabel</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.e67-its.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;www.e67-its.de&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -266,8 +266,8 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>459</width>
-            <height>259</height>
+            <width>174</width>
+            <height>127</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">
@@ -374,7 +374,9 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="tabAutor">
       <attribute name="icon">
-       <iconset theme="im-user"/>
+       <iconset theme="im-user">
+        <normaloff/>
+       </iconset>
       </attribute>
       <attribute name="title">
        <string>Aut&amp;oren</string>
@@ -396,8 +398,8 @@ p, li { white-space: pre-wrap; }
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>459</width>
-            <height>259</height>
+            <width>168</width>
+            <height>87</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -476,7 +478,9 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="tabTranslation">
       <attribute name="icon">
-       <iconset theme="tools-check-spelling"/>
+       <iconset theme="tools-check-spelling">
+        <normaloff/>
+       </iconset>
       </attribute>
       <attribute name="title">
        <string>Ü&amp;bersetzung</string>

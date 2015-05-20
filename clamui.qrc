@@ -1,17 +1,29 @@
 <RCC>
-  <qresource prefix="/translations">
-    <file>translations/translation_info.txt</file>
-  </qresource>
-  <qresource prefix="/icons">
-    <file>icons/breeze/actions/toolbar/web-browser.svg</file>
-    <file>icons/breeze/actions/toolbar/dialog-ok.svg</file>
-    <file>icons/breeze/actions/toolbar/dialog-close.svg</file>
-    <file>icons/png/clamui.png</file>
-    <file>icons/png/clamav.png</file>
-    <file>icons/png/clamui-256.png</file>
-    <file>icons/png/clamav-256.png</file>
-    <file>icons/png/clamav-128.png</file>
-    <file>icons/png/clamui-128.png</file>
-    <file>icons/png/clamav-128x128.png</file>
-  </qresource>
+    <qresource prefix="/icons">
+        <file>icons/breeze/actions/toolbar/web-browser.svg</file>
+        <file>icons/breeze/actions/toolbar/dialog-ok.svg</file>
+        <file>icons/breeze/actions/toolbar/dialog-close.svg</file>
+        <file>icons/png/clamui.png</file>
+        <file>icons/png/clamav.png</file>
+        <file>icons/png/clamui-256.png</file>
+        <file>icons/png/clamav-256.png</file>
+        <file>icons/png/clamav-128.png</file>
+        <file>icons/png/clamui-128.png</file>
+        <file>icons/png/clamav-128x128.png</file>
+        <file>icons/flags/czech.png</file>
+        <file>icons/flags/dutch.png</file>
+        <file>icons/flags/english.png</file>
+        <file>icons/flags/french.png</file>
+        <file>icons/flags/german.png</file>
+        <file>icons/flags/greek.png</file>
+        <file>icons/flags/hungarian.png</file>
+        <file>icons/flags/italy.png</file>
+        <file>icons/flags/polish.png</file>
+        <file>icons/flags/portuguese_br.png</file>
+        <file>icons/flags/portuguese.png</file>
+        <file>icons/flags/romanian.png</file>
+        <file>icons/flags/russian.png</file>
+        <file>icons/flags/slovak.png</file>
+        <file>icons/flags/spain.png</file>
+    </qresource>
 </RCC>

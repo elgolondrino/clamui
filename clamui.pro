@@ -14,7 +14,7 @@ QT += KDESu
 TEMPLATE = app
 VERSION = -0.0.0
 LANGUAGE += C++
-#CODECFORTR += UTF-8
+CODECFORTR += UTF-8
 UI_DIR += src
 MOC_DIR += moc
 OBJECTS_DIR += obj
@@ -87,11 +87,11 @@ OTHER_FILES += ChangeLog \
 
 RESOURCES += clamui.qrc
 
-TRANSLATIONS += translations/clamui_de.ts \
+TRANSLATIONS += translations/clamui_de_DE.ts \
     translations/clamui_en.ts
 
 DISTFILES += clamui.desktop \
-    translations/clamui_de.qm \
+    translations/clamui_de_DE.qm \
     translations/clamui_en.qm \
     AUTHORS \
     ChangeLog \
@@ -118,6 +118,9 @@ panel.files += icons/breeze/status/panel/clamui-idle.svg \
     icons/breeze/status/panel/clamui-no-virus-found.svg \
     icons/breeze/status/panel/clamui-virus-found.svg
 
+flags.path += /usr/share/$(TARGET)/flags
+flags.files += icons/flags/*
+
 # ### Solid Actions
 solid.path += /usr/share/solid/actions/
 solid.files += scripts/VirusScan.desktop \
@@ -128,11 +131,8 @@ menu.path += /usr/share/applications/
 menu.files += src/clamui.desktop
 
 #### Übersetzungen
-translationDE.path += /usr/share/locale/de/LC_MESSAGES
-translationDE.files += translations/$(TARGET)_de.qm
-
-translationEN.path += /usr/share/locale/en/LC_MESSAGES
-translationEN.files += translations/$(TARGET)_en.qm
+translation.path += /usr/share/$(TARGET)/translations
+translation.files += translations/*
 
 # #### Pfade zu den lokalisierten Hilfeseiten.
 #helpDE.path += /usr/share/doc/kde/HTML/de/$(TARGET)
@@ -171,9 +171,9 @@ INSTALLS += target \
     menu \
 #	helpDE \
 #	helpEN \
-    translationDE \
-    translationEN \
+    translation \
     software \
     toolbar \
     panel \
-    solid
+    solid \
+    flags

@@ -40,6 +40,9 @@ Settings::Settings(QWidget *parent) : QDialog(parent){
                        APP_TITLE).arg(
                        APP_VERSION));
 
+    languages = new LanguageTools();
+    fileToNiceName = new QMap<QString, QString>();
+
     /*
      * Load path values in the comboBox_ClamVDB.
      */
@@ -66,6 +69,7 @@ Settings::Settings(QWidget *parent) : QDialog(parent){
     comboBox_ConfigPath->addItem("/usr/local/etc/");
     comboBox_ConfigPath->setItemIcon(4, QIcon::fromTheme("folder"));
 
+    createLanguageMenu();
     createSlots();
     settingsRead();
 
@@ -132,12 +136,20 @@ void Settings::slotCheckPath(){
 
 void Settings::settingsWrite(){
 
+    LanguageTools language;
+
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);
     clamui_conf.beginGroup("ClamUI");
     clamui_conf.setValue("Language_Manually", groupBox_Language->isChecked());
-    clamui_conf.setValue("Language_Index", comboBox_Language->currentIndex());
+//    clamui_conf.setValue("Language_Index", comboBox_Language->currentIndex());
+//    clamui_conf.setValue("languageNiceName",
+//                             comboBox_Language->currentText());
     clamui_conf.setValue("Language", comboBox_Language->currentText());
+
+    clamui_conf.setValue("languageFileName",
+                             fileToNiceName->value(
+                                 comboBox_Language->currentText()));
     clamui_conf.setValue("Autostart", checkBox_Autostart->isChecked());
     clamui_conf.setValue("Hide_Window", checkBox_HideWindow->isChecked());
     clamui_conf.setValue("Icon_on_Desktop", checkBox_IconOnDesktop->isChecked());
@@ -162,6 +174,10 @@ void Settings::settingsWrite(){
 
 void Settings::settingsRead(){
 
+    QString locale = QLocale::system().name();
+
+    QString defaultLanguage = "clamui_" + locale + ".qm";
+
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);
 
@@ -169,9 +185,11 @@ void Settings::settingsRead(){
     groupBox_Language->setChecked(
                 clamui_conf.value("Language_Manually", false).toBool());
     comboBox_Language->setCurrentIndex(
-                clamui_conf.value("Language_Index", 0).toInt());
-    comboBox_Language->setCurrentText(
-                clamui_conf.value("Language", "").toString());
+                comboBox_Language->findText(
+                    clamui_conf.value("Language",
+                                      defaultLanguage).toString(),
+                    Qt::MatchExactly));
+
     checkBox_Autostart->setChecked(
                 clamui_conf.value("Autostart", false).toBool());
     checkBox_HideWindow->setChecked(
@@ -252,4 +270,40 @@ void Settings::settingsDefaultClamUI(){
     checkBox_MenuBar->setChecked(true);
     checkBox_StatusBar->setChecked(true);
     checkBox_ToolBar->setChecked(true);
+}
+
+void Settings::createLanguageMenu() {
+
+    QDir dir(LANG_PATH);
+    QStringList filter;
+    filter << "clamui*.qm";
+    QStringList fileNames = dir.entryList(filter);
+
+    QString languageName;
+    QIcon * countryFlag;
+    LanguageInfo info;
+    //		info = languages->getLanguageInfo("clamui_en.qm");
+
+    languageName = info.niceName;
+    QString trlangName = tr(languageName.toStdString().c_str());
+
+    countryFlag = new QIcon("/usr/share/" APP_NAME "/flags/" + info.flagFile);
+
+    comboBox_Language->setInsertPolicy(QComboBox::InsertAtTop);
+    comboBox_Language->insertItem(0, *(countryFlag), trlangName);
+
+    //		fileToNiceName->insert(trlangName, "clamui_en.qm");
+
+    for (int i = 0; i < (int)fileNames.size(); ++i) {
+        info = languages->getLanguageInfo(fileNames[i]);
+        languageName = info.niceName;
+
+        trlangName = trUtf8(languageName.toStdString().c_str());
+        countryFlag = new QIcon("/usr/share/" APP_NAME "/flags/" +
+                                info.flagFile);
+
+        comboBox_Language->insertItem(i+1, *(countryFlag), trlangName);
+
+        fileToNiceName->insert(trlangName, fileNames[i]);
+    }
 }

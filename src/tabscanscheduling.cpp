@@ -103,7 +103,7 @@ void TabScanScheduling::slotDaemonStatus() {
     } else {
 
         pushButton_FreshclamStatus->setText(trUtf8("Stoppen"));
-        label_FreshclamStatus->setText(trUtf8("L<b>äuft</b>"));
+        label_FreshclamStatus->setText(trUtf8("<b>Läuft</b>"));
         label_FreshclamStatus->setStyleSheet("color: rgb(0, 170, 0);");
     }
 }

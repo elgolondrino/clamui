@@ -51,7 +51,7 @@ void LanguageTools::readLanguages() {
 
 	languageInfoMap = new QMap<QString, LanguageInfo>;
 
-	QFile translationsFile(":/translations/translations/translation_info.txt");
+    QFile translationsFile(LANG_PATH + "translation_info.txt");
 
 	if (!translationsFile.open(QIODevice::ReadOnly | QIODevice::Text))
 		return;
