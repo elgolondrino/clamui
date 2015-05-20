@@ -171,14 +171,24 @@ void TabScanScheduling::slotStartStopClamd(){
 void TabScanScheduling::slotStartStopFreshclam(){
 
     QStringList arguments;
-    arguments << "--config-file=" + configPath +  "freshclam.conf"
-              << "--log=" + configPath + "freshclam.log"
-              << "--daemon"
-              << "--pid=" + configPath + "freshclam.pid"
-              << "--checks=" + spinBox_FreshClamUpdate->value()
-              << "--datadir=" + virusdbPath
-              << "--daemon-notify=" + configPath + "clamd.conf"
-              << "--enable-stats";
+    if (checkBox_FreshClam->isChecked()) {
+        arguments << "--config-file=" + configPath +  "freshclam.conf"
+                  << "--log=/tmp/freshclam.log"
+                  << "--daemon"
+                  << "--pid=" + configPath + "freshclam.pid"
+                  << "--checks=" + spinBox_FreshClamUpdate->value()
+                  << "--datadir=" + virusdbPath
+                  << "--daemon-notify=" + configPath + "clamd.conf"
+                  << "--enable-stats";
+    } else {
+        arguments << "--config-file=" + configPath +  "freshclam.conf"
+                  << "--log=/tmp/freshclam.log"
+                  << "--pid=" + configPath + "freshclam.pid"
+                  << "--checks=" + spinBox_FreshClamUpdate->value()
+                  << "--datadir=" + virusdbPath
+                  << "--daemon-notify=" + configPath + "clamd.conf"
+                  << "--enable-stats";
+    }
 
     FreshClamProcess start;
     start.freshclamDaemon(programPath + "freshclam", arguments);

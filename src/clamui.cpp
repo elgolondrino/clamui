@@ -332,7 +332,7 @@ void ClamUI::freshclamDaemon(){
 
     QStringList arguments;
     arguments << "--config-file=" + configPath +  "freshclam.conf"
-              << "--log=" + configPath + "freshclam.log"
+              << "--log=/tmp/freshclam.log"
               << "--daemon"
               << "--pid=" + configPath + "freshclam.pid"
               << "--checks=" + freshclamInterval

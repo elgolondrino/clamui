@@ -5,7 +5,7 @@ lessThan(QT_VERSION, 5.3) {
 QT += sql
 QT += network
 QT += widgets
-QT += KIconThemes
+#QT += KIconThemes
 QT += Solid
 QT += KNotifications
 QT += KDESu
@@ -106,8 +106,17 @@ DISTFILES += clamui.desktop \
     scripts/VirusScan.sh
 
 # #### Programmicons
-pixmap.path += /usr/share/pixmaps/
-pixmap.files += icons/clamui.svg
+software.path += /usr/share/icons/breeze/apps/software/
+software.files += icons/breeze/apps/software/clamav.svg \
+    icons/breeze/apps/software/clamui.svg
+
+toolbar.path += /usr/share/icons/breeze/actions/toolbar/
+toolbar.files += icons/breeze/actions/toolbar/web-browser.svg
+
+panel.path += /usr/share/icons/breeze/status/panel/
+panel.files += icons/breeze/status/panel/clamui-idle.svg \
+    icons/breeze/status/panel/clamui-no-virus-found.svg \
+    icons/breeze/status/panel/clamui-virus-found.svg
 
 # ### Solid Actions
 solid.path += /usr/share/solid/actions/
@@ -164,5 +173,7 @@ INSTALLS += target \
 #	helpEN \
     translationDE \
     translationEN \
-    pixmap \
+    software \
+    toolbar \
+    panel \
     solid
