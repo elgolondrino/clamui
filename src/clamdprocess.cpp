@@ -47,6 +47,15 @@ bool ClamdProcess::clamDaemon(QString clamd, QStringList argumentsList){
         return false;
 }
 
-void ClamdProcess::stopDaemon(){
+bool ClamdProcess::stopDaemon(){
 
+    /*
+     * TODO
+     * A better way to stop the daemon.
+     */
+    QProcess *daemonProcess = new QProcess();
+    daemonProcess->start("killall clamd");
+
+    if (daemonProcess->waitForFinished())
+        return true;
 }

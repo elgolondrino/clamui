@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>Georg Lassnig</author>
  <class>Settings</class>
  <widget class="QDialog" name="Settings">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>863</width>
+    <width>940</width>
     <height>573</height>
    </rect>
   </property>
@@ -22,7 +23,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget_Settings">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="icon">
@@ -44,7 +45,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>827</width>
+            <width>904</width>
             <height>469</height>
            </rect>
           </property>
@@ -185,7 +186,7 @@
        <item>
         <widget class="QToolBox" name="toolBox">
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="page_general">
           <property name="geometry">
@@ -193,7 +194,7 @@
             <x>0</x>
             <y>0</y>
             <width>831</width>
-            <height>380</height>
+            <height>349</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -216,7 +217,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>815</width>
-                <height>364</height>
+                <height>333</height>
                </rect>
               </property>
               <layout class="QFormLayout" name="formLayout_3">
@@ -361,7 +362,7 @@
                        <string/>
                       </property>
                       <property name="pixmap">
-                       <pixmap resource="../clamui.qrc">:/icons/icons/breeze/actions/toolbar/dialog-close.svg</pixmap>
+                       <pixmap>:/icons/icons/breeze/actions/toolbar/dialog-close.svg</pixmap>
                       </property>
                      </widget>
                     </item>
@@ -375,7 +376,7 @@
                        <string/>
                       </property>
                       <property name="pixmap">
-                       <pixmap resource="../clamui.qrc">:/icons/icons/breeze/actions/toolbar/dialog-close.svg</pixmap>
+                       <pixmap>:/icons/icons/breeze/actions/toolbar/dialog-close.svg</pixmap>
                       </property>
                      </widget>
                     </item>
@@ -436,8 +437,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>96</width>
-            <height>86</height>
+            <width>831</width>
+            <height>349</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -459,8 +460,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>134</width>
-                <height>284</height>
+                <width>815</width>
+                <height>333</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -647,8 +648,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>96</width>
-            <height>86</height>
+            <width>908</width>
+            <height>349</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -670,81 +671,436 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>96</width>
-                <height>238</height>
+                <width>892</width>
+                <height>333</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_11">
                <item>
                 <layout class="QGridLayout" name="gridLayout_4">
-                 <item row="4" column="0">
-                  <widget class="QLabel" name="label_40">
-                   <property name="text">
-                    <string>TextLabel</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="0">
-                  <widget class="QLabel" name="label_41">
-                   <property name="text">
-                    <string>TextLabel</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="8" column="0">
-                  <widget class="QLabel" name="label_30">
-                   <property name="text">
-                    <string>TextLabel</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
+                 <item row="0" column="2">
                   <widget class="QLabel" name="label_39">
+                   <property name="toolTip">
+                    <string>Gibt die maximale Größe der Log-Datei an.&lt;br /&gt;Verwenden Sie &lt;b&gt;M&lt;/b&gt; oder &lt;b&gt;m&lt;/b&gt; für Megabyte (1M = 1m = 1048576 Bytes) &lt;br /&gt;und &lt;b&gt;K&lt;/b&gt; oder &lt;b&gt;k&lt;/b&gt; für Kilobytes (1K = 1k = 1024 Bytes). &lt;br /&gt;0 deaktiviert das Größenlimit für die Log-Datei</string>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>&amp;Maximale Größe der Log Datei:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>lineEdit_FcLogFileSize</cstring>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_38">
-                   <property name="text">
-                    <string>TextLabel</string>
+                   <property name="toolTip">
+                    <string>Ist die Log Datei aktiviert, werden alle Vorgängen in der Datei &lt;i&gt;freshclam.log&lt;/i&gt; protokolliert.</string>
                    </property>
-                  </widget>
-                 </item>
-                 <item row="9" column="0">
-                  <widget class="QLabel" name="label_28">
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>Lo&amp;g-Datei aktivieren:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>comboBox_FcActivateLogFile</cstring>
                    </property>
                   </widget>
                  </item>
                  <item row="2" column="0">
                   <widget class="QLabel" name="label_42">
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>A&amp;usführliches Logging:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>comboBox_FcVerboseLogging</cstring>
                    </property>
                   </widget>
                  </item>
-                 <item row="5" column="0">
-                  <widget class="QLabel" name="label_37">
+                 <item row="0" column="3">
+                  <widget class="QLineEdit" name="lineEdit_FcLogFileSize">
+                   <property name="toolTip">
+                    <string>Gibt die maximale Größe der Log-Datei an.&lt;br /&gt;Verwenden Sie &lt;b&gt;M&lt;/b&gt; oder &lt;b&gt;m&lt;/b&gt; für Megabyte (1M = 1m = 1048576 Bytes) &lt;br /&gt;und &lt;b&gt;K&lt;/b&gt; oder &lt;b&gt;k&lt;/b&gt; für Kilobytes (1K = 1k = 1024 Bytes). &lt;br /&gt;0 deaktiviert das Größenlimit für die Log-Datei</string>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>1M</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="7" column="0">
-                  <widget class="QLabel" name="label_33">
+                 <item row="2" column="1">
+                  <widget class="QComboBox" name="comboBox_FcVerboseLogging">
+                   <item>
+                    <property name="text">
+                     <string>Nein</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-cancel"/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Ja</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-ok"/>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QComboBox" name="comboBox_FcActivateLogFile">
+                   <property name="toolTip">
+                    <string>Ist die Log Datei aktiviert, werden alle Vorgängen in der Datei &lt;i&gt;freshclam.log&lt;/i&gt; protokolliert.</string>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Nein</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-cancel"/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Ja</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-ok"/>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QLabel" name="label_32">
+                   <property name="toolTip">
+                    <string>Verwendet das Logging-System von des Betriebssystems.</string>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>Das &amp;Systemlogging verwenden:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>comboBox_FcSystemLogging</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="5">
+                  <widget class="QComboBox" name="comboBox_FcTimeStamp">
+                   <property name="toolTip">
+                    <string>Setzt vor jedem Log-Eintrag das Datum und die Zeit.</string>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Nein</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-cancel"/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Ja</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-ok"/>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="0" column="4">
+                  <widget class="QLabel" name="label_31">
+                   <property name="text">
+                    <string>&amp;Zeitstempel für die Log-Einträge:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>comboBox_FcTimeStamp</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="3">
+                  <widget class="QComboBox" name="comboBox_FcSystemLogging">
+                   <property name="toolTip">
+                    <string>Verwendet das Logging-System von des Betriebssystems.</string>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Nein</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-cancel"/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Ja</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-ok"/>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="2" column="5">
+                  <widget class="QComboBox" name="comboBox_FcPidFile">
+                   <property name="currentIndex">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Nein</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-cancel"/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Ja</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-ok"/>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="2" column="4">
+                  <widget class="QLabel" name="label_34">
+                   <property name="text">
+                    <string>&amp;PID-Datei speichern:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>comboBox_FcPidFile</cstring>
                    </property>
                   </widget>
                  </item>
                  <item row="6" column="0">
-                  <widget class="QLabel" name="label_35">
-                   <property name="text">
-                    <string>TextLabel</string>
+                  <widget class="QLabel" name="label_40">
+                   <property name="toolTip">
+                    <string>db.XY.clamav.net &lt;br /&gt;Für &lt;b&gt;XY&lt;/b&gt; den Länder Code Ihres Landes einsetzen. &lt;br /&gt; Für weitere Informationen, siehe: http://www.iana.org/cctld/cctld-whois.htm für eine vollständige Übersicht. &lt;br /&gt;Verwenden Sie&lt;i&gt; db.XY.ipv6.clamav.net&lt;/i&gt; für IPv6 Verbindungen.</string>
                    </property>
+                   <property name="text">
+                    <string>Datenbank Mirror:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>lineEdit_FcMirror</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="1" colspan="2">
+                  <widget class="QLineEdit" name="lineEdit_FcDNSverification">
+                   <property name="toolTip">
+                    <string>Freshclam benutzt DNS TXT Records um die Datenbank und Software Version zu verifizieren.&lt;br /&gt; ACHTUNG!&lt;br /&gt; Nicht verändern es sei denn, Sie verwenden eine eigene Domain zur Datenbank Verifikation.</string>
+                   </property>
+                   <property name="text">
+                    <string>current.cvd.clamav.net</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QSpinBox" name="spinBox">
+                   <property name="toolTip">
+                    <string>Gibt an, wie oft der freshclam Dämon versuchen soll einen Server zu erreichen, bis er abbricht. Gilt pro Mirror.</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="value">
+                    <number>3</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="1" colspan="2">
+                  <widget class="QLineEdit" name="lineEdit_FcMirror">
+                   <property name="toolTip">
+                    <string>db.XY.clamav.net &lt;br /&gt;Für &lt;b&gt;XY&lt;/b&gt; den Länder Code Ihres Landes einsetzen. &lt;br /&gt; Für weitere Informationen, siehe: http://www.iana.org/cctld/cctld-whois.htm für eine vollständige Übersicht. &lt;br /&gt;Verwenden Sie&lt;i&gt; db.XY.ipv6.clamav.net&lt;/i&gt; für IPv6 Verbindungen.</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="placeholderText">
+                    <string>db.XY.clamav.net oder db.XY.ipv6.clamav.net</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="0">
+                  <widget class="QLabel" name="label_37">
+                   <property name="toolTip">
+                    <string>Diese Domain ich eine Fallback-Adresse, falls die anderen Mirror nicht erreichbar sind. &lt;br /&gt;&lt;b&gt;Verändern Sie diesen Eintrag nur, wenn Sie genau wissen was Sie tun.&lt;/b&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Datenbank Mirror (Fallback):</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>lineEdit_FcMirrorFallBack</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="1" colspan="2">
+                  <widget class="QLineEdit" name="lineEdit_FcMirrorFallBack">
+                   <property name="toolTip">
+                    <string>Diese Domain ich eine Fallback-Adresse, falls die anderen Mirror nicht erreichbar sind. &lt;br /&gt;&lt;b&gt;Verändern Sie diesen Eintrag nur, wenn Sie genau wissen was Sie tun.&lt;/b&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>database.clamav.net</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>database.clamav.net</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="0">
+                  <widget class="QLabel" name="label_41">
+                   <property name="toolTip">
+                    <string>Freshclam benutzt DNS TXT Records um die Datenbank und Software Version zu verifizieren.&lt;br /&gt; ACHTUNG!&lt;br /&gt; Nicht verändern es sei denn, Sie verwenden eine eigene Domain zur Datenbank Verifikation.</string>
+                   </property>
+                   <property name="text">
+                    <string>&amp;Verwende DNS zur verifikation:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>lineEdit_FcDNSverification</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="label_43">
+                   <property name="toolTip">
+                    <string>Gibt an, wie oft der freshclam Dämon versuchen soll einen Server zu erreichen, bis er abbricht. Gilt pro Mirror.</string>
+                   </property>
+                   <property name="text">
+                    <string>Anfrage&amp;versuche pro Mirror:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>spinBox</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QLabel" name="label_44">
+                   <property name="toolTip">
+                    <string>Standardmäßig wird die lokale Virendatenbank nicht komprimiert. Wodurch der Zugriff auf die Daten schneller ist.</string>
+                   </property>
+                   <property name="text">
+                    <string>Lokale Datenbank komprimieren:</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>comboBox_CompressDB</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QComboBox" name="comboBox_CompressDB">
+                   <property name="toolTip">
+                    <string>Standardmäßig wird die lokale Virendatenbank nicht komprimiert. Wodurch der Zugriff auf die Daten schneller ist.</string>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Nein</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-cancel"/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Ja</string>
+                    </property>
+                    <property name="icon">
+                     <iconset theme="dialog-ok"/>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="3" column="3" rowspan="5" colspan="3">
+                  <widget class="QGroupBox" name="groupBox_FcProxy">
+                   <property name="title">
+                    <string>HTTP Pro&amp;xy Server angeben</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_9">
+                    <item>
+                     <layout class="QGridLayout" name="gridLayout_6">
+                      <item row="1" column="0">
+                       <widget class="QLabel" name="label_30">
+                        <property name="text">
+                         <string>Port:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="label_28">
+                        <property name="text">
+                         <string>Benutzername:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="0">
+                       <widget class="QLabel" name="label_33">
+                        <property name="text">
+                         <string>Passwort:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="1">
+                       <widget class="QLineEdit" name="lineEdit_FcProxyServerPort">
+                        <property name="maxLength">
+                         <number>5</number>
+                        </property>
+                        <property name="placeholderText">
+                         <string>1234</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="0">
+                       <widget class="QLabel" name="label_35">
+                        <property name="text">
+                         <string>Proxy Server Adresse:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="2">
+                       <spacer name="horizontalSpacer_2">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item row="0" column="1" colspan="2">
+                       <widget class="QLineEdit" name="lineEdit_FcProxyServer">
+                        <property name="placeholderText">
+                         <string>myproxy.com</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1" colspan="2">
+                       <widget class="QLineEdit" name="lineEdit_FcProxyServerUser">
+                        <property name="placeholderText">
+                         <string>meinusername</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="1" colspan="2">
+                       <widget class="QLineEdit" name="lineEdit_FcProxyServerPassword">
+                        <property name="echoMode">
+                         <enum>QLineEdit::PasswordEchoOnEdit</enum>
+                        </property>
+                        <property name="placeholderText">
+                         <string>meinpasswort</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -754,6 +1110,14 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
             </widget>
            </item>
           </layout>
+         </widget>
+         <widget class="QWidget" name="page_milter">
+          <attribute name="icon">
+           <iconset theme="configure"/>
+          </attribute>
+          <attribute name="label">
+           <string>ClamAV Milter</string>
+          </attribute>
          </widget>
         </widget>
        </item>

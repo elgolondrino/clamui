@@ -32,8 +32,15 @@
 #ifndef FRESHCLAMCONF_H
 #define FRESHCLAMCONF_H
 
+/* Qt Headers */
 #include <QtCore/QObject>
 #include <QtCore/qglobal.h>
+#include <QIODevice>
+#include <QTextStream>
+#include <QFile>
+#include <QDateTime>
+
+#include "definitionen.h"
 
 class FreshClamConf : public QObject
 {
@@ -41,9 +48,8 @@ class FreshClamConf : public QObject
 public:
     explicit FreshClamConf(QObject *parent = 0);
 
-signals:
-
-public slots:
+private:
+    void writeFreshClamConf(QStringList values);
 };
 
 #endif // FRESHCLAMCONF_H

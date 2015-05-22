@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>900</width>
-    <height>500</height>
+    <width>944</width>
+    <height>582</height>
    </rect>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -49,7 +49,6 @@
        <attribute name="title">
         <string>Dateien in Quarantäne</string>
        </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_3"/>
       </widget>
       <widget class="TabVirusDB" name="tab_04">
        <attribute name="icon">
@@ -148,13 +147,13 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>900</width>
+     <width>944</width>
      <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
     <property name="title">
-     <string>&amp;Datei</string>
+     <string>Da&amp;tei</string>
     </property>
     <addaction name="action_Close"/>
     <addaction name="separator"/>
@@ -162,7 +161,7 @@
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
-     <string>&amp;?</string>
+     <string>Hi&amp;lfe</string>
     </property>
     <addaction name="action_Handbook"/>
     <addaction name="separator"/>
@@ -304,8 +303,9 @@
   </action>
   <action name="actionClamAV_Online">
    <property name="icon">
-    <iconset resource="../clamui.qrc">
-     <normaloff>:/icons/icons/breeze/actions/toolbar/web-browser.svg</normaloff>:/icons/icons/breeze/actions/toolbar/web-browser.svg</iconset>
+    <iconset theme="web-browser">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>&amp;ClamAV im Web</string>

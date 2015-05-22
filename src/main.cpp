@@ -57,8 +57,6 @@ int main(int argc, char *argv[]) {
     QString locale = QLocale::system().name();
     QString defaultLanguage = QString(APP_NAME) + "_" + locale + ".qm";
 
-    qDebug() << locale;
-
     // Falls die Sprache manuell gesetzt wurde.
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);

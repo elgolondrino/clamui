@@ -47,7 +47,7 @@ public:
     bool clamScan(QString clamscan, QStringList argumentsList);
     bool clamdScan(QString clamscan, QStringList argumentsList);
     bool clamDaemon(QString clamd, QStringList argumentsList);
-    void stopDaemon();
+    bool stopDaemon();
 
 private:
     QProcess *clamscanProcess;

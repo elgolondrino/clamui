@@ -1,2 +1,2 @@
-clamui_en.qm,English,english.png,en
+clamui_en_GB.qm,English,english.png,en
 clamui_de_DE.qm,German,german.png,de

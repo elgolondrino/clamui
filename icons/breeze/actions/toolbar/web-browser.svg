@@ -170,13 +170,13 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="45.254834"
-     inkscape:cx="10.330572"
-     inkscape:cy="10.866138"
+     inkscape:zoom="22.627417"
+     inkscape:cx="7.2995896"
+     inkscape:cy="12.625278"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     width="0px"
+     width="372.05px"
      height="0px"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -190,7 +190,11 @@
      inkscape:showpageshadow="false">
     <inkscape:grid
        type="xygrid"
-       id="grid4114" />
+       id="grid4114"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
     <sodipodi:guide
        position="2.0000011,19.999996"
        orientation="18,0"

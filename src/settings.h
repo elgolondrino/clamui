@@ -41,6 +41,9 @@
 #include <QTranslator>
 #include <QMetaProperty>
 
+#include "freshclamconf.h"
+#include "clamdconf.h"
+#include "clamavmilterconf.h"
 #include "definitionen.h"
 #include "languagetools.h"
 

@@ -42,6 +42,7 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
 
     createSlots();
     settingsRead();
+    createActions();
     createTrayIcon("clamui", "ClamAV ist derzeit inaktiv.");
 
     clamDaemon();
@@ -49,7 +50,7 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
     if (freshclamAsDaemon)
         freshclamDaemon();
 
-    QTimer *daemonStatus = new QTimer;
+    QTimer *daemonStatus = new QTimer(this);
     connect(daemonStatus,
             SIGNAL(timeout()),
             this,
@@ -71,10 +72,10 @@ void ClamUI::slotDaemonStatus() {
                     trUtf8("Der <b>ClamAV Dämon</b> läuft nicht."),
                     "dialog-warning",
                     10000 );
-        clamdStatus = false;
-    } else {
+//        clamdStatus = false;
+    } /*else {
         clamdStatus = true;
-    }
+    }*/
 
     /*
      * If freshclam still running as daemon don't try to start the program.
@@ -88,10 +89,10 @@ void ClamUI::slotDaemonStatus() {
                     trUtf8("Der <b>Virendefinitionen Update Dämon</b> läuft nicht."),
                     "dialog-warning",
                     10000 );
-        freshclamStatus = false;
-    } else {
+//        freshclamStatus = false;
+    } /*else {
         freshclamStatus = true;
-    }
+    }*/
 }
 
 void ClamUI::changeEvent(QEvent *event){
@@ -200,6 +201,8 @@ void ClamUI::slotAbout(){
 
 void ClamUI::slotQuit(){
 
+    ClamdProcess clamd;
+    FreshClamProcess freshclam;
     QMessageBox msgBox;
 
     msgBox.setWindowTitle(trUtf8("Beenden bestätigen"));
@@ -211,7 +214,10 @@ void ClamUI::slotQuit(){
     int ret = msgBox.exec();
     switch (ret) {
     case QMessageBox::Yes:
-//        startDaemon.stopDaemon();
+        if (stopClamdOnQuit)
+            clamd.stopDaemon();
+        if (stopFreshclamOnQuit)
+            freshclam.stopFreshclam();
         qApp->quit();
         break;
     case QMessageBox::No:
@@ -238,8 +244,8 @@ void ClamUI::settingsRead(){
     clamui_conf.beginGroup("ClamUI");
     tabWidget->setCurrentIndex(clamui_conf.value("Currend_Tab", 0).toInt());
     QPoint pos = clamui_conf.value("Window_Pos", QPoint(200, 200)).toPoint();
-    resize(clamui_conf.value("Window_Size", QSize(900, 500)).toSize());
-//    resize(size);
+    QSize size = clamui_conf.value("Window_Size", QSize(900, 500)).toSize();
+    resize(size);
     move(pos);
 
     if (clamui_conf.value("Hide_Menubar", true).toBool()){
@@ -274,24 +280,62 @@ void ClamUI::settingsRead(){
     clamui_conf.endGroup();
 }
 
+void ClamUI::createActions(){
+
+    action_Minimized = new QAction(
+                trUtf8("Mi&nimieren"),
+                this);
+    action_Minimized->setIcon(QIcon::fromTheme(""));
+    connect(action_Minimized,
+            SIGNAL(triggered()),
+            this,
+            SLOT(hide()));
+
+    action_Maximized = new QAction(
+                trUtf8("Ma&ximieren"),
+                this);
+    action_Maximized->setIcon(QIcon::fromTheme(""));
+    connect(action_Maximized,
+            SIGNAL(triggered()),
+            this,
+            SLOT(showMaximized()));
+
+    action_Restore = new QAction(
+                trUtf8("&Wiederherstellen"),
+                this);
+    action_Restore->setIcon(QIcon::fromTheme("view-restore"));
+    connect(action_Restore,
+            SIGNAL(triggered()),
+            this,
+            SLOT(showNormal()));
+}
+
 void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){
 
-
     trayIconMenu = new QMenu(this);
-    trayIconMenu->addMenu(menu_Help/*, trUtf8("Hilfe")*/);
+    trayIconMenu->setTitle(QString("%1 - %2").arg(APP_TITLE).arg(APP_VERSION));
+    trayIconMenu->addMenu(menuClamAV_Daemon);
+    trayIconMenu->addMenu(menuFreshClam);
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(action_Settings);
-    trayIconMenu->setTitle(QString("%1 - %2").arg(APP_TITLE).arg(APP_VERSION));
+    trayIconMenu->addSeparator();
+    trayIconMenu->addAction(action_Restore);
+    trayIconMenu->addAction(action_Maximized);
+    trayIconMenu->addAction(action_Minimized);
+    trayIconMenu->addSeparator();
+    trayIconMenu->addMenu(menu_Help);
+    trayIconMenu->addAction(action_Quit);
 
     statusNotifierItem = new KStatusNotifierItem(this);
-    statusNotifierItem->setTitle(QString("%1 - %2").arg(APP_TITLE).arg(APP_VERSION));
     statusNotifierItem->setToolTip("clamui",
                                    APP_TITLE " - " APP_VERSION,
                                    statusMessage);
     statusNotifierItem->setIconByName(iconSysTray);
+    statusNotifierItem->setStandardActionsEnabled(false);
+    statusNotifierItem->setCategory(KStatusNotifierItem::ApplicationStatus);
     statusNotifierItem->setStatus(KStatusNotifierItem::Active);
     statusNotifierItem->setContextMenu(trayIconMenu);
-
+    statusNotifierItem->setTitle(QString("%1 - %2").arg(APP_TITLE).arg(APP_VERSION));
 }
 
 void ClamUI::clamDaemon(){
@@ -304,8 +348,17 @@ void ClamUI::clamDaemon(){
     /*
      * If clamd still running don't try to start the daemon.
      */
-    if (QFile::exists("/tmp/clamd.socket"))
+    if (QFile::exists("/tmp/clamd.socket")){
+
+        statusNotifierItem->showMessage(
+                    trUtf8("%1 - %2 - Information!").arg(
+                        APP_TITLE).arg(
+                        APP_VERSION),
+                    trUtf8("Der <b>ClamAV Dämon</b> ist bereits aktiv."),
+                    "dialog-information",
+                    10000 );
         return;
+    }
 
     if (startDaemon.clamDaemon(daemonPath + "clamd", arguments)) {
         statusNotifierItem->showMessage(
@@ -345,8 +398,18 @@ void ClamUI::freshclamDaemon(){
     /*
      * If freshclam still running as daemon don't try to start the program.
      */
-    if (QFile::exists(configPath + "freshclam.pid"))
+    if (QFile::exists(configPath + "freshclam.pid")){
+
+        statusNotifierItem->showMessage(
+                    trUtf8("%1 - %2 - Information!").arg(
+                        APP_TITLE).arg(
+                        APP_VERSION),
+                    trUtf8("Der <b>Virendefinitionen Update Dämon</b> "
+                           "ist bereits aktiv."),
+                    "dialog-information",
+                    10000 );
         return;
+    }
 
     if (startFreshClam->freshclamDaemon(programPath + "freshclam", arguments)) {
         statusNotifierItem->showMessage(
@@ -356,7 +419,7 @@ void ClamUI::freshclamDaemon(){
                         APP_VERSION),
                     trUtf8("Der <b>Virendefinitionen Update Dämon</b> wurde "
                            "erfolgreich gestartet und aktualisiert ")
-                    + freshclamInterval + trUtf8("x am Tag die "
+                    + freshclamInterval + trUtf8(" mal am Tag die "
                                                  "Virendatenbank."),
                     "dialog-information",
                     10000 );

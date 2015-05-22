@@ -67,7 +67,7 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
 
     slotDaemonStatus();
 
-    QTimer *daemonStatus = new QTimer;
+    QTimer *daemonStatus = new QTimer(this);
     connect(daemonStatus,
             SIGNAL(timeout()),
             this,
@@ -326,13 +326,13 @@ void TabScanScheduling::addFile(){
 
     QStringList file;
 
-    QFileDialog fileDialog;
-    fileDialog.setFileMode(QFileDialog::AnyFile);
-    fileDialog.setViewMode(QFileDialog::Detail);
-    fileDialog.setOption(QFileDialog::ShowDirsOnly, false);
-    fileDialog.exec();
+    QFileDialog *fileDialog = new QFileDialog(this);
+    fileDialog->setFileMode(QFileDialog::AnyFile);
+    fileDialog->setViewMode(QFileDialog::Detail);
+    fileDialog->setOption(QFileDialog::ShowDirsOnly, false);
+    fileDialog->exec();
 
-    file = fileDialog.selectedFiles();
+    file = fileDialog->selectedFiles();
 
     saveToDB(file);
 
@@ -345,13 +345,13 @@ void TabScanScheduling::addDirectory(){
 
     QStringList directory;
 
-    QFileDialog fileDialog;
-    fileDialog.setFileMode(QFileDialog::DirectoryOnly);
-    fileDialog.setViewMode(QFileDialog::Detail);
-    fileDialog.setOption(QFileDialog::ShowDirsOnly, true);
-    fileDialog.exec();
+    QFileDialog *fileDialog = new QFileDialog(this);
+    fileDialog->setFileMode(QFileDialog::DirectoryOnly);
+    fileDialog->setViewMode(QFileDialog::Detail);
+    fileDialog->setOption(QFileDialog::ShowDirsOnly, true);
+    fileDialog->exec();
 
-    directory = fileDialog.selectedFiles();
+    directory = fileDialog->selectedFiles();
 
     saveToDB(directory);
 

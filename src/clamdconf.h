@@ -32,7 +32,15 @@
 #ifndef CLAMDCONF_H
 #define CLAMDCONF_H
 
+/* Qt Headers */
+#include <QtCore/QObject>
 #include <QtCore/qglobal.h>
+#include <QIODevice>
+#include <QTextStream>
+#include <QFile>
+#include <QDateTime>
+
+#include "definitionen.h"
 
 class ClamdConf : public QObject
 {
@@ -40,9 +48,8 @@ class ClamdConf : public QObject
 public:
     explicit ClamdConf(QObject *parent = 0);
 
-signals:
-
-public slots:
+private:
+    void writeClamdConf(QStringList values);
 };
 
 #endif // CLAMDCONF_H

@@ -70,14 +70,12 @@ class ClamUI : public QMainWindow, private Ui::ClamUI
 public:
     explicit ClamUI(QWidget *parent = 0);
 
-    bool freshclamStatus;
-    bool clamdStatus;
-
 protected:
     void changeEvent(QEvent *event);
     void closeEvent(QCloseEvent *event);
 
 private:
+    void createActions();
     void createSlots();
     void settingsRead();
     void createTrayIcon(QString iconSysTray, QString statusMessage);
@@ -90,6 +88,8 @@ private:
     QString programPath;
     QString freshclamInterval;
 
+//    bool freshclamStatus;
+//    bool clamdStatus;
     bool freshclamAsDaemon;
     bool stopClamdOnQuit;
     bool stopFreshclamOnQuit;
@@ -99,6 +99,11 @@ private:
     QTranslator *appTranslator;
     LanguageTools * languages;
     QMap<QString, QString> * fileToNiceName;
+
+    QAction *action_Restore;
+    QAction *action_Maximized;
+    QAction *action_Minimized;
+    QAction *action_Help;
 
 private slots:
     void slotQuit();

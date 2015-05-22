@@ -48,6 +48,19 @@ bool FreshClamProcess::freshclamDaemon(QString freshclam, QStringList arguments)
 
 }
 
+bool FreshClamProcess::stopFreshclam(){
+
+    /*
+     * TODO
+     * A better way to stop the daemon.
+     */
+    QProcess *freshClamRunDaemon = new QProcess();
+    freshClamRunDaemon->start("killall freshclam");
+
+    if (freshClamRunDaemon->waitForFinished())
+        return true;
+}
+
 bool FreshClamProcess::freshclamManuelly(QString freshclam, QStringList arguments){
 
     QProcess *freshClamRun = new QProcess();

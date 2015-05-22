@@ -180,10 +180,10 @@ void FirstRunWizard::slotCheckPath(){
         if (programPath.exists(pathPrograms + "clamscan")
                 and programPath.exists(pathPrograms + "freshclam")){
             label_ProgramPath->setPixmap(
-                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-ok.svg"));
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-ok.png"));
         } else {
             label_ProgramPath->setPixmap(
-                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-close.svg"));
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-close.png"));
             button(QWizard::FinishButton)->setEnabled(false);
             label_TextFinished->setHidden(true);
         }
@@ -193,10 +193,10 @@ void FirstRunWizard::slotCheckPath(){
          */
         if (daemonPath.exists(pathDeamon + "clamd")){
             label_DaemonPath->setPixmap(
-                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-ok.svg"));
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-ok.png"));
         } else {
             label_DaemonPath->setPixmap(
-                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-close.svg"));
+                        QPixmap(":/icons/icons/breeze/actions/toolbar/dialog-close.png"));
             button(QWizard::FinishButton)->setEnabled(false);
             label_TextFinished->setHidden(true);
         }

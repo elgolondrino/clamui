@@ -276,7 +276,7 @@
             <string>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</string>
            </property>
            <property name="text">
-            <string>Wie oft am Tag aktuallisieren:</string>
+            <string>Wie oft am Tag aktualisieren:</string>
            </property>
           </widget>
          </item>

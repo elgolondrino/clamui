@@ -32,8 +32,15 @@
 #ifndef CLAMAVMILTERCONF_H
 #define CLAMAVMILTERCONF_H
 
+/* Qt Headers */
 #include <QtCore/QObject>
 #include <QtCore/qglobal.h>
+#include <QIODevice>
+#include <QTextStream>
+#include <QFile>
+#include <QDateTime>
+
+#include "definitionen.h"
 
 class ClamavMilterConf : public QObject
 {
@@ -41,9 +48,8 @@ class ClamavMilterConf : public QObject
 public:
     explicit ClamavMilterConf(QObject *parent = 0);
 
-signals:
-
-public slots:
+private:
+    void writeClamavMilterConf(QStringList values);
 };
 
 #endif // CLAMAVMILTERCONF_H

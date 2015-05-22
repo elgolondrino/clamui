@@ -44,7 +44,10 @@ HEADERS += src/definitionen.h \
     src/firstrunwizard.h \
     src/clamscanprocess.h \
     src/clamdprocess.h \
-    src/freshclamprocess.h
+    src/freshclamprocess.h \
+    src/clamdconf.h \
+    src/freshclamconf.h \
+    src/clamavmilterconf.h
 
 SOURCES += src/about.cpp \
     src/main.cpp \
@@ -60,7 +63,10 @@ SOURCES += src/about.cpp \
     src/firstrunwizard.cpp \
     src/clamscanprocess.cpp \
     src/clamdprocess.cpp \
-    src/freshclamprocess.cpp
+    src/freshclamprocess.cpp \
+    src/clamdconf.cpp \
+    src/freshclamconf.cpp \
+    src/clamavmilterconf.cpp
 
 FORMS += ui/about.ui \
     ui/clamui.ui \
@@ -88,11 +94,11 @@ OTHER_FILES += ChangeLog \
 RESOURCES += clamui.qrc
 
 TRANSLATIONS += translations/clamui_de_DE.ts \
-    translations/clamui_en.ts
+    translations/clamui_en_GB.ts
 
 DISTFILES += clamui.desktop \
     translations/clamui_de_DE.qm \
-    translations/clamui_en.qm \
+    translations/clamui_en_GB.qm \
     AUTHORS \
     ChangeLog \
     LICENSE \
