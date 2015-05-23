@@ -41,6 +41,12 @@ void ClamdConf::writeClamdConf(QStringList values){
     QDateTime currentTime;
     QString configPath, datumZeit;
 
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+    clamui_conf.beginGroup("ClamAV");
+    configPath =  clamui_conf.value("Config_Path", CLAMAV_PATH).toString();
+    clamui_conf.endGroup();
+
     datumZeit = currentTime.currentDateTime().toLocalTime().toString();
 
     QFile confFile(configPath + "clamd.conf");

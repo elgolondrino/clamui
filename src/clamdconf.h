@@ -39,6 +39,9 @@
 #include <QTextStream>
 #include <QFile>
 #include <QDateTime>
+#include <QSettings>
+#include <QDebug>
+#include <QDir>
 
 #include "definitionen.h"
 

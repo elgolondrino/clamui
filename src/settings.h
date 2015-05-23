@@ -65,12 +65,16 @@ private:
     void settingsDefaultClamUI();
     void settingsDefaultClamAV();
     void createLanguageMenu();
+    void writeFreshClamConf();
+    void writeClamdConf();
+    void writeClamavMilterConf();
 
     QTranslator *appTranslator;
     LanguageTools * languages;
     QMap<QString, QString> * fileToNiceName;
 
 private slots:
+    void slotFcActivateLogFile();
     void settingsWrite();
     void settingsDefault();
     void slotCheckPath();

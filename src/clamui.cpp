@@ -385,11 +385,11 @@ void ClamUI::freshclamDaemon(){
 
     QStringList arguments;
     arguments << "--config-file=" + configPath +  "freshclam.conf"
-              << "--log=/tmp/freshclam.log"
+//              << "--log=/tmp/freshclam.log"
               << "--daemon"
-              << "--pid=" + configPath + "freshclam.pid"
+//              << "--pid=" + configPath + "freshclam.pid"
               << "--checks=" + freshclamInterval
-              << "--datadir=" + virusdbPath
+//              << "--datadir=" + virusdbPath
               << "--daemon-notify=" + configPath + "clamd.conf"
               << "--enable-stats";
 

@@ -39,6 +39,9 @@
 #include <QTextStream>
 #include <QFile>
 #include <QDateTime>
+#include <QSettings>
+#include <QDebug>
+#include <QDir>
 
 #include "definitionen.h"
 
@@ -47,9 +50,9 @@ class FreshClamConf : public QObject
     Q_OBJECT
 public:
     explicit FreshClamConf(QObject *parent = 0);
+    bool writeFreshClamConf(QStringList values);
 
 private:
-    void writeFreshClamConf(QStringList values);
 };
 
 #endif // FRESHCLAMCONF_H

@@ -184,7 +184,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QToolBox" name="toolBox">
+        <widget class="QToolBox" name="toolBox_ClamAV">
          <property name="currentIndex">
           <number>2</number>
          </property>
@@ -193,7 +193,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>831</width>
+            <width>908</width>
             <height>349</height>
            </rect>
           </property>
@@ -216,7 +216,7 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>815</width>
+                <width>892</width>
                 <height>333</height>
                </rect>
               </property>
@@ -437,7 +437,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>831</width>
+            <width>908</width>
             <height>349</height>
            </rect>
           </property>
@@ -447,7 +447,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
            </iconset>
           </attribute>
           <attribute name="label">
-           <string>Clamscan</string>
+           <string>Clamd Dämon</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_7">
            <item>
@@ -460,7 +460,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>815</width>
+                <width>892</width>
                 <height>333</height>
                </rect>
               </property>
@@ -658,7 +658,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
            </iconset>
           </attribute>
           <attribute name="label">
-           <string>Freshclam</string>
+           <string>Freshclam Dämon</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_8">
            <item>
@@ -716,11 +716,20 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                  </item>
                  <item row="0" column="3">
                   <widget class="QLineEdit" name="lineEdit_FcLogFileSize">
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
                    <property name="toolTip">
                     <string>Gibt die maximale Größe der Log-Datei an.&lt;br /&gt;Verwenden Sie &lt;b&gt;M&lt;/b&gt; oder &lt;b&gt;m&lt;/b&gt; für Megabyte (1M = 1m = 1048576 Bytes) &lt;br /&gt;und &lt;b&gt;K&lt;/b&gt; oder &lt;b&gt;k&lt;/b&gt; für Kilobytes (1K = 1k = 1024 Bytes). &lt;br /&gt;0 deaktiviert das Größenlimit für die Log-Datei</string>
                    </property>
                    <property name="text">
                     <string>1M</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -731,7 +740,9 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                      <string>Nein</string>
                     </property>
                     <property name="icon">
-                     <iconset theme="dialog-cancel"/>
+                     <iconset theme="dialog-cancel">
+                      <normaloff/>
+                     </iconset>
                     </property>
                    </item>
                    <item>
@@ -739,7 +750,9 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                      <string>Ja</string>
                     </property>
                     <property name="icon">
-                     <iconset theme="dialog-ok"/>
+                     <iconset theme="dialog-ok">
+                      <normaloff/>
+                     </iconset>
                     </property>
                    </item>
                   </widget>
@@ -754,7 +767,9 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                      <string>Nein</string>
                     </property>
                     <property name="icon">
-                     <iconset theme="dialog-cancel"/>
+                     <iconset theme="dialog-cancel">
+                      <normaloff/>
+                     </iconset>
                     </property>
                    </item>
                    <item>
@@ -762,7 +777,9 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                      <string>Ja</string>
                     </property>
                     <property name="icon">
-                     <iconset theme="dialog-ok"/>
+                     <iconset theme="dialog-ok">
+                      <normaloff/>
+                     </iconset>
                     </property>
                    </item>
                   </widget>
@@ -790,7 +807,9 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                      <string>Nein</string>
                     </property>
                     <property name="icon">
-                     <iconset theme="dialog-cancel"/>
+                     <iconset theme="dialog-cancel">
+                      <normaloff/>
+                     </iconset>
                     </property>
                    </item>
                    <item>
@@ -798,7 +817,9 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                      <string>Ja</string>
                     </property>
                     <property name="icon">
-                     <iconset theme="dialog-ok"/>
+                     <iconset theme="dialog-ok">
+                      <normaloff/>
+                     </iconset>
                     </property>
                    </item>
                   </widget>
@@ -823,7 +844,9 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                      <string>Nein</string>
                     </property>
                     <property name="icon">
-                     <iconset theme="dialog-cancel"/>
+                     <iconset theme="dialog-cancel">
+                      <normaloff/>
+                     </iconset>
                     </property>
                    </item>
                    <item>
@@ -831,42 +854,11 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                      <string>Ja</string>
                     </property>
                     <property name="icon">
-                     <iconset theme="dialog-ok"/>
+                     <iconset theme="dialog-ok">
+                      <normaloff/>
+                     </iconset>
                     </property>
                    </item>
-                  </widget>
-                 </item>
-                 <item row="2" column="5">
-                  <widget class="QComboBox" name="comboBox_FcPidFile">
-                   <property name="currentIndex">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <property name="text">
-                     <string>Nein</string>
-                    </property>
-                    <property name="icon">
-                     <iconset theme="dialog-cancel"/>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>Ja</string>
-                    </property>
-                    <property name="icon">
-                     <iconset theme="dialog-ok"/>
-                    </property>
-                   </item>
-                  </widget>
-                 </item>
-                 <item row="2" column="4">
-                  <widget class="QLabel" name="label_34">
-                   <property name="text">
-                    <string>&amp;PID-Datei speichern:</string>
-                   </property>
-                   <property name="buddy">
-                    <cstring>comboBox_FcPidFile</cstring>
-                   </property>
                   </widget>
                  </item>
                  <item row="6" column="0">
@@ -893,7 +885,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                   </widget>
                  </item>
                  <item row="3" column="1">
-                  <widget class="QSpinBox" name="spinBox">
+                  <widget class="QSpinBox" name="spinBox_FcAttempts">
                    <property name="toolTip">
                     <string>Gibt an, wie oft der freshclam Dämon versuchen soll einen Server zu erreichen, bis er abbricht. Gilt pro Mirror.</string>
                    </property>
@@ -914,7 +906,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                     <string>db.XY.clamav.net &lt;br /&gt;Für &lt;b&gt;XY&lt;/b&gt; den Länder Code Ihres Landes einsetzen. &lt;br /&gt; Für weitere Informationen, siehe: http://www.iana.org/cctld/cctld-whois.htm für eine vollständige Übersicht. &lt;br /&gt;Verwenden Sie&lt;i&gt; db.XY.ipv6.clamav.net&lt;/i&gt; für IPv6 Verbindungen.</string>
                    </property>
                    <property name="text">
-                    <string/>
+                    <string>db.de.clamav.net</string>
                    </property>
                    <property name="placeholderText">
                     <string>db.XY.clamav.net oder db.XY.ipv6.clamav.net</string>
@@ -924,7 +916,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                  <item row="7" column="0">
                   <widget class="QLabel" name="label_37">
                    <property name="toolTip">
-                    <string>Diese Domain ich eine Fallback-Adresse, falls die anderen Mirror nicht erreichbar sind. &lt;br /&gt;&lt;b&gt;Verändern Sie diesen Eintrag nur, wenn Sie genau wissen was Sie tun.&lt;/b&gt;</string>
+                    <string>Diese Domain ist eine Fallback-Adresse, falls die anderen Mirror nicht erreichbar sind. &lt;br /&gt;&lt;b&gt;Verändern Sie diesen Eintrag nur, wenn Sie genau wissen was Sie tun.&lt;/b&gt;</string>
                    </property>
                    <property name="text">
                     <string>Datenbank Mirror (Fallback):</string>
@@ -937,7 +929,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                  <item row="7" column="1" colspan="2">
                   <widget class="QLineEdit" name="lineEdit_FcMirrorFallBack">
                    <property name="toolTip">
-                    <string>Diese Domain ich eine Fallback-Adresse, falls die anderen Mirror nicht erreichbar sind. &lt;br /&gt;&lt;b&gt;Verändern Sie diesen Eintrag nur, wenn Sie genau wissen was Sie tun.&lt;/b&gt;</string>
+                    <string>Diese Domain ist eine Fallback-Adresse, falls die anderen Mirror nicht erreichbar sind. &lt;br /&gt;&lt;b&gt;Verändern Sie diesen Eintrag nur, wenn Sie genau wissen was Sie tun.&lt;/b&gt;</string>
                    </property>
                    <property name="text">
                     <string>database.clamav.net</string>
@@ -966,10 +958,10 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                     <string>Gibt an, wie oft der freshclam Dämon versuchen soll einen Server zu erreichen, bis er abbricht. Gilt pro Mirror.</string>
                    </property>
                    <property name="text">
-                    <string>Anfrage&amp;versuche pro Mirror:</string>
+                    <string>Anfrageversuche &amp;pro Mirror:</string>
                    </property>
                    <property name="buddy">
-                    <cstring>spinBox</cstring>
+                    <cstring>spinBox_FcAttempts</cstring>
                    </property>
                   </widget>
                  </item>
@@ -979,7 +971,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                     <string>Standardmäßig wird die lokale Virendatenbank nicht komprimiert. Wodurch der Zugriff auf die Daten schneller ist.</string>
                    </property>
                    <property name="text">
-                    <string>Lokale Datenbank komprimieren:</string>
+                    <string>&amp;Lokale Datenbank komprimieren:</string>
                    </property>
                    <property name="buddy">
                     <cstring>comboBox_CompressDB</cstring>
@@ -996,7 +988,9 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                      <string>Nein</string>
                     </property>
                     <property name="icon">
-                     <iconset theme="dialog-cancel"/>
+                     <iconset theme="dialog-cancel">
+                      <normaloff/>
+                     </iconset>
                     </property>
                    </item>
                    <item>
@@ -1004,7 +998,9 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                      <string>Ja</string>
                     </property>
                     <property name="icon">
-                     <iconset theme="dialog-ok"/>
+                     <iconset theme="dialog-ok">
+                      <normaloff/>
+                     </iconset>
                     </property>
                    </item>
                   </widget>
@@ -1112,8 +1108,18 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
           </layout>
          </widget>
          <widget class="QWidget" name="page_milter">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>96</width>
+            <height>26</height>
+           </rect>
+          </property>
           <attribute name="icon">
-           <iconset theme="configure"/>
+           <iconset theme="configure">
+            <normaloff/>
+           </iconset>
           </attribute>
           <attribute name="label">
            <string>ClamAV Milter</string>

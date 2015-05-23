@@ -173,19 +173,19 @@ void TabScanScheduling::slotStartStopFreshclam(){
     QStringList arguments;
     if (checkBox_FreshClam->isChecked()) {
         arguments << "--config-file=" + configPath +  "freshclam.conf"
-                  << "--log=/tmp/freshclam.log"
+//                  << "--log=/tmp/freshclam.log"
                   << "--daemon"
-                  << "--pid=" + configPath + "freshclam.pid"
+//                  << "--pid=" + configPath + "freshclam.pid"
                   << "--checks=" + spinBox_FreshClamUpdate->value()
-                  << "--datadir=" + virusdbPath
+//                  << "--datadir=" + virusdbPath
                   << "--daemon-notify=" + configPath + "clamd.conf"
                   << "--enable-stats";
     } else {
         arguments << "--config-file=" + configPath +  "freshclam.conf"
-                  << "--log=/tmp/freshclam.log"
-                  << "--pid=" + configPath + "freshclam.pid"
+//                  << "--log=/tmp/freshclam.log"
+//                  << "--pid=" + configPath + "freshclam.pid"
                   << "--checks=" + spinBox_FreshClamUpdate->value()
-                  << "--datadir=" + virusdbPath
+//                  << "--datadir=" + virusdbPath
                   << "--daemon-notify=" + configPath + "clamd.conf"
                   << "--enable-stats";
     }

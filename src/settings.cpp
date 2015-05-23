@@ -100,6 +100,27 @@ void Settings::createSlots(){
             this, SLOT(slotCheckPath()));
     connect(comboBox_DaemonPath, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotCheckPath()));
+    connect(comboBox_FcActivateLogFile, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotFcActivateLogFile()));
+    connect(tabWidget_Settings, SIGNAL(currentChanged(int)),
+            this, SLOT(slotFcActivateLogFile()));
+}
+
+void Settings::slotFcActivateLogFile(){
+
+    if (comboBox_FcActivateLogFile->currentIndex() == 0) {
+
+        lineEdit_FcLogFileSize->setEnabled(false);
+        comboBox_FcTimeStamp->setEnabled(false);
+        comboBox_FcVerboseLogging->setEnabled(false);
+        comboBox_FcSystemLogging->setEnabled(false);
+    } else if (comboBox_FcActivateLogFile->currentIndex() == 1) {
+
+        lineEdit_FcLogFileSize->setEnabled(true);
+        comboBox_FcTimeStamp->setEnabled(true);
+        comboBox_FcVerboseLogging->setEnabled(true);
+        comboBox_FcSystemLogging->setEnabled(true);
+    }
 }
 
 void Settings::slotCheckPath(){
@@ -134,42 +155,207 @@ void Settings::slotCheckPath(){
     }
 }
 
+void Settings::writeFreshClamConf(){
+
+    QString dataCollect;
+    QStringList freshclamList;
+
+    if (groupBox_FcProxy->isChecked()) {
+
+        dataCollect += "HTTPProxyServer " + lineEdit_FcProxyServer->text();
+        dataCollect += " ||| ";
+        dataCollect += "HTTPProxyPort " + lineEdit_FcProxyServerPort->text();
+        dataCollect += " ||| ";
+        dataCollect += "HTTPProxyUsername " + lineEdit_FcProxyServerUser->text();
+        dataCollect += " ||| ";
+        dataCollect += "HTTPProxyPassword " + lineEdit_FcProxyServerPassword->text();
+        dataCollect += " ||| ";
+
+    } else {
+
+        dataCollect += "#HTTPProxyServer";
+        dataCollect += " ||| ";
+        dataCollect += "#HTTPProxyPort ";
+        dataCollect += " ||| ";
+        dataCollect += "#HTTPProxyUsername ";
+        dataCollect += " ||| ";
+        dataCollect += "#HTTPProxyPassword ";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_FcActivateLogFile->currentIndex() == 1){
+
+        dataCollect += "UpdateLogFile " + comboBox_ConfigPath->currentText() + "freshclam.log";
+        dataCollect += " ||| ";
+
+        if (comboBox_FcVerboseLogging->currentIndex() == 1)
+            dataCollect += "LogVerbose yes";
+            dataCollect += " ||| ";
+
+        if (comboBox_FcTimeStamp->currentIndex() == 1)
+            dataCollect += "LogTime yes";
+            dataCollect += " ||| ";
+
+        if (comboBox_FcSystemLogging->currentIndex() == 1)
+            dataCollect += "LogSyslog yes";
+            dataCollect += " ||| ";
+    } else {
+
+        dataCollect += "#UpdateLogFile ";
+        dataCollect += " ||| ";
+        dataCollect += "#LogVerbose yes";
+        dataCollect += " ||| ";
+        dataCollect += "#LogTime yes";
+        dataCollect += " ||| ";
+        dataCollect += "#LogSyslog yes";
+        dataCollect += " ||| ";
+    }
+
+    dataCollect += "PidFile " + comboBox_ConfigPath->currentText() + "freshclam.pid";
+    dataCollect += " ||| ";
+    dataCollect += "MaxAttempts " + spinBox_FcAttempts->text();
+    dataCollect += " ||| ";
+    dataCollect += "DatabaseDirectory " + comboBox_ClamVDB->currentText();
+    dataCollect += " ||| ";
+    dataCollect += "DNSDatabaseInfo " + lineEdit_FcDNSverification->text();
+    dataCollect += " ||| ";
+    dataCollect += "DatabaseMirror " + lineEdit_FcMirror->text();
+    dataCollect += " ||| ";
+    dataCollect += "DatabaseMirror " + lineEdit_FcMirrorFallBack->text();
+
+    freshclamList << dataCollect;
+
+    FreshClamConf conf;
+    if (!conf.writeFreshClamConf(freshclamList)) {
+
+        QMessageBox message;
+        message.setWindowTitle("Warnung!");
+        message.setText(trUtf8("Die Datei <b>freshclam.conf</b> "
+                               "konnte nicht nach <b>")
+                               + comboBox_ConfigPath->currentText()
+                               + trUtf8("</b> geschrieben werden."));
+        message.setInformativeText(trUtf8("Bitte vergewissern Sie sich, dass Sie "
+                                          "für das angegebene Verzeichnis auch die "
+                                          "benötigten Schreibrechte besitzen."));
+        message.setIcon(QMessageBox::Warning);
+        message.setWindowIcon(QIcon::fromTheme("dialog-warning"));
+        message.exec();
+    }
+}
+
+void Settings::writeClamavMilterConf(){
+
+}
+
+void Settings::writeClamdConf(){
+
+}
+
 void Settings::settingsWrite(){
 
     LanguageTools language;
 
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);
-    clamui_conf.beginGroup("ClamUI");
-    clamui_conf.setValue("Language_Manually", groupBox_Language->isChecked());
-//    clamui_conf.setValue("Language_Index", comboBox_Language->currentIndex());
-//    clamui_conf.setValue("languageNiceName",
-//                             comboBox_Language->currentText());
-    clamui_conf.setValue("Language", comboBox_Language->currentText());
 
-    clamui_conf.setValue("languageFileName",
+    if (tabWidget_Settings->currentIndex() == 0) {
+        clamui_conf.beginGroup("ClamUI");
+        clamui_conf.setValue("Language_Manually", groupBox_Language->isChecked());
+        //    clamui_conf.setValue("Language_Index", comboBox_Language->currentIndex());
+        //    clamui_conf.setValue("languageNiceName",
+        //                             comboBox_Language->currentText());
+        clamui_conf.setValue("Language", comboBox_Language->currentText());
+
+        clamui_conf.setValue("languageFileName",
                              fileToNiceName->value(
                                  comboBox_Language->currentText()));
-    clamui_conf.setValue("Autostart", checkBox_Autostart->isChecked());
-    clamui_conf.setValue("Hide_Window", checkBox_HideWindow->isChecked());
-    clamui_conf.setValue("Icon_on_Desktop", checkBox_IconOnDesktop->isChecked());
-    clamui_conf.setValue("Hide_Menubar", checkBox_MenuBar->isChecked());
-    clamui_conf.setValue("Hide_Statusbar", checkBox_StatusBar->isChecked());
-    clamui_conf.setValue("Hide_Toolbar", checkBox_ToolBar->isChecked());
-    clamui_conf.endGroup();
+        clamui_conf.setValue("Autostart", checkBox_Autostart->isChecked());
+        clamui_conf.setValue("Hide_Window", checkBox_HideWindow->isChecked());
+        clamui_conf.setValue("Icon_on_Desktop", checkBox_IconOnDesktop->isChecked());
+        clamui_conf.setValue("Hide_Menubar", checkBox_MenuBar->isChecked());
+        clamui_conf.setValue("Hide_Statusbar", checkBox_StatusBar->isChecked());
+        clamui_conf.setValue("Hide_Toolbar", checkBox_ToolBar->isChecked());
+        clamui_conf.endGroup();
+    }
 
-    clamui_conf.beginGroup("ClamAV");
-    clamui_conf.setValue("Program_Path_Id", comboBox_ProgramPath->currentIndex());
-    clamui_conf.setValue("Program_Path", comboBox_ProgramPath->currentText());
-    clamui_conf.setValue("Daemon_Path_Id", comboBox_DaemonPath->currentIndex());
-    clamui_conf.setValue("Daemon_Path", comboBox_DaemonPath->currentText());
-    clamui_conf.setValue("VirusDB_Path_Id", comboBox_ClamVDB->currentIndex());
-    clamui_conf.setValue("VirusDB_Path", comboBox_ClamVDB->currentText());
-    clamui_conf.setValue("Config_Path_Id", comboBox_ConfigPath->currentIndex());
-    clamui_conf.setValue("Config_Path", comboBox_ConfigPath->currentText());
-    clamui_conf.setValue("StopClamdOnQuit", checkBox_StopClamdOnQuit->isChecked());
-    clamui_conf.setValue("StopFreshclamOnQuit", checkBox_StopFreshclamOnQuit->isChecked());
-    clamui_conf.endGroup();
+    if (tabWidget_Settings->currentIndex() == 1
+            and toolBox_ClamAV->currentIndex() == 0) {
+        clamui_conf.beginGroup("ClamAV");
+        clamui_conf.setValue("Program_Path_Id",
+                             comboBox_ProgramPath->currentIndex());
+        clamui_conf.setValue("Program_Path",
+                             comboBox_ProgramPath->currentText());
+        clamui_conf.setValue("Daemon_Path_Id",
+                             comboBox_DaemonPath->currentIndex());
+        clamui_conf.setValue("Daemon_Path",
+                             comboBox_DaemonPath->currentText());
+        clamui_conf.setValue("VirusDB_Path_Id",
+                             comboBox_ClamVDB->currentIndex());
+        clamui_conf.setValue("VirusDB_Path",
+                             comboBox_ClamVDB->currentText());
+        clamui_conf.setValue("Config_Path_Id",
+                             comboBox_ConfigPath->currentIndex());
+        clamui_conf.setValue("Config_Path",
+                             comboBox_ConfigPath->currentText());
+        clamui_conf.setValue("StopClamdOnQuit",
+                             checkBox_StopClamdOnQuit->isChecked());
+        clamui_conf.setValue("StopFreshclamOnQuit",
+                             checkBox_StopFreshclamOnQuit->isChecked());
+        clamui_conf.endGroup();
+    }
+
+    if (tabWidget_Settings->currentIndex() == 1
+            and toolBox_ClamAV->currentIndex() == 1) {
+        clamui_conf.beginGroup("Clamd");
+
+        clamui_conf.endGroup();
+
+        writeClamdConf();
+
+    }
+
+    if (tabWidget_Settings->currentIndex() == 1
+            and toolBox_ClamAV->currentIndex() == 2) {
+        clamui_conf.beginGroup("Freshclam");
+        clamui_conf.setValue("FcProxy",
+                             groupBox_FcProxy->isChecked());
+        clamui_conf.setValue("FcProxyServer",
+                             lineEdit_FcProxyServer->text());
+        clamui_conf.setValue("FcProxyServerPassword",
+                             lineEdit_FcProxyServerPassword->text());
+        clamui_conf.setValue("FcProxyServerPort",
+                             lineEdit_FcProxyServerPort->text());
+        clamui_conf.setValue("FcProxyServerUser",
+                             lineEdit_FcProxyServerUser->text());
+        clamui_conf.setValue("FcActivateLogFile",
+                             comboBox_FcActivateLogFile->currentIndex());
+        clamui_conf.setValue("FcSystemLogging",
+                             comboBox_FcSystemLogging->currentIndex());
+        clamui_conf.setValue("FcTimeStamp",
+                             comboBox_FcTimeStamp->currentIndex());
+        clamui_conf.setValue("FcVerboseLogging",
+                             comboBox_FcVerboseLogging->currentIndex());
+        clamui_conf.setValue("FcAttempts",
+                             spinBox_FcAttempts->value());
+        clamui_conf.setValue("FcDNSverification",
+                             lineEdit_FcDNSverification->text());
+        clamui_conf.setValue("FcMirror",
+                             lineEdit_FcMirror->text());
+        clamui_conf.setValue("FcMirrorFallBack",
+                             lineEdit_FcMirrorFallBack->text());
+        clamui_conf.endGroup();
+
+        writeFreshClamConf();
+    }
+
+    if (tabWidget_Settings->currentIndex() == 1
+            and toolBox_ClamAV->currentIndex() == 2) {
+        clamui_conf.beginGroup("ClamAVMilter");
+
+        clamui_conf.endGroup();
+
+        writeClamavMilterConf();
+    }
 }
 
 void Settings::settingsRead(){
@@ -222,6 +408,38 @@ void Settings::settingsRead(){
     checkBox_StopFreshclamOnQuit->setChecked(
                 clamui_conf.value("StopFreshclamOnQuit", false).toBool());
     clamui_conf.endGroup();
+
+    clamui_conf.beginGroup("Freshclam");
+    groupBox_FcProxy->setChecked(
+                clamui_conf.value("FcProxy", false).toBool());
+    lineEdit_FcProxyServer->setText(
+                clamui_conf.value("FcProxyServer").toString());
+    lineEdit_FcProxyServerPassword->setText(
+                clamui_conf.value("FcProxyServerPassword").toString());
+    lineEdit_FcProxyServerPort->setText(
+                clamui_conf.value("FcProxyServerPort").toString());
+    lineEdit_FcProxyServerUser->setText(
+                clamui_conf.value("FcProxyServerUser").toString());
+    comboBox_FcActivateLogFile->setCurrentIndex(
+                clamui_conf.value("FcActivateLogFile", 0).toInt());
+    comboBox_FcSystemLogging->setCurrentIndex(
+                clamui_conf.value("FcSystemLogging", 0).toInt());
+    comboBox_FcTimeStamp->setCurrentIndex(
+                clamui_conf.value("FcTimeStamp", 0).toInt());
+    comboBox_FcVerboseLogging->setCurrentIndex(
+                clamui_conf.value("FcVerboseLogging", 0).toInt());
+    spinBox_FcAttempts->setValue(
+                clamui_conf.value("FcAttempts", 3).toInt());
+    lineEdit_FcDNSverification->setText(
+                clamui_conf.value("FcDNSverification", "current.cvd.clamav.net").toString());
+    lineEdit_FcLogFileSize->setText(
+                clamui_conf.value("FcLogFileSize", "1M").toString());
+    lineEdit_FcMirror->setText(
+                clamui_conf.value("FcMirror", "db.de.clamav.net").toString());
+    lineEdit_FcMirrorFallBack->setText(
+                clamui_conf.value("FcMirrorFallBack", "database.clamav.net").toString());
+    clamui_conf.endGroup();
+
 }
 
 void Settings::settingsDefault(){
@@ -251,12 +469,42 @@ void Settings::settingsDefault(){
 }
 
 void Settings::settingsDefaultClamAV(){
-    comboBox_ProgramPath->setCurrentIndex(0);
-    comboBox_DaemonPath->setCurrentIndex(0);
-    comboBox_ClamVDB->setCurrentIndex(0);
-    comboBox_ConfigPath->setCurrentIndex(0);
-    checkBox_StopClamdOnQuit->setChecked(false);
-    checkBox_StopFreshclamOnQuit->setChecked(false);
+
+    if (toolBox_ClamAV->currentIndex() == 0) {
+        comboBox_ProgramPath->setCurrentIndex(0);
+        comboBox_DaemonPath->setCurrentIndex(0);
+        comboBox_ClamVDB->setCurrentIndex(0);
+        comboBox_ConfigPath->setCurrentIndex(0);
+        checkBox_StopClamdOnQuit->setChecked(false);
+        checkBox_StopFreshclamOnQuit->setChecked(false);
+    }
+
+    if (toolBox_ClamAV->currentIndex() == 1) {
+
+    }
+
+    if (toolBox_ClamAV->currentIndex() == 2) {
+
+        groupBox_FcProxy->setChecked(false);
+        lineEdit_FcProxyServer->clear();
+        lineEdit_FcProxyServerPassword->clear();
+        lineEdit_FcProxyServerPort->clear();
+        lineEdit_FcProxyServerUser->clear();
+        comboBox_FcActivateLogFile->setCurrentIndex(0);
+        comboBox_FcSystemLogging->setCurrentIndex(0);
+        comboBox_FcTimeStamp->setCurrentIndex(0);
+        comboBox_FcVerboseLogging->setCurrentIndex(0);
+        spinBox_FcAttempts->setValue(3);
+        lineEdit_FcDNSverification->setText("current.cvd.clamav.net");
+        lineEdit_FcLogFileSize->setText("1M");
+        lineEdit_FcMirror->setText("db.de.clamav.net");
+        lineEdit_FcMirrorFallBack->setText("database.clamav.net");
+    }
+
+    if (toolBox_ClamAV->currentIndex() == 3) {
+
+    }
+
 }
 
 void Settings::settingsDefaultClamUI(){
