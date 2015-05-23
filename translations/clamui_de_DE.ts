@@ -414,17 +414,17 @@ Vielen Dank im voraus.</source>
 <context>
     <name>ClamavMilterConf</name>
     <message>
-        <location filename="../src/clamavmilterconf.cpp" line="61"/>
+        <location filename="../src/clamavmilterconf.cpp" line="66"/>
         <source>Generiert am: </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamavmilterconf.cpp" line="63"/>
+        <location filename="../src/clamavmilterconf.cpp" line="68"/>
         <source>Generiert mit: </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamavmilterconf.cpp" line="66"/>
+        <location filename="../src/clamavmilterconf.cpp" line="71"/>
         <source>Pfad: </source>
         <translation></translation>
     </message>
@@ -432,17 +432,17 @@ Vielen Dank im voraus.</source>
 <context>
     <name>ClamdConf</name>
     <message>
-        <location filename="../src/clamdconf.cpp" line="61"/>
+        <location filename="../src/clamdconf.cpp" line="67"/>
         <source>Generiert am: </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamdconf.cpp" line="63"/>
+        <location filename="../src/clamdconf.cpp" line="69"/>
         <source>Generiert mit: </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamdconf.cpp" line="66"/>
+        <location filename="../src/clamdconf.cpp" line="72"/>
         <source>Pfad: </source>
         <translation></translation>
     </message>
@@ -929,18 +929,45 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="661"/>
+        <location filename="../ui/settings.ui" line="477"/>
+        <location filename="../ui/settings.ui" line="746"/>
+        <source>Logging</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="636"/>
+        <location filename="../ui/settings.ui" line="649"/>
+        <source>Meldet zusätzliche Informationen über die infizierte Datei, wie zum Beispiel die Größe und Hash zusammen mit dem Virennamen.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="639"/>
+        <source>Informationen &amp;über die infizierte Datei:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="725"/>
         <source>Freshclam Dämon</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="919"/>
-        <location filename="../ui/settings.ui" line="932"/>
+        <location filename="../ui/settings.ui" line="1036"/>
+        <source>Netzwerk</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1057"/>
+        <location filename="../ui/settings.ui" line="1175"/>
         <source>Diese Domain ist eine Fallback-Adresse, falls die anderen Mirror nicht erreichbar sind. &lt;br /&gt;&lt;b&gt;Verändern Sie diesen Eintrag nur, wenn Sie genau wissen was Sie tun.&lt;/b&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="961"/>
+        <location filename="../ui/settings.ui" line="1073"/>
+        <source>Datenbank &amp;Mirror:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1126"/>
         <source>Anfrageversuche &amp;pro Mirror:</source>
         <translation></translation>
     </message>
@@ -970,236 +997,226 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="473"/>
-        <location filename="../ui/settings.ui" line="480"/>
-        <location filename="../ui/settings.ui" line="487"/>
-        <location filename="../ui/settings.ui" line="494"/>
-        <location filename="../ui/settings.ui" line="501"/>
-        <location filename="../ui/settings.ui" line="508"/>
-        <location filename="../ui/settings.ui" line="515"/>
-        <location filename="../ui/settings.ui" line="522"/>
-        <location filename="../ui/settings.ui" line="529"/>
-        <location filename="../ui/settings.ui" line="536"/>
-        <location filename="../ui/settings.ui" line="543"/>
-        <location filename="../ui/settings.ui" line="550"/>
-        <location filename="../ui/settings.ui" line="557"/>
-        <location filename="../ui/settings.ui" line="564"/>
-        <location filename="../ui/settings.ui" line="571"/>
-        <location filename="../ui/settings.ui" line="578"/>
-        <location filename="../ui/settings.ui" line="585"/>
-        <location filename="../ui/settings.ui" line="592"/>
-        <location filename="../ui/settings.ui" line="599"/>
-        <location filename="../ui/settings.ui" line="606"/>
-        <location filename="../ui/settings.ui" line="613"/>
-        <location filename="../ui/settings.ui" line="620"/>
-        <location filename="../ui/settings.ui" line="627"/>
-        <location filename="../ui/settings.ui" line="634"/>
-        <source>TextLabel</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/settings.ui" line="684"/>
-        <location filename="../ui/settings.ui" line="726"/>
+        <location filename="../ui/settings.ui" line="672"/>
+        <location filename="../ui/settings.ui" line="691"/>
+        <location filename="../ui/settings.ui" line="773"/>
+        <location filename="../ui/settings.ui" line="850"/>
         <source>Gibt die maximale Größe der Log-Datei an.&lt;br /&gt;Verwenden Sie &lt;b&gt;M&lt;/b&gt; oder &lt;b&gt;m&lt;/b&gt; für Megabyte (1M = 1m = 1048576 Bytes) &lt;br /&gt;und &lt;b&gt;K&lt;/b&gt; oder &lt;b&gt;k&lt;/b&gt; für Kilobytes (1K = 1k = 1024 Bytes). &lt;br /&gt;0 deaktiviert das Größenlimit für die Log-Datei</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="687"/>
+        <location filename="../ui/settings.ui" line="675"/>
+        <location filename="../ui/settings.ui" line="853"/>
         <source>&amp;Maximale Größe der Log Datei:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="697"/>
-        <location filename="../ui/settings.ui" line="763"/>
+        <location filename="../ui/settings.ui" line="495"/>
+        <location filename="../ui/settings.ui" line="582"/>
+        <location filename="../ui/settings.ui" line="786"/>
+        <location filename="../ui/settings.ui" line="863"/>
         <source>Ist die Log Datei aktiviert, werden alle Vorgängen in der Datei &lt;i&gt;freshclam.log&lt;/i&gt; protokolliert.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="700"/>
+        <location filename="../ui/settings.ui" line="498"/>
+        <location filename="../ui/settings.ui" line="866"/>
         <source>Lo&amp;g-Datei aktivieren:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="710"/>
+        <location filename="../ui/settings.ui" line="548"/>
+        <location filename="../ui/settings.ui" line="903"/>
         <source>A&amp;usführliches Logging:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="729"/>
+        <location filename="../ui/settings.ui" line="694"/>
+        <location filename="../ui/settings.ui" line="776"/>
         <source>1M</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="740"/>
-        <location filename="../ui/settings.ui" line="767"/>
-        <location filename="../ui/settings.ui" line="807"/>
-        <location filename="../ui/settings.ui" line="844"/>
-        <location filename="../ui/settings.ui" line="988"/>
+        <location filename="../ui/settings.ui" line="525"/>
+        <location filename="../ui/settings.ui" line="559"/>
+        <location filename="../ui/settings.ui" line="586"/>
+        <location filename="../ui/settings.ui" line="613"/>
+        <location filename="../ui/settings.ui" line="653"/>
+        <location filename="../ui/settings.ui" line="790"/>
+        <location filename="../ui/settings.ui" line="817"/>
+        <location filename="../ui/settings.ui" line="880"/>
+        <location filename="../ui/settings.ui" line="914"/>
+        <location filename="../ui/settings.ui" line="1087"/>
         <source>Nein</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="750"/>
-        <location filename="../ui/settings.ui" line="777"/>
-        <location filename="../ui/settings.ui" line="817"/>
-        <location filename="../ui/settings.ui" line="854"/>
-        <location filename="../ui/settings.ui" line="998"/>
+        <location filename="../ui/settings.ui" line="535"/>
+        <location filename="../ui/settings.ui" line="569"/>
+        <location filename="../ui/settings.ui" line="596"/>
+        <location filename="../ui/settings.ui" line="623"/>
+        <location filename="../ui/settings.ui" line="661"/>
+        <location filename="../ui/settings.ui" line="800"/>
+        <location filename="../ui/settings.ui" line="827"/>
+        <location filename="../ui/settings.ui" line="890"/>
+        <location filename="../ui/settings.ui" line="924"/>
+        <location filename="../ui/settings.ui" line="1097"/>
         <source>Ja</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="790"/>
-        <location filename="../ui/settings.ui" line="840"/>
+        <location filename="../ui/settings.ui" line="508"/>
+        <location filename="../ui/settings.ui" line="609"/>
+        <location filename="../ui/settings.ui" line="754"/>
+        <location filename="../ui/settings.ui" line="876"/>
         <source>Verwendet das Logging-System von des Betriebssystems.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="793"/>
+        <location filename="../ui/settings.ui" line="511"/>
+        <location filename="../ui/settings.ui" line="757"/>
         <source>Das &amp;Systemlogging verwenden:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="803"/>
+        <location filename="../ui/settings.ui" line="521"/>
+        <location filename="../ui/settings.ui" line="813"/>
         <source>Setzt vor jedem Log-Eintrag das Datum und die Zeit.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="830"/>
+        <location filename="../ui/settings.ui" line="485"/>
+        <location filename="../ui/settings.ui" line="840"/>
         <source>&amp;Zeitstempel für die Log-Einträge:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="867"/>
-        <location filename="../ui/settings.ui" line="906"/>
+        <location filename="../ui/settings.ui" line="1070"/>
+        <location filename="../ui/settings.ui" line="1162"/>
         <source>db.XY.clamav.net &lt;br /&gt;Für &lt;b&gt;XY&lt;/b&gt; den Länder Code Ihres Landes einsetzen. &lt;br /&gt; Für weitere Informationen, siehe: http://www.iana.org/cctld/cctld-whois.htm für eine vollständige Übersicht. &lt;br /&gt;Verwenden Sie&lt;i&gt; db.XY.ipv6.clamav.net&lt;/i&gt; für IPv6 Verbindungen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="870"/>
-        <source>Datenbank Mirror:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/settings.ui" line="880"/>
-        <location filename="../ui/settings.ui" line="945"/>
+        <location filename="../ui/settings.ui" line="1044"/>
+        <location filename="../ui/settings.ui" line="1152"/>
         <source>Freshclam benutzt DNS TXT Records um die Datenbank und Software Version zu verifizieren.&lt;br /&gt; ACHTUNG!&lt;br /&gt; Nicht verändern es sei denn, Sie verwenden eine eigene Domain zur Datenbank Verifikation.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="883"/>
+        <location filename="../ui/settings.ui" line="1155"/>
         <source>current.cvd.clamav.net</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="890"/>
-        <location filename="../ui/settings.ui" line="958"/>
+        <location filename="../ui/settings.ui" line="1123"/>
+        <location filename="../ui/settings.ui" line="1136"/>
         <source>Gibt an, wie oft der freshclam Dämon versuchen soll einen Server zu erreichen, bis er abbricht. Gilt pro Mirror.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="909"/>
+        <location filename="../ui/settings.ui" line="1165"/>
         <source>db.de.clamav.net</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="912"/>
+        <location filename="../ui/settings.ui" line="1168"/>
         <source>db.XY.clamav.net oder db.XY.ipv6.clamav.net</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="922"/>
+        <location filename="../ui/settings.ui" line="1060"/>
         <source>Datenbank Mirror (Fallback):</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="935"/>
-        <location filename="../ui/settings.ui" line="938"/>
+        <location filename="../ui/settings.ui" line="1178"/>
+        <location filename="../ui/settings.ui" line="1181"/>
         <source>database.clamav.net</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="948"/>
+        <location filename="../ui/settings.ui" line="1047"/>
         <source>&amp;Verwende DNS zur verifikation:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="971"/>
-        <location filename="../ui/settings.ui" line="984"/>
+        <location filename="../ui/settings.ui" line="1083"/>
+        <location filename="../ui/settings.ui" line="1110"/>
         <source>Standardmäßig wird die lokale Virendatenbank nicht komprimiert. Wodurch der Zugriff auf die Daten schneller ist.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="974"/>
+        <location filename="../ui/settings.ui" line="1113"/>
         <source>&amp;Lokale Datenbank komprimieren:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1011"/>
+        <location filename="../ui/settings.ui" line="942"/>
         <source>HTTP Pro&amp;xy Server angeben</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1025"/>
+        <location filename="../ui/settings.ui" line="956"/>
         <source>Port:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1032"/>
+        <location filename="../ui/settings.ui" line="963"/>
         <source>Benutzername:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1039"/>
+        <location filename="../ui/settings.ui" line="970"/>
         <source>Passwort:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1049"/>
+        <location filename="../ui/settings.ui" line="980"/>
         <source>1234</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1056"/>
+        <location filename="../ui/settings.ui" line="987"/>
         <source>Proxy Server Adresse:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1076"/>
+        <location filename="../ui/settings.ui" line="1007"/>
         <source>myproxy.com</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1083"/>
+        <location filename="../ui/settings.ui" line="1014"/>
         <source>meinusername</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1093"/>
+        <location filename="../ui/settings.ui" line="1024"/>
         <source>meinpasswort</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1125"/>
+        <location filename="../ui/settings.ui" line="1211"/>
         <source>ClamAV Milter</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1139"/>
+        <location filename="../ui/settings.ui" line="1225"/>
         <source>Hilfe</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1164"/>
+        <location filename="../ui/settings.ui" line="1250"/>
         <source>Standardwerte</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1176"/>
+        <location filename="../ui/settings.ui" line="1262"/>
         <source>Speichern</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1188"/>
+        <location filename="../ui/settings.ui" line="1274"/>
         <source>Schließen</source>
         <translation></translation>
     </message>
@@ -1209,27 +1226,34 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="233"/>
+        <location filename="../src/settings.cpp" line="256"/>
         <source>Die Datei &lt;b&gt;freshclam.conf&lt;/b&gt; konnte nicht nach &lt;b&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="236"/>
+        <location filename="../src/settings.cpp" line="259"/>
+        <location filename="../src/settings.cpp" line="291"/>
         <source>&lt;/b&gt; geschrieben werden.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="237"/>
+        <location filename="../src/settings.cpp" line="260"/>
+        <location filename="../src/settings.cpp" line="292"/>
         <source>Bitte vergewissern Sie sich, dass Sie für das angegebene Verzeichnis auch die benötigten Schreibrechte besitzen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="449"/>
+        <location filename="../src/settings.cpp" line="288"/>
+        <source>Die Datei &lt;b&gt;clamd.conf&lt;/b&gt; konnte nicht nach &lt;b&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../src/settings.cpp" line="530"/>
         <source>Zurücksetzen bestätigen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="450"/>
+        <location filename="../src/settings.cpp" line="531"/>
         <source>Möchten Sie die Werte wirklich auf die Standardeinstellungen zurücksetzen?</source>
         <translation></translation>
     </message>

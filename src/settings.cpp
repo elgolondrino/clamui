@@ -104,6 +104,29 @@ void Settings::createSlots(){
             this, SLOT(slotFcActivateLogFile()));
     connect(tabWidget_Settings, SIGNAL(currentChanged(int)),
             this, SLOT(slotFcActivateLogFile()));
+    connect(comboBox_CdActivateLogFile, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotCdActivateLogFile()));
+    connect(tabWidget_Settings, SIGNAL(currentChanged(int)),
+            this, SLOT(slotCdActivateLogFile()));
+}
+
+void Settings::slotCdActivateLogFile(){
+
+    if (comboBox_CdActivateLogFile->currentIndex() == 0) {
+
+        lineEdit_CdLogFileSize->setEnabled(false);
+        comboBox_CdTimeStamp->setEnabled(false);
+        comboBox_CdVerboseLogging->setEnabled(false);
+        comboBox_CdSystemLogging->setEnabled(false);
+        comboBox_CdExtendedDetectionInfo->setEnabled(false);
+    } else if (comboBox_CdActivateLogFile->currentIndex() == 1) {
+
+        lineEdit_CdLogFileSize->setEnabled(true);
+        comboBox_CdTimeStamp->setEnabled(true);
+        comboBox_CdVerboseLogging->setEnabled(true);
+        comboBox_CdSystemLogging->setEnabled(true);
+        comboBox_CdExtendedDetectionInfo->setEnabled(true);
+    }
 }
 
 void Settings::slotFcActivateLogFile(){
@@ -243,11 +266,42 @@ void Settings::writeFreshClamConf(){
     }
 }
 
-void Settings::writeClamavMilterConf(){
+void Settings::writeClamdConf(){
 
+    QString dataCollect;
+    QStringList clamdList;
+
+    dataCollect += "PidFile " + comboBox_ConfigPath->currentText() + "clamd.pid";
+    dataCollect += " ||| ";
+    dataCollect += "TemporaryDirectory /tmp";
+    dataCollect += " ||| ";
+    dataCollect += "DatabaseDirectory " + comboBox_ClamVDB->currentText();
+    dataCollect += " ||| ";
+
+    clamdList << dataCollect;
+
+    ClamdConf conf;
+    if (!conf.writeClamdConf(clamdList)) {
+
+        QMessageBox message;
+        message.setWindowTitle("Warnung!");
+        message.setText(trUtf8("Die Datei <b>clamd.conf</b> "
+                               "konnte nicht nach <b>")
+                               + comboBox_ConfigPath->currentText()
+                               + trUtf8("</b> geschrieben werden."));
+        message.setInformativeText(trUtf8("Bitte vergewissern Sie sich, dass Sie "
+                                          "für das angegebene Verzeichnis auch die "
+                                          "benötigten Schreibrechte besitzen."));
+        message.setIcon(QMessageBox::Warning);
+        message.setWindowIcon(QIcon::fromTheme("dialog-warning"));
+        message.exec();
+    }
 }
 
-void Settings::writeClamdConf(){
+void Settings::writeClamavMilterConf(){
+
+    QString dataCollect;
+    QStringList milterList;
 
 }
 
@@ -307,7 +361,18 @@ void Settings::settingsWrite(){
     if (tabWidget_Settings->currentIndex() == 1
             and toolBox_ClamAV->currentIndex() == 1) {
         clamui_conf.beginGroup("Clamd");
-
+        clamui_conf.setValue("CdActivateLogFile",
+                             comboBox_CdActivateLogFile->currentIndex());
+        clamui_conf.setValue("CdSystemLogging",
+                             comboBox_CdSystemLogging->currentIndex());
+        clamui_conf.setValue("CdTimeStamp",
+                             comboBox_CdTimeStamp->currentIndex());
+        clamui_conf.setValue("CdVerboseLogging",
+                             comboBox_CdVerboseLogging->currentIndex());
+        clamui_conf.setValue("CdLogFileSize",
+                             lineEdit_CdLogFileSize->text());
+        clamui_conf.setValue("CdExtendedDetectionInfo",
+                             comboBox_CdExtendedDetectionInfo->currentIndex());
         clamui_conf.endGroup();
 
         writeClamdConf();
@@ -335,6 +400,8 @@ void Settings::settingsWrite(){
                              comboBox_FcTimeStamp->currentIndex());
         clamui_conf.setValue("FcVerboseLogging",
                              comboBox_FcVerboseLogging->currentIndex());
+        clamui_conf.setValue("FcLogFileSize",
+                             lineEdit_FcLogFileSize->text());
         clamui_conf.setValue("FcAttempts",
                              spinBox_FcAttempts->value());
         clamui_conf.setValue("FcDNSverification",
@@ -440,6 +507,20 @@ void Settings::settingsRead(){
                 clamui_conf.value("FcMirrorFallBack", "database.clamav.net").toString());
     clamui_conf.endGroup();
 
+    clamui_conf.beginGroup("Clamd");
+    comboBox_CdActivateLogFile->setCurrentIndex(
+                clamui_conf.value("CdActivateLogFile", 0).toInt());
+    comboBox_CdSystemLogging->setCurrentIndex(
+                clamui_conf.value("CdSystemLogging", 0).toInt());
+    comboBox_CdTimeStamp->setCurrentIndex(
+                clamui_conf.value("CdTimeStamp", 0).toInt());
+    comboBox_CdVerboseLogging->setCurrentIndex(
+                clamui_conf.value("CdVerboseLogging", 0).toInt());
+    lineEdit_CdLogFileSize->setText(
+                clamui_conf.value("CdLogFileSize", "1M").toString());
+    comboBox_CdExtendedDetectionInfo->setCurrentIndex(
+                clamui_conf.value("CdExtendedDetectionInfo", 0).toInt());
+    clamui_conf.endGroup();
 }
 
 void Settings::settingsDefault(){
@@ -481,6 +562,12 @@ void Settings::settingsDefaultClamAV(){
 
     if (toolBox_ClamAV->currentIndex() == 1) {
 
+        comboBox_CdActivateLogFile->setCurrentIndex(0);
+        comboBox_CdSystemLogging->setCurrentIndex(0);
+        comboBox_CdTimeStamp->setCurrentIndex(0);
+        comboBox_CdVerboseLogging->setCurrentIndex(0);
+        lineEdit_CdLogFileSize->setText("1M");
+        comboBox_CdExtendedDetectionInfo->setCurrentIndex(0);
     }
 
     if (toolBox_ClamAV->currentIndex() == 2) {

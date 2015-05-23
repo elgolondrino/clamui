@@ -50,9 +50,9 @@ class ClamdConf : public QObject
     Q_OBJECT
 public:
     explicit ClamdConf(QObject *parent = 0);
+    bool writeClamdConf(QStringList values);
 
 private:
-    void writeClamdConf(QStringList values);
 };
 
 #endif // CLAMDCONF_H

@@ -36,7 +36,7 @@ ClamdConf::ClamdConf(QObject *parent) : QObject(parent)
 
 }
 
-void ClamdConf::writeClamdConf(QStringList values){
+bool ClamdConf::writeClamdConf(QStringList values){
 
     QDateTime currentTime;
     QString configPath, datumZeit;
@@ -49,23 +49,31 @@ void ClamdConf::writeClamdConf(QStringList values){
 
     datumZeit = currentTime.currentDateTime().toLocalTime().toString();
 
+
     QFile confFile(configPath + "clamd.conf");
-    confFile.open(QIODevice::WriteOnly);
+    bool write = confFile.open(QIODevice::WriteOnly);
     QTextStream confOutput(&confFile);
-    confOutput.setCodec("UTF-8");
-    confOutput
-            << "####################################################################"
-            << "\n"
-            << "# clamd.conf \n"
-            << "#\n"
-            << "# " << trUtf8("Generiert am: ") << datumZeit << "\n"
-            << "#\n"
-            << "# " << trUtf8("Generiert mit: ")
-            << APP_TITLE << " - Version: " << APP_VERSION << "\n"
-            << "#\n"
-            << "# " << trUtf8("Pfad: ") << configPath
-            << "#\n"
-            << "####################################################################"
-            << "\n\n";
+
+    foreach (QString value, values) {
+
+        QStringList field = value.split(" ||| ");
+
+        confOutput.setCodec("UTF-8");
+        confOutput
+                << "####################################################################"
+                << "\n"
+                << "# clamd.conf \n"
+                << "#\n"
+                << "# " << trUtf8("Generiert am: ") << datumZeit << "\n"
+                << "#\n"
+                << "# " << trUtf8("Generiert mit: ")
+                << APP_TITLE << " - Version: " << APP_VERSION << "\n"
+                << "#\n"
+                << "# " << trUtf8("Pfad: ") << configPath
+                << "#\n"
+                << "####################################################################"
+                << "\n\n";
+    }
+    return write;
 }
 

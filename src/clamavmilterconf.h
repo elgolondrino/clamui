@@ -50,9 +50,9 @@ class ClamavMilterConf : public QObject
     Q_OBJECT
 public:
     explicit ClamavMilterConf(QObject *parent = 0);
+    bool writeClamavMilterConf(QStringList values);
 
 private:
-    void writeClamavMilterConf(QStringList values);
 };
 
 #endif // CLAMAVMILTERCONF_H
