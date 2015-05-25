@@ -56,20 +56,6 @@ bool FreshClamConf::writeFreshClamConf(QStringList values){
     foreach (QString value, values) {
 
         QStringList field = value.split(" ||| ");
-        QString HTTPProxyServer = field[0];
-        QString HTTPProxyPort = field[1];
-        QString HTTPProxyUsername = field[2];
-        QString HTTPProxyPassword = field[3];
-        QString UpdateLogFile = field[4];
-        QString LogVerbose = field[5];
-        QString LogTime = field[6];
-        QString LogSyslog = field[7];
-        QString PidFile = field[8];
-        QString MaxAttempts = field[9];
-        QString DatabaseDirectory = field[10];
-        QString DNSDatabaseInfo = field[11];
-        QString DatabaseMirror = field[12];
-        QString DatabaseMirror2 = field[13];
 
         confOutput.setCodec("UTF-8");
         confOutput
@@ -86,20 +72,20 @@ bool FreshClamConf::writeFreshClamConf(QStringList values){
                 << "#\n"
                 << "####################################################################"
                 << "\n\n"
-                << HTTPProxyServer << "\n\n"
-                << HTTPProxyPort << "\n\n"
-                << HTTPProxyUsername << "\n\n"
-                << HTTPProxyPassword << "\n\n"
-                << UpdateLogFile << "\n\n"
-                << LogVerbose << "\n\n"
-                << LogTime << "\n\n"
-                << LogSyslog << "\n\n"
-                << PidFile << "\n\n"
-                << MaxAttempts << "\n\n"
-                << DatabaseDirectory << "\n\n"
-                << DNSDatabaseInfo << "\n\n"
-                << DatabaseMirror << "\n\n"
-                << DatabaseMirror2 << "\n\n"
+                << field[0] << "\n\n"
+                << field[1] << "\n\n"
+                << field[2] << "\n\n"
+                << field[3] << "\n\n"
+                << field[4] << "\n\n"
+                << field[5] << "\n\n"
+                << field[6] << "\n\n"
+                << field[7] << "\n\n"
+                << field[8] << "\n\n"
+                << field[9] << "\n\n"
+                << field[10] << "\n\n"
+                << field[11] << "\n\n"
+                << field[12] << "\n\n"
+                << field[12] << "\n\n"
                 << "###### END OF FILE ######\n";
     }
     return write;

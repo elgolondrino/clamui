@@ -108,6 +108,33 @@ void Settings::createSlots(){
             this, SLOT(slotCdActivateLogFile()));
     connect(tabWidget_Settings, SIGNAL(currentChanged(int)),
             this, SLOT(slotCdActivateLogFile()));
+    connect(comboBox_CdScanMail, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotCdScanMail()));
+    connect(tabWidget_Settings, SIGNAL(currentChanged(int)),
+            this, SLOT(slotCdScanMail()));
+}
+
+void Settings::slotCdScanMail(){
+
+    if (comboBox_CdScanMail->currentIndex() == 0) {
+
+        comboBox_CdScanPartialMessages->setEnabled(false);
+        comboBox_CdPhishingSignatures->setEnabled(false);
+        comboBox_CdPhishingScanURLs->setEnabled(false);
+        comboBox_CdPhishingAlwaysBlockSSLMismatch->setEnabled(false);
+        comboBox_CdPhishingAlwaysBlockCloak->setEnabled(false);
+        comboBox_CdPartitionIntersection->setEnabled(false);
+        comboBox_CdHeuristicScanPrecedence->setEnabled(false);
+    } else {
+
+        comboBox_CdScanPartialMessages->setEnabled(true);
+        comboBox_CdPhishingSignatures->setEnabled(true);
+        comboBox_CdPhishingScanURLs->setEnabled(true);
+        comboBox_CdPhishingAlwaysBlockSSLMismatch->setEnabled(true);
+        comboBox_CdPhishingAlwaysBlockCloak->setEnabled(true);
+        comboBox_CdPartitionIntersection->setEnabled(true);
+        comboBox_CdHeuristicScanPrecedence->setEnabled(true);
+    }
 }
 
 void Settings::slotCdActivateLogFile(){
@@ -211,17 +238,32 @@ void Settings::writeFreshClamConf(){
         dataCollect += "UpdateLogFile " + comboBox_ConfigPath->currentText() + "freshclam.log";
         dataCollect += " ||| ";
 
-        if (comboBox_FcVerboseLogging->currentIndex() == 1)
+        if (comboBox_FcVerboseLogging->currentIndex() == 1){
             dataCollect += "LogVerbose yes";
             dataCollect += " ||| ";
+        } else {
+            dataCollect += "LogVerbose no";
+            dataCollect += " ||| ";
+        }
 
-        if (comboBox_FcTimeStamp->currentIndex() == 1)
+        if (comboBox_FcTimeStamp->currentIndex() == 1){
             dataCollect += "LogTime yes";
             dataCollect += " ||| ";
+        } else {
+            dataCollect += "LogVerbose no";
+            dataCollect += " ||| ";
+        }
 
-        if (comboBox_FcSystemLogging->currentIndex() == 1)
+        if (comboBox_FcSystemLogging->currentIndex() == 1){
             dataCollect += "LogSyslog yes";
             dataCollect += " ||| ";
+        } else {
+            dataCollect += "LogVerbose no";
+            dataCollect += " ||| ";
+        }
+
+        dataCollect += "LogFileMaxSize " + lineEdit_FcLogFileSize->text();
+        dataCollect += " ||| ";
     } else {
 
         dataCollect += "#UpdateLogFile ";
@@ -231,6 +273,8 @@ void Settings::writeFreshClamConf(){
         dataCollect += "#LogTime yes";
         dataCollect += " ||| ";
         dataCollect += "#LogSyslog yes";
+        dataCollect += " ||| ";
+        dataCollect += "#LogFileMaxSize ";
         dataCollect += " ||| ";
     }
 
@@ -271,12 +315,317 @@ void Settings::writeClamdConf(){
     QString dataCollect;
     QStringList clamdList;
 
-    dataCollect += "PidFile " + comboBox_ConfigPath->currentText() + "clamd.pid";
-    dataCollect += " ||| ";
-    dataCollect += "TemporaryDirectory /tmp";
-    dataCollect += " ||| ";
     dataCollect += "DatabaseDirectory " + comboBox_ClamVDB->currentText();
     dataCollect += " ||| ";
+    dataCollect += "LocalSocket " + comboBox_ConfigPath->currentText() + "clamd.socket";
+    dataCollect += " ||| ";
+    dataCollect += "FixStaleSocket yes ";
+    dataCollect += " ||| ";
+    dataCollect += "LocalSocketMode 660 ";
+    dataCollect += " ||| ";
+    dataCollect += "PidFile " + comboBox_ConfigPath->currentText() + "clamd.pid";
+    dataCollect += " ||| ";
+    dataCollect += "TemporaryDirectory " + comboBox_CdTempDir->currentText();
+    dataCollect += " ||| ";
+
+    if (comboBox_CdLeaveTemporaryFiles->currentIndex() == 1) {
+        dataCollect += "LeaveTemporaryFiles yes";
+        dataCollect += " ||| ";
+
+    } else {
+        dataCollect += "LeaveTemporaryFiles no";
+        dataCollect += " ||| ";
+    }
+
+    if(comboBox_CdBytecode->currentIndex() == 1){
+        dataCollect += "Bytecode yes";
+        dataCollect += " ||| ";
+
+    } else {
+        dataCollect += "Bytecode no";
+        dataCollect += " ||| ";
+    }
+
+    dataCollect += "BytecodeSecurity " + comboBox_CdTrustSign->currentText();
+    dataCollect += " ||| ";
+
+    dataCollect += "MaxDirectoryRecursion " + spinBox_CdMaxDirectoryRecursion->text();
+    dataCollect += " ||| ";
+
+    if (comboBox_CdFollowDirectorySymlinks->currentIndex() == 1) {
+        dataCollect += "FollowDirectorySymlinks yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "FollowDirectorySymlinks no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdFollowFileSymlinks->currentIndex() == 1) {
+        dataCollect += "FollowFileSymlinks yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "FollowFileSymlinks no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdCrossFilesystems->currentIndex() == 1) {
+        dataCollect += "CrossFilesystems yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "CrossFilesystems no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdAlgorithmicDetection->currentIndex() == 1) {
+        dataCollect += "AlgorithmicDetection yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "AlgorithmicDetection no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdForceToDisk->currentIndex() == 1) {
+        dataCollect += "ForceToDisk yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "ForceToDisk no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdDisableCache->currentIndex() == 1) {
+        dataCollect += "DisableCache yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "DisableCache no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdScanOLE2->currentIndex() == 1) {
+        dataCollect += "ScanOLE2 yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "ScanOLE2 no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdOLE2BlockMacros->currentIndex() == 1) {
+        dataCollect += "OLE2BlockMacros yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "OLE2BlockMacros no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdScanPDF->currentIndex() == 1) {
+        dataCollect += "ScanPDF yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "ScanPDF no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdScanSWF->currentIndex() == 1) {
+        dataCollect += "ScanSWF yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "ScanSWF no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdScanHTML->currentIndex() == 1) {
+        dataCollect += "ScanHTML yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "ScanHTML no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdScanArchive->currentIndex() == 1) {
+        dataCollect += "ScanArchive yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "ScanArchive no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdArchiveBlockEncrypted->currentIndex() == 1) {
+        dataCollect += "ArchiveBlockEncrypted yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "ArchiveBlockEncrypted no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdDetectPUA->currentIndex() == 1) {
+        dataCollect += "DetectPUA yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "DetectPUA no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdScanPE->currentIndex() == 1) {
+        dataCollect += "ScanPE yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "ScanPE no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdDisableCertCheck->currentIndex() == 1) {
+        dataCollect += "DisableCertCheck yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "DisableCertCheck no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdScanELF->currentIndex() == 1) {
+        dataCollect += "ScanELF yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "ScanELF no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdDetectBrokenExecutables->currentIndex() == 1) {
+        dataCollect += "DetectBrokenExecutables yes";
+        dataCollect += " ||| ";
+    } else {
+        dataCollect += "DetectBrokenExecutables no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdScanMail->currentIndex() == 1) {
+        dataCollect += "ScanMail yes";
+        dataCollect += " ||| ";
+
+        if (comboBox_CdScanPartialMessages->currentIndex() == 1) {
+            dataCollect += "ScanPartialMessages yes";
+            dataCollect += " ||| ";
+        } else {
+            dataCollect += "ScanPartialMessages no";
+            dataCollect += " ||| ";
+        }
+
+        if (comboBox_CdPhishingSignatures->currentIndex() == 1) {
+            dataCollect += "PhishingSignatures yes";
+            dataCollect += " ||| ";
+        } else {
+            dataCollect += "PhishingSignatures no";
+            dataCollect += " ||| ";
+        }
+
+        if (comboBox_CdPhishingScanURLs->currentIndex() == 1) {
+            dataCollect += "PhishingScanURLs yes";
+            dataCollect += " ||| ";
+        } else {
+            dataCollect += "PhishingScanURLs no";
+            dataCollect += " ||| ";
+        }
+
+        if (comboBox_CdPhishingAlwaysBlockSSLMismatch->currentIndex() == 1) {
+            dataCollect += "PhishingAlwaysBlockSSLMismatch yes";
+            dataCollect += " ||| ";
+        } else {
+            dataCollect += "PhishingAlwaysBlockSSLMismatch no";
+            dataCollect += " ||| ";
+        }
+
+        if (comboBox_CdPhishingAlwaysBlockCloak->currentIndex() == 1) {
+            dataCollect += "PhishingAlwaysBlockCloak yes";
+            dataCollect += " ||| ";
+        } else {
+            dataCollect += "PhishingAlwaysBlockCloak no";
+            dataCollect += " ||| ";
+        }
+
+        if (comboBox_CdPartitionIntersection->currentIndex() == 1) {
+            dataCollect += "PartitionIntersection yes";
+            dataCollect += " ||| ";
+        } else {
+            dataCollect += "PartitionIntersection no";
+            dataCollect += " ||| ";
+        }
+
+        if (comboBox_CdHeuristicScanPrecedence->currentIndex() == 1) {
+            dataCollect += "HeuristicScanPrecedence yes";
+            dataCollect += " ||| ";
+        } else {
+            dataCollect += "HeuristicScanPrecedence no";
+            dataCollect += " ||| ";
+        }
+    } else {
+        dataCollect += "ScanMail no";
+        dataCollect += " ||| ";
+        dataCollect += "ScanPartialMessages no";
+        dataCollect += " ||| ";
+        dataCollect += "PhishingSignatures no";
+        dataCollect += " ||| ";
+        dataCollect += "PhishingScanURLs no";
+        dataCollect += " ||| ";
+        dataCollect += "PhishingAlwaysBlockSSLMismatch no";
+        dataCollect += " ||| ";
+        dataCollect += "PhishingAlwaysBlockCloak no";
+        dataCollect += " ||| ";
+        dataCollect += "PartitionIntersection no";
+        dataCollect += " ||| ";
+        dataCollect += "HeuristicScanPrecedence no";
+        dataCollect += " ||| ";
+    }
+
+    if (comboBox_CdActivateLogFile->currentIndex() == 1){
+
+        dataCollect += "LogFile " + comboBox_ConfigPath->currentText() + "clamd.log";
+        dataCollect += " ||| ";
+
+        if (comboBox_CdVerboseLogging->currentIndex() == 1) {
+            dataCollect += "LogVerbose yes";
+            dataCollect += " ||| ";
+        } else {
+            dataCollect += "LogVerbose no";
+            dataCollect += " ||| ";
+        }
+
+        if (comboBox_CdTimeStamp->currentIndex() == 1) {
+            dataCollect += "LogTime yes";
+            dataCollect += " ||| ";
+        } else {
+            dataCollect += "LogTime no";
+            dataCollect += " ||| ";
+        }
+
+        if (comboBox_CdSystemLogging->currentIndex() == 1) {
+            dataCollect += "LogSyslog yes";
+            dataCollect += " ||| ";
+        } else {
+            dataCollect += "LogSyslog no";
+            dataCollect += " ||| ";
+        }
+
+        if (comboBox_CdExtendedDetectionInfo->currentIndex() == 1) {
+            dataCollect += "ExtendedDetectionInfo yes";
+            dataCollect += " ||| ";
+        } else {
+            dataCollect += "ExtendedDetectionInfo no";
+            dataCollect += " ||| ";
+        }
+
+        dataCollect += "LogFileMaxSize " + lineEdit_CdLogFileSize->text();
+    } else {
+
+        dataCollect += "#LogFile ";
+        dataCollect += " ||| ";
+        dataCollect += "#LogVerbose yes";
+        dataCollect += " ||| ";
+        dataCollect += "#LogTime yes";
+        dataCollect += " ||| ";
+        dataCollect += "#LogSyslog yes";
+        dataCollect += " ||| ";
+        dataCollect += "#ExtendedDetectionInfo yes";
+        dataCollect += " ||| ";
+        dataCollect += "#LogFileMaxSize ";
+    }
 
     clamdList << dataCollect;
 
@@ -372,9 +721,70 @@ void Settings::settingsWrite(){
         clamui_conf.setValue("CdLogFileSize",
                              lineEdit_CdLogFileSize->text());
         clamui_conf.setValue("CdExtendedDetectionInfo",
-                             comboBox_CdExtendedDetectionInfo->currentIndex());
+                             comboBox_CdExtendedDetectionInfo->currentIndex());        
+        clamui_conf.setValue("CdBytecode",
+                             comboBox_CdBytecode->currentIndex());
+        clamui_conf.setValue("CdTrustSign",
+                             comboBox_CdTrustSign->currentIndex());
+        clamui_conf.setValue("CdTempDir",
+                             comboBox_CdTempDir->currentIndex());
+        clamui_conf.setValue("CdCrossFilesystems",
+                             comboBox_CdCrossFilesystems->currentIndex());
+        clamui_conf.setValue("CdFollowDirectorySymlinks",
+                             comboBox_CdFollowDirectorySymlinks->currentIndex());
+        clamui_conf.setValue("CdFollowFileSymlinks",
+                             comboBox_CdFollowFileSymlinks->currentIndex());
+        clamui_conf.setValue("CdLeaveTemporaryFiles",
+                             comboBox_CdLeaveTemporaryFiles->currentIndex());
+        clamui_conf.setValue("CdMaxDirectoryRecursion",
+                             spinBox_CdMaxDirectoryRecursion->value());
+        clamui_conf.setValue("CdAlgorithmicDetection",
+                             comboBox_CdAlgorithmicDetection->currentIndex());
+        clamui_conf.setValue("CdForceToDisk",
+                             comboBox_CdForceToDisk->currentIndex());
+        clamui_conf.setValue("CdDisableCache",
+                             comboBox_CdDisableCache->currentIndex());
+        clamui_conf.setValue("CdDetectPUA",
+                             comboBox_CdDetectPUA->currentIndex());
+        clamui_conf.setValue("CdScanPE",
+                             comboBox_CdScanPE->currentIndex());
+        clamui_conf.setValue("CdDisableCertCheck",
+                             comboBox_CdDisableCertCheck->currentIndex());
+        clamui_conf.setValue("CdScanELF",
+                             comboBox_CdScanELF->currentIndex());
+        clamui_conf.setValue("CdDetectBrokenExecutables",
+                             comboBox_CdDetectBrokenExecutables->currentIndex());
+        clamui_conf.setValue("CdScanOLE2",
+                             comboBox_CdScanOLE2->currentIndex());
+        clamui_conf.setValue("CdOLE2BlockMacros",
+                             comboBox_CdOLE2BlockMacros->currentIndex());
+        clamui_conf.setValue("CdScanPDF",
+                             comboBox_CdScanPDF->currentIndex());
+        clamui_conf.setValue("CdScanSWF",
+                             comboBox_CdScanSWF->currentIndex());
+        clamui_conf.setValue("CdScanHTML",
+                             comboBox_CdScanHTML->currentIndex());
+        clamui_conf.setValue("CdScanArchive",
+                             comboBox_CdScanArchive->currentIndex());
+        clamui_conf.setValue("CdArchiveBlockEncrypted",
+                             comboBox_CdArchiveBlockEncrypted->currentIndex());
+        clamui_conf.setValue("CdScanMail",
+                             comboBox_CdScanMail->currentIndex());
+        clamui_conf.setValue("CdScanPartialMessages",
+                             comboBox_CdScanPartialMessages->currentIndex());
+        clamui_conf.setValue("CdPhishingSignatures",
+                             comboBox_CdPhishingSignatures->currentIndex());
+        clamui_conf.setValue("CdPhishingScanURLs",
+                             comboBox_CdPhishingScanURLs->currentIndex());
+        clamui_conf.setValue("CdPhishingAlwaysBlockSSLMismatch",
+                             comboBox_CdPhishingAlwaysBlockSSLMismatch->currentIndex());
+        clamui_conf.setValue("CdPhishingAlwaysBlockCloak",
+                             comboBox_CdPhishingAlwaysBlockCloak->currentIndex());
+        clamui_conf.setValue("CdPartitionIntersection",
+                             comboBox_CdPartitionIntersection->currentIndex());
+        clamui_conf.setValue("CdHeuristicScanPrecedence",
+                             comboBox_CdHeuristicScanPrecedence->currentIndex());
         clamui_conf.endGroup();
-
         writeClamdConf();
 
     }
@@ -520,6 +930,68 @@ void Settings::settingsRead(){
                 clamui_conf.value("CdLogFileSize", "1M").toString());
     comboBox_CdExtendedDetectionInfo->setCurrentIndex(
                 clamui_conf.value("CdExtendedDetectionInfo", 0).toInt());
+    comboBox_CdBytecode->setCurrentIndex(
+                clamui_conf.value("CdBytecode", 1).toInt());
+    comboBox_CdTrustSign->setCurrentIndex(
+                clamui_conf.value("CdTrustSign", 1).toInt());
+    comboBox_CdTempDir->setCurrentIndex(
+                clamui_conf.value("CdTempDir", 0).toInt());
+    comboBox_CdCrossFilesystems->setCurrentIndex(
+                clamui_conf.value("CdCrossFilesystems", 1).toInt());
+    comboBox_CdFollowDirectorySymlinks->setCurrentIndex(
+                clamui_conf.value("CdFollowDirectorySymlinks", 0).toInt());
+    comboBox_CdFollowFileSymlinks->setCurrentIndex(
+                clamui_conf.value("CdFollowFileSymlinks", 0).toInt());
+    comboBox_CdLeaveTemporaryFiles->setCurrentIndex(
+                clamui_conf.value("CdLeaveTemporaryFiles", 0).toInt());
+    spinBox_CdMaxDirectoryRecursion->setValue(
+                clamui_conf.value("CdMaxDirectoryRecursion", 15).toInt());
+    comboBox_CdAlgorithmicDetection->setCurrentIndex(
+                clamui_conf.value("CdAlgorithmicDetection", 1).toInt());
+    comboBox_CdForceToDisk->setCurrentIndex(
+                clamui_conf.value("CdForceToDisk", 1).toInt());
+    comboBox_CdDisableCache->setCurrentIndex(
+                clamui_conf.value("CdDisableCache", 0).toInt());
+    comboBox_CdDetectPUA->setCurrentIndex(
+                clamui_conf.value("CdDetectPUA", 0).toInt());
+    comboBox_CdScanPE->setCurrentIndex(
+                clamui_conf.value("CdScanPE", 1).toInt());
+    comboBox_CdDisableCertCheck->setCurrentIndex(
+                clamui_conf.value("CdDisableCertCheck", 0).toInt());
+    comboBox_CdScanELF->setCurrentIndex(
+                clamui_conf.value("CdScanELF", 1).toInt());
+    comboBox_CdDetectBrokenExecutables->setCurrentIndex(
+                clamui_conf.value("CdDetectBrokenExecutables", 0).toInt());
+    comboBox_CdScanOLE2->setCurrentIndex(
+                clamui_conf.value("CdScanOLE2", 1).toInt());
+    comboBox_CdOLE2BlockMacros->setCurrentIndex(
+                clamui_conf.value("CdOLE2BlockMacros", 0).toInt());
+    comboBox_CdScanPDF->setCurrentIndex(
+                clamui_conf.value("CdScanPDF", 1).toInt());
+    comboBox_CdScanSWF->setCurrentIndex(
+                clamui_conf.value("CdScanSWF", 1).toInt());
+    comboBox_CdScanHTML->setCurrentIndex(
+                clamui_conf.value("CdScanHTML", 1).toInt());
+    comboBox_CdScanArchive->setCurrentIndex(
+                clamui_conf.value("CdScanArchive", 1).toInt());
+    comboBox_CdArchiveBlockEncrypted->setCurrentIndex(
+                clamui_conf.value("CdArchiveBlockEncrypted", 0).toInt());
+    comboBox_CdScanMail->setCurrentIndex(
+                clamui_conf.value("CdScanMail", 1).toInt());
+    comboBox_CdScanPartialMessages->setCurrentIndex(
+                clamui_conf.value("CdScanPartialMessages", 0).toInt());
+    comboBox_CdPhishingSignatures->setCurrentIndex(
+                clamui_conf.value("CdPhishingSignatures", 1).toInt());
+    comboBox_CdPhishingScanURLs->setCurrentIndex(
+                clamui_conf.value("CdPhishingScanURLs", 1).toInt());
+    comboBox_CdPhishingAlwaysBlockSSLMismatch->setCurrentIndex(
+                clamui_conf.value("CdPhishingAlwaysBlockSSLMismatch", 0).toInt());
+    comboBox_CdPhishingAlwaysBlockCloak->setCurrentIndex(
+                clamui_conf.value("CdPhishingAlwaysBlockCloak", 0).toInt());
+    comboBox_CdPartitionIntersection->setCurrentIndex(
+                clamui_conf.value("CdPartitionIntersection", 0).toInt());
+    comboBox_CdHeuristicScanPrecedence->setCurrentIndex(
+                clamui_conf.value("CdHeuristicScanPrecedence", 0).toInt());
     clamui_conf.endGroup();
 }
 
@@ -568,6 +1040,37 @@ void Settings::settingsDefaultClamAV(){
         comboBox_CdVerboseLogging->setCurrentIndex(0);
         lineEdit_CdLogFileSize->setText("1M");
         comboBox_CdExtendedDetectionInfo->setCurrentIndex(0);
+        comboBox_CdBytecode->setCurrentIndex(1);
+        comboBox_CdTrustSign->setCurrentIndex(1);
+        comboBox_CdTempDir->setCurrentIndex(0);
+        comboBox_CdCrossFilesystems->setCurrentIndex(1);
+        comboBox_CdFollowDirectorySymlinks->setCurrentIndex(0);
+        comboBox_CdFollowFileSymlinks->setCurrentIndex(0);
+        comboBox_CdLeaveTemporaryFiles->setCurrentIndex(0);
+        spinBox_CdMaxDirectoryRecursion->setValue(15);
+        comboBox_CdAlgorithmicDetection->setCurrentIndex(1);
+        comboBox_CdForceToDisk->setCurrentIndex(1);
+        comboBox_CdDisableCache->setCurrentIndex(0);
+        comboBox_CdDetectPUA->setCurrentIndex(0);
+        comboBox_CdScanPE->setCurrentIndex(1);
+        comboBox_CdDisableCertCheck->setCurrentIndex(0);
+        comboBox_CdScanELF->setCurrentIndex(1);
+        comboBox_CdDetectBrokenExecutables->setCurrentIndex(0);
+        comboBox_CdScanOLE2->setCurrentIndex(1);
+        comboBox_CdOLE2BlockMacros->setCurrentIndex(0);
+        comboBox_CdScanPDF->setCurrentIndex(1);
+        comboBox_CdScanSWF->setCurrentIndex(1);
+        comboBox_CdScanHTML->setCurrentIndex(1);
+        comboBox_CdScanArchive->setCurrentIndex(1);
+        comboBox_CdArchiveBlockEncrypted->setCurrentIndex(0);
+        comboBox_CdScanMail->setCurrentIndex(1);
+        comboBox_CdScanPartialMessages->setCurrentIndex(0);
+        comboBox_CdPhishingSignatures->setCurrentIndex(1);
+        comboBox_CdPhishingScanURLs->setCurrentIndex(1);
+        comboBox_CdPhishingAlwaysBlockSSLMismatch->setCurrentIndex(0);
+        comboBox_CdPhishingAlwaysBlockCloak->setCurrentIndex(0);
+        comboBox_CdPartitionIntersection->setCurrentIndex(0);
+        comboBox_CdHeuristicScanPrecedence->setCurrentIndex(0);
     }
 
     if (toolBox_ClamAV->currentIndex() == 2) {

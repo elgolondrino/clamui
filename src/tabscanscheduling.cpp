@@ -80,7 +80,7 @@ void TabScanScheduling::slotDaemonStatus() {
     /*
      * If clamd not running.
      */
-    if (!QFile::exists("/tmp/clamd.socket")){
+    if (!QFile::exists(configPath + "clamd.pid")){
 
         pushButton_CamdStatus->setText(trUtf8("Starten"));
         label_CamdStatus->setText(trUtf8("<b>Der ClamAV Dämon läuft nicht.</b>"));

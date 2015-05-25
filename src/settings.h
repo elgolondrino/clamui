@@ -74,6 +74,7 @@ private:
     QMap<QString, QString> * fileToNiceName;
 
 private slots:
+    void slotCdScanMail();
     void slotFcActivateLogFile();
     void slotCdActivateLogFile();
     void settingsWrite();

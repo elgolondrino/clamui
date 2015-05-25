@@ -63,7 +63,7 @@ void ClamUI::slotDaemonStatus() {
     /*
      * If clamd still running don't try to start the daemon.
      */
-    if (!QFile::exists("/tmp/clamd.socket")){
+    if (!QFile::exists(configPath + "clamd.pid")){
 
         statusNotifierItem->showMessage(
                     trUtf8("%1 - %2 - Warnung!").arg(
@@ -108,7 +108,7 @@ void ClamUI::changeEvent(QEvent *event){
 
 void ClamUI::closeEvent(QCloseEvent *event)
 {
-    if (statusNotifierItem->standardActionsEnabled() == true) {
+    if (statusNotifierItem->standardActionsEnabled() == false) {
 
         statusNotifierItem->showMessage(
                     trUtf8("%1 - %2 - Hinweis!").arg(
@@ -348,7 +348,7 @@ void ClamUI::clamDaemon(){
     /*
      * If clamd still running don't try to start the daemon.
      */
-    if (QFile::exists("/tmp/clamd.socket")){
+    if (QFile::exists(configPath + "clamd.pid")){
 
         statusNotifierItem->showMessage(
                     trUtf8("%1 - %2 - Information!").arg(

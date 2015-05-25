@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>940</width>
-    <height>573</height>
+    <height>581</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -46,7 +46,7 @@
             <x>0</x>
             <y>0</y>
             <width>904</width>
-            <height>469</height>
+            <height>477</height>
            </rect>
           </property>
           <layout class="QFormLayout" name="formLayout">
@@ -193,8 +193,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>86</width>
-            <height>86</height>
+            <width>908</width>
+            <height>357</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -216,8 +216,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>494</width>
-                <height>294</height>
+                <width>892</width>
+                <height>341</height>
                </rect>
               </property>
               <layout class="QFormLayout" name="formLayout_3">
@@ -438,7 +438,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
             <x>0</x>
             <y>0</y>
             <width>908</width>
-            <height>349</height>
+            <height>357</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -460,248 +460,1498 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>892</width>
-                <height>333</height>
+                <width>872</width>
+                <height>891</height>
                </rect>
               </property>
-              <widget class="QGroupBox" name="groupBox_5">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>10</y>
-                 <width>621</width>
-                 <height>191</height>
-                </rect>
-               </property>
-               <property name="title">
-                <string>Logging</string>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_13">
-                <item>
-                 <layout class="QGridLayout" name="gridLayout_9">
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="label_45">
-                    <property name="text">
-                     <string>&amp;Zeitstempel für die Log-Einträge:</string>
+              <layout class="QVBoxLayout" name="verticalLayout_14">
+               <item>
+                <widget class="QGroupBox" name="groupBox_6">
+                 <property name="title">
+                  <string>Temporäre Daten</string>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_4">
+                  <item row="0" column="0">
+                   <layout class="QGridLayout" name="gridLayout_3">
+                    <item row="0" column="2">
+                     <widget class="QComboBox" name="comboBox_CdTempDir">
+                      <property name="toolTip">
+                       <string>In dem angegebenen Verzeichnis werden von Clamd Daten vorübergehend gespeichert.</string>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>/tmp</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>/var/tmp</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_5">
+                      <property name="toolTip">
+                       <string>In dem angegebenen Verzeichnis werden von Clamd Daten vorübergehend gespeichert.</string>
+                      </property>
+                      <property name="text">
+                       <string>Tem&amp;poräre Dateien speichern in:</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>comboBox_CdTempDir</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="3">
+                     <widget class="QLabel" name="label_12">
+                      <property name="toolTip">
+                       <string>Temporäre Dateien nicht löschen.</string>
+                      </property>
+                      <property name="text">
+                       <string>Tempor&amp;äre Dateien behalten:</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>comboBox_CdLeaveTemporaryFiles</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="4">
+                     <widget class="QComboBox" name="comboBox_CdLeaveTemporaryFiles">
+                      <property name="toolTip">
+                       <string>Temporäre Dateien nicht löschen.</string>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Nein</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-cancel">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Ja</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-ok">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="groupBox_5">
+                 <property name="title">
+                  <string>Logging</string>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_6">
+                  <item row="0" column="0">
+                   <layout class="QGridLayout" name="gridLayout_9">
+                    <item row="1" column="1">
+                     <widget class="QComboBox" name="comboBox_CdVerboseLogging">
+                      <item>
+                       <property name="text">
+                        <string>Nein</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-cancel">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Ja</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-ok">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="QLabel" name="label_48">
+                      <property name="text">
+                       <string>A&amp;usführliches Logging:</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>comboBox_FcVerboseLogging</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_47">
+                      <property name="toolTip">
+                       <string>Ist die Log Datei aktiviert, werden alle Vorgängen in der Datei &lt;i&gt;freshclam.log&lt;/i&gt; protokolliert.</string>
+                      </property>
+                      <property name="text">
+                       <string>Lo&amp;g-Datei aktivieren:</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>comboBox_FcActivateLogFile</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QComboBox" name="comboBox_CdActivateLogFile">
+                      <property name="toolTip">
+                       <string>Ist die Log Datei aktiviert, werden alle Vorgängen in der Datei &lt;i&gt;freshclam.log&lt;/i&gt; protokolliert.</string>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Nein</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-cancel">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Ja</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-ok">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="0" column="3">
+                     <widget class="QComboBox" name="comboBox_CdSystemLogging">
+                      <property name="toolTip">
+                       <string>Verwendet das Logging-System von des Betriebssystems.</string>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Nein</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-cancel">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Ja</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-ok">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="0" column="4">
+                     <widget class="QLabel" name="label_45">
+                      <property name="text">
+                       <string>&amp;Zeitstempel für die Log-Einträge:</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>comboBox_FcTimeStamp</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QLabel" name="label_34">
+                      <property name="toolTip">
+                       <string>Verwendet das Logging-System von des Betriebssystems.</string>
+                      </property>
+                      <property name="text">
+                       <string>Das &amp;Systemlogging verwenden:</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>comboBox_FcSystemLogging</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="3">
+                     <widget class="QComboBox" name="comboBox_CdExtendedDetectionInfo">
+                      <property name="toolTip">
+                       <string>Meldet zusätzliche Informationen über die infizierte Datei, wie zum Beispiel die Größe und Hash zusammen mit dem Virennamen.</string>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Nein</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-cancel">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Ja</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-ok">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="1" column="2">
+                     <widget class="QLabel" name="label_4">
+                      <property name="toolTip">
+                       <string>Meldet zusätzliche Informationen über die infizierte Datei, wie zum Beispiel die Größe und Hash zusammen mit dem Virennamen.</string>
+                      </property>
+                      <property name="text">
+                       <string>Informationen &amp;über die infizierte Datei:</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>comboBox_CdExtendedDetectionInfo</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="5">
+                     <widget class="QComboBox" name="comboBox_CdTimeStamp">
+                      <property name="toolTip">
+                       <string>Setzt vor jedem Log-Eintrag das Datum und die Zeit.</string>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Nein</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-cancel">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Ja</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-ok">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="1" column="4">
+                     <widget class="QLabel" name="label_46">
+                      <property name="toolTip">
+                       <string>Gibt die maximale Größe der Log-Datei an.&lt;br /&gt;Verwenden Sie &lt;b&gt;M&lt;/b&gt; oder &lt;b&gt;m&lt;/b&gt; für Megabyte (1M = 1m = 1048576 Bytes) &lt;br /&gt;und &lt;b&gt;K&lt;/b&gt; oder &lt;b&gt;k&lt;/b&gt; für Kilobytes (1K = 1k = 1024 Bytes). &lt;br /&gt;0 deaktiviert das Größenlimit für die Log-Datei</string>
+                      </property>
+                      <property name="text">
+                       <string>&amp;Maximale Größe der Log Datei:</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>lineEdit_FcLogFileSize</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="5">
+                     <widget class="QLineEdit" name="lineEdit_CdLogFileSize">
+                      <property name="maximumSize">
+                       <size>
+                        <width>80</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Gibt die maximale Größe der Log-Datei an.&lt;br /&gt;Verwenden Sie &lt;b&gt;M&lt;/b&gt; oder &lt;b&gt;m&lt;/b&gt; für Megabyte (1M = 1m = 1048576 Bytes) &lt;br /&gt;und &lt;b&gt;K&lt;/b&gt; oder &lt;b&gt;k&lt;/b&gt; für Kilobytes (1K = 1k = 1024 Bytes). &lt;br /&gt;0 deaktiviert das Größenlimit für die Log-Datei</string>
+                      </property>
+                      <property name="text">
+                       <string>1M</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="groupBox_7">
+                 <property name="title">
+                  <string>Einstellungen zur Virensuche</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_15">
+                  <item row="0" column="0" colspan="2">
+                   <widget class="QGroupBox" name="groupBox_9">
+                    <property name="title">
+                     <string>Allgemeines</string>
                     </property>
-                    <property name="buddy">
-                     <cstring>comboBox_FcTimeStamp</cstring>
-                    </property>
+                    <layout class="QFormLayout" name="formLayout_7">
+                     <item row="0" column="0">
+                      <layout class="QGridLayout" name="gridLayout_11">
+                       <item row="2" column="0">
+                        <widget class="QLabel" name="label_10">
+                         <property name="toolTip">
+                          <string>Folgt zum scannen auf Dateiverknüpfungen.</string>
+                         </property>
+                         <property name="text">
+                          <string>Dateiverknüpfungen folgen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdFollowFileSymlinks</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QLabel" name="label_9">
+                         <property name="toolTip">
+                          <string>Folgt zum scannen auf Verzeichnisverknüpfungen.</string>
+                         </property>
+                         <property name="text">
+                          <string>Verzeichnisverknüpfungen folgen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdFollowDirectorySymlinks</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="label_8">
+                         <property name="toolTip">
+                          <string>Scannt Verzeichnisse rekursiv bis zu der angegebennen Tiefe.</string>
+                         </property>
+                         <property name="text">
+                          <string>&amp;Verzeichnisse bis zu dieser Tiefe scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>spinBox_CdMaxDirectoryRecursion</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QSpinBox" name="spinBox_CdMaxDirectoryRecursion">
+                         <property name="toolTip">
+                          <string>Scannt Verzeichnisse rekursiv bis zu der angegebennen Tiefe.</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="minimum">
+                          <number>1</number>
+                         </property>
+                         <property name="maximum">
+                          <number>100</number>
+                         </property>
+                         <property name="value">
+                          <number>15</number>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="1">
+                        <widget class="QComboBox" name="comboBox_CdCrossFilesystems">
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="2" column="1">
+                        <widget class="QComboBox" name="comboBox_CdFollowFileSymlinks">
+                         <property name="toolTip">
+                          <string>Folgt zum scannen auf Dateiverknüpfungen.</string>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="QComboBox" name="comboBox_CdFollowDirectorySymlinks">
+                         <property name="toolTip">
+                          <string>Folgt zum scannen auf Verzeichnisverknüpfungen.</string>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="5" column="0">
+                        <widget class="QLabel" name="label_14">
+                         <property name="toolTip">
+                          <string>Diese option bewirkt, dass Speicher oder verschachtelte Scans auf die Festplatte ausgelagert werden.</string>
+                         </property>
+                         <property name="text">
+                          <string>Daten auf die Festplatte auslagern:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdForceToDisk</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="0">
+                        <widget class="QLabel" name="label_11">
+                         <property name="text">
+                          <string>Andere Dateisysteme scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdCrossFilesystems</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="4" column="0">
+                        <widget class="QLabel" name="label_13">
+                         <property name="toolTip">
+                          <string> In einigen Fällen (z.B. komplexe Malware, Exploits in Grafikdateien und anderen) &lt;br /&gt;verwendet ClamAV spezielle Algorithmen um eine akkurate Virenerkennung zu &lt;br /&gt;gewährleisten.</string>
+                         </property>
+                         <property name="text">
+                          <string>Algorithmus-Erkennung aktivieren:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdAlgorithmicDetection</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="5" column="1">
+                        <widget class="QComboBox" name="comboBox_CdForceToDisk">
+                         <property name="toolTip">
+                          <string>Diese option bewirkt, dass Speicher oder verschachtelte Scans auf die Festplatte ausgelagert werden.</string>
+                         </property>
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="4" column="1">
+                        <widget class="QComboBox" name="comboBox_CdAlgorithmicDetection">
+                         <property name="toolTip">
+                          <string> In einigen Fällen (z.B. komplexe Malware, Exploits in Grafikdateien und anderen) &lt;br /&gt;verwendet ClamAV spezielle Algorithmen um eine akkurate Virenerkennung zu &lt;br /&gt;gewährleisten.</string>
+                         </property>
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="6" column="0">
+                        <widget class="QLabel" name="label_15">
+                         <property name="toolTip">
+                          <string>Diese Option ermöglicht es Ihnen, die Cachin Funktion zu deaktivieren. &lt;br /&gt;Standardmäßig werden Daten mit MD5 gekennzeichnet, wenn sie nicht als Virus gekennzeichnet wurden. &lt;br /&gt;Wenn Sie den Cache deaktivieren, wirkt sich dies gerade bei großen Scans negativ auf die Performance aus.</string>
+                         </property>
+                         <property name="text">
+                          <string>Zwischenspeicher deaktivieren:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdDisableCache</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="6" column="1">
+                        <widget class="QComboBox" name="comboBox_CdDisableCache">
+                         <property name="toolTip">
+                          <string>Diese Option ermöglicht es Ihnen, die Cachin Funktion zu deaktivieren. &lt;br /&gt;Standardmäßig werden Daten mit MD5 gekennzeichnet, wenn sie nicht als Virus gekennzeichnet wurden. &lt;br /&gt;Wenn Sie den Cache deaktivieren, wirkt sich dies gerade bei großen Scans negativ auf die Performance aus.</string>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="label_47">
-                    <property name="toolTip">
-                     <string>Ist die Log Datei aktiviert, werden alle Vorgängen in der Datei &lt;i&gt;freshclam.log&lt;/i&gt; protokolliert.</string>
+                  <item row="1" column="1" colspan="2">
+                   <widget class="QGroupBox" name="groupBox_10">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
                     </property>
-                    <property name="text">
-                     <string>Lo&amp;g-Datei aktivieren:</string>
+                    <property name="title">
+                     <string>Ausführbare Dateien (Programme)</string>
                     </property>
-                    <property name="buddy">
-                     <cstring>comboBox_FcActivateLogFile</cstring>
-                    </property>
+                    <layout class="QFormLayout" name="formLayout_8">
+                     <item row="0" column="0">
+                      <layout class="QGridLayout" name="gridLayout_13">
+                       <item row="1" column="0">
+                        <widget class="QLabel" name="label_17">
+                         <property name="text">
+                          <string>Portable Programme scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdScanPE</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="QComboBox" name="comboBox_CdScanPE">
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QComboBox" name="comboBox_CdDetectPUA">
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="label_16">
+                         <property name="text">
+                          <string>Erkenne m&amp;ögliche unerwünschte Programme:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdDetectPUA</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
+                        <widget class="QLabel" name="label_18">
+                         <property name="text">
+                          <string>Certifikate nicht scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdDisableCertCheck</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="0">
+                        <widget class="QLabel" name="label_19">
+                         <property name="text">
+                          <string>ELF-Programmdateien scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdScanELF</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="4" column="0">
+                        <widget class="QLabel" name="label_20">
+                         <property name="text">
+                          <string>Erkenne defekte ELF-Programmdateien:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdDetectBrokenExecutables</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="1">
+                        <widget class="QComboBox" name="comboBox_CdDisableCertCheck">
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="3" column="1">
+                        <widget class="QComboBox" name="comboBox_CdScanELF">
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="4" column="1">
+                        <widget class="QComboBox" name="comboBox_CdDetectBrokenExecutables">
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
                   <item row="0" column="2">
-                   <widget class="QLabel" name="label_34">
-                    <property name="toolTip">
-                     <string>Verwendet das Logging-System von des Betriebssystems.</string>
+                   <widget class="QGroupBox" name="groupBox_11">
+                    <property name="title">
+                     <string>Dokumente und Bibliotheken</string>
                     </property>
-                    <property name="text">
-                     <string>Das &amp;Systemlogging verwenden:</string>
-                    </property>
-                    <property name="buddy">
-                     <cstring>comboBox_FcSystemLogging</cstring>
-                    </property>
+                    <layout class="QFormLayout" name="formLayout_9">
+                     <item row="0" column="0">
+                      <layout class="QGridLayout" name="gridLayout_14">
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="label_21">
+                         <property name="toolTip">
+                          <string>Diese Option scannt OLE2 Dateien wie z.B. Microsoft Office Dokumente und *.msi Dateien.</string>
+                         </property>
+                         <property name="text">
+                          <string>Microsoft OLE&amp;2 Dateien scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdScanOLE2</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="QComboBox" name="comboBox_CdOLE2BlockMacros">
+                         <property name="toolTip">
+                          <string>Diese Option aktiviert OLE2 Dateien mit VBA Makros.
+
+With this option enabled OLE2 files with VBA macros, which were not
+# detected by signatures will be marked as &quot;Heuristics.OLE2.ContainsMacros&quot;.</string>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QLabel" name="label_23">
+                         <property name="toolTip">
+                          <string>Diese Option aktiviert OLE2 Dateien mit VBA Makros.</string>
+                         </property>
+                         <property name="text">
+                          <string>Microsoft OLE2 / VBA Makros blockieren:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdOLE2BlockMacros</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="0">
+                        <widget class="QLabel" name="label_22">
+                         <property name="text">
+                          <string>Flash Dateien (*.swf) scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdScanSWF</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
+                        <widget class="QLabel" name="label_24">
+                         <property name="text">
+                          <string>PDF Dateien scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdScanPDF</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="6" column="0">
+                        <widget class="QLabel" name="label_25">
+                         <property name="text">
+                          <string>Verschlüsselte Archive als Virus markieren:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdArchiveBlockEncrypted</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QComboBox" name="comboBox_CdScanOLE2">
+                         <property name="toolTip">
+                          <string>Diese Option scannt OLE2 Dateien wie z.B. Microsoft Office Dokumente und *.msi Dateien.</string>
+                         </property>
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="3" column="1">
+                        <widget class="QComboBox" name="comboBox_CdScanSWF">
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="5" column="0">
+                        <widget class="QLabel" name="label_26">
+                         <property name="text">
+                          <string>Archiv Dateien (ZIP, RAR) scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdScanArchive</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="1">
+                        <widget class="QComboBox" name="comboBox_CdScanPDF">
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="4" column="0">
+                        <widget class="QLabel" name="label_27">
+                         <property name="text">
+                          <string>HTML Dateien scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdScanHTML</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="6" column="1">
+                        <widget class="QComboBox" name="comboBox_CdArchiveBlockEncrypted">
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="5" column="1">
+                        <widget class="QComboBox" name="comboBox_CdScanArchive">
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="4" column="1">
+                        <widget class="QComboBox" name="comboBox_CdScanHTML">
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
-                  <item row="2" column="1">
-                   <widget class="QComboBox" name="comboBox_CdTimeStamp">
-                    <property name="toolTip">
-                     <string>Setzt vor jedem Log-Eintrag das Datum und die Zeit.</string>
+                  <item row="2" column="1" colspan="2">
+                   <widget class="QGroupBox" name="groupBox_8">
+                    <property name="title">
+                     <string>Bytecode</string>
                     </property>
-                    <item>
-                     <property name="text">
-                      <string>Nein</string>
-                     </property>
-                     <property name="icon">
-                      <iconset theme="dialog-cancel">
-                       <normaloff/>
-                      </iconset>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Ja</string>
-                     </property>
-                     <property name="icon">
-                      <iconset theme="dialog-ok">
-                       <normaloff/>
-                      </iconset>
-                     </property>
-                    </item>
+                    <layout class="QFormLayout" name="formLayout_5">
+                     <item row="0" column="0">
+                      <layout class="QGridLayout" name="gridLayout_10">
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="label_6">
+                         <property name="toolTip">
+                          <string>Es ist äußerst wichtig, dass Bytecode aktiviert ist. Ansonsten können viele neue Viren nicht erkannt werden.</string>
+                         </property>
+                         <property name="text">
+                          <string>Bytecode laden:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdBytecode</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="QComboBox" name="comboBox_CdTrustSign">
+                         <property name="toolTip">
+                          <string>Bytecode Sicherheitsstufe setzen. &lt;br /&gt;Mögliche Einstellungen :&lt;br /&gt;&lt;b&gt;None&lt;/b&gt; - keine Sicherheit, nur zum Debuggen nutzen. &lt;b&gt;NIEMALS AUF PRODUKTIV SYSTEMEN VERWENDEN!&lt;/b&gt; &lt;br /&gt;Nur verfügbar, wenn clamav mit &lt;i&gt; --enable-debug&lt;/i&gt; erstellt wurde!&lt;br /&gt;&lt;br /&gt;&lt;b&gt;TrustSigned&lt;/b&gt; - Vertraue Bytecode, wenn er von signierten *.c[lv]d Dateien geladen wurde.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Paranoid&lt;/b&gt; - Vertraue keinen Bytecode. Während der Laufzeit überprüfen.&lt;br /&gt;&lt;br /&gt;Empfohlen: TrustedSigned</string>
+                         </property>
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>None</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>TrustSigned</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Paranoid</string>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QComboBox" name="comboBox_CdBytecode">
+                         <property name="toolTip">
+                          <string>Es ist äußerst wichtig, dass Bytecode aktiviert ist. Ansonsten können viele neue Viren nicht erkannt werden.</string>
+                         </property>
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QLabel" name="label_7">
+                         <property name="toolTip">
+                          <string>Bytecode Sicherheitsstufe setzen. &lt;br /&gt;Mögliche Einstellungen :&lt;br /&gt;&lt;b&gt;None&lt;/b&gt; - keine Sicherheit, nur zum Debuggen nutzen. &lt;b&gt;NIEMALS AUF PRODUKTIV SYSTEMEN VERWENDEN!&lt;/b&gt; &lt;br /&gt;Nur verfügbar, wenn clamav mit &lt;i&gt; --enable-debug&lt;/i&gt; erstellt wurde!&lt;br /&gt;&lt;br /&gt;&lt;b&gt;TrustSigned&lt;/b&gt; - Vertraue Bytecode, wenn er von signierten *.c[lv]d Dateien geladen wurde.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Paranoid&lt;/b&gt; - Vertraue keinen Bytecode. Während der Laufzeit überprüfen.&lt;br /&gt;&lt;br /&gt;Empfohlen: TrustedSigned</string>
+                         </property>
+                         <property name="text">
+                          <string>Bytecode Sicherheitsstufe:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdTrustSign</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="label_48">
-                    <property name="text">
-                     <string>A&amp;usführliches Logging:</string>
-                    </property>
-                    <property name="buddy">
-                     <cstring>comboBox_FcVerboseLogging</cstring>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="1">
-                   <widget class="QComboBox" name="comboBox_CdVerboseLogging">
-                    <item>
-                     <property name="text">
-                      <string>Nein</string>
-                     </property>
-                     <property name="icon">
-                      <iconset theme="dialog-cancel">
-                       <normaloff/>
-                      </iconset>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Ja</string>
-                     </property>
-                     <property name="icon">
-                      <iconset theme="dialog-ok">
-                       <normaloff/>
-                      </iconset>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
-                   <widget class="QComboBox" name="comboBox_CdActivateLogFile">
-                    <property name="toolTip">
-                     <string>Ist die Log Datei aktiviert, werden alle Vorgängen in der Datei &lt;i&gt;freshclam.log&lt;/i&gt; protokolliert.</string>
-                    </property>
-                    <item>
-                     <property name="text">
-                      <string>Nein</string>
-                     </property>
-                     <property name="icon">
-                      <iconset theme="dialog-cancel">
-                       <normaloff/>
-                      </iconset>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Ja</string>
-                     </property>
-                     <property name="icon">
-                      <iconset theme="dialog-ok">
-                       <normaloff/>
-                      </iconset>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                  <item row="0" column="3">
-                   <widget class="QComboBox" name="comboBox_CdSystemLogging">
-                    <property name="toolTip">
-                     <string>Verwendet das Logging-System von des Betriebssystems.</string>
-                    </property>
-                    <item>
-                     <property name="text">
-                      <string>Nein</string>
-                     </property>
-                     <property name="icon">
-                      <iconset theme="dialog-cancel">
-                       <normaloff/>
-                      </iconset>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Ja</string>
-                     </property>
-                     <property name="icon">
-                      <iconset theme="dialog-ok">
-                       <normaloff/>
-                      </iconset>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                  <item row="1" column="2">
-                   <widget class="QLabel" name="label_4">
-                    <property name="toolTip">
-                     <string>Meldet zusätzliche Informationen über die infizierte Datei, wie zum Beispiel die Größe und Hash zusammen mit dem Virennamen.</string>
-                    </property>
-                    <property name="text">
-                     <string>Informationen &amp;über die infizierte Datei:</string>
-                    </property>
-                    <property name="buddy">
-                     <cstring>comboBox_CdExtendedDetectionInfo</cstring>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="3">
-                   <widget class="QComboBox" name="comboBox_CdExtendedDetectionInfo">
-                    <property name="toolTip">
-                     <string>Meldet zusätzliche Informationen über die infizierte Datei, wie zum Beispiel die Größe und Hash zusammen mit dem Virennamen.</string>
-                    </property>
-                    <item>
-                     <property name="text">
-                      <string>Nein</string>
-                     </property>
-                     <property name="icon">
-                      <iconset theme="dialog-cancel"/>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Ja</string>
-                     </property>
-                     <property name="icon">
-                      <iconset theme="dialog-ok"/>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                  <item row="2" column="2">
-                   <widget class="QLabel" name="label_46">
-                    <property name="toolTip">
-                     <string>Gibt die maximale Größe der Log-Datei an.&lt;br /&gt;Verwenden Sie &lt;b&gt;M&lt;/b&gt; oder &lt;b&gt;m&lt;/b&gt; für Megabyte (1M = 1m = 1048576 Bytes) &lt;br /&gt;und &lt;b&gt;K&lt;/b&gt; oder &lt;b&gt;k&lt;/b&gt; für Kilobytes (1K = 1k = 1024 Bytes). &lt;br /&gt;0 deaktiviert das Größenlimit für die Log-Datei</string>
-                    </property>
-                    <property name="text">
-                     <string>&amp;Maximale Größe der Log Datei:</string>
-                    </property>
-                    <property name="buddy">
-                     <cstring>lineEdit_FcLogFileSize</cstring>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="3">
-                   <widget class="QLineEdit" name="lineEdit_CdLogFileSize">
-                    <property name="maximumSize">
+                  <item row="1" column="0" rowspan="2">
+                   <widget class="QGroupBox" name="groupBox_12">
+                    <property name="minimumSize">
                      <size>
-                      <width>80</width>
-                      <height>16777215</height>
+                      <width>0</width>
+                      <height>0</height>
                      </size>
                     </property>
-                    <property name="toolTip">
-                     <string>Gibt die maximale Größe der Log-Datei an.&lt;br /&gt;Verwenden Sie &lt;b&gt;M&lt;/b&gt; oder &lt;b&gt;m&lt;/b&gt; für Megabyte (1M = 1m = 1048576 Bytes) &lt;br /&gt;und &lt;b&gt;K&lt;/b&gt; oder &lt;b&gt;k&lt;/b&gt; für Kilobytes (1K = 1k = 1024 Bytes). &lt;br /&gt;0 deaktiviert das Größenlimit für die Log-Datei</string>
+                    <property name="title">
+                     <string>E-Mails</string>
                     </property>
-                    <property name="text">
-                     <string>1M</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
+                    <layout class="QFormLayout" name="formLayout_11">
+                     <item row="0" column="0">
+                      <layout class="QGridLayout" name="gridLayout_12">
+                       <item row="0" column="1">
+                        <widget class="QComboBox" name="comboBox_CdScanMail">
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
+                        <widget class="QLabel" name="label_51">
+                         <property name="text">
+                          <string>Phishing-Signaturen erkennen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdPhishingSignatures</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="label_49">
+                         <property name="text">
+                          <string>E-Mails scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdScanMail</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QLabel" name="label_50">
+                         <property name="text">
+                          <string>Teilnachrichten scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdScanPartialMessages</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="1">
+                        <widget class="QComboBox" name="comboBox_CdPhishingSignatures">
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="7" column="0">
+                        <widget class="QLabel" name="label_55">
+                         <property name="text">
+                          <string>Bei Virus/Pishing Entdeckung scannen sofort stoppen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdHeuristicScanPrecedence</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="0">
+                        <widget class="QLabel" name="label_52">
+                         <property name="text">
+                          <string>Urls in E-Mails auf Phishing Versuche scannen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdPhishingScanURLs</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="QComboBox" name="comboBox_CdScanPartialMessages">
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="4" column="0">
+                        <widget class="QLabel" name="label_53">
+                         <property name="text">
+                          <string>SSL in Urls auf Nichtübereinstimmungen prüfen:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdPhishingAlwaysBlockSSLMismatch</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="5" column="0">
+                        <widget class="QLabel" name="label_54">
+                         <property name="text">
+                          <string>Getarnte Urls blockieren:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdPhishingAlwaysBlockCloak</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="6" column="0">
+                        <widget class="QLabel" name="label_56">
+                         <property name="text">
+                          <string>Erkenne Partitionsschnittpunkt in RAW-Disk Abbilder:</string>
+                         </property>
+                         <property name="buddy">
+                          <cstring>comboBox_CdPartitionIntersection</cstring>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="1">
+                        <widget class="QComboBox" name="comboBox_CdPhishingScanURLs">
+                         <property name="currentIndex">
+                          <number>1</number>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="7" column="1">
+                        <widget class="QComboBox" name="comboBox_CdHeuristicScanPrecedence">
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="6" column="1">
+                        <widget class="QComboBox" name="comboBox_CdPartitionIntersection">
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="5" column="1">
+                        <widget class="QComboBox" name="comboBox_CdPhishingAlwaysBlockCloak">
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="4" column="1">
+                        <widget class="QComboBox" name="comboBox_CdPhishingAlwaysBlockSSLMismatch">
+                         <item>
+                          <property name="text">
+                           <string>Nein</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-cancel">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Ja</string>
+                          </property>
+                          <property name="icon">
+                           <iconset theme="dialog-ok">
+                            <normaloff/>
+                           </iconset>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
                  </layout>
-                </item>
-               </layout>
-              </widget>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </widget>
            </item>
@@ -712,8 +1962,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>908</width>
-            <height>349</height>
+            <width>96</width>
+            <height>86</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -734,8 +1984,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>-67</y>
-                <width>872</width>
+                <y>0</y>
+                <width>536</width>
                 <height>425</height>
                </rect>
               </property>
@@ -1198,8 +2448,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>100</width>
-            <height>30</height>
+            <width>96</width>
+            <height>26</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -1287,11 +2537,11 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
  <tabstops>
   <tabstop>tabWidget_Settings</tabstop>
   <tabstop>scrollArea_ClamUI</tabstop>
-  <tabstop>checkBox_ToolBar</tabstop>
   <tabstop>checkBox_Autostart</tabstop>
   <tabstop>checkBox_HideWindow</tabstop>
-  <tabstop>checkBox_IconOnDesktop</tabstop>
   <tabstop>checkBox_MenuBar</tabstop>
+  <tabstop>checkBox_IconOnDesktop</tabstop>
+  <tabstop>checkBox_ToolBar</tabstop>
   <tabstop>checkBox_StatusBar</tabstop>
   <tabstop>groupBox_Language</tabstop>
   <tabstop>comboBox_Language</tabstop>
@@ -1303,6 +2553,59 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
   <tabstop>comboBox_ClamVDB</tabstop>
   <tabstop>comboBox_ConfigPath</tabstop>
   <tabstop>scrollArea_2</tabstop>
+  <tabstop>comboBox_CdTempDir</tabstop>
+  <tabstop>comboBox_CdLeaveTemporaryFiles</tabstop>
+  <tabstop>comboBox_CdActivateLogFile</tabstop>
+  <tabstop>comboBox_CdVerboseLogging</tabstop>
+  <tabstop>comboBox_CdSystemLogging</tabstop>
+  <tabstop>comboBox_CdExtendedDetectionInfo</tabstop>
+  <tabstop>comboBox_CdTimeStamp</tabstop>
+  <tabstop>lineEdit_CdLogFileSize</tabstop>
+  <tabstop>spinBox_CdMaxDirectoryRecursion</tabstop>
+  <tabstop>comboBox_CdFollowDirectorySymlinks</tabstop>
+  <tabstop>comboBox_CdFollowFileSymlinks</tabstop>
+  <tabstop>comboBox_CdCrossFilesystems</tabstop>
+  <tabstop>comboBox_CdAlgorithmicDetection</tabstop>
+  <tabstop>comboBox_CdForceToDisk</tabstop>
+  <tabstop>comboBox_CdDisableCache</tabstop>
+  <tabstop>comboBox_CdScanOLE2</tabstop>
+  <tabstop>comboBox_CdOLE2BlockMacros</tabstop>
+  <tabstop>comboBox_CdScanPDF</tabstop>
+  <tabstop>comboBox_CdScanSWF</tabstop>
+  <tabstop>comboBox_CdScanHTML</tabstop>
+  <tabstop>comboBox_CdScanArchive</tabstop>
+  <tabstop>comboBox_CdArchiveBlockEncrypted</tabstop>
+  <tabstop>comboBox_CdScanMail</tabstop>
+  <tabstop>comboBox_CdScanPartialMessages</tabstop>
+  <tabstop>comboBox_CdPhishingSignatures</tabstop>
+  <tabstop>comboBox_CdPhishingScanURLs</tabstop>
+  <tabstop>comboBox_CdPhishingAlwaysBlockSSLMismatch</tabstop>
+  <tabstop>comboBox_CdPhishingAlwaysBlockCloak</tabstop>
+  <tabstop>comboBox_CdPartitionIntersection</tabstop>
+  <tabstop>comboBox_CdHeuristicScanPrecedence</tabstop>
+  <tabstop>comboBox_CdDetectPUA</tabstop>
+  <tabstop>comboBox_CdScanPE</tabstop>
+  <tabstop>comboBox_CdDisableCertCheck</tabstop>
+  <tabstop>comboBox_CdScanELF</tabstop>
+  <tabstop>comboBox_CdDetectBrokenExecutables</tabstop>
+  <tabstop>comboBox_CdBytecode</tabstop>
+  <tabstop>comboBox_CdTrustSign</tabstop>
+  <tabstop>scrollArea_3</tabstop>
+  <tabstop>comboBox_FcActivateLogFile</tabstop>
+  <tabstop>comboBox_FcVerboseLogging</tabstop>
+  <tabstop>comboBox_FcTimeStamp</tabstop>
+  <tabstop>comboBox_FcSystemLogging</tabstop>
+  <tabstop>lineEdit_FcLogFileSize</tabstop>
+  <tabstop>groupBox_FcProxy</tabstop>
+  <tabstop>lineEdit_FcProxyServer</tabstop>
+  <tabstop>lineEdit_FcProxyServerPort</tabstop>
+  <tabstop>lineEdit_FcProxyServerUser</tabstop>
+  <tabstop>lineEdit_FcProxyServerPassword</tabstop>
+  <tabstop>comboBox_CompressDB</tabstop>
+  <tabstop>spinBox_FcAttempts</tabstop>
+  <tabstop>lineEdit_FcDNSverification</tabstop>
+  <tabstop>lineEdit_FcMirror</tabstop>
+  <tabstop>lineEdit_FcMirrorFallBack</tabstop>
   <tabstop>pushButton_Help</tabstop>
   <tabstop>pushButton_Default</tabstop>
   <tabstop>pushButton_Save</tabstop>
