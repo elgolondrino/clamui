@@ -739,17 +739,17 @@ Alle benötigten Einstellungen wurden vorgenommen. Klicken Sie nun auf &lt;b&gt;
 <context>
     <name>FreshClamConf</name>
     <message>
-        <location filename="../src/freshclamconf.cpp" line="80"/>
+        <location filename="../src/freshclamconf.cpp" line="66"/>
         <source>Generiert am: </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/freshclamconf.cpp" line="82"/>
+        <location filename="../src/freshclamconf.cpp" line="68"/>
         <source>Generiert mit: </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/freshclamconf.cpp" line="85"/>
+        <location filename="../src/freshclamconf.cpp" line="71"/>
         <source>Pfad: </source>
         <translation></translation>
     </message>
@@ -929,45 +929,315 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="477"/>
-        <location filename="../ui/settings.ui" line="746"/>
+        <location filename="../ui/settings.ui" line="471"/>
+        <source>Temporäre Daten</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="479"/>
+        <location filename="../ui/settings.ui" line="496"/>
+        <source>In dem angegebenen Verzeichnis werden von Clamd Daten vorübergehend gespeichert.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="483"/>
+        <source>/tmp</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="499"/>
+        <source>Tem&amp;poräre Dateien speichern in:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="509"/>
+        <location filename="../ui/settings.ui" line="522"/>
+        <source>Temporäre Dateien nicht löschen.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="512"/>
+        <source>Tempor&amp;äre Dateien behalten:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="554"/>
+        <location filename="../ui/settings.ui" line="1996"/>
         <source>Logging</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="636"/>
-        <location filename="../ui/settings.ui" line="649"/>
+        <location filename="../ui/settings.ui" line="686"/>
+        <location filename="../ui/settings.ui" line="713"/>
         <source>Meldet zusätzliche Informationen über die infizierte Datei, wie zum Beispiel die Größe und Hash zusammen mit dem Virennamen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="639"/>
+        <location filename="../ui/settings.ui" line="716"/>
         <source>Informationen &amp;über die infizierte Datei:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="725"/>
+        <location filename="../ui/settings.ui" line="790"/>
+        <source>Einstellungen zur Virensuche</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="796"/>
+        <source>Allgemeines</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="804"/>
+        <location filename="../ui/settings.ui" line="889"/>
+        <source>Folgt zum scannen auf Dateiverknüpfungen.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="807"/>
+        <source>Dateiverknüpfungen folgen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="817"/>
+        <location filename="../ui/settings.ui" line="916"/>
+        <source>Folgt zum scannen auf Verzeichnisverknüpfungen.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="820"/>
+        <source>Verzeichnisverknüpfungen folgen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="830"/>
+        <location filename="../ui/settings.ui" line="843"/>
+        <source>Scannt Verzeichnisse rekursiv bis zu der angegebennen Tiefe.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="833"/>
+        <source>&amp;Verzeichnisse bis zu dieser Tiefe scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="943"/>
+        <location filename="../ui/settings.ui" line="979"/>
+        <source>Diese option bewirkt, dass Speicher oder verschachtelte Scans auf die Festplatte ausgelagert werden.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="946"/>
+        <source>Daten auf die Festplatte auslagern:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="956"/>
+        <source>Andere Dateisysteme scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="966"/>
+        <location filename="../ui/settings.ui" line="1009"/>
+        <source> In einigen Fällen (z.B. komplexe Malware, Exploits in Grafikdateien und anderen) &lt;br /&gt;verwendet ClamAV spezielle Algorithmen um eine akkurate Virenerkennung zu &lt;br /&gt;gewährleisten.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="969"/>
+        <source>Algorithmus-Erkennung aktivieren:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1039"/>
+        <location filename="../ui/settings.ui" line="1052"/>
+        <source>Diese Option ermöglicht es Ihnen, die Cachin Funktion zu deaktivieren. &lt;br /&gt;Standardmäßig werden Daten mit MD5 gekennzeichnet, wenn sie nicht als Virus gekennzeichnet wurden. &lt;br /&gt;Wenn Sie den Cache deaktivieren, wirkt sich dies gerade bei großen Scans negativ auf die Performance aus.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1042"/>
+        <source>Zwischenspeicher deaktivieren:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1090"/>
+        <source>Ausführbare Dateien (Programme)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1098"/>
+        <source>Portable Programme scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1159"/>
+        <source>Erkenne m&amp;ögliche unerwünschte Programme:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1169"/>
+        <source>Certifikate nicht scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1179"/>
+        <source>ELF-Programmdateien scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1189"/>
+        <source>Erkenne defekte ELF-Programmdateien:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1279"/>
+        <source>Dokumente und Bibliotheken</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1330"/>
+        <source>Diese Option aktiviert OLE2 Dateien mit VBA Makros.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1333"/>
+        <source>Microsoft OLE2 / VBA Makros blockieren:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1343"/>
+        <source>Flash Dateien (*.swf) scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1353"/>
+        <source>PDF Dateien scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1363"/>
+        <source>Verschlüsselte Archive als Virus markieren:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1430"/>
+        <source>Archiv Dateien (ZIP, RAR) scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1467"/>
+        <source>HTML Dateien scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1560"/>
+        <source>Bytecode</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1568"/>
+        <location filename="../ui/settings.ui" line="1606"/>
+        <source>Es ist äußerst wichtig, dass Bytecode aktiviert ist. Ansonsten können viele neue Viren nicht erkannt werden.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1571"/>
+        <source>Bytecode laden:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1581"/>
+        <location filename="../ui/settings.ui" line="1636"/>
+        <source>Bytecode Sicherheitsstufe setzen. &lt;br /&gt;Mögliche Einstellungen :&lt;br /&gt;&lt;b&gt;None&lt;/b&gt; - keine Sicherheit, nur zum Debuggen nutzen. &lt;b&gt;NIEMALS AUF PRODUKTIV SYSTEMEN VERWENDEN!&lt;/b&gt; &lt;br /&gt;Nur verfügbar, wenn clamav mit &lt;i&gt; --enable-debug&lt;/i&gt; erstellt wurde!&lt;br /&gt;&lt;br /&gt;&lt;b&gt;TrustSigned&lt;/b&gt; - Vertraue Bytecode, wenn er von signierten *.c[lv]d Dateien geladen wurde.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Paranoid&lt;/b&gt; - Vertraue keinen Bytecode. Während der Laufzeit überprüfen.&lt;br /&gt;&lt;br /&gt;Empfohlen: TrustedSigned</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1588"/>
+        <source>None</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1593"/>
+        <source>TrustSigned</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1598"/>
+        <source>Paranoid</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1639"/>
+        <source>Bytecode Sicherheitsstufe:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1660"/>
+        <source>E-Mails</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1695"/>
+        <source>Phishing-Signaturen erkennen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1705"/>
+        <source>E-Mails scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1715"/>
+        <source>Teilnachrichten scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1752"/>
+        <source>Bei Virus/Pishing Entdeckung scannen sofort stoppen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1762"/>
+        <source>Urls in E-Mails auf Phishing Versuche scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1796"/>
+        <source>SSL in Urls auf Nichtübereinstimmungen prüfen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1806"/>
+        <source>Getarnte Urls blockieren:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1816"/>
+        <source>Erkenne Partitionsschnittpunkt in RAW-Disk Abbilder:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1975"/>
         <source>Freshclam Dämon</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1036"/>
+        <location filename="../ui/settings.ui" line="2286"/>
         <source>Netzwerk</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1057"/>
-        <location filename="../ui/settings.ui" line="1175"/>
+        <location filename="../ui/settings.ui" line="2307"/>
+        <location filename="../ui/settings.ui" line="2425"/>
         <source>Diese Domain ist eine Fallback-Adresse, falls die anderen Mirror nicht erreichbar sind. &lt;br /&gt;&lt;b&gt;Verändern Sie diesen Eintrag nur, wenn Sie genau wissen was Sie tun.&lt;/b&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1073"/>
+        <location filename="../ui/settings.ui" line="2323"/>
         <source>Datenbank &amp;Mirror:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1126"/>
+        <location filename="../ui/settings.ui" line="2376"/>
         <source>Anfrageversuche &amp;pro Mirror:</source>
         <translation></translation>
     </message>
@@ -997,226 +1267,306 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="672"/>
-        <location filename="../ui/settings.ui" line="691"/>
-        <location filename="../ui/settings.ui" line="773"/>
-        <location filename="../ui/settings.ui" line="850"/>
+        <location filename="../ui/settings.ui" line="753"/>
+        <location filename="../ui/settings.ui" line="772"/>
+        <location filename="../ui/settings.ui" line="2023"/>
+        <location filename="../ui/settings.ui" line="2100"/>
         <source>Gibt die maximale Größe der Log-Datei an.&lt;br /&gt;Verwenden Sie &lt;b&gt;M&lt;/b&gt; oder &lt;b&gt;m&lt;/b&gt; für Megabyte (1M = 1m = 1048576 Bytes) &lt;br /&gt;und &lt;b&gt;K&lt;/b&gt; oder &lt;b&gt;k&lt;/b&gt; für Kilobytes (1K = 1k = 1024 Bytes). &lt;br /&gt;0 deaktiviert das Größenlimit für die Log-Datei</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="675"/>
-        <location filename="../ui/settings.ui" line="853"/>
+        <location filename="../ui/settings.ui" line="756"/>
+        <location filename="../ui/settings.ui" line="2103"/>
         <source>&amp;Maximale Größe der Log Datei:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="495"/>
-        <location filename="../ui/settings.ui" line="582"/>
-        <location filename="../ui/settings.ui" line="786"/>
-        <location filename="../ui/settings.ui" line="863"/>
+        <location filename="../ui/settings.ui" line="596"/>
+        <location filename="../ui/settings.ui" line="609"/>
+        <location filename="../ui/settings.ui" line="2036"/>
+        <location filename="../ui/settings.ui" line="2113"/>
         <source>Ist die Log Datei aktiviert, werden alle Vorgängen in der Datei &lt;i&gt;freshclam.log&lt;/i&gt; protokolliert.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="498"/>
-        <location filename="../ui/settings.ui" line="866"/>
+        <location filename="../ui/settings.ui" line="599"/>
+        <location filename="../ui/settings.ui" line="2116"/>
         <source>Lo&amp;g-Datei aktivieren:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="548"/>
-        <location filename="../ui/settings.ui" line="903"/>
+        <location filename="../ui/settings.ui" line="586"/>
+        <location filename="../ui/settings.ui" line="2153"/>
         <source>A&amp;usführliches Logging:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="694"/>
-        <location filename="../ui/settings.ui" line="776"/>
+        <location filename="../ui/settings.ui" line="775"/>
+        <location filename="../ui/settings.ui" line="2026"/>
         <source>1M</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="525"/>
-        <location filename="../ui/settings.ui" line="559"/>
-        <location filename="../ui/settings.ui" line="586"/>
+        <location filename="../ui/settings.ui" line="526"/>
+        <location filename="../ui/settings.ui" line="563"/>
         <location filename="../ui/settings.ui" line="613"/>
-        <location filename="../ui/settings.ui" line="653"/>
-        <location filename="../ui/settings.ui" line="790"/>
-        <location filename="../ui/settings.ui" line="817"/>
-        <location filename="../ui/settings.ui" line="880"/>
-        <location filename="../ui/settings.ui" line="914"/>
-        <location filename="../ui/settings.ui" line="1087"/>
+        <location filename="../ui/settings.ui" line="640"/>
+        <location filename="../ui/settings.ui" line="690"/>
+        <location filename="../ui/settings.ui" line="730"/>
+        <location filename="../ui/settings.ui" line="866"/>
+        <location filename="../ui/settings.ui" line="893"/>
+        <location filename="../ui/settings.ui" line="920"/>
+        <location filename="../ui/settings.ui" line="986"/>
+        <location filename="../ui/settings.ui" line="1016"/>
+        <location filename="../ui/settings.ui" line="1056"/>
+        <location filename="../ui/settings.ui" line="1112"/>
+        <location filename="../ui/settings.ui" line="1136"/>
+        <location filename="../ui/settings.ui" line="1200"/>
+        <location filename="../ui/settings.ui" line="1227"/>
+        <location filename="../ui/settings.ui" line="1251"/>
+        <location filename="../ui/settings.ui" line="1307"/>
+        <location filename="../ui/settings.ui" line="1380"/>
+        <location filename="../ui/settings.ui" line="1407"/>
+        <location filename="../ui/settings.ui" line="1444"/>
+        <location filename="../ui/settings.ui" line="1478"/>
+        <location filename="../ui/settings.ui" line="1505"/>
+        <location filename="../ui/settings.ui" line="1532"/>
+        <location filename="../ui/settings.ui" line="1613"/>
+        <location filename="../ui/settings.ui" line="1672"/>
+        <location filename="../ui/settings.ui" line="1729"/>
+        <location filename="../ui/settings.ui" line="1773"/>
+        <location filename="../ui/settings.ui" line="1830"/>
+        <location filename="../ui/settings.ui" line="1854"/>
+        <location filename="../ui/settings.ui" line="1878"/>
+        <location filename="../ui/settings.ui" line="1902"/>
+        <location filename="../ui/settings.ui" line="1926"/>
+        <location filename="../ui/settings.ui" line="2040"/>
+        <location filename="../ui/settings.ui" line="2067"/>
+        <location filename="../ui/settings.ui" line="2130"/>
+        <location filename="../ui/settings.ui" line="2164"/>
+        <location filename="../ui/settings.ui" line="2337"/>
         <source>Nein</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="535"/>
-        <location filename="../ui/settings.ui" line="569"/>
-        <location filename="../ui/settings.ui" line="596"/>
+        <location filename="../ui/settings.ui" line="536"/>
+        <location filename="../ui/settings.ui" line="573"/>
         <location filename="../ui/settings.ui" line="623"/>
-        <location filename="../ui/settings.ui" line="661"/>
-        <location filename="../ui/settings.ui" line="800"/>
-        <location filename="../ui/settings.ui" line="827"/>
-        <location filename="../ui/settings.ui" line="890"/>
-        <location filename="../ui/settings.ui" line="924"/>
-        <location filename="../ui/settings.ui" line="1097"/>
+        <location filename="../ui/settings.ui" line="650"/>
+        <location filename="../ui/settings.ui" line="700"/>
+        <location filename="../ui/settings.ui" line="740"/>
+        <location filename="../ui/settings.ui" line="876"/>
+        <location filename="../ui/settings.ui" line="903"/>
+        <location filename="../ui/settings.ui" line="930"/>
+        <location filename="../ui/settings.ui" line="996"/>
+        <location filename="../ui/settings.ui" line="1026"/>
+        <location filename="../ui/settings.ui" line="1066"/>
+        <location filename="../ui/settings.ui" line="1122"/>
+        <location filename="../ui/settings.ui" line="1146"/>
+        <location filename="../ui/settings.ui" line="1210"/>
+        <location filename="../ui/settings.ui" line="1237"/>
+        <location filename="../ui/settings.ui" line="1261"/>
+        <location filename="../ui/settings.ui" line="1317"/>
+        <location filename="../ui/settings.ui" line="1390"/>
+        <location filename="../ui/settings.ui" line="1417"/>
+        <location filename="../ui/settings.ui" line="1454"/>
+        <location filename="../ui/settings.ui" line="1488"/>
+        <location filename="../ui/settings.ui" line="1515"/>
+        <location filename="../ui/settings.ui" line="1542"/>
+        <location filename="../ui/settings.ui" line="1623"/>
+        <location filename="../ui/settings.ui" line="1682"/>
+        <location filename="../ui/settings.ui" line="1739"/>
+        <location filename="../ui/settings.ui" line="1783"/>
+        <location filename="../ui/settings.ui" line="1840"/>
+        <location filename="../ui/settings.ui" line="1864"/>
+        <location filename="../ui/settings.ui" line="1888"/>
+        <location filename="../ui/settings.ui" line="1912"/>
+        <location filename="../ui/settings.ui" line="1936"/>
+        <location filename="../ui/settings.ui" line="2050"/>
+        <location filename="../ui/settings.ui" line="2077"/>
+        <location filename="../ui/settings.ui" line="2140"/>
+        <location filename="../ui/settings.ui" line="2174"/>
+        <location filename="../ui/settings.ui" line="2347"/>
         <source>Ja</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="508"/>
-        <location filename="../ui/settings.ui" line="609"/>
-        <location filename="../ui/settings.ui" line="754"/>
-        <location filename="../ui/settings.ui" line="876"/>
+        <location filename="../ui/settings.ui" line="636"/>
+        <location filename="../ui/settings.ui" line="673"/>
+        <location filename="../ui/settings.ui" line="2004"/>
+        <location filename="../ui/settings.ui" line="2126"/>
         <source>Verwendet das Logging-System von des Betriebssystems.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="511"/>
-        <location filename="../ui/settings.ui" line="757"/>
+        <location filename="../ui/settings.ui" line="676"/>
+        <location filename="../ui/settings.ui" line="2007"/>
         <source>Das &amp;Systemlogging verwenden:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="521"/>
-        <location filename="../ui/settings.ui" line="813"/>
+        <location filename="../ui/settings.ui" line="726"/>
+        <location filename="../ui/settings.ui" line="2063"/>
         <source>Setzt vor jedem Log-Eintrag das Datum und die Zeit.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="485"/>
-        <location filename="../ui/settings.ui" line="840"/>
+        <location filename="../ui/settings.ui" line="663"/>
+        <location filename="../ui/settings.ui" line="2090"/>
         <source>&amp;Zeitstempel für die Log-Einträge:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1070"/>
-        <location filename="../ui/settings.ui" line="1162"/>
+        <location filename="../ui/settings.ui" line="2320"/>
+        <location filename="../ui/settings.ui" line="2412"/>
         <source>db.XY.clamav.net &lt;br /&gt;Für &lt;b&gt;XY&lt;/b&gt; den Länder Code Ihres Landes einsetzen. &lt;br /&gt; Für weitere Informationen, siehe: http://www.iana.org/cctld/cctld-whois.htm für eine vollständige Übersicht. &lt;br /&gt;Verwenden Sie&lt;i&gt; db.XY.ipv6.clamav.net&lt;/i&gt; für IPv6 Verbindungen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1044"/>
-        <location filename="../ui/settings.ui" line="1152"/>
+        <location filename="../ui/settings.ui" line="2294"/>
+        <location filename="../ui/settings.ui" line="2402"/>
         <source>Freshclam benutzt DNS TXT Records um die Datenbank und Software Version zu verifizieren.&lt;br /&gt; ACHTUNG!&lt;br /&gt; Nicht verändern es sei denn, Sie verwenden eine eigene Domain zur Datenbank Verifikation.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1155"/>
+        <location filename="../ui/settings.ui" line="2405"/>
         <source>current.cvd.clamav.net</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1123"/>
-        <location filename="../ui/settings.ui" line="1136"/>
+        <location filename="../ui/settings.ui" line="2373"/>
+        <location filename="../ui/settings.ui" line="2386"/>
         <source>Gibt an, wie oft der freshclam Dämon versuchen soll einen Server zu erreichen, bis er abbricht. Gilt pro Mirror.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1165"/>
+        <location filename="../ui/settings.ui" line="2415"/>
         <source>db.de.clamav.net</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1168"/>
+        <location filename="../ui/settings.ui" line="2418"/>
         <source>db.XY.clamav.net oder db.XY.ipv6.clamav.net</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1060"/>
+        <location filename="../ui/settings.ui" line="2310"/>
         <source>Datenbank Mirror (Fallback):</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1178"/>
-        <location filename="../ui/settings.ui" line="1181"/>
+        <location filename="../ui/settings.ui" line="2428"/>
+        <location filename="../ui/settings.ui" line="2431"/>
         <source>database.clamav.net</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1047"/>
+        <location filename="../ui/settings.ui" line="2297"/>
         <source>&amp;Verwende DNS zur verifikation:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1083"/>
-        <location filename="../ui/settings.ui" line="1110"/>
+        <location filename="../ui/settings.ui" line="2333"/>
+        <location filename="../ui/settings.ui" line="2360"/>
         <source>Standardmäßig wird die lokale Virendatenbank nicht komprimiert. Wodurch der Zugriff auf die Daten schneller ist.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1113"/>
+        <location filename="../ui/settings.ui" line="2363"/>
         <source>&amp;Lokale Datenbank komprimieren:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="942"/>
+        <location filename="../ui/settings.ui" line="2192"/>
         <source>HTTP Pro&amp;xy Server angeben</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="956"/>
+        <location filename="../ui/settings.ui" line="488"/>
+        <source>/var/tmp</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1287"/>
+        <location filename="../ui/settings.ui" line="1373"/>
+        <source>Diese Option scannt OLE2 Dateien wie z.B. Microsoft Office Dokumente und *.msi Dateien.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1290"/>
+        <source>Microsoft OLE&amp;2 Dateien scannen:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="1300"/>
+        <source>Diese Option aktiviert OLE2 Dateien mit VBA Makros.
+
+With this option enabled OLE2 files with VBA macros, which were not
+# detected by signatures will be marked as &quot;Heuristics.OLE2.ContainsMacros&quot;.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/settings.ui" line="2206"/>
         <source>Port:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="963"/>
+        <location filename="../ui/settings.ui" line="2213"/>
         <source>Benutzername:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="970"/>
+        <location filename="../ui/settings.ui" line="2220"/>
         <source>Passwort:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="980"/>
+        <location filename="../ui/settings.ui" line="2230"/>
         <source>1234</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="987"/>
+        <location filename="../ui/settings.ui" line="2237"/>
         <source>Proxy Server Adresse:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1007"/>
+        <location filename="../ui/settings.ui" line="2257"/>
         <source>myproxy.com</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1014"/>
+        <location filename="../ui/settings.ui" line="2264"/>
         <source>meinusername</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1024"/>
+        <location filename="../ui/settings.ui" line="2274"/>
         <source>meinpasswort</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1211"/>
+        <location filename="../ui/settings.ui" line="2461"/>
         <source>ClamAV Milter</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1225"/>
+        <location filename="../ui/settings.ui" line="2475"/>
         <source>Hilfe</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1250"/>
+        <location filename="../ui/settings.ui" line="2500"/>
         <source>Standardwerte</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1262"/>
+        <location filename="../ui/settings.ui" line="2512"/>
         <source>Speichern</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/settings.ui" line="1274"/>
+        <location filename="../ui/settings.ui" line="2524"/>
         <source>Schließen</source>
         <translation></translation>
     </message>
@@ -1226,34 +1576,34 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="256"/>
+        <location filename="../src/settings.cpp" line="300"/>
         <source>Die Datei &lt;b&gt;freshclam.conf&lt;/b&gt; konnte nicht nach &lt;b&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="259"/>
-        <location filename="../src/settings.cpp" line="291"/>
+        <location filename="../src/settings.cpp" line="303"/>
+        <location filename="../src/settings.cpp" line="640"/>
         <source>&lt;/b&gt; geschrieben werden.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="260"/>
-        <location filename="../src/settings.cpp" line="292"/>
+        <location filename="../src/settings.cpp" line="304"/>
+        <location filename="../src/settings.cpp" line="641"/>
         <source>Bitte vergewissern Sie sich, dass Sie für das angegebene Verzeichnis auch die benötigten Schreibrechte besitzen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="288"/>
+        <location filename="../src/settings.cpp" line="637"/>
         <source>Die Datei &lt;b&gt;clamd.conf&lt;/b&gt; konnte nicht nach &lt;b&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="530"/>
+        <location filename="../src/settings.cpp" line="1002"/>
         <source>Zurücksetzen bestätigen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="531"/>
+        <location filename="../src/settings.cpp" line="1003"/>
         <source>Möchten Sie die Werte wirklich auf die Standardeinstellungen zurücksetzen?</source>
         <translation></translation>
     </message>
