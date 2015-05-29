@@ -23,7 +23,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget_Settings">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="icon">
@@ -58,19 +58,6 @@
              <layout class="QVBoxLayout" name="verticalLayout_5">
               <item>
                <layout class="QGridLayout" name="gridLayout">
-                <item row="3" column="0">
-                 <widget class="QCheckBox" name="checkBox_MenuBar">
-                  <property name="toolTip">
-                   <string>Die Menüleiste ein- oder ausblenden.</string>
-                  </property>
-                  <property name="text">
-                   <string>Menü anzeigen.</string>
-                  </property>
-                  <property name="checked">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
                 <item row="0" column="0">
                  <widget class="QCheckBox" name="checkBox_Autostart">
                   <property name="toolTip">
@@ -78,16 +65,6 @@
                   </property>
                   <property name="text">
                    <string>ClamUI automatisch starten.</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QCheckBox" name="checkBox_HideWindow">
-                  <property name="toolTip">
-                   <string>Das Programm läuft im Systemabschnitt der Kontrollleiste und es wird nach dem starten kein Fenster angezeigt. </string>
-                  </property>
-                  <property name="text">
-                   <string>Fenster beim Start nicht anzeigen.</string>
                   </property>
                  </widget>
                 </item>
@@ -101,13 +78,23 @@
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="0">
-                 <widget class="QCheckBox" name="checkBox_ToolBar">
+                <item row="1" column="0">
+                 <widget class="QCheckBox" name="checkBox_HideWindow">
                   <property name="toolTip">
-                   <string>Die Werkzeugleiste ein- oder ausblenden.</string>
+                   <string>Das Programm läuft im Systemabschnitt der Kontrollleiste und es wird nach dem starten kein Fenster angezeigt. </string>
                   </property>
                   <property name="text">
-                   <string>Werkzeugleiste anzeigen.</string>
+                   <string>Fenster beim Start nicht anzeigen.</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QCheckBox" name="checkBox_MenuBar">
+                  <property name="toolTip">
+                   <string>Die Menüleiste ein- oder ausblenden.</string>
+                  </property>
+                  <property name="text">
+                   <string>Menü anzeigen.</string>
                   </property>
                   <property name="checked">
                    <bool>true</bool>
@@ -124,6 +111,29 @@
                   </property>
                   <property name="checked">
                    <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QCheckBox" name="checkBox_ToolBar">
+                  <property name="toolTip">
+                   <string>Die Werkzeugleiste ein- oder ausblenden.</string>
+                  </property>
+                  <property name="text">
+                   <string>Werkzeugleiste anzeigen.</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QCheckBox" name="checkBox_ShowQuitMessage">
+                  <property name="text">
+                   <string>Meldung beim Beenden nicht mehr anzeigen.</string>
+                  </property>
+                  <property name="checked">
+                   <bool>false</bool>
                   </property>
                  </widget>
                 </item>
@@ -186,7 +196,7 @@
        <item>
         <widget class="QToolBox" name="toolBox_ClamAV">
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="page_general">
           <property name="geometry">
@@ -1166,7 +1176,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        <item row="2" column="0">
                         <widget class="QLabel" name="label_18">
                          <property name="text">
-                          <string>Certifikate nicht scannen:</string>
+                          <string>&amp;Certifikate nicht scannen:</string>
                          </property>
                          <property name="buddy">
                           <cstring>comboBox_CdDisableCertCheck</cstring>
@@ -1568,7 +1578,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           <string>Es ist äußerst wichtig, dass Bytecode aktiviert ist. Ansonsten können viele neue Viren nicht erkannt werden.</string>
                          </property>
                          <property name="text">
-                          <string>Bytecode laden:</string>
+                          <string>Bytecode &amp;laden:</string>
                          </property>
                          <property name="buddy">
                           <cstring>comboBox_CdBytecode</cstring>

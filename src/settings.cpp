@@ -663,6 +663,7 @@ void Settings::settingsWrite(){
 
     if (tabWidget_Settings->currentIndex() == 0) {
         clamui_conf.beginGroup("ClamUI");
+        clamui_conf.setValue("NoMessage", checkBox_ShowQuitMessage->isChecked());
         clamui_conf.setValue("Language_Manually", groupBox_Language->isChecked());
         //    clamui_conf.setValue("Language_Index", comboBox_Language->currentIndex());
         //    clamui_conf.setValue("languageNiceName",
@@ -845,6 +846,8 @@ void Settings::settingsRead(){
                              APP_TITLE, APP_NAME);
 
     clamui_conf.beginGroup("ClamUI");
+    checkBox_ShowQuitMessage->setChecked(
+                clamui_conf.value("NoMessage", false).toBool());
     groupBox_Language->setChecked(
                 clamui_conf.value("Language_Manually", false).toBool());
     comboBox_Language->setCurrentIndex(
@@ -1108,6 +1111,7 @@ void Settings::settingsDefaultClamUI(){
     checkBox_MenuBar->setChecked(true);
     checkBox_StatusBar->setChecked(true);
     checkBox_ToolBar->setChecked(true);
+    checkBox_ShowQuitMessage->setChecked(false);
 }
 
 void Settings::createLanguageMenu() {

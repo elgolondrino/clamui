@@ -35,6 +35,7 @@
 #include <QtCore/QObject>
 #include <QtCore/qglobal.h>
 #include <QProcess>
+#include <QDebug>
 
 #include "definitionen.h"
 
@@ -48,7 +49,9 @@ public:
     bool freshclamManuelly(QString freshclam, QStringList arguments);
     bool stopFreshclam();
 
-private:
+
+signals:
+    void resultReady(const QString &result);
 
 };
 

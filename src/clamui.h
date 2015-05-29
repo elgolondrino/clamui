@@ -93,6 +93,7 @@ private:
     bool freshclamAsDaemon;
     bool stopClamdOnQuit;
     bool stopFreshclamOnQuit;
+    bool noMessageOnQuit;
 
     KStatusNotifierItem *statusNotifierItem;
     QMenu *trayIconMenu;
@@ -104,6 +105,8 @@ private:
     QAction *action_Maximized;
     QAction *action_Minimized;
     QAction *action_Help;
+
+    QCheckBox *checkBoxNoMessage;
 
 private slots:
     void slotQuit();

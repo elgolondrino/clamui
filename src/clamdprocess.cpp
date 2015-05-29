@@ -37,14 +37,15 @@ ClamdProcess::ClamdProcess(QObject *parent) : QProcess(parent){
 
 bool ClamdProcess::clamDaemon(QString clamd, QStringList argumentsList){
 
-    QProcess *daemonProcess = new QProcess();
-    daemonProcess->start(clamd, argumentsList);
+    start(clamd, argumentsList);
 
-    if (daemonProcess->waitForStarted()
-            and daemonProcess->state() == QProcess::Running)
-        return daemonProcess->isOpen();
-    else
+    if (waitForStarted()
+            and state() == QProcess::Running){
+        qDebug() << processId();
+        return isOpen();
+    } else {
         return false;
+    }
 }
 
 bool ClamdProcess::stopDaemon(){
@@ -53,9 +54,8 @@ bool ClamdProcess::stopDaemon(){
      * TODO
      * A better way to stop the daemon.
      */
-    QProcess *daemonProcess = new QProcess();
-    daemonProcess->start("killall clamd");
+    start("killall clamd");
 
-    if (daemonProcess->waitForFinished())
+    if (waitForFinished())
         return true;
 }

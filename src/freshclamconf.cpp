@@ -85,7 +85,8 @@ bool FreshClamConf::writeFreshClamConf(QStringList values){
                 << field[10] << "\n\n"
                 << field[11] << "\n\n"
                 << field[12] << "\n\n"
-                << field[12] << "\n\n"
+                << field[13] << "\n\n"
+                << field[14] << "\n\n"
                 << "###### END OF FILE ######\n";
     }
     return write;

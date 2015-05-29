@@ -37,15 +37,15 @@ FreshClamProcess::FreshClamProcess(QObject *parent) : QProcess(parent){
 
 bool FreshClamProcess::freshclamDaemon(QString freshclam, QStringList arguments){
 
-    QProcess *freshClamRunDaemon = new QProcess;
-    freshClamRunDaemon->start(freshclam, arguments);
+    start(freshclam, arguments);
 
-    if (freshClamRunDaemon->waitForStarted()
-            and freshClamRunDaemon->state() == QProcess::Running)
-        return freshClamRunDaemon->isOpen();
-    else
+    if (waitForStarted()
+            and state() == QProcess::Running){
+        qDebug() << processId();
+        return isOpen();
+    } else {
         return false;
-
+    }
 }
 
 bool FreshClamProcess::stopFreshclam(){
@@ -54,16 +54,14 @@ bool FreshClamProcess::stopFreshclam(){
      * TODO
      * A better way to stop the daemon.
      */
-    QProcess *freshClamRunDaemon = new QProcess();
-    freshClamRunDaemon->start("killall freshclam");
+    start("killall freshclam");
 
-    if (freshClamRunDaemon->waitForFinished())
+    if (waitForFinished())
         return true;
 }
 
 bool FreshClamProcess::freshclamManuelly(QString freshclam, QStringList arguments){
 
-    QProcess *freshClamRun = new QProcess();
-    return freshClamRun->startDetached(freshclam, arguments);
+    return startDetached(freshclam, arguments);
 }
 

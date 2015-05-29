@@ -201,9 +201,18 @@ void ClamUI::slotAbout(){
 
 void ClamUI::slotQuit(){
 
+    checkBoxNoMessage = new QCheckBox;
+    checkBoxNoMessage->setText(trUtf8("Die Meldung nicht mehr anzeigen."));
+
     ClamdProcess clamd;
     FreshClamProcess freshclam;
     QMessageBox msgBox;
+
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+
+    if (noMessageOnQuit)
+        qApp->quit();
 
     msgBox.setWindowTitle(trUtf8("Beenden bestätigen"));
     msgBox.setText(trUtf8("Möchten Sie <b>") +
@@ -211,6 +220,7 @@ void ClamUI::slotQuit(){
     msgBox.setIcon(QMessageBox::Question);
     msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     msgBox.setDefaultButton(QMessageBox::Yes);
+    msgBox.setCheckBox(checkBoxNoMessage);
     int ret = msgBox.exec();
     switch (ret) {
     case QMessageBox::Yes:
@@ -218,6 +228,11 @@ void ClamUI::slotQuit(){
             clamd.stopDaemon();
         if (stopFreshclamOnQuit)
             freshclam.stopFreshclam();
+
+        clamui_conf.beginGroup("ClamUI");
+        clamui_conf.setValue("NoMessage", checkBoxNoMessage->isChecked());
+        clamui_conf.endGroup();
+
         qApp->quit();
         break;
     case QMessageBox::No:
@@ -245,6 +260,7 @@ void ClamUI::settingsRead(){
     tabWidget->setCurrentIndex(clamui_conf.value("Currend_Tab", 0).toInt());
     QPoint pos = clamui_conf.value("Window_Pos", QPoint(200, 200)).toPoint();
     QSize size = clamui_conf.value("Window_Size", QSize(900, 500)).toSize();
+    noMessageOnQuit = clamui_conf.value("NoMessage", false).toBool();
     resize(size);
     move(pos);
 
@@ -341,7 +357,7 @@ void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){
 void ClamUI::clamDaemon(){
 
     QStringList arguments;
-    arguments << "--config-file=" + configPath + "clamd.conf";
+    arguments << "--config-file=" + configPath + "clamd.conf" << "&&";
 
     ClamdProcess startDaemon;
 
