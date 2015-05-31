@@ -268,7 +268,7 @@ Vielen Dank im voraus.</source>
     <message>
         <location filename="../ui/clamui.ui" line="245"/>
         <source>Ctrl+S</source>
-        <translation></translation>
+        <translation>Strg+S</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="255"/>
@@ -278,7 +278,7 @@ Vielen Dank im voraus.</source>
     <message>
         <location filename="../ui/clamui.ui" line="258"/>
         <source>Ctrl+Q</source>
-        <translation></translation>
+        <translation>Strg+B</translation>
     </message>
     <message>
         <location filename="../ui/clamui.ui" line="268"/>
@@ -306,7 +306,7 @@ Vielen Dank im voraus.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="72"/>
+        <location filename="../src/clamui.cpp" line="69"/>
         <source>Der &lt;b&gt;ClamAV Dämon&lt;/b&gt; läuft nicht.</source>
         <translation></translation>
     </message>
@@ -315,103 +315,103 @@ Vielen Dank im voraus.</source>
         <translation type="vanished">Der &lt;b&gt;Virendefinitionen Update Dämon&lt;/b&gt; läuft nicht.</translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="89"/>
+        <location filename="../src/clamui.cpp" line="86"/>
         <source>Der &lt;b&gt;Virendefinitionen Update Dämon&lt;/b&gt; läuft nicht.</source>
         <translation>Der &lt;b&gt;Virendefinitionen Update Dämon&lt;/b&gt; läuft nicht.</translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="114"/>
-        <location filename="../src/clamui.cpp" line="380"/>
-        <location filename="../src/clamui.cpp" line="431"/>
+        <location filename="../src/clamui.cpp" line="115"/>
+        <location filename="../src/clamui.cpp" line="402"/>
+        <location filename="../src/clamui.cpp" line="454"/>
         <source>%1 - %2 - Hinweis!</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="117"/>
+        <location filename="../src/clamui.cpp" line="118"/>
         <source>Das Programm läuft im Systemabschnitt der Kontrollleiste weiter. Um das Programm zu beenden, im Kontextmenü auf Beenden klicken.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="205"/>
+        <location filename="../src/clamui.cpp" line="215"/>
         <source>Die Meldung nicht mehr anzeigen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="216"/>
+        <location filename="../src/clamui.cpp" line="234"/>
         <source>Beenden bestätigen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="217"/>
+        <location filename="../src/clamui.cpp" line="235"/>
         <source>Möchten Sie &lt;b&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="218"/>
+        <location filename="../src/clamui.cpp" line="236"/>
         <source>&lt;/b&gt; wirklich beenden?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="300"/>
+        <location filename="../src/clamui.cpp" line="320"/>
         <source>Mi&amp;nimieren</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="309"/>
+        <location filename="../src/clamui.cpp" line="329"/>
         <source>Ma&amp;ximieren</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="318"/>
+        <location filename="../src/clamui.cpp" line="338"/>
         <source>&amp;Wiederherstellen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="368"/>
-        <location filename="../src/clamui.cpp" line="418"/>
+        <location filename="../src/clamui.cpp" line="388"/>
+        <location filename="../src/clamui.cpp" line="441"/>
         <source>%1 - %2 - Information!</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="371"/>
+        <location filename="../src/clamui.cpp" line="391"/>
         <source>Der &lt;b&gt;ClamAV Dämon&lt;/b&gt; ist bereits aktiv.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="383"/>
+        <location filename="../src/clamui.cpp" line="405"/>
         <source>Der &lt;b&gt;CLamAV Dämon&lt;/b&gt; wurde erfolgreich gestartet.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="392"/>
+        <location filename="../src/clamui.cpp" line="418"/>
         <source>Der &lt;b&gt;CLamAV Dämon&lt;/b&gt; konnte &lt;b&gt;nicht&lt;/b&gt; gestartet werden.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="421"/>
+        <location filename="../src/clamui.cpp" line="444"/>
         <source>Der &lt;b&gt;Virendefinitionen Update Dämon&lt;/b&gt; ist bereits aktiv.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="434"/>
+        <location filename="../src/clamui.cpp" line="457"/>
         <source>Der &lt;b&gt;Virendefinitionen Update Dämon&lt;/b&gt; wurde erfolgreich gestartet und aktualisiert </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="436"/>
+        <location filename="../src/clamui.cpp" line="459"/>
         <source> mal am Tag die Virendatenbank.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="446"/>
+        <location filename="../src/clamui.cpp" line="469"/>
         <source>Der &lt;b&gt;Virendefinitionen Update Dämon&lt;/b&gt; konnte &lt;b&gt;nicht&lt;/b&gt; gestartet werden.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/clamui.cpp" line="69"/>
-        <location filename="../src/clamui.cpp" line="86"/>
-        <location filename="../src/clamui.cpp" line="389"/>
-        <location filename="../src/clamui.cpp" line="443"/>
+        <location filename="../src/clamui.cpp" line="66"/>
+        <location filename="../src/clamui.cpp" line="83"/>
+        <location filename="../src/clamui.cpp" line="415"/>
+        <location filename="../src/clamui.cpp" line="466"/>
         <source>%1 - %2 - Warnung!</source>
         <translation></translation>
     </message>
@@ -1619,6 +1619,29 @@ With this option enabled OLE2 files with VBA macros, which were not
     </message>
 </context>
 <context>
+    <name>ShowLogFile</name>
+    <message>
+        <location filename="../ui/showlogfile.ui" line="14"/>
+        <source>Form</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/showlogfile.ui" line="48"/>
+        <source>Speichern</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/showlogfile.ui" line="60"/>
+        <source>Schließen</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../src/showlogfile.cpp" line="38"/>
+        <source>%1 %2 - Logdateibetrachter</source>
+        <translation></translation>
+    </message>
+</context>
+<context>
     <name>TabAboutClamAV</name>
     <message>
         <location filename="../ui/tababoutclamav.ui" line="14"/>
@@ -1631,85 +1654,91 @@ With this option enabled OLE2 files with VBA macros, which were not
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="59"/>
-        <location filename="../ui/tababoutclamav.ui" line="147"/>
-        <location filename="../ui/tababoutclamav.ui" line="235"/>
-        <location filename="../ui/tababoutclamav.ui" line="309"/>
-        <location filename="../ui/tababoutclamav.ui" line="387"/>
-        <location filename="../ui/tababoutclamav.ui" line="468"/>
-        <location filename="../ui/tababoutclamav.ui" line="549"/>
-        <location filename="../ui/tababoutclamav.ui" line="607"/>
+        <location filename="../ui/tababoutclamav.ui" line="89"/>
+        <location filename="../ui/tababoutclamav.ui" line="131"/>
+        <location filename="../ui/tababoutclamav.ui" line="249"/>
+        <location filename="../ui/tababoutclamav.ui" line="323"/>
+        <location filename="../ui/tababoutclamav.ui" line="401"/>
+        <location filename="../ui/tababoutclamav.ui" line="482"/>
+        <location filename="../ui/tababoutclamav.ui" line="563"/>
+        <location filename="../ui/tababoutclamav.ui" line="621"/>
         <source>Beschreibung</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="65"/>
-        <location filename="../ui/tababoutclamav.ui" line="153"/>
-        <location filename="../ui/tababoutclamav.ui" line="241"/>
-        <location filename="../ui/tababoutclamav.ui" line="315"/>
-        <location filename="../ui/tababoutclamav.ui" line="393"/>
-        <location filename="../ui/tababoutclamav.ui" line="474"/>
-        <location filename="../ui/tababoutclamav.ui" line="555"/>
-        <location filename="../ui/tababoutclamav.ui" line="613"/>
+        <location filename="../ui/tababoutclamav.ui" line="95"/>
+        <location filename="../ui/tababoutclamav.ui" line="137"/>
+        <location filename="../ui/tababoutclamav.ui" line="255"/>
+        <location filename="../ui/tababoutclamav.ui" line="329"/>
+        <location filename="../ui/tababoutclamav.ui" line="407"/>
+        <location filename="../ui/tababoutclamav.ui" line="488"/>
+        <location filename="../ui/tababoutclamav.ui" line="569"/>
+        <location filename="../ui/tababoutclamav.ui" line="627"/>
         <source>TextLabel</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="81"/>
-        <location filename="../ui/tababoutclamav.ui" line="140"/>
-        <location filename="../ui/tababoutclamav.ui" line="205"/>
-        <location filename="../ui/tababoutclamav.ui" line="286"/>
-        <location filename="../ui/tababoutclamav.ui" line="367"/>
-        <location filename="../ui/tababoutclamav.ui" line="461"/>
-        <location filename="../ui/tababoutclamav.ui" line="526"/>
-        <location filename="../ui/tababoutclamav.ui" line="645"/>
+        <location filename="../ui/tababoutclamav.ui" line="75"/>
+        <location filename="../ui/tababoutclamav.ui" line="153"/>
+        <location filename="../ui/tababoutclamav.ui" line="219"/>
+        <location filename="../ui/tababoutclamav.ui" line="300"/>
+        <location filename="../ui/tababoutclamav.ui" line="381"/>
+        <location filename="../ui/tababoutclamav.ui" line="475"/>
+        <location filename="../ui/tababoutclamav.ui" line="540"/>
+        <location filename="../ui/tababoutclamav.ui" line="659"/>
         <source>Version:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="88"/>
-        <location filename="../ui/tababoutclamav.ui" line="169"/>
-        <location filename="../ui/tababoutclamav.ui" line="228"/>
-        <location filename="../ui/tababoutclamav.ui" line="331"/>
-        <location filename="../ui/tababoutclamav.ui" line="409"/>
-        <location filename="../ui/tababoutclamav.ui" line="490"/>
-        <location filename="../ui/tababoutclamav.ui" line="571"/>
-        <location filename="../ui/tababoutclamav.ui" line="652"/>
+        <location filename="../ui/tababoutclamav.ui" line="82"/>
+        <location filename="../ui/tababoutclamav.ui" line="176"/>
+        <location filename="../ui/tababoutclamav.ui" line="242"/>
+        <location filename="../ui/tababoutclamav.ui" line="345"/>
+        <location filename="../ui/tababoutclamav.ui" line="423"/>
+        <location filename="../ui/tababoutclamav.ui" line="504"/>
+        <location filename="../ui/tababoutclamav.ui" line="585"/>
+        <location filename="../ui/tababoutclamav.ui" line="666"/>
         <source>Installationspfad:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="116"/>
+        <location filename="../ui/tababoutclamav.ui" line="111"/>
+        <location filename="../ui/tababoutclamav.ui" line="199"/>
+        <source>Log Datei anzeigen</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/tababoutclamav.ui" line="123"/>
         <source>Freshclam</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="197"/>
+        <location filename="../ui/tababoutclamav.ui" line="211"/>
         <source>Clamdscan</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="278"/>
+        <location filename="../ui/tababoutclamav.ui" line="292"/>
         <source>Clamscan</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="359"/>
+        <location filename="../ui/tababoutclamav.ui" line="373"/>
         <source>Clamdtop</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="437"/>
+        <location filename="../ui/tababoutclamav.ui" line="451"/>
         <source>Clambc</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="518"/>
+        <location filename="../ui/tababoutclamav.ui" line="532"/>
         <source>Clamconf</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tababoutclamav.ui" line="599"/>
+        <location filename="../ui/tababoutclamav.ui" line="613"/>
         <source>Sigtool</source>
         <translation></translation>
     </message>
@@ -1752,66 +1781,66 @@ With this option enabled OLE2 files with VBA macros, which were not
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="169"/>
+        <location filename="../ui/tabscanscheduling.ui" line="171"/>
         <source>Automatisches aktualisieren der Virendatenbank</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="177"/>
+        <location filename="../ui/tabscanscheduling.ui" line="179"/>
         <source>Freshclam Status</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="187"/>
+        <location filename="../ui/tabscanscheduling.ui" line="189"/>
         <source>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktualität der Virendefinitionen. </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="203"/>
+        <location filename="../ui/tabscanscheduling.ui" line="205"/>
         <source>Wie oft am Tag aktualisieren:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="244"/>
-        <location filename="../ui/tabscanscheduling.ui" line="266"/>
+        <location filename="../ui/tabscanscheduling.ui" line="246"/>
+        <location filename="../ui/tabscanscheduling.ui" line="268"/>
         <source>Den Virendefinitionen Updater starten oder stoppen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="247"/>
-        <location filename="../ui/tabscanscheduling.ui" line="332"/>
+        <location filename="../ui/tabscanscheduling.ui" line="249"/>
+        <location filename="../ui/tabscanscheduling.ui" line="334"/>
         <source>PushButton</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="275"/>
-        <location filename="../ui/tabscanscheduling.ui" line="307"/>
+        <location filename="../ui/tabscanscheduling.ui" line="277"/>
+        <location filename="../ui/tabscanscheduling.ui" line="309"/>
         <source>TextLabel</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="290"/>
+        <location filename="../ui/tabscanscheduling.ui" line="292"/>
         <source>Status ClamAV Dämon</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="298"/>
-        <location filename="../ui/tabscanscheduling.ui" line="329"/>
+        <location filename="../ui/tabscanscheduling.ui" line="300"/>
+        <location filename="../ui/tabscanscheduling.ui" line="331"/>
         <source>Den ClamAV Dämon starten oder stoppen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="347"/>
+        <location filename="../ui/tabscanscheduling.ui" line="349"/>
         <source>&amp;Gesamtes Benutzervezeichnis scannen.</source>
         <translation>&amp;Gesamtes Benutzerverzeichnis scannen.</translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="429"/>
+        <location filename="../ui/tabscanscheduling.ui" line="431"/>
         <source>Dateien und Verzeichnisse auswählen, deren Inhalte von ClamAV nicht überprüft werden sollen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="447"/>
+        <location filename="../ui/tabscanscheduling.ui" line="449"/>
         <source>Markierte Entfernen</source>
         <translation></translation>
     </message>
@@ -1821,38 +1850,38 @@ With this option enabled OLE2 files with VBA macros, which were not
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="362"/>
+        <location filename="../ui/tabscanscheduling.ui" line="364"/>
         <source>Dateien und Verzeichnisse ausschließen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="368"/>
+        <location filename="../ui/tabscanscheduling.ui" line="370"/>
         <source>Verzeichnisse die von der Überprüfung ausgeschlossen werden.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="432"/>
+        <location filename="../ui/tabscanscheduling.ui" line="434"/>
         <source>Verzeichnis hinzufügen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="444"/>
+        <location filename="../ui/tabscanscheduling.ui" line="446"/>
         <source>Ausgewähltes Verzeichnis entfernen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="417"/>
+        <location filename="../ui/tabscanscheduling.ui" line="419"/>
         <source>Datei hinzufügen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="200"/>
-        <location filename="../ui/tabscanscheduling.ui" line="213"/>
+        <location filename="../ui/tabscanscheduling.ui" line="202"/>
+        <location filename="../ui/tabscanscheduling.ui" line="215"/>
         <source>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="190"/>
+        <location filename="../ui/tabscanscheduling.ui" line="192"/>
         <source>freshclam im Hintergrund starten.</source>
         <translation></translation>
     </message>
