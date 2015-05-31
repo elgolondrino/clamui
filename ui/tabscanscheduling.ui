@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>927</width>
+    <width>974</width>
     <height>558</height>
    </rect>
   </property>
@@ -137,7 +137,9 @@
                    <string>Speichern</string>
                   </property>
                   <property name="icon">
-                   <iconset theme="dialog-ok-apply"/>
+                   <iconset theme="dialog-ok-apply">
+                    <normaloff/>
+                   </iconset>
                   </property>
                  </widget>
                 </item>

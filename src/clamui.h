@@ -117,6 +117,7 @@ private slots:
     void slotDaemonStatus();
     void slotIsolatedFiles();
     void slotUpdateVirusDB();
+    void slotWindowState();
 };
 
 #endif // CLAMUI_H

@@ -32,9 +32,13 @@
 #ifndef TABABOUTCLAMAV_H
 #define TABABOUTCLAMAV_H
 
+/* Qt Headers */
+#include <QSettings>
+
 #include <clamav.h>
 
 #include "definitionen.h"
+#include "showlogfile.h"
 
 #include "ui_tababoutclamav.h"
 
@@ -47,6 +51,16 @@ public:
 
 protected:
     void changeEvent(QEvent *e);
+
+private:
+    void createSlots();
+    void settingsRead();
+
+    QString configPath;
+
+private slots:
+    void openLogFileClamd();
+    void openLogFileFreshclam();
 };
 
 #endif // TABABOUTCLAMAV_H

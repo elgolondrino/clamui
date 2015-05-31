@@ -9,7 +9,7 @@ QT += widgets
 QT += Solid
 QT += KNotifications
 QT += KDESu
-#INCLUDEPATH += /usr/lib64
+INCLUDEPATH += /usr/lib64
 
 TEMPLATE = app
 VERSION = -0.0.0
@@ -47,7 +47,9 @@ HEADERS += src/definitionen.h \
     src/freshclamprocess.h \
     src/clamdconf.h \
     src/freshclamconf.h \
-    src/clamavmilterconf.h
+    src/clamavmilterconf.h \
+    src/showlogfile.h \
+    src/clamdscanprocess.h
 
 SOURCES += src/about.cpp \
     src/main.cpp \
@@ -66,7 +68,9 @@ SOURCES += src/about.cpp \
     src/freshclamprocess.cpp \
     src/clamdconf.cpp \
     src/freshclamconf.cpp \
-    src/clamavmilterconf.cpp
+    src/clamavmilterconf.cpp \
+    src/showlogfile.cpp \
+    src/clamdscanprocess.cpp
 
 FORMS += ui/about.ui \
     ui/clamui.ui \
@@ -76,7 +80,8 @@ FORMS += ui/about.ui \
     ui/tabvirusquarantine.ui \
     ui/tabscanscheduling.ui \
     ui/tababoutclamav.ui \
-    ui/firstrunwizard.ui
+    ui/firstrunwizard.ui \
+    ui/showlogfile.ui
 
 OTHER_FILES += ChangeLog \
     INSTALL \

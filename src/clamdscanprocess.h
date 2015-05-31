@@ -32,12 +32,19 @@
 #ifndef CLAMDSCANPROCESS_H
 #define CLAMDSCANPROCESS_H
 
+#include <QtCore/QObject>
 #include <QtCore/qglobal.h>
+#include <QProcess>
+
+#include "definitionen.h"
 
 class ClamdScanProcess : public QProcess
 {
 public:
     ClamdScanProcess();
+
+    bool clamdScan(QString clamdscan, QStringList argumentsList);
+    bool clamddScan(QString clamdscan, QStringList argumentsList);
 };
 
 #endif // CLAMDSCANPROCESS_H

@@ -48,6 +48,7 @@ public:
     bool freshclamDaemon(QString freshclam, QStringList arguments);
     bool freshclamManuelly(QString freshclam, QStringList arguments);
     bool stopFreshclam();
+    bool freshclamRunning();
 
 
 signals:

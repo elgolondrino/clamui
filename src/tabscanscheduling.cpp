@@ -164,8 +164,8 @@ void TabScanScheduling::slotStartStopClamd(){
     QStringList arguments;
     arguments << "--config-file=" + configPath + "clamd.conf";
 
-    ClamdProcess start;
-    start.clamDaemon(daemonPath + "clamd", arguments);
+    ClamdProcess *start = new ClamdProcess;
+    start->clamDaemon(daemonPath + "clamd", arguments);
 }
 
 void TabScanScheduling::slotStartStopFreshclam(){
@@ -190,8 +190,8 @@ void TabScanScheduling::slotStartStopFreshclam(){
                   << "--enable-stats";
     }
 
-    FreshClamProcess start;
-    start.freshclamDaemon(programPath + "freshclam", arguments);
+    FreshClamProcess *start = new FreshClamProcess;
+    start->freshclamDaemon(programPath + "freshclam", arguments);
 }
 
 void TabScanScheduling::enableGroupBoxes(){

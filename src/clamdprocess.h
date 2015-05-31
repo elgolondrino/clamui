@@ -44,14 +44,10 @@ class ClamdProcess : public QProcess {
 public:
     explicit ClamdProcess(QObject *parent = 0);
 
-    bool clamScan(QString clamscan, QStringList argumentsList);
-    bool clamdScan(QString clamscan, QStringList argumentsList);
     bool clamDaemon(QString clamd, QStringList argumentsList);
     bool stopDaemon();
+    bool clamdRunning();
 
-private:
-    QProcess *clamscanProcess;
-    QProcess *clamdscanProcess;
 };
 
 #endif // CLAMDPROCESSES_H

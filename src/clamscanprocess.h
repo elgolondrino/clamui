@@ -36,11 +36,16 @@
 #include <QtCore/qglobal.h>
 #include <QProcess>
 
+#include "definitionen.h"
+
 class ClamScanProcess : public QProcess{
     Q_OBJECT
 
 public:
     explicit ClamScanProcess(QObject *parent = 0);
+
+    bool clamScan(QString clamscan, QStringList argumentsList);
+    bool clamdScan(QString clamscan, QStringList argumentsList);
 };
 
 #endif // CLAMSCANPROCESS_H

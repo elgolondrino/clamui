@@ -35,6 +35,9 @@ TabAboutClamAV::TabAboutClamAV(QWidget *parent) :
     QWidget(parent)
 {
     setupUi(this);
+
+    createSlots();
+    settingsRead();
 }
 
 void TabAboutClamAV::changeEvent(QEvent *e)
@@ -47,4 +50,37 @@ void TabAboutClamAV::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void TabAboutClamAV::createSlots(){
+
+    connect(pushButton_ClamdLogFile, SIGNAL(clicked(bool)),
+            this, SLOT(openLogFileClamd()));
+
+    connect(pushButton_FreshclamLogFile, SIGNAL(clicked(bool)),
+            this, SLOT(openLogFileFreshclam()));
+}
+
+void TabAboutClamAV::openLogFileClamd(){
+
+    ShowLogFile *logFile = new ShowLogFile;
+    logFile->show();
+    logFile->openLogFile(configPath + "clamd.log");
+}
+
+void TabAboutClamAV::openLogFileFreshclam(){
+
+    ShowLogFile *logFile = new ShowLogFile;
+    logFile->show();
+    logFile->openLogFile(configPath + "freshclam.log");
+}
+
+void TabAboutClamAV::settingsRead(){
+
+
+    QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
+                             APP_TITLE, APP_NAME);
+    clamui_conf.beginGroup("ClamAV");
+    configPath =  clamui_conf.value("Config_Path", CLAMAV_PATH).toString();
+    clamui_conf.endGroup();
 }

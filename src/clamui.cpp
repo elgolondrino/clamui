@@ -47,9 +47,6 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
 
     clamDaemon();
 
-    if (freshclamAsDaemon)
-        freshclamDaemon();
-
     QTimer *daemonStatus = new QTimer(this);
     connect(daemonStatus,
             SIGNAL(timeout()),
@@ -106,6 +103,10 @@ void ClamUI::changeEvent(QEvent *event){
     }
 }
 
+void slotWindowState(){
+
+}
+
 void ClamUI::closeEvent(QCloseEvent *event)
 {
     if (statusNotifierItem->standardActionsEnabled() == false) {
@@ -120,14 +121,23 @@ void ClamUI::closeEvent(QCloseEvent *event)
                            "im Kontextmenü auf Beenden klicken."),
                     "dialog-information",
                     10000 );
+        statusNotifierItem->setStatus(KStatusNotifierItem::Active);
     }
     hide();
     event->accept();
 
 }
 
-void ClamUI::createSlots(){
+void ClamUI::slotWindowState(){
 
+    if (isVisible())
+        statusNotifierItem->setStatus(KStatusNotifierItem::Passive);
+    else if (isHidden())
+        statusNotifierItem->setStatus(KStatusNotifierItem::Active);
+
+}
+
+void ClamUI::createSlots(){
 
     connect(tabWidget, SIGNAL(currentChanged(int)),
             this, SLOT(settingsWrite()));
@@ -211,8 +221,15 @@ void ClamUI::slotQuit(){
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);
 
-    if (noMessageOnQuit)
+    if (noMessageOnQuit){
+        if (stopClamdOnQuit)
+            clamd.stopDaemon();
+
+        if (stopFreshclamOnQuit)
+            freshclam.stopFreshclam();
+
         qApp->quit();
+    }
 
     msgBox.setWindowTitle(trUtf8("Beenden bestätigen"));
     msgBox.setText(trUtf8("Möchten Sie <b>") +
@@ -226,6 +243,7 @@ void ClamUI::slotQuit(){
     case QMessageBox::Yes:
         if (stopClamdOnQuit)
             clamd.stopDaemon();
+
         if (stopFreshclamOnQuit)
             freshclam.stopFreshclam();
 
@@ -349,7 +367,7 @@ void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){
     statusNotifierItem->setIconByName(iconSysTray);
     statusNotifierItem->setStandardActionsEnabled(false);
     statusNotifierItem->setCategory(KStatusNotifierItem::ApplicationStatus);
-    statusNotifierItem->setStatus(KStatusNotifierItem::Active);
+    statusNotifierItem->setStatus(KStatusNotifierItem::Passive);
     statusNotifierItem->setContextMenu(trayIconMenu);
     statusNotifierItem->setTitle(QString("%1 - %2").arg(APP_TITLE).arg(APP_VERSION));
 }
@@ -357,14 +375,14 @@ void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){
 void ClamUI::clamDaemon(){
 
     QStringList arguments;
-    arguments << "--config-file=" + configPath + "clamd.conf" << "&&";
+    arguments << "--config-file=" + configPath + "clamd.conf";
 
-    ClamdProcess startDaemon;
+    ClamdProcess *startDaemon = new ClamdProcess;
 
     /*
      * If clamd still running don't try to start the daemon.
      */
-    if (QFile::exists(configPath + "clamd.pid")){
+    if (startDaemon->clamdRunning()){
 
         statusNotifierItem->showMessage(
                     trUtf8("%1 - %2 - Information!").arg(
@@ -373,18 +391,24 @@ void ClamUI::clamDaemon(){
                     trUtf8("Der <b>ClamAV Dämon</b> ist bereits aktiv."),
                     "dialog-information",
                     10000 );
+
+        if (freshclamAsDaemon)
+            freshclamDaemon();
         return;
     }
 
-    if (startDaemon.clamDaemon(daemonPath + "clamd", arguments)) {
+    if (startDaemon->clamDaemon(daemonPath + "clamd", arguments)) {
         statusNotifierItem->showMessage(
-
                     trUtf8("%1 - %2 - Hinweis!").arg(
                         APP_TITLE).arg(
                         APP_VERSION),
                     trUtf8("Der <b>CLamAV Dämon</b> wurde erfolgreich gestartet."),
                     "dialog-information",
                     10000 );
+
+        if (freshclamAsDaemon and startDaemon->state() == QProcess::Running)
+            freshclamDaemon();
+
     } else {
 
         statusNotifierItem->showMessage(
@@ -401,11 +425,8 @@ void ClamUI::freshclamDaemon(){
 
     QStringList arguments;
     arguments << "--config-file=" + configPath +  "freshclam.conf"
-//              << "--log=/tmp/freshclam.log"
               << "--daemon"
-//              << "--pid=" + configPath + "freshclam.pid"
               << "--checks=" + freshclamInterval
-//              << "--datadir=" + virusdbPath
               << "--daemon-notify=" + configPath + "clamd.conf"
               << "--enable-stats";
 
@@ -414,7 +435,7 @@ void ClamUI::freshclamDaemon(){
     /*
      * If freshclam still running as daemon don't try to start the program.
      */
-    if (QFile::exists(configPath + "freshclam.pid")){
+    if (startFreshClam->freshclamRunning()){
 
         statusNotifierItem->showMessage(
                     trUtf8("%1 - %2 - Information!").arg(

@@ -35,6 +35,7 @@ ShowLogFile::ShowLogFile(QWidget *parent) :
     QWidget(parent)
 {
     setupUi(this);
+    setWindowTitle(trUtf8("%1 %2 - Logdateibetrachter").arg(APP_TITLE).arg(APP_VERSION));
 }
 
 void ShowLogFile::changeEvent(QEvent *e)
@@ -47,4 +48,20 @@ void ShowLogFile::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void ShowLogFile::openLogFile(QString logFile){
+
+    QString line;
+    QFile file(logFile);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+
+    QTextStream in(&file);
+    line = in.readAll();
+
+    textEdit_LogFile->setText(line);
+}
+
+void ShowLogFile::saveLogFile(){
+
 }

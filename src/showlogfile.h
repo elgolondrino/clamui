@@ -32,6 +32,14 @@
 #ifndef SHOWLOGFILE_H
 #define SHOWLOGFILE_H
 
+/* Qt Headers */
+#include <QFileDialog>
+#include <QTextStream>
+#include <QFile>
+#include <QDebug>
+
+#include "definitionen.h"
+
 #include "ui_showlogfile.h"
 
 class ShowLogFile : public QWidget, private Ui::ShowLogFile
@@ -40,9 +48,17 @@ class ShowLogFile : public QWidget, private Ui::ShowLogFile
 
 public:
     explicit ShowLogFile(QWidget *parent = 0);
+    void openLogFile(QString logFile);
 
 protected:
     void changeEvent(QEvent *e);
+
+private:
+    void createSlots();
+    void settingsRead();
+
+private slots:
+    void saveLogFile();
 };
 
 #endif // SHOWLOGFILE_H
