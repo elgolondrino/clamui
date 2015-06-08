@@ -225,9 +225,9 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>0</y>
-                <width>892</width>
-                <height>341</height>
+                <y>-110</y>
+                <width>872</width>
+                <height>489</height>
                </rect>
               </property>
               <layout class="QFormLayout" name="formLayout_3">
@@ -263,37 +263,9 @@
                  <property name="title">
                   <string>Programmpfade setzen</string>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_3">
-                  <item>
-                   <layout class="QGridLayout" name="gridLayout_5" columnstretch="0,1,0">
-                    <item row="1" column="1">
-                     <widget class="QComboBox" name="comboBox_DaemonPath">
-                      <property name="toolTip">
-                       <string>Unter diesem Pfad befindet sich der ClamAV Dämon.&lt;br /&gt;
-&lt;i&gt;clamd&lt;/i&gt;</string>
-                      </property>
-                      <item>
-                       <property name="text">
-                        <string>/usr/sbin/</string>
-                       </property>
-                       <property name="icon">
-                        <iconset theme="folder">
-                         <normaloff/>
-                        </iconset>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>/usr/local/sbin/</string>
-                       </property>
-                       <property name="icon">
-                        <iconset theme="folder">
-                         <normaloff/>
-                        </iconset>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
+                 <layout class="QFormLayout" name="formLayout_12">
+                  <item row="0" column="0">
+                   <layout class="QGridLayout" name="gridLayout_5" columnstretch="0,0,0">
                     <item row="0" column="1">
                      <widget class="QComboBox" name="comboBox_ProgramPath">
                       <property name="toolTip">
@@ -328,6 +300,78 @@
                       </item>
                      </widget>
                     </item>
+                    <item row="3" column="1">
+                     <widget class="QComboBox" name="comboBox_ConfigPath">
+                      <property name="toolTip">
+                       <string>Wo sollen die Konfigurationsdateien gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QComboBox" name="comboBox_DaemonPath">
+                      <property name="toolTip">
+                       <string>Unter diesem Pfad befindet sich der ClamAV Dämon.&lt;br /&gt;
+&lt;i&gt;clamd&lt;/i&gt;</string>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>/usr/sbin/</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="folder">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>/usr/local/sbin/</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="folder">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="1" column="2">
+                     <widget class="QLabel" name="label_DaemonPath">
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QLabel" name="label_36">
+                      <property name="toolTip">
+                       <string>Wo sollen die Virendefinitionen gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+                      </property>
+                      <property name="text">
+                       <string>Pfad zur &amp;Virendatenbank:</string>
+                      </property>
+                      <property name="buddy">
+                       <cstring>comboBox_ClamVDB</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QLabel" name="label_ProgramPath">
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="1">
+                     <widget class="QComboBox" name="comboBox_ClamVDB">
+                      <property name="toolTip">
+                       <string>Wo sollen die Virendefinitionen gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+                      </property>
+                     </widget>
+                    </item>
                     <item row="1" column="0">
                      <widget class="QLabel" name="label_29">
                       <property name="toolTip">
@@ -339,6 +383,17 @@
                       </property>
                       <property name="buddy">
                        <cstring>comboBox_DaemonPath</cstring>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0">
+                     <widget class="QLabel" name="label_2">
+                      <property name="toolTip">
+                       <string>Wo sollen die Konfigurationsdateien gespeichert werden?&lt;br /&gt;
+Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+                      </property>
+                      <property name="text">
+                       <string>Pfad zu den Konfigurationsdateien:</string>
                       </property>
                      </widget>
                     </item>
@@ -362,72 +417,138 @@
                       </property>
                      </widget>
                     </item>
-                    <item row="1" column="2">
-                     <widget class="QLabel" name="label_DaemonPath">
+                    <item row="4" column="1">
+                     <widget class="QLineEdit" name="lineEdit_QuarantineFolder">
                       <property name="toolTip">
-                       <string>&lt;b&gt;Kreuz&lt;/b&gt; = unter diesem Pfad wurden die benötigten Programme &lt;b&gt;nicht&lt;/b&gt; gefunden. &lt;br /&gt;
-&lt;b&gt;Haken&lt;/b&gt; = Kreuz = unter diesem Pfad wurden die benötigten Programme gefunden.</string>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="pixmap">
-                       <pixmap>:/icons/icons/breeze/actions/toolbar/dialog-close.svg</pixmap>
+                       <string>In diesem Verzeichnis werden die infizierten Dateien abgelegt.</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="0" column="2">
-                     <widget class="QLabel" name="label_ProgramPath">
+                    <item row="4" column="0">
+                     <widget class="QLabel" name="label_57">
                       <property name="toolTip">
-                       <string>&lt;b&gt;Kreuz&lt;/b&gt; = unter diesem Pfad wurden die benötigten Programme &lt;b&gt;nicht&lt;/b&gt; gefunden. &lt;br /&gt;
-&lt;b&gt;Haken&lt;/b&gt; = Kreuz = unter diesem Pfad wurden die benötigten Programme gefunden.</string>
+                       <string>In diesem Verzeichnis werden die infizierten Dateien abgelegt.</string>
                       </property>
+                      <property name="text">
+                       <string>Quarantäneverzeichnis:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="2">
+                     <widget class="QPushButton" name="pushButton_QuarantineFolder">
                       <property name="text">
                        <string/>
                       </property>
-                      <property name="pixmap">
-                       <pixmap>:/icons/icons/breeze/actions/toolbar/dialog-close.svg</pixmap>
+                      <property name="icon">
+                       <iconset theme="folder"/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QGroupBox" name="groupBox_Statistics">
+                 <property name="title">
+                  <string>&amp;Statistiken an das ClamAV Projekt senden</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_10">
+                  <item row="0" column="0">
+                   <layout class="QGridLayout" name="gridLayout_16">
+                    <item row="2" column="0">
+                     <widget class="QLabel" name="label_58">
+                      <property name="toolTip">
+                       <string>Die Auszeit für Anfragen an den Statistik-Server, in Sekunden.</string>
+                      </property>
+                      <property name="text">
+                       <string>Timeout für Server-Anfragen in Sekunden:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_60">
+                      <property name="toolTip">
+                       <string>Das Senden von individuellen PE-Bereichen deaktivieren , &lt;br /&gt;wenn Dateien als Malware markiert wurde.</string>
+                      </property>
+                      <property name="text">
+                       <string>PE Bereiche in den Statistiken deaktivieren:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="QLabel" name="label_59">
+                      <property name="toolTip">
+                       <string>Sendet ein Host ID in Form einer UUID an den Statistik-Server.</string>
+                      </property>
+                      <property name="text">
+                       <string>Host ID in Form einer UUID mitsenden:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QComboBox" name="comboBox_StatsPEDisabled">
+                      <property name="toolTip">
+                       <string>Das Senden von individuellen PE-Bereichen deaktivieren , &lt;br /&gt;wenn Dateien als Malware markiert wurde.</string>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Nein</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-cancel">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Ja</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="dialog-ok">
+                         <normaloff/>
+                        </iconset>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QLineEdit" name="lineEdit_StatsHostID">
+                      <property name="toolTip">
+                       <string>Sendet ein Host ID in Form einer UUID an den Statistik-Server.</string>
+                      </property>
+                      <property name="text">
+                       <string>auto</string>
                       </property>
                      </widget>
                     </item>
                     <item row="2" column="1">
-                     <widget class="QComboBox" name="comboBox_ClamVDB">
+                     <widget class="QSpinBox" name="spinBox_StatsTimeout">
                       <property name="toolTip">
-                       <string>Wo sollen die Virendefinitionen gespeichert werden?&lt;br /&gt;
-Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+                       <string>Die Auszeit für Anfragen an den Statistik-Server, in Sekunden.</string>
                       </property>
-                     </widget>
-                    </item>
-                    <item row="2" column="0">
-                     <widget class="QLabel" name="label_36">
-                      <property name="toolTip">
-                       <string>Wo sollen die Virendefinitionen gespeichert werden?&lt;br /&gt;
-Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+                      <property name="suffix">
+                       <string/>
                       </property>
-                      <property name="text">
-                       <string>Pfad zur &amp;Virendatenbank:</string>
+                      <property name="prefix">
+                       <string/>
                       </property>
-                      <property name="buddy">
-                       <cstring>comboBox_ClamVDB</cstring>
+                      <property name="minimum">
+                       <number>0</number>
                       </property>
-                     </widget>
-                    </item>
-                    <item row="3" column="0">
-                     <widget class="QLabel" name="label_2">
-                      <property name="toolTip">
-                       <string>Wo sollen die Konfigurationsdateien gespeichert werden?&lt;br /&gt;
-Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+                      <property name="maximum">
+                       <number>100</number>
                       </property>
-                      <property name="text">
-                       <string>Pfad zu den Konfigurationsdateien:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="3" column="1">
-                     <widget class="QComboBox" name="comboBox_ConfigPath">
-                      <property name="toolTip">
-                       <string>Wo sollen die Konfigurationsdateien gespeichert werden?&lt;br /&gt;
-Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals root-Rechte benötigen.</string>
+                      <property name="value">
+                       <number>10</number>
                       </property>
                      </widget>
                     </item>
@@ -447,8 +568,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>908</width>
-            <height>357</height>
+            <width>96</width>
+            <height>86</height>
            </rect>
           </property>
           <attribute name="icon">
@@ -470,7 +591,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>872</width>
+                <width>858</width>
                 <height>891</height>
                </rect>
               </property>

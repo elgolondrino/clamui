@@ -37,14 +37,12 @@ ClamdProcess::ClamdProcess(QObject *parent) : QProcess(parent){
 
 bool ClamdProcess::clamDaemon(QString clamd, QStringList argumentsList){
 
-    bool status;
+    bool status = false;
 
     start(clamd, argumentsList);
 
     if (waitForStarted() and state() == QProcess::Running)
         status = true;
-    else
-        status = false;
 
     return status;
 }

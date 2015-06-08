@@ -64,9 +64,10 @@ private:
     void settingsRead();
     void settingsReadDirectories();
     void settingsReadFiles();
-    void databaseRead();
+    void databaseReadDir();
+    void databaseReadFile();
     void enableGroupBoxes();
-    void saveToDB(QStringList values);
+    void saveToDB(QString table, QStringList values);
 
     QString daemonPath;
     QString programPath;
@@ -79,7 +80,8 @@ private:
 private slots:
     void addFile();
     void addDirectory();
-    void removeFromDB();
+    void removeDirectoriesFromDB();
+    void removeFilesFromDB();
     void settingsWrite();
     void slotDaemonStatus();
     void slotStartStopClamd();

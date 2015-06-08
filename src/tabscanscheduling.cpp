@@ -61,9 +61,10 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
     createSlots();
 
     /*
-     * Load values to the tableview.
+     * Load values to the tableviews.
      */
-    databaseRead();
+    databaseReadDir();
+    databaseReadFile();
 
     slotDaemonStatus();
 
@@ -141,7 +142,10 @@ void TabScanScheduling::createSlots(){
             this, SLOT(addDirectory()));
 
     connect(pushButton_ClearListDirectories, SIGNAL(clicked(bool)),
-            this, SLOT(removeFromDB()));
+            this, SLOT(removeDirectoriesFromDB()));
+
+    connect(pushButton_ClearListFiles, SIGNAL(clicked(bool)),
+            this, SLOT(removeFilesFromDB()));
 
     connect(groupBox_Eclude, SIGNAL(clicked(bool)),
             this, SLOT(settingsWrite()));
@@ -173,19 +177,13 @@ void TabScanScheduling::slotStartStopFreshclam(){
     QStringList arguments;
     if (checkBox_FreshClam->isChecked()) {
         arguments << "--config-file=" + configPath +  "freshclam.conf"
-//                  << "--log=/tmp/freshclam.log"
                   << "--daemon"
-//                  << "--pid=" + configPath + "freshclam.pid"
                   << "--checks=" + spinBox_FreshClamUpdate->value()
-//                  << "--datadir=" + virusdbPath
                   << "--daemon-notify=" + configPath + "clamd.conf"
                   << "--enable-stats";
     } else {
         arguments << "--config-file=" + configPath +  "freshclam.conf"
-//                  << "--log=/tmp/freshclam.log"
-//                  << "--pid=" + configPath + "freshclam.pid"
                   << "--checks=" + spinBox_FreshClamUpdate->value()
-//                  << "--datadir=" + virusdbPath
                   << "--daemon-notify=" + configPath + "clamd.conf"
                   << "--enable-stats";
     }
@@ -198,9 +196,12 @@ void TabScanScheduling::enableGroupBoxes(){
 
     if (!groupBox_Eclude->isChecked()) {
         groupBox_ExlcludeDir->setEnabled(true);
-        databaseRead();
+        groupBox_ExlcludeFile->setEnabled(true);
+        databaseReadDir();
+        databaseReadFile();
     } else {
         groupBox_ExlcludeDir->setEnabled(false);
+        groupBox_ExlcludeFile->setEnabled(false);
     }
 }
 
@@ -334,7 +335,7 @@ void TabScanScheduling::addFile(){
 
     file = fileDialog->selectedFiles();
 
-    saveToDB(file);
+    saveToDB("files", file);
 
 }
 
@@ -353,41 +354,55 @@ void TabScanScheduling::addDirectory(){
 
     directory = fileDialog->selectedFiles();
 
-    saveToDB(directory);
+    saveToDB("directories", directory);
 
 }
 
-void TabScanScheduling::saveToDB(QStringList values){
+void TabScanScheduling::saveToDB(QString table, QStringList values){
 
     QString value = values.value(0);
     if (!value.isEmpty()) {
         QSqlQueryModel save;
-        save.setQuery("INSERT INTO dir_files (value) VALUES('" + value + "');");
+        save.setQuery("INSERT INTO " + table + " (value) VALUES('" + value + "');");
 
 //        qDebug() << save.lastError();
     }
 
-    databaseRead();
+    databaseReadDir();
+    databaseReadFile();
 
 }
 
 /*
- * Load excluded directories to Tableview.
+ * Load excluded files to tableview.
  */
-void TabScanScheduling::databaseRead(){
+void TabScanScheduling::databaseReadFile(){
 
     QSqlQueryModel *query = new QSqlQueryModel;
     query->clear();
-    query->setQuery("SELECT DISTINCT value FROM dir_files "
+    query->setQuery("SELECT DISTINCT value FROM files "
+                    "ORDER BY value ASC");
+
+    tableView_FilesExclude->setModel(query);
+}
+
+/*
+ * Load excluded directories to tableview.
+ */
+void TabScanScheduling::databaseReadDir(){
+
+    QSqlQueryModel *query = new QSqlQueryModel;
+    query->clear();
+    query->setQuery("SELECT DISTINCT value FROM directories "
                     "ORDER BY value ASC");
 
     tableView_DirectoriesExclude->setModel(query);
 }
 
 /*
- * Delete excluded files and directories from Tableview and databse.
+ * Delete excluded directories from tableview and databse.
  */
-void TabScanScheduling::removeFromDB(){
+void TabScanScheduling::removeDirectoriesFromDB(){
 
     QString dataDelete = tableView_DirectoriesExclude->currentIndex().data(0).toString();
 
@@ -406,11 +421,47 @@ void TabScanScheduling::removeFromDB(){
     switch (ret) {
     case QMessageBox::Yes:
 
-        deleteData.exec("DELETE FROM dir_files WHERE value = '"
+        deleteData.exec("DELETE FROM directories WHERE value = '"
                         + dataDelete + "'");
 //        qDebug() << deleteData.lastError();
 
-        databaseRead();
+        databaseReadDir();
+        break;
+    case QMessageBox::No:
+        msgBox.close();
+        break;
+    default:
+        break;
+    }
+}
+
+/*
+ * Delete excluded files from tableview and databse.
+ */
+void TabScanScheduling::removeFilesFromDB(){
+
+    QString dataDelete = tableView_FilesExclude->currentIndex().data(0).toString();
+
+    QSqlQuery deleteData;
+
+    QMessageBox msgBox;
+
+    msgBox.setWindowTitle(trUtf8("Löschen bestätigen"));
+    msgBox.setText(trUtf8("Möchten Sie die den Eintrag <b>")
+                   + dataDelete +
+                   trUtf8("</b> wirklich löschen?"));
+    msgBox.setIcon(QMessageBox::Question);
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::Yes);
+    int ret = msgBox.exec();
+    switch (ret) {
+    case QMessageBox::Yes:
+
+        deleteData.exec("DELETE FROM files WHERE value = '"
+                        + dataDelete + "'");
+//        qDebug() << deleteData.lastError();
+
+        databaseReadFile();
         break;
     case QMessageBox::No:
         msgBox.close();

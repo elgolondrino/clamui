@@ -60,6 +60,7 @@ void ShowLogFile::openLogFile(QString logFile){
     line = in.readAll();
 
     textEdit_LogFile->setText(line);
+
 }
 
 void ShowLogFile::saveLogFile(){

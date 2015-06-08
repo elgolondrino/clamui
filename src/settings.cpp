@@ -68,6 +68,8 @@ Settings::Settings(QWidget *parent) : QDialog(parent){
     comboBox_ConfigPath->setItemIcon(3, QIcon::fromTheme("folder"));
     comboBox_ConfigPath->addItem("/usr/local/etc/");
     comboBox_ConfigPath->setItemIcon(4, QIcon::fromTheme("folder"));
+    comboBox_ConfigPath->addItem("/etc/");
+    comboBox_ConfigPath->setItemIcon(5, QIcon::fromTheme("folder"));
 
     createLanguageMenu();
     createSlots();
@@ -612,6 +614,7 @@ void Settings::writeClamdConf(){
         }
 
         dataCollect += "LogFileMaxSize " + lineEdit_CdLogFileSize->text();
+        dataCollect += " ||| ";
     } else {
 
         dataCollect += "#LogFile ";
@@ -625,6 +628,33 @@ void Settings::writeClamdConf(){
         dataCollect += "#ExtendedDetectionInfo yes";
         dataCollect += " ||| ";
         dataCollect += "#LogFileMaxSize ";
+        dataCollect += " ||| ";
+    }
+
+    /*
+     * Statistics
+     */
+    if (groupBox_Statistics->isChecked()) {
+
+        dataCollect += "StatsEnabled yes";
+        dataCollect += " ||| ";
+        if (comboBox_StatsPEDisabled->currentIndex() == 0)
+            dataCollect += "StatsPEDisabled no";
+        else if (comboBox_StatsPEDisabled->currentIndex() == 1)
+            dataCollect += "StatsPEDisabled yes";
+        dataCollect += " ||| ";
+        dataCollect += "StatsHostID " + lineEdit_StatsHostID->text();
+        dataCollect += " ||| ";
+        dataCollect += "StatsTimeout " + spinBox_StatsTimeout->text();
+    } else if (!groupBox_Statistics->isChecked()) {
+
+        dataCollect += "#StatsEnabled no";
+        dataCollect += " ||| ";
+        dataCollect += "#StatsPEDisabled yes";
+        dataCollect += " ||| ";
+        dataCollect += "#StatsHostID ";
+        dataCollect += " ||| ";
+        dataCollect += "#StatsTimeout ";
     }
 
     clamdList << dataCollect;
@@ -656,7 +686,7 @@ void Settings::writeClamavMilterConf(){
 
 void Settings::settingsWrite(){
 
-    LanguageTools language;
+//    LanguageTools language;
 
     QSettings clamui_conf(QSettings::NativeFormat, QSettings::UserScope,
                              APP_TITLE, APP_NAME);
@@ -665,9 +695,9 @@ void Settings::settingsWrite(){
         clamui_conf.beginGroup("ClamUI");
         clamui_conf.setValue("NoMessage", checkBox_ShowQuitMessage->isChecked());
         clamui_conf.setValue("Language_Manually", groupBox_Language->isChecked());
-        //    clamui_conf.setValue("Language_Index", comboBox_Language->currentIndex());
-        //    clamui_conf.setValue("languageNiceName",
-        //                             comboBox_Language->currentText());
+//        clamui_conf.setValue("Language_Index", comboBox_Language->currentIndex());
+//        clamui_conf.setValue("languageNiceName",
+//                             comboBox_Language->currentText());
         clamui_conf.setValue("Language", comboBox_Language->currentText());
 
         clamui_conf.setValue("languageFileName",
@@ -705,6 +735,14 @@ void Settings::settingsWrite(){
                              checkBox_StopClamdOnQuit->isChecked());
         clamui_conf.setValue("StopFreshclamOnQuit",
                              checkBox_StopFreshclamOnQuit->isChecked());
+        clamui_conf.setValue("StatsEnabled",
+                             groupBox_Statistics->isChecked());
+        clamui_conf.setValue("StatsPEDisabled",
+                             comboBox_StatsPEDisabled->currentIndex());
+        clamui_conf.setValue("StatsHostID",
+                             lineEdit_StatsHostID->text());
+        clamui_conf.setValue("StatsTimeout",
+                             spinBox_StatsTimeout->value());
         clamui_conf.endGroup();
     }
 
@@ -879,7 +917,7 @@ void Settings::settingsRead(){
 //  QString daemonPath =   clamui_conf.value("Daemon_Path", "/usr/sbin/").toString());
     comboBox_ClamVDB->setCurrentIndex(
                 clamui_conf.value("VirusDB_Path_Id", 0).toInt());
-//  QString virusdbPath =   clamui_conf.value("VirusDB_Path", CLAMAV_VDB_PATH").toString());
+//  QString virusdbPath =   clamui_conf.value("VirusDB_Path", CLAMAV_VDB_PATH).toString());
     comboBox_ConfigPath->setCurrentIndex(
                 clamui_conf.value("Config_Path_Id", 0).toInt());
 //   QString configPath =  clamui_conf.value("Config_Path", CLAMAV_PATH).toString());
@@ -887,6 +925,14 @@ void Settings::settingsRead(){
                 clamui_conf.value("StopClamdOnQuit", false).toBool());
     checkBox_StopFreshclamOnQuit->setChecked(
                 clamui_conf.value("StopFreshclamOnQuit", false).toBool());
+    groupBox_Statistics->setChecked(
+                clamui_conf.value("StatsEnabled", false).toBool());
+    comboBox_StatsPEDisabled->setCurrentIndex(
+                clamui_conf.value("StatsPEDisabled", 0).toInt());
+    lineEdit_StatsHostID->setText(
+                clamui_conf.value("StatsHostID", "auto").toString());
+    spinBox_StatsTimeout->setValue(
+                clamui_conf.value("StatsTimeout", 10).toInt());
     clamui_conf.endGroup();
 
     clamui_conf.beginGroup("Freshclam");
@@ -1074,6 +1120,10 @@ void Settings::settingsDefaultClamAV(){
         comboBox_CdPhishingAlwaysBlockCloak->setCurrentIndex(0);
         comboBox_CdPartitionIntersection->setCurrentIndex(0);
         comboBox_CdHeuristicScanPrecedence->setCurrentIndex(0);
+        groupBox_Statistics->setChecked(false);
+        comboBox_StatsPEDisabled->setCurrentIndex(0);
+        lineEdit_StatsHostID->setText("auto");
+        spinBox_StatsTimeout->setValue(10);
     }
 
     if (toolBox_ClamAV->currentIndex() == 2) {

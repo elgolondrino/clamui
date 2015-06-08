@@ -31,10 +31,7 @@
 
 #include "freshclamconf.h"
 
-FreshClamConf::FreshClamConf(QObject *parent) : QObject(parent)
-{
-
-}
+FreshClamConf::FreshClamConf(QObject *parent) : QObject(parent){}
 
 bool FreshClamConf::writeFreshClamConf(QStringList values){
 
@@ -51,16 +48,16 @@ bool FreshClamConf::writeFreshClamConf(QStringList values){
 
     QFile confFile(configPath + "freshclam.conf");
     bool write = confFile.open(QIODevice::WriteOnly | QIODevice::Text);
-    QTextStream confOutput(&confFile);
+    QTextStream confOut(&confFile);
 
     foreach (QString value, values) {
 
         QStringList field = value.split(" ||| ");
 
-        confOutput.setCodec("UTF-8");
-        confOutput
-                << "####################################################################"
+        confOut.setCodec("UTF-8");
+        confOut << "####################################################################"
                 << "\n"
+                << "#\n"
                 << "# freshclam.conf \n"
                 << "#\n"
                 << "# " << trUtf8("Generiert am: ") << datumZeit << "\n"

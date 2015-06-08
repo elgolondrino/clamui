@@ -37,14 +37,12 @@ FreshClamProcess::FreshClamProcess(QObject *parent) : QProcess(parent){
 
 bool FreshClamProcess::freshclamDaemon(QString freshclam, QStringList arguments){
 
-    bool status;
+    bool status = false;
 
     start(freshclam, arguments);
 
     if (waitForStarted() and state() == QProcess::Running)
         status = true;
-    else
-        status = false;
 
     return status;
 }

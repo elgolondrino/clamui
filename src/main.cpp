@@ -94,7 +94,13 @@ int main(int argc, char *argv[]) {
         clamDir.mkdir(CLAMAV_PATH);
 
     /*
-     * The directory for the virus definitionen stored.
+     * The default quarantine folder.
+     */
+    if (!clamDir.exists(CLAMAV_PATH + "quarantine"))
+        clamDir.mkdir(CLAMAV_PATH + "quarantine");
+
+    /*
+     * The directory for the virus definition stored.
      */
     if (!clamDir.exists(CLAMAV_VDB_PATH))
         clamDir.mkdir(CLAMAV_VDB_PATH);

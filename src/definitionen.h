@@ -35,7 +35,7 @@
 #include <QDir>
 #include <QString>
 
-#define APP_VERSION "0.0.0"
+#define APP_VERSION "0.1.0"
 #define APP_TITLE "ClamUI"
 #define APP_NAME "clamui"
 #define APP_COMPANY_NAME "E67-ITS"

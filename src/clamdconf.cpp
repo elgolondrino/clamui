@@ -31,10 +31,7 @@
 
 #include "clamdconf.h"
 
-ClamdConf::ClamdConf(QObject *parent) : QObject(parent)
-{
-
-}
+ClamdConf::ClamdConf(QObject *parent) : QObject(parent){}
 
 bool ClamdConf::writeClamdConf(QStringList values){
 
@@ -52,16 +49,16 @@ bool ClamdConf::writeClamdConf(QStringList values){
 
     QFile confFile(configPath + "clamd.conf");
     bool write = confFile.open(QIODevice::WriteOnly);
-    QTextStream confOutput(&confFile);
+    QTextStream confOut(&confFile);
 
     foreach (QString value, values) {
 
         QStringList field = value.split(" ||| ");
 
-        confOutput.setCodec("UTF-8");
-        confOutput
-                << "####################################################################"
+        confOut.setCodec("UTF-8");
+        confOut << "####################################################################"
                 << "\n"
+                << "#\n"
                 << "# clamd.conf \n"
                 << "#\n"
                 << "# " << trUtf8("Generiert am: ") << datumZeit << "\n"
@@ -69,7 +66,7 @@ bool ClamdConf::writeClamdConf(QStringList values){
                 << "# " << trUtf8("Generiert mit: ")
                 << APP_TITLE << " - Version: " << APP_VERSION << "\n"
                 << "#\n"
-                << "# " << trUtf8("Pfad: ") << configPath
+                << "# " << trUtf8("Pfad: ") << configPath << "\n"
                 << "#\n"
                 << "####################################################################"
                 << "\n\n"
@@ -115,8 +112,11 @@ bool ClamdConf::writeClamdConf(QStringList values){
                 << field[39]<< "\n\n"
                 << field[40]<< "\n\n"
                 << field[41]<< "\n\n"
+                << field[42]<< "\n\n"
+                << field[43]<< "\n\n"
+                << field[44]<< "\n\n"
+                << field[45]<< "\n\n"
                 << "###### END OF FILE ######\n";
     }
     return write;
 }
-

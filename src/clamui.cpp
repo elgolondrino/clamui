@@ -52,7 +52,7 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
             SIGNAL(timeout()),
             this,
             SLOT(slotDaemonStatus()));
-    daemonStatus->start(180000);
+    daemonStatus->start(60000);
 }
 
 void ClamUI::slotDaemonStatus() {
@@ -103,10 +103,6 @@ void ClamUI::changeEvent(QEvent *event){
     }
 }
 
-void slotWindowState(){
-
-}
-
 void ClamUI::closeEvent(QCloseEvent *event)
 {
     if (statusNotifierItem->standardActionsEnabled() == false) {
@@ -121,19 +117,9 @@ void ClamUI::closeEvent(QCloseEvent *event)
                            "im Kontextmenü auf Beenden klicken."),
                     "dialog-information",
                     10000 );
-        statusNotifierItem->setStatus(KStatusNotifierItem::Active);
     }
     hide();
     event->accept();
-
-}
-
-void ClamUI::slotWindowState(){
-
-    if (isVisible())
-        statusNotifierItem->setStatus(KStatusNotifierItem::Passive);
-    else if (isHidden())
-        statusNotifierItem->setStatus(KStatusNotifierItem::Active);
 
 }
 
@@ -367,7 +353,7 @@ void ClamUI::createTrayIcon(QString iconSysTray, QString statusMessage){
     statusNotifierItem->setIconByName(iconSysTray);
     statusNotifierItem->setStandardActionsEnabled(false);
     statusNotifierItem->setCategory(KStatusNotifierItem::ApplicationStatus);
-    statusNotifierItem->setStatus(KStatusNotifierItem::Passive);
+    statusNotifierItem->setStatus(KStatusNotifierItem::Active);
     statusNotifierItem->setContextMenu(trayIconMenu);
     statusNotifierItem->setTitle(QString("%1 - %2").arg(APP_TITLE).arg(APP_VERSION));
 }
