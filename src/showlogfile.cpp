@@ -31,15 +31,16 @@
 
 #include "showlogfile.h"
 
-ShowLogFile::ShowLogFile(QWidget *parent) :
-    QWidget(parent)
-{
+ShowLogFile::ShowLogFile(QWidget *parent) : QWidget(parent){
+
     setupUi(this);
     setWindowTitle(trUtf8("%1 %2 - Logdateibetrachter").arg(APP_TITLE).arg(APP_VERSION));
+
+    pushButton_Save->setHidden(true);
 }
 
-void ShowLogFile::changeEvent(QEvent *e)
-{
+void ShowLogFile::changeEvent(QEvent *e){
+
     QWidget::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:

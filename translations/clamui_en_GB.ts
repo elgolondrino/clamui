@@ -985,55 +985,55 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <location filename="../ui/settings.ui" line="423"/>
         <location filename="../ui/settings.ui" line="430"/>
         <source>In diesem Verzeichnis werden die infizierten Dateien abgelegt.</source>
-        <translation type="unfinished"></translation>
+        <translation>In this directory the infected files are stored.</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="433"/>
         <source>Quarantäneverzeichnis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Quarantine Directory</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="455"/>
         <source>&amp;Statistiken an das ClamAV Projekt senden</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Send stats to ClamAV Project</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="469"/>
         <location filename="../ui/settings.ui" line="536"/>
         <source>Die Auszeit für Anfragen an den Statistik-Server, in Sekunden.</source>
-        <translation type="unfinished"></translation>
+        <translation>The time-out for requests to the stats server, in seconds.</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="472"/>
         <source>Timeout für Server-Anfragen in Sekunden:</source>
-        <translation type="unfinished"></translation>
+        <translation>Timeout for server requests in seconds:</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="479"/>
         <location filename="../ui/settings.ui" line="499"/>
         <source>Das Senden von individuellen PE-Bereichen deaktivieren , &lt;br /&gt;wenn Dateien als Malware markiert wurde.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sending individual PE areas deactivated when files &lt;br /&gt;were marked as malware.</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="482"/>
         <source>PE Bereiche in den Statistiken deaktivieren:</source>
-        <translation type="unfinished"></translation>
+        <translation>PE ranges in the statistics deactivated:</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="489"/>
         <location filename="../ui/settings.ui" line="526"/>
         <source>Sendet ein Host ID in Form einer UUID an den Statistik-Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sends a Host ID in the form of a UUID to the statistics server.</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="492"/>
         <source>Host ID in Form einer UUID mitsenden:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sending host ID in the format of a UUID:</translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="529"/>
         <source>auto</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="581"/>
@@ -1760,7 +1760,7 @@ With this option enabled OLE2 files with VBA macros, which were not
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../src/showlogfile.cpp" line="38"/>
+        <location filename="../src/showlogfile.cpp" line="37"/>
         <source>%1 %2 - Logdateibetrachter</source>
         <translation>%1 %2 - Logfile Viewer</translation>
     </message>
@@ -1961,7 +1961,7 @@ With this option enabled OLE2 files with VBA macros, which were not
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="364"/>
         <source>Verzeichnisse ausschließen</source>
-        <translation type="unfinished"></translation>
+        <translation>Exclude directories</translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="419"/>
@@ -2003,7 +2003,7 @@ With this option enabled OLE2 files with VBA macros, which were not
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="457"/>
         <source>Dateien ausschließen</source>
-        <translation type="unfinished"></translation>
+        <translation>Exclude files</translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="512"/>

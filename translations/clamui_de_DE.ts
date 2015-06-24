@@ -930,55 +930,55 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
         <location filename="../ui/settings.ui" line="423"/>
         <location filename="../ui/settings.ui" line="430"/>
         <source>In diesem Verzeichnis werden die infizierten Dateien abgelegt.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="433"/>
         <source>Quarantäneverzeichnis:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="455"/>
         <source>&amp;Statistiken an das ClamAV Projekt senden</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="469"/>
         <location filename="../ui/settings.ui" line="536"/>
         <source>Die Auszeit für Anfragen an den Statistik-Server, in Sekunden.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="472"/>
         <source>Timeout für Server-Anfragen in Sekunden:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="479"/>
         <location filename="../ui/settings.ui" line="499"/>
         <source>Das Senden von individuellen PE-Bereichen deaktivieren , &lt;br /&gt;wenn Dateien als Malware markiert wurde.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="482"/>
         <source>PE Bereiche in den Statistiken deaktivieren:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="489"/>
         <location filename="../ui/settings.ui" line="526"/>
         <source>Sendet ein Host ID in Form einer UUID an den Statistik-Server.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="492"/>
         <source>Host ID in Form einer UUID mitsenden:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="529"/>
         <source>auto</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/settings.ui" line="581"/>
@@ -1685,7 +1685,7 @@ With this option enabled OLE2 files with VBA macros, which were not
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/showlogfile.cpp" line="38"/>
+        <location filename="../src/showlogfile.cpp" line="37"/>
         <source>%1 %2 - Logdateibetrachter</source>
         <translation></translation>
     </message>
@@ -1886,7 +1886,7 @@ With this option enabled OLE2 files with VBA macros, which were not
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="364"/>
         <source>Verzeichnisse ausschließen</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="419"/>
@@ -1924,7 +1924,7 @@ With this option enabled OLE2 files with VBA macros, which were not
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="457"/>
         <source>Dateien ausschließen</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ui/tabscanscheduling.ui" line="512"/>
