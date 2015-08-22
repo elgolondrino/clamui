@@ -12,7 +12,7 @@ QT += KDESu
 INCLUDEPATH += /usr/lib64
 
 TEMPLATE = app
-VERSION = -0.1.0
+VERSION = -0.1.0_DEV
 LANGUAGE += C++
 CODECFORTR += UTF-8
 UI_DIR += src
