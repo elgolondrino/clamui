@@ -43,6 +43,8 @@ bool FreshClamProcess::freshclamDaemon(QString freshclam, QStringList arguments)
 
     if (waitForStarted() and state() == QProcess::Running)
         status = true;
+    else
+        status = false;
 
     return status;
 }

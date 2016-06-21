@@ -43,6 +43,8 @@ bool ClamdProcess::clamDaemon(QString clamd, QStringList argumentsList){
 
     if (waitForStarted() and state() == QProcess::Running)
         status = true;
+    else
+        status = false;
 
     return status;
 }

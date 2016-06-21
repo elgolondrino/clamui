@@ -23,11 +23,10 @@ TARGET = clamui
 
 CONFIG += qt
 DEPENDPATH += . \
-    gui \
+    ui \
     src \
     doc \
     icaons \
-    ui \
     translations
 
 HEADERS += src/definitionen.h \
