@@ -76,6 +76,20 @@ TabScanScheduling::TabScanScheduling(QWidget *parent) :
     daemonStatus->start(1000);
 }
 
+void TabScanScheduling::slotLogFileClamd(){
+
+    ShowLogFile *logFile = new ShowLogFile(this);
+    logFile->openLogFile(configPath + "clamd.log");
+    logFile->exec();
+}
+
+void TabScanScheduling::slotLogFileFreshclam(){
+
+    ShowLogFile *logFile = new ShowLogFile(this);
+    logFile->openLogFile(configPath + "freshclam.log");
+    logFile->exec();
+}
+
 void TabScanScheduling::slotDaemonStatus() {
 
     /*
@@ -83,14 +97,14 @@ void TabScanScheduling::slotDaemonStatus() {
      */
     if (!QFile::exists(configPath + "clamd.pid")){
 
-        pushButton_CamdStatus->setText(trUtf8("Starten"));
-        label_CamdStatus->setText(trUtf8("<b>Der ClamAV Dämon läuft nicht.</b>"));
-        label_CamdStatus->setStyleSheet("color: rgb(255, 0, 0);");
+        pushButton_ClamdStatus->setText(trUtf8("Starten"));
+        label_ClamdStatus->setText(trUtf8("<b>Der ClamAV Dämon läuft nicht.</b>"));
+        label_ClamdStatus->setStyleSheet("color: rgb(255, 0, 0);");
     } else {
 
-        pushButton_CamdStatus->setText(trUtf8("Stoppen"));
-        label_CamdStatus->setText(trUtf8("<b>Der ClamAV Dämon läuft.</b>"));
-        label_CamdStatus->setStyleSheet("color: rgb(0, 170, 0);");
+        pushButton_ClamdStatus->setText(trUtf8("Stoppen"));
+        label_ClamdStatus->setText(trUtf8("<b>Der ClamAV Dämon läuft.</b>"));
+        label_ClamdStatus->setStyleSheet("color: rgb(0, 170, 0);");
     }
 
     /*
@@ -123,6 +137,12 @@ void TabScanScheduling::changeEvent(QEvent *e){
 
 void TabScanScheduling::createSlots(){
 
+    connect(pushButton_LogFreshClam, SIGNAL(clicked(bool)),
+            this, SLOT(slotLogFileFreshclam()));
+
+    connect(pushButton_LogClamd, SIGNAL(clicked(bool)),
+            this, SLOT(slotLogFileClamd()));
+
     connect(checkBox_FreshClam, SIGNAL(clicked(bool)),
             this, SLOT(settingsWrite()));
 
@@ -153,7 +173,7 @@ void TabScanScheduling::createSlots(){
     connect(pushButton_FreshclamStatus, SIGNAL(clicked(bool)),
             this, SLOT(slotStartStopFreshclam()));
 
-    connect(pushButton_CamdStatus, SIGNAL(clicked(bool)),
+    connect(pushButton_ClamdStatus, SIGNAL(clicked(bool)),
             this, SLOT(slotStartStopClamd()));
 
     connect(comboBox_Scheduling, SIGNAL(currentIndexChanged(int)),
@@ -169,7 +189,19 @@ void TabScanScheduling::slotStartStopClamd(){
     arguments << "--config-file=" + configPath + "clamd.conf";
 
     ClamdProcess *start = new ClamdProcess;
-    start->clamDaemon(daemonPath + "clamd", arguments);
+
+    if (!start->clamdRunning()) {
+        pushButton_ClamdStatus->setText(trUtf8("Starten"));
+        label_ClamdStatus->setText(trUtf8("<b>Der ClamAV Dämon läuft nicht.</b>"));
+        label_ClamdStatus->setStyleSheet("color: rgb(255, 0, 0);");
+        start->clamDaemon(daemonPath + "clamd", arguments);
+
+    } else if (start->clamdRunning()) {
+        pushButton_ClamdStatus->setText(trUtf8("Stoppen"));
+        label_ClamdStatus->setText(trUtf8("<b>Der ClamAV Dämon läuft.</b>"));
+        label_ClamdStatus->setStyleSheet("color: rgb(0, 170, 0);");
+        start->stopDaemon();
+    }
 }
 
 void TabScanScheduling::slotStartStopFreshclam(){
@@ -189,7 +221,19 @@ void TabScanScheduling::slotStartStopFreshclam(){
     }
 
     FreshClamProcess *start = new FreshClamProcess;
-    start->freshclamDaemon(programPath + "freshclam", arguments);
+
+    if (!start->freshclamRunning()) {
+        pushButton_FreshclamStatus->setText(trUtf8("Starten"));
+        label_FreshclamStatus->setText(trUtf8("<b>Läuft nicht.</b>"));
+        label_FreshclamStatus->setStyleSheet("color: rgb(255, 0, 0);");
+        start->freshclamDaemon(programPath + "freshclam", arguments);
+    } else if (start->freshclamRunning()) {
+        pushButton_FreshclamStatus->setText(trUtf8("Stoppen"));
+        label_FreshclamStatus->setText(trUtf8("<b>Läuft.</b>"));
+        label_FreshclamStatus->setStyleSheet("color: rgb(0, 170, 0);");
+        start->stopFreshclam();
+
+    }
 }
 
 void TabScanScheduling::enableGroupBoxes(){

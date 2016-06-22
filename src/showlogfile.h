@@ -37,12 +37,13 @@
 #include <QTextStream>
 #include <QFile>
 #include <QDebug>
+#include <QTimer>
 
 #include "definitionen.h"
 
 #include "ui_showlogfile.h"
 
-class ShowLogFile : public QWidget, private Ui::ShowLogFile
+class ShowLogFile : public QDialog, private Ui::ShowLogFile
 {
     Q_OBJECT
 
@@ -57,8 +58,11 @@ private:
     void createSlots();
     void settingsRead();
 
+    QString keepValue;
+
 private slots:
     void saveLogFile();
+    void slotRefreshLogFile();
 };
 
 #endif // SHOWLOGFILE_H

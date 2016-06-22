@@ -38,7 +38,9 @@ ClamUI::ClamUI(QWidget *parent) : QMainWindow(parent){
     setWindowTitle(trUtf8("%1 %2").arg(
                        APP_TITLE).arg(
                        APP_VERSION));
-    setWindowIcon(QIcon::fromTheme("vlc"));
+    setWindowIcon(QIcon::fromTheme("clamui"));
+
+    tabWidget->tabBar()->removeTab(4);
 
     createSlots();
     settingsRead();

@@ -1657,12 +1657,12 @@ With this option enabled OLE2 files with VBA macros, which were not
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1051"/>
+        <location filename="../src/settings.cpp" line="1055"/>
         <source>Zurücksetzen bestätigen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1052"/>
+        <location filename="../src/settings.cpp" line="1056"/>
         <source>Möchten Sie die Werte wirklich auf die Standardeinstellungen zurücksetzen?</source>
         <translation></translation>
     </message>
@@ -1830,72 +1830,88 @@ With this option enabled OLE2 files with VBA macros, which were not
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="171"/>
+        <location filename="../ui/tabscanscheduling.ui" line="170"/>
         <source>Automatisches aktualisieren der Virendatenbank</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="179"/>
+        <location filename="../ui/tabscanscheduling.ui" line="178"/>
         <source>Freshclam Status</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="189"/>
+        <location filename="../ui/tabscanscheduling.ui" line="188"/>
         <source>Startet das Programm freshclam im Hintergrund und überprüft in regelmäßigen Abständen die Aktualität der Virendefinitionen. </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="205"/>
+        <location filename="../ui/tabscanscheduling.ui" line="204"/>
         <source>Wie oft am Tag aktualisieren:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="246"/>
-        <location filename="../ui/tabscanscheduling.ui" line="268"/>
+        <location filename="../ui/tabscanscheduling.ui" line="245"/>
+        <location filename="../ui/tabscanscheduling.ui" line="267"/>
         <source>Den Virendefinitionen Updater starten oder stoppen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="249"/>
-        <location filename="../ui/tabscanscheduling.ui" line="334"/>
+        <location filename="../ui/tabscanscheduling.ui" line="248"/>
+        <location filename="../ui/tabscanscheduling.ui" line="343"/>
         <source>PushButton</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="277"/>
-        <location filename="../ui/tabscanscheduling.ui" line="309"/>
+        <location filename="../ui/tabscanscheduling.ui" line="276"/>
+        <location filename="../ui/tabscanscheduling.ui" line="318"/>
         <source>TextLabel</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="292"/>
+        <location filename="../ui/tabscanscheduling.ui" line="286"/>
+        <source>Zeigt die Log Datei des FreshClam Dämons an.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="289"/>
+        <location filename="../ui/tabscanscheduling.ui" line="353"/>
+        <source>Log Datei</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="301"/>
         <source>Status ClamAV Dämon</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="300"/>
-        <location filename="../ui/tabscanscheduling.ui" line="331"/>
+        <location filename="../ui/tabscanscheduling.ui" line="309"/>
+        <location filename="../ui/tabscanscheduling.ui" line="340"/>
         <source>Den ClamAV Dämon starten oder stoppen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="349"/>
+        <location filename="../ui/tabscanscheduling.ui" line="350"/>
+        <source>Zeigt die Log Datei des ClamAV Dämons an.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="368"/>
         <source>&amp;Gesamtes Benutzervezeichnis scannen.</source>
         <translation>&amp;Gesamtes Benutzerverzeichnis scannen.</translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="364"/>
+        <location filename="../ui/tabscanscheduling.ui" line="383"/>
         <source>Verzeichnisse ausschließen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="419"/>
+        <location filename="../ui/tabscanscheduling.ui" line="438"/>
         <source>Dateien und Verzeichnisse auswählen, deren Inhalte von ClamAV nicht überprüft werden sollen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="437"/>
-        <location filename="../ui/tabscanscheduling.ui" line="527"/>
+        <location filename="../ui/tabscanscheduling.ui" line="455"/>
+        <location filename="../ui/tabscanscheduling.ui" line="543"/>
         <source>Markierte Entfernen</source>
         <translation></translation>
     </message>
@@ -1905,40 +1921,44 @@ With this option enabled OLE2 files with VBA macros, which were not
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="370"/>
-        <location filename="../ui/tabscanscheduling.ui" line="463"/>
+        <location filename="../ui/tabscanscheduling.ui" line="389"/>
         <source>Verzeichnisse die von der Überprüfung ausgeschlossen werden.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="422"/>
+        <location filename="../ui/tabscanscheduling.ui" line="441"/>
         <source>Verzeichnis hinzufügen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="434"/>
-        <location filename="../ui/tabscanscheduling.ui" line="524"/>
+        <location filename="../ui/tabscanscheduling.ui" line="452"/>
+        <location filename="../ui/tabscanscheduling.ui" line="540"/>
         <source>Ausgewähltes Verzeichnis entfernen.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="457"/>
+        <location filename="../ui/tabscanscheduling.ui" line="474"/>
         <source>Dateien ausschließen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="512"/>
+        <location filename="../ui/tabscanscheduling.ui" line="480"/>
+        <source>Dateien die von der Überprüfung ausgeschlossen werden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/tabscanscheduling.ui" line="529"/>
         <source>Datei hinzufügen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="202"/>
-        <location filename="../ui/tabscanscheduling.ui" line="215"/>
+        <location filename="../ui/tabscanscheduling.ui" line="201"/>
+        <location filename="../ui/tabscanscheduling.ui" line="214"/>
         <source>Wie häufig soll nach einer aktuellen Virendatenbank gesucht werden?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/tabscanscheduling.ui" line="192"/>
+        <location filename="../ui/tabscanscheduling.ui" line="191"/>
         <source>freshclam im Hintergrund starten.</source>
         <translation></translation>
     </message>

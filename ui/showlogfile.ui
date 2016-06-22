@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>ShowLogFile</class>
- <widget class="QWidget" name="ShowLogFile">
+ <widget class="QDialog" name="ShowLogFile">
   <property name="geometry">
    <rect>
     <x>0</x>

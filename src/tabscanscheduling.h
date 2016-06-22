@@ -45,6 +45,7 @@
 #include "sqlite_db.h"
 #include "clamdprocess.h"
 #include "freshclamprocess.h"
+#include "showlogfile.h"
 
 #include "ui_tabscanscheduling.h"
 
@@ -87,6 +88,8 @@ private slots:
     void slotStartStopClamd();
     void slotStartStopFreshclam();
     void slotComboBoxSchedulingIndexChanged();
+    void slotLogFileClamd();
+    void slotLogFileFreshclam();
 
 };
 

@@ -31,12 +31,13 @@
 
 #include "showlogfile.h"
 
-ShowLogFile::ShowLogFile(QWidget *parent) : QWidget(parent){
+ShowLogFile::ShowLogFile(QWidget *parent) : QDialog(parent){
 
     setupUi(this);
     setWindowTitle(trUtf8("%1 %2 - Logdateibetrachter").arg(APP_TITLE).arg(APP_VERSION));
 
     pushButton_Save->setHidden(true);
+
 }
 
 void ShowLogFile::changeEvent(QEvent *e){
@@ -49,9 +50,21 @@ void ShowLogFile::changeEvent(QEvent *e){
     default:
         break;
     }
+
+    // Update every 10 seconds the viewer.
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &ShowLogFile::slotRefreshLogFile);
+    timer->start(10000);
+}
+
+void ShowLogFile::slotRefreshLogFile() {
+    textEdit_LogFile->clear();
+    openLogFile(keepValue);
 }
 
 void ShowLogFile::openLogFile(QString logFile){
+
+    keepValue = logFile;
 
     QString line;
     QFile file(logFile);
@@ -61,6 +74,10 @@ void ShowLogFile::openLogFile(QString logFile){
     line = in.readAll();
 
     textEdit_LogFile->setText(line);
+    textEdit_LogFile->ensureCursorVisible();
+    QTextCursor c = textEdit_LogFile->textCursor();
+    c.movePosition(QTextCursor::End);
+    textEdit_LogFile->setTextCursor(c);
 
 }
 

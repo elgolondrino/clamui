@@ -743,6 +743,8 @@ void Settings::settingsWrite(){
                              lineEdit_StatsHostID->text());
         clamui_conf.setValue("StatsTimeout",
                              spinBox_StatsTimeout->value());
+        clamui_conf.setValue("QuarantineFolder",
+                             lineEdit_QuarantineFolder->text());
         clamui_conf.endGroup();
     }
 
@@ -933,6 +935,8 @@ void Settings::settingsRead(){
                 clamui_conf.value("StatsHostID", "auto").toString());
     spinBox_StatsTimeout->setValue(
                 clamui_conf.value("StatsTimeout", 10).toInt());
+    lineEdit_QuarantineFolder->setText(
+                clamui_conf.value("QuarantineFolder", CLAMAV_PATH + "quarantine").toString());
     clamui_conf.endGroup();
 
     clamui_conf.beginGroup("Freshclam");
@@ -1079,6 +1083,7 @@ void Settings::settingsDefaultClamAV(){
         comboBox_ConfigPath->setCurrentIndex(0);
         checkBox_StopClamdOnQuit->setChecked(false);
         checkBox_StopFreshclamOnQuit->setChecked(false);
+        lineEdit_QuarantineFolder->setText(CLAMAV_PATH + "quarantine/");
     }
 
     if (toolBox_ClamAV->currentIndex() == 1) {

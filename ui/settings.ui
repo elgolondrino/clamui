@@ -16,8 +16,7 @@
   </property>
   <property name="windowIcon">
    <iconset theme="configure">
-    <normaloff/>
-   </iconset>
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -28,8 +27,7 @@
      <widget class="QWidget" name="tab_1">
       <attribute name="icon">
        <iconset theme="clamui">
-        <normaloff/>
-       </iconset>
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>ClamUI</string>
@@ -46,7 +44,7 @@
             <x>0</x>
             <y>0</y>
             <width>904</width>
-            <height>477</height>
+            <height>476</height>
            </rect>
           </property>
           <layout class="QFormLayout" name="formLayout">
@@ -186,8 +184,7 @@
      <widget class="QWidget" name="tab_2">
       <attribute name="icon">
        <iconset theme="clamav">
-        <normaloff/>
-       </iconset>
+        <normaloff>.</normaloff>.</iconset>
       </attribute>
       <attribute name="title">
        <string>ClamAV</string>
@@ -204,13 +201,12 @@
             <x>0</x>
             <y>0</y>
             <width>908</width>
-            <height>357</height>
+            <height>352</height>
            </rect>
           </property>
           <attribute name="icon">
            <iconset theme="configure">
-            <normaloff/>
-           </iconset>
+            <normaloff>.</normaloff>.</iconset>
           </attribute>
           <attribute name="label">
            <string>Allgemein</string>
@@ -225,9 +221,9 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>-110</y>
+                <y>0</y>
                 <width>872</width>
-                <height>489</height>
+                <height>500</height>
                </rect>
               </property>
               <layout class="QFormLayout" name="formLayout_3">
@@ -284,8 +280,7 @@
                        </property>
                        <property name="icon">
                         <iconset theme="folder">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -294,8 +289,7 @@
                        </property>
                        <property name="icon">
                         <iconset theme="folder">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -320,8 +314,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="folder">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -330,8 +323,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="folder">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -440,7 +432,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        <string/>
                       </property>
                       <property name="icon">
-                       <iconset theme="folder"/>
+                       <iconset theme="folder">
+                        <normaloff>.</normaloff>.</iconset>
                       </property>
                      </widget>
                     </item>
@@ -504,8 +497,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -514,8 +506,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -574,8 +565,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
           </property>
           <attribute name="icon">
            <iconset theme="configure">
-            <normaloff/>
-           </iconset>
+            <normaloff>.</normaloff>.</iconset>
           </attribute>
           <attribute name="label">
            <string>Clamd Dämon</string>
@@ -591,8 +581,8 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>858</width>
-                <height>891</height>
+                <width>899</width>
+                <height>914</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -658,8 +648,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -668,8 +657,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -695,8 +683,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -705,8 +692,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -745,8 +731,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -755,8 +740,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -772,8 +756,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -782,8 +765,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -822,8 +804,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -832,8 +813,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -862,8 +842,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -872,8 +851,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -998,8 +976,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1008,8 +985,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1025,8 +1001,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1035,8 +1010,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1052,8 +1026,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1062,8 +1035,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1118,8 +1090,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1128,8 +1099,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1148,8 +1118,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1158,8 +1127,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1188,8 +1156,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1198,8 +1165,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1244,8 +1210,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1254,8 +1219,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1268,8 +1232,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1278,8 +1241,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1332,8 +1294,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1342,8 +1303,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1359,8 +1319,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1369,8 +1328,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1383,8 +1341,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1393,8 +1350,7 @@ Beachten Sie, dass Verzeichnisse außerhalb vom Benutzerverzeichnis gegebenfals 
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1439,8 +1395,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1449,8 +1404,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1512,8 +1466,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1522,8 +1475,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1539,8 +1491,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1549,8 +1500,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1576,8 +1526,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1586,8 +1535,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1610,8 +1558,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1620,8 +1567,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1637,8 +1583,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1647,8 +1592,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1664,8 +1608,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1674,8 +1617,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1745,8 +1687,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1755,8 +1696,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1804,8 +1744,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1814,8 +1753,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1861,8 +1799,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1871,8 +1808,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1905,8 +1841,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1915,8 +1850,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1962,8 +1896,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1972,8 +1905,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -1986,8 +1918,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -1996,8 +1927,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -2010,8 +1940,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -2020,8 +1949,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -2034,8 +1962,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -2044,8 +1971,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -2058,8 +1984,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-cancel">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                          <item>
@@ -2068,8 +1993,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                           </property>
                           <property name="icon">
                            <iconset theme="dialog-ok">
-                            <normaloff/>
-                           </iconset>
+                            <normaloff>.</normaloff>.</iconset>
                           </property>
                          </item>
                         </widget>
@@ -2099,8 +2023,7 @@ With this option enabled OLE2 files with VBA macros, which were not
           </property>
           <attribute name="icon">
            <iconset theme="configure">
-            <normaloff/>
-           </iconset>
+            <normaloff>.</normaloff>.</iconset>
           </attribute>
           <attribute name="label">
            <string>Freshclam Dämon</string>
@@ -2116,8 +2039,8 @@ With this option enabled OLE2 files with VBA macros, which were not
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>536</width>
-                <height>425</height>
+                <width>566</width>
+                <height>436</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_4">
@@ -2172,8 +2095,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -2182,8 +2104,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -2199,8 +2120,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -2209,8 +2129,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -2262,8 +2181,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -2272,8 +2190,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -2296,8 +2213,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -2306,8 +2222,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -2469,8 +2384,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-cancel">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                       <item>
@@ -2479,8 +2393,7 @@ With this option enabled OLE2 files with VBA macros, which were not
                        </property>
                        <property name="icon">
                         <iconset theme="dialog-ok">
-                         <normaloff/>
-                        </iconset>
+                         <normaloff>.</normaloff>.</iconset>
                        </property>
                       </item>
                      </widget>
@@ -2585,8 +2498,7 @@ With this option enabled OLE2 files with VBA macros, which were not
           </property>
           <attribute name="icon">
            <iconset theme="configure">
-            <normaloff/>
-           </iconset>
+            <normaloff>.</normaloff>.</iconset>
           </attribute>
           <attribute name="label">
            <string>ClamAV Milter</string>
@@ -2607,8 +2519,7 @@ With this option enabled OLE2 files with VBA macros, which were not
        </property>
        <property name="icon">
         <iconset theme="help-about">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -2632,8 +2543,7 @@ With this option enabled OLE2 files with VBA macros, which were not
        </property>
        <property name="icon">
         <iconset theme="edit-undo">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -2644,8 +2554,7 @@ With this option enabled OLE2 files with VBA macros, which were not
        </property>
        <property name="icon">
         <iconset theme="dialog-ok-apply">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -2656,8 +2565,7 @@ With this option enabled OLE2 files with VBA macros, which were not
        </property>
        <property name="icon">
         <iconset theme="dialog-close">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>

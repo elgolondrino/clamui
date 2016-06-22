@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="48"
-   height="48"
-   viewBox="0 0 48 48"
+   width="32"
+   height="32"
+   viewBox="0 0 32 32"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -27,8 +27,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.9195959"
-     inkscape:cx="16.473729"
-     inkscape:cy="26.314003"
+     inkscape:cx="-9.4558823"
+     inkscape:cy="11.161714"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -54,10 +54,10 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-1004.3622)">
+     transform="translate(0,-1020.3622)">
     <image
-       y="1004.7498"
-       x="0.24366081"
+       y="1020.7048"
+       x="-0.21636662"
        id="image4131"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBI
 WXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH3wUNEhIIfLvcCAAAIABJREFUeNrtnXmcXGWV97/nube2
@@ -234,7 +234,7 @@ SUVORK5CYII=
 "
        style="image-rendering:optimizeQuality"
        preserveAspectRatio="none"
-       height="48"
-       width="48" />
+       height="32"
+       width="32" />
   </g>
 </svg>
