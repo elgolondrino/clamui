@@ -46,6 +46,7 @@
 #include "clamdprocess.h"
 #include "freshclamprocess.h"
 #include "showlogfile.h"
+#include "clamdscanprocess.h"
 
 #include "ui_tabscanscheduling.h"
 

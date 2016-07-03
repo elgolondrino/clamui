@@ -41,7 +41,6 @@ HEADERS += src/definitionen.h \
     src/languagetools.h \
     src/sqlite_db.h \
     src/firstrunwizard.h \
-    src/clamscanprocess.h \
     src/clamdprocess.h \
     src/freshclamprocess.h \
     src/clamdconf.h \
@@ -62,7 +61,6 @@ SOURCES += src/about.cpp \
     src/languagetools.cpp \
     src/sqlite_db.cpp \
     src/firstrunwizard.cpp \
-    src/clamscanprocess.cpp \
     src/clamdprocess.cpp \
     src/freshclamprocess.cpp \
     src/clamdconf.cpp \

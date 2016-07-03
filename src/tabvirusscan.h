@@ -33,6 +33,7 @@
 #define TABVIRUSSCAN_H
 
 #include "definitionen.h"
+#include "clamdscanprocess.h"
 
 #include "ui_tabvirusscan.h"
 
